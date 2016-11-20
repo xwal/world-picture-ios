@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397802414552824FD695D7EF /* Pods_NationalGeographic.framework */; };
+		D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
+		D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */; };
+		D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */; };
+		D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */; };
+		D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */; };
+		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
+		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
+		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
+		D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
+		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
+		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
+		D67AE0661DDB486E00DBC7AE /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0431DDB486E00DBC7AE /* 1.jpg */; };
+		D67AE0671DDB486E00DBC7AE /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0441DDB486E00DBC7AE /* 1.png */; };
+		D67AE0681DDB486E00DBC7AE /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0451DDB486E00DBC7AE /* 10.png */; };
+		D67AE0691DDB486E00DBC7AE /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0461DDB486E00DBC7AE /* 11.png */; };
+		D67AE06A1DDB486E00DBC7AE /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0471DDB486E00DBC7AE /* 12.png */; };
+		D67AE06B1DDB486E00DBC7AE /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0481DDB486E00DBC7AE /* 13.png */; };
+		D67AE06C1DDB486E00DBC7AE /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0491DDB486E00DBC7AE /* 14.png */; };
+		D67AE06D1DDB486E00DBC7AE /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04A1DDB486E00DBC7AE /* 15.png */; };
+		D67AE06E1DDB486E00DBC7AE /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04B1DDB486E00DBC7AE /* 16.png */; };
+		D67AE06F1DDB486E00DBC7AE /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04C1DDB486E00DBC7AE /* 17.png */; };
+		D67AE0701DDB486E00DBC7AE /* 18.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04D1DDB486E00DBC7AE /* 18.png */; };
+		D67AE0711DDB486E00DBC7AE /* 19.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04E1DDB486E00DBC7AE /* 19.png */; };
+		D67AE0721DDB486E00DBC7AE /* 1h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE04F1DDB486E00DBC7AE /* 1h.jpg */; };
+		D67AE0731DDB486E00DBC7AE /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0501DDB486E00DBC7AE /* 2.jpg */; };
+		D67AE0741DDB486E00DBC7AE /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0511DDB486E00DBC7AE /* 2.png */; };
+		D67AE0751DDB486E00DBC7AE /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0521DDB486E00DBC7AE /* 20.png */; };
+		D67AE0761DDB486E00DBC7AE /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0531DDB486E00DBC7AE /* 21.png */; };
+		D67AE0771DDB486E00DBC7AE /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0541DDB486E00DBC7AE /* 22.png */; };
+		D67AE0781DDB486E00DBC7AE /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0551DDB486E00DBC7AE /* 23.png */; };
+		D67AE0791DDB486E00DBC7AE /* 24.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0561DDB486E00DBC7AE /* 24.png */; };
+		D67AE07A1DDB486E00DBC7AE /* 25.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0571DDB486E00DBC7AE /* 25.png */; };
+		D67AE07B1DDB486E00DBC7AE /* 2h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0581DDB486E00DBC7AE /* 2h.jpg */; };
+		D67AE07C1DDB486E00DBC7AE /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0591DDB486E00DBC7AE /* 3.jpg */; };
+		D67AE07D1DDB486E00DBC7AE /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05A1DDB486E00DBC7AE /* 3.png */; };
+		D67AE07E1DDB486E00DBC7AE /* 3h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05B1DDB486E00DBC7AE /* 3h.jpg */; };
+		D67AE07F1DDB486E00DBC7AE /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05C1DDB486E00DBC7AE /* 4.png */; };
+		D67AE0801DDB486E00DBC7AE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05D1DDB486E00DBC7AE /* 5.png */; };
+		D67AE0811DDB486E00DBC7AE /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05E1DDB486E00DBC7AE /* 6.png */; };
+		D67AE0821DDB486E00DBC7AE /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE05F1DDB486E00DBC7AE /* 7.png */; };
+		D67AE0831DDB486E00DBC7AE /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0601DDB486E00DBC7AE /* 8.png */; };
+		D67AE0841DDB486E00DBC7AE /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0611DDB486E00DBC7AE /* 9.png */; };
+		D67AE0851DDB486E00DBC7AE /* Deault.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0621DDB486E00DBC7AE /* Deault.png */; };
+		D67AE0861DDB486E00DBC7AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0631DDB486E00DBC7AE /* Default-568h@2x.png */; };
+		D67AE0871DDB486E00DBC7AE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0641DDB486E00DBC7AE /* Default@2x.png */; };
+		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
+		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
+		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
+		D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0271DDBED1300B2664C /* PictureCell.swift */; };
+		D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */; };
+		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
+		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
+		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
+		397802414552824FD695D7EF /* Pods_NationalGeographic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
+		BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationalGeographic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60C21E11DDB0B5D00375E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D60C21E61DDB0B5D00375E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPageViewController.swift; sourceTree = "<group>"; };
+		D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; };
+		D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
+		D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordManager.swift; sourceTree = "<group>"; };
+		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
+		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
+		D63ED2091DE0537A0043D785 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
+		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
+		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
+		D67AE0431DDB486E00DBC7AE /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		D67AE0441DDB486E00DBC7AE /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		D67AE0451DDB486E00DBC7AE /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		D67AE0461DDB486E00DBC7AE /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		D67AE0471DDB486E00DBC7AE /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		D67AE0481DDB486E00DBC7AE /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
+		D67AE0491DDB486E00DBC7AE /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 14.png; sourceTree = "<group>"; };
+		D67AE04A1DDB486E00DBC7AE /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
+		D67AE04B1DDB486E00DBC7AE /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 16.png; sourceTree = "<group>"; };
+		D67AE04C1DDB486E00DBC7AE /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
+		D67AE04D1DDB486E00DBC7AE /* 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18.png; sourceTree = "<group>"; };
+		D67AE04E1DDB486E00DBC7AE /* 19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 19.png; sourceTree = "<group>"; };
+		D67AE04F1DDB486E00DBC7AE /* 1h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1h.jpg; sourceTree = "<group>"; };
+		D67AE0501DDB486E00DBC7AE /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		D67AE0511DDB486E00DBC7AE /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		D67AE0521DDB486E00DBC7AE /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
+		D67AE0531DDB486E00DBC7AE /* 21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 21.png; sourceTree = "<group>"; };
+		D67AE0541DDB486E00DBC7AE /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
+		D67AE0551DDB486E00DBC7AE /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 23.png; sourceTree = "<group>"; };
+		D67AE0561DDB486E00DBC7AE /* 24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 24.png; sourceTree = "<group>"; };
+		D67AE0571DDB486E00DBC7AE /* 25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 25.png; sourceTree = "<group>"; };
+		D67AE0581DDB486E00DBC7AE /* 2h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2h.jpg; sourceTree = "<group>"; };
+		D67AE0591DDB486E00DBC7AE /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		D67AE05A1DDB486E00DBC7AE /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		D67AE05B1DDB486E00DBC7AE /* 3h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3h.jpg; sourceTree = "<group>"; };
+		D67AE05C1DDB486E00DBC7AE /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		D67AE05D1DDB486E00DBC7AE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		D67AE05E1DDB486E00DBC7AE /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		D67AE05F1DDB486E00DBC7AE /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		D67AE0601DDB486E00DBC7AE /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		D67AE0611DDB486E00DBC7AE /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		D67AE0621DDB486E00DBC7AE /* Deault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deault.png; sourceTree = "<group>"; };
+		D67AE0631DDB486E00DBC7AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D67AE0641DDB486E00DBC7AE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
+		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
+		D6A5F0271DDBED1300B2664C /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D60C21D41DDB0B5C00375E8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		292DAC52A30A8A85AF483D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				397802414552824FD695D7EF /* Pods_NationalGeographic.framework */,
+				E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */,
+				ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		754335DC08D477ADFB71D38B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */,
+				BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */,
+				BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */,
+				F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */,
+				4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */,
+				3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D60C21CE1DDB0B5C00375E8B = {
+			isa = PBXGroup;
+			children = (
+				D60C21D91DDB0B5D00375E8B /* NationalGeographic */,
+				D60C21D81DDB0B5D00375E8B /* Products */,
+				754335DC08D477ADFB71D38B /* Pods */,
+				292DAC52A30A8A85AF483D6C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D60C21D81DDB0B5D00375E8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D60C21D91DDB0B5D00375E8B /* NationalGeographic */ = {
+			isa = PBXGroup;
+			children = (
+				D6D5636A1DE02CDB009C6EB9 /* Interface */,
+				D633AD421DDC7623006B08C6 /* Manager */,
+				D6549C601DDC2D470036650E /* Application */,
+				D67AE0411DDB486E00DBC7AE /* Resources */,
+				D6AA8A9F1DDB3F7600032800 /* Views */,
+				D6AA8A9E1DDB3F6C00032800 /* Models */,
+				D6AA8A9D1DDB3F3D00032800 /* Controllers */,
+				D60C21E11DDB0B5D00375E8B /* Assets.xcassets */,
+				D60C21E61DDB0B5D00375E8B /* Info.plist */,
+			);
+			path = NationalGeographic;
+			sourceTree = "<group>";
+		};
+		D633AD421DDC7623006B08C6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */,
+				D63E805A1DDEA11A00308F92 /* ShareManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D6549C601DDC2D470036650E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D6549C611DDC2D730036650E /* AppDelegate.swift */,
+				D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D67AE0411DDB486E00DBC7AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D67AE0421DDB486E00DBC7AE /* images */,
+				D67AE0651DDB486E00DBC7AE /* jianjie.css */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D67AE0421DDB486E00DBC7AE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D67AE0431DDB486E00DBC7AE /* 1.jpg */,
+				D67AE0441DDB486E00DBC7AE /* 1.png */,
+				D67AE0451DDB486E00DBC7AE /* 10.png */,
+				D67AE0461DDB486E00DBC7AE /* 11.png */,
+				D67AE0471DDB486E00DBC7AE /* 12.png */,
+				D67AE0481DDB486E00DBC7AE /* 13.png */,
+				D67AE0491DDB486E00DBC7AE /* 14.png */,
+				D67AE04A1DDB486E00DBC7AE /* 15.png */,
+				D67AE04B1DDB486E00DBC7AE /* 16.png */,
+				D67AE04C1DDB486E00DBC7AE /* 17.png */,
+				D67AE04D1DDB486E00DBC7AE /* 18.png */,
+				D67AE04E1DDB486E00DBC7AE /* 19.png */,
+				D67AE04F1DDB486E00DBC7AE /* 1h.jpg */,
+				D67AE0501DDB486E00DBC7AE /* 2.jpg */,
+				D67AE0511DDB486E00DBC7AE /* 2.png */,
+				D67AE0521DDB486E00DBC7AE /* 20.png */,
+				D67AE0531DDB486E00DBC7AE /* 21.png */,
+				D67AE0541DDB486E00DBC7AE /* 22.png */,
+				D67AE0551DDB486E00DBC7AE /* 23.png */,
+				D67AE0561DDB486E00DBC7AE /* 24.png */,
+				D67AE0571DDB486E00DBC7AE /* 25.png */,
+				D67AE0581DDB486E00DBC7AE /* 2h.jpg */,
+				D67AE0591DDB486E00DBC7AE /* 3.jpg */,
+				D67AE05A1DDB486E00DBC7AE /* 3.png */,
+				D67AE05B1DDB486E00DBC7AE /* 3h.jpg */,
+				D67AE05C1DDB486E00DBC7AE /* 4.png */,
+				D67AE05D1DDB486E00DBC7AE /* 5.png */,
+				D67AE05E1DDB486E00DBC7AE /* 6.png */,
+				D67AE05F1DDB486E00DBC7AE /* 7.png */,
+				D67AE0601DDB486E00DBC7AE /* 8.png */,
+				D67AE0611DDB486E00DBC7AE /* 9.png */,
+				D67AE0621DDB486E00DBC7AE /* Deault.png */,
+				D67AE0631DDB486E00DBC7AE /* Default-568h@2x.png */,
+				D67AE0641DDB486E00DBC7AE /* Default@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		D6AA8A9D1DDB3F3D00032800 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */,
+				D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */,
+				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
+				D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */,
+				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
+				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
+				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6AA8A9E1DDB3F6C00032800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */,
+				D66052091DDB666000ADDF34 /* PictureListModel.swift */,
+				D63ED2091DE0537A0043D785 /* WallpaperModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D6AA8A9F1DDB3F7600032800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */,
+				D6A5F0271DDBED1300B2664C /* PictureCell.swift */,
+				D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6D5636A1DE02CDB009C6EB9 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D6E90D931DE02E0800C65D15 /* Main.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D60C21D61DDB0B5C00375E8B /* NationalGeographic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60C21FF1DDB0B5D00375E8B /* Build configuration list for PBXNativeTarget "NationalGeographic" */;
+			buildPhases = (
+				716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */,
+				D60C21D31DDB0B5C00375E8B /* Sources */,
+				D60C21D41DDB0B5C00375E8B /* Frameworks */,
+				D60C21D51DDB0B5C00375E8B /* Resources */,
+				FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */,
+				56D24AF890773D52369E195A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NationalGeographic;
+			productName = NationalGeographic;
+			productReference = D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D60C21CF1DDB0B5C00375E8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = ChaosVoid;
+				TargetAttributes = {
+					D60C21D61DDB0B5C00375E8B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = D55X9329NJ;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D60C21D21DDB0B5C00375E8B /* Build configuration list for PBXProject "NationalGeographic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+			);
+			mainGroup = D60C21CE1DDB0B5C00375E8B;
+			productRefGroup = D60C21D81DDB0B5D00375E8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D60C21D61DDB0B5C00375E8B /* NationalGeographic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D60C21D51DDB0B5C00375E8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67AE0841DDB486E00DBC7AE /* 9.png in Resources */,
+				D67AE0801DDB486E00DBC7AE /* 5.png in Resources */,
+				D67AE0701DDB486E00DBC7AE /* 18.png in Resources */,
+				D67AE0791DDB486E00DBC7AE /* 24.png in Resources */,
+				D67AE0681DDB486E00DBC7AE /* 10.png in Resources */,
+				D67AE0741DDB486E00DBC7AE /* 2.png in Resources */,
+				D67AE07A1DDB486E00DBC7AE /* 25.png in Resources */,
+				D67AE07C1DDB486E00DBC7AE /* 3.jpg in Resources */,
+				D67AE06F1DDB486E00DBC7AE /* 17.png in Resources */,
+				D67AE06C1DDB486E00DBC7AE /* 14.png in Resources */,
+				D67AE07F1DDB486E00DBC7AE /* 4.png in Resources */,
+				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
+				D67AE0771DDB486E00DBC7AE /* 22.png in Resources */,
+				D67AE0871DDB486E00DBC7AE /* Default@2x.png in Resources */,
+				D67AE0691DDB486E00DBC7AE /* 11.png in Resources */,
+				D67AE07E1DDB486E00DBC7AE /* 3h.jpg in Resources */,
+				D67AE0721DDB486E00DBC7AE /* 1h.jpg in Resources */,
+				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
+				D67AE0731DDB486E00DBC7AE /* 2.jpg in Resources */,
+				D67AE06A1DDB486E00DBC7AE /* 12.png in Resources */,
+				D67AE0831DDB486E00DBC7AE /* 8.png in Resources */,
+				D67AE0751DDB486E00DBC7AE /* 20.png in Resources */,
+				D67AE0661DDB486E00DBC7AE /* 1.jpg in Resources */,
+				D67AE0781DDB486E00DBC7AE /* 23.png in Resources */,
+				D67AE07B1DDB486E00DBC7AE /* 2h.jpg in Resources */,
+				D67AE0851DDB486E00DBC7AE /* Deault.png in Resources */,
+				D67AE06D1DDB486E00DBC7AE /* 15.png in Resources */,
+				D67AE0671DDB486E00DBC7AE /* 1.png in Resources */,
+				D67AE0821DDB486E00DBC7AE /* 7.png in Resources */,
+				D67AE0761DDB486E00DBC7AE /* 21.png in Resources */,
+				D67AE0711DDB486E00DBC7AE /* 19.png in Resources */,
+				D67AE0811DDB486E00DBC7AE /* 6.png in Resources */,
+				D67AE07D1DDB486E00DBC7AE /* 3.png in Resources */,
+				D67AE06E1DDB486E00DBC7AE /* 16.png in Resources */,
+				D67AE06B1DDB486E00DBC7AE /* 13.png in Resources */,
+				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
+				D67AE0861DDB486E00DBC7AE /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56D24AF890773D52369E195A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D60C21D31DDB0B5C00375E8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
+				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
+				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
+				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
+				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
+				D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */,
+				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,
+				D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */,
+				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
+				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
+				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
+				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
+				D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */,
+				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,
+				D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */,
+				D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D6E90D931DE02E0800C65D15 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6E90D921DE02E0800C65D15 /* Base */,
+				D6E90D941DE02E1400C65D15 /* en */,
+				D6E90D951DE02E1A00C65D15 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D60C21FD1DDB0B5D00375E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D60C21FE1DDB0B5D00375E8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D60C22001DDB0B5D00375E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D55X9329NJ;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NationalGeographic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NationalGeographic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D60C22011DDB0B5D00375E8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D55X9329NJ;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NationalGeographic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NationalGeographic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D60C21D21DDB0B5C00375E8B /* Build configuration list for PBXProject "NationalGeographic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60C21FD1DDB0B5D00375E8B /* Debug */,
+				D60C21FE1DDB0B5D00375E8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D60C21FF1DDB0B5D00375E8B /* Build configuration list for PBXNativeTarget "NationalGeographic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60C22001DDB0B5D00375E8B /* Debug */,
+				D60C22011DDB0B5D00375E8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D60C21CF1DDB0B5C00375E8B /* Project object */;
+}
