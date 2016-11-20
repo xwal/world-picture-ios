@@ -17,11 +17,20 @@ class WallpaperViewController: UICollectionViewController {
     var loadingImageView: UIImageView!
     
     var wallpaperArray = [WallpaperModel]()
+    
+    var currentIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         requestWallpaper()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if currentIndex < wallpaperArray.count {
+            collectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .top, animated: true)
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -89,6 +98,21 @@ class WallpaperViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let wallpapaerPageVC = segue.destination as! WallpaperPageViewController
         wallpapaerPageVC.wallpaperModelArray = wallpaperArray
+        
+        weak var weakSelf = self
+        wallpapaerPageVC.indexChanged = { (index) in
+            weakSelf?.currentIndex = index
+        }
+        
+        guard let cell = sender as? UICollectionViewCell else {
+            return
+        }
+        
+        if let indexPath = collectionView?.indexPath(for: cell) {
+            currentIndex = indexPath.row
+            wallpapaerPageVC.selectedIndex = indexPath.row
+        }
+        
     }
 
 }

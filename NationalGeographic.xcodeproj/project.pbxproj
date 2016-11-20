@@ -12,6 +12,7 @@
 		D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */; };
 		D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */; };
 		D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */; };
+		D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */; };
 		D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */; };
 		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
@@ -76,6 +77,7 @@
 		D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPageViewController.swift; sourceTree = "<group>"; };
 		D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; };
 		D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
+		D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordManager.swift; sourceTree = "<group>"; };
 		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
@@ -275,11 +277,12 @@
 			children = (
 				D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */,
 				D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */,
+				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
 				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
 				D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */,
 				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
 				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
-				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
+				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
 				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
+				D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */,
 				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
 				D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */,
 				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,

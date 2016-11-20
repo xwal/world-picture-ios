@@ -12,7 +12,7 @@ import MBProgressHUD
 
 class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
     
-    var wallpaperModel: WallpaperModel?
+    var wallpaperModel: WallpaperModel!
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -28,7 +28,7 @@ class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.maximumZoomScale = 2
         
-        if let url = wallpaperModel?.ios_wallpaper_url {
+        if let url = wallpaperModel.ios_wallpaper_url {
             imageView.kf.setImage(with: URL(string: url))
         }
     }

@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import Kingfisher
 
-class PictureDetailViewController: UIViewController {
+class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
+    
+    var pictureModel: PictureModel!
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let url = pictureModel.thumb {
+            imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: nil, progressBlock: nil, completionHandler: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.zoomScale = 1
+        self.view.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +46,8 @@ class PictureDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView.superview
+    }
 
 }

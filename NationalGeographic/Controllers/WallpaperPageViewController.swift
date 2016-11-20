@@ -10,8 +10,11 @@ import UIKit
 
 class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    var selectedIndex = 0
     var wallpaperModelArray: [WallpaperModel]!
-    var wallpaperDetailArray = [WallpaperDetailViewController]()
+    
+    var indexChanged: ((_ index: Int) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,9 +22,8 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         self.dataSource = self
         self.delegate = self
         
-        let initDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as! WallpaperDetailViewController
-        initDetailVC.wallpaperModel = wallpaperModelArray[0]
-        wallpaperDetailArray.append(initDetailVC)
+        let initDetailVC = createWallpaperDetail()
+        initDetailVC.wallpaperModel = wallpaperModelArray[selectedIndex]
         
         self.setViewControllers([initDetailVC], direction: .forward, animated: true, completion: nil)
         
@@ -40,26 +42,22 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         // Dispose of any resources that can be recreated.
     }
     
-    func nextViewController(_ viewController: WallpaperDetailViewController, before: Bool) -> WallpaperDetailViewController? {
+    func createWallpaperDetail() -> WallpaperDetailViewController {
+        
+        let wallpaperDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WallpaperDetailViewController") as! WallpaperDetailViewController
+        return wallpaperDetailVC
+    }
+    
+    func nextWallpaperDetail(for viewController: WallpaperDetailViewController, before: Bool) -> WallpaperDetailViewController? {
         if let index = wallpaperModelArray.index(of: viewController.wallpaperModel!) {
             let nextIndex = before ? index - 1 : index + 1
             if nextIndex < 0 || nextIndex >= wallpaperModelArray.count {
                 return nil
             }
             else {
-                if nextIndex >= wallpaperDetailArray.count {
-                    if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
-                        detailVC.wallpaperModel = wallpaperModelArray[nextIndex]
-                        wallpaperDetailArray.insert(detailVC, at: nextIndex)
-                        return detailVC
-                    }
-                    return nil
-                    
-                }
-                else {
-                    let detailVC = wallpaperDetailArray[nextIndex]
-                    return detailVC
-                }
+                let detailVC = self.createWallpaperDetail()
+                detailVC.wallpaperModel = wallpaperModelArray[nextIndex]
+                return detailVC
             }
         }
         else {
@@ -70,12 +68,19 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
     
     // MARK: - UIPageViewControllerDataSource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        return nextViewController(viewController as! WallpaperDetailViewController, before: true)
+        return nextWallpaperDetail(for: viewController as! WallpaperDetailViewController, before: true)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nextViewController(viewController as! WallpaperDetailViewController, before: false)
+        return nextWallpaperDetail(for: viewController as! WallpaperDetailViewController, before: false)
+    }
+    
+    // MARK: - UIPageViewControllerDelegate
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let visiableVC = pageViewController.viewControllers?.first as? WallpaperDetailViewController {
+            selectedIndex = wallpaperModelArray.index(of: visiableVC.wallpaperModel)!
+            indexChanged?(selectedIndex)
+        }
     }
 
 }

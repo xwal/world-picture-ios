@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import MBProgressHUD
+import SnapKit
 
-class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var albumID: String? = nil
     
@@ -24,10 +25,6 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBOutlet weak var contentWebView: UIWebView!
     
-    
-    
-    @IBOutlet weak var pictureCollectionView: UICollectionView!
-    
     @IBOutlet var showOrHideViews: [UIView]!
     
     var pageViewController: UIPageViewController!
@@ -40,16 +37,34 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
         requestAlbumDetail()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func setupView() {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-//        pageViewController.delegate = self
-//        pageViewController.setViewControllers(<#T##viewControllers: [UIViewController]?##[UIViewController]?#>, direction: <#T##UIPageViewControllerNavigationDirection#>, animated: <#T##Bool#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        self.addChildViewController(pageViewController)
+        self.view.addSubview(pageViewController.view)
+        pageViewController.view.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(self.view)
+        }
+        self.view.sendSubview(toBack: pageViewController.view)
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            self.showOrHideViewsTapped()
+        }
+        pageViewController.view.addGestureRecognizer(tapGesture)
     }
     
     func showOrHideViewsTapped() {
@@ -61,7 +76,6 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func requestAlbumDetail() {
-        pictureCollectionView.isHidden = true
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.mode = .indeterminate
         if albumID != nil {
@@ -70,13 +84,24 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
                     self.pictureListModel = PictureListModel.yy_model(withJSON: JSON)
                 }
                 DispatchQueue.main.async {
+                    self.initialPageViewController()
                     hud.hide(animated: true)
-                    self.pictureCollectionView.isHidden = false
                     self.updateViews()
                 }
             })
         }
         
+    }
+    
+    func createPictureDetail() -> PictureDetailViewController {
+        let pictureDetail = self.storyboard?.instantiateViewController(withIdentifier: "PictureDetailViewController") as! PictureDetailViewController
+        return pictureDetail
+    }
+    
+    func initialPageViewController() {
+        let initPictureDetail = self.createPictureDetail()
+        initPictureDetail.pictureModel = self.pictureListModel.picture![0]
+        self.pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
     }
     
     func updateViews() {
@@ -90,7 +115,23 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
             let html = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"><link href=\"jianjie.css\" type=\"text/css\" rel=\"stylesheet\"  /></head><body><p>\(currentPic.content!)（摄像：\(currentPic.author!)）</p></body></html>"
             contentWebView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
         }
-        pictureCollectionView.reloadData()
+    }
+    
+    func nextViewController(_ viewController: PictureDetailViewController, before: Bool) -> PictureDetailViewController? {
+        if let index = pictureListModel.picture?.index(of: viewController.pictureModel!) {
+            let nextIndex = before ? index - 1 : index + 1
+            if nextIndex < 0 || nextIndex >= (pictureListModel.picture?.count)! {
+                return nil
+            }
+            else {
+                let detailVC = self.createPictureDetail()
+                detailVC.pictureModel = pictureListModel.picture?[nextIndex]
+                return detailVC
+            }
+        }
+        else {
+            return nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,15 +148,14 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
+        guard let currentPictureDetail = pageViewController.viewControllers?.first as? PictureDetailViewController else {
+            return
+        }
         
-        let currentCell = pictureCollectionView.cellForItem(at: IndexPath(row: currentIndex, section: 0)) as! PictureCell
-        
-        if let image = currentCell.pictureImageView.image {
-            
+        if let image = currentPictureDetail.imageView.image {
             if !image.isEqual(UIImage(named: "nopic")) {
                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
             }
-            
         }
     }
     
@@ -135,44 +175,22 @@ class AlbumDetailViewController: UIViewController, UICollectionViewDataSource, U
         _ = navigationController?.popViewController(animated: true)
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    // MARK: - UICollectionViewDataSource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = pictureListModel?.counttotal else {
-            return 0
+    // MARK: - UIPageViewControllerDataSource
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return nextViewController(viewController as! PictureDetailViewController, before: true)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return nextViewController(viewController as! PictureDetailViewController, before: false)
+    }
+    
+    // MARK: - UIPageViewControllerDelegate
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let visiableVC = pageViewController.viewControllers?.first as? PictureDetailViewController {
+            currentIndex = (pictureListModel.picture?.index(of: visiableVC.pictureModel))!
+            updateViews()
         }
-        return Int(count) ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCell", for: indexPath) as! PictureCell
-        cell.model = pictureListModel?.picture?[indexPath.row]
-        return cell
-    }
-    
-    // MARK: UICollectionViewDelegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showOrHideViewsTapped()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? PictureCell)?.pictureImageView.transform = CGAffineTransform.identity
-    }
-    
-    // MARK: - UIScrollViewDelegate
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentIndex = pictureCollectionView.indexPathForItem(at: scrollView.contentOffset)?.row ?? 0
-        updateViews()
     }
 
 }
