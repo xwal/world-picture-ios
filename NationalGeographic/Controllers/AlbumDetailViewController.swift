@@ -144,7 +144,7 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
             return
         }
         
-        ShareManager.share(text: pictureModel.content, thumbImages: pictureModel.url, images: pictureModel.url, url: URL(string: pictureModel.yourshotlink!), title: pictureModel.title, type: .auto)
+        ShareManager.share(text: pictureModel.content, thumbImages: pictureModel.url, images: pictureModel.url, url: nil, title: pictureModel.title, type: .auto)
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {

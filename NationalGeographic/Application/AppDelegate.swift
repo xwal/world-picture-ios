@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ShareManager.setupShareSDK()
         
         UITabBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
         
         return true
     }

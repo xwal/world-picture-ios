@@ -37,9 +37,9 @@ class ShareManager: NSObject {
             {
             case .typeSinaWeibo:
                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                appInfo?.ssdkSetupSinaWeibo(byAppKey: "568898243",
-                                            appSecret : "38a4f8204cc784f81f9f0daaf31e02e3",
-                                            redirectUri : "http://www.sharesdk.cn",
+                appInfo?.ssdkSetupSinaWeibo(byAppKey: "3670565384",
+                                            appSecret : "1f15571e9b8b6f194ff6f4edacfbfb23",
+                                            redirectUri : "http://chaosky.me/ngp",
                                             authType : SSDKAuthTypeBoth)
                 
             case .typeWechat:
@@ -48,8 +48,8 @@ class ShareManager: NSObject {
                 
             case .typeQQ:
                 //设置QQ应用信息
-                appInfo?.ssdkSetupQQ(byAppId: "100371282",
-                                     appKey : "aed9b0303e3ed1e27bae87c33761161d",
+                appInfo?.ssdkSetupQQ(byAppId: "1105837816",
+                                     appKey : "NFrj9KR5DsF5XUuH",
                                      authType : SSDKAuthTypeBoth)
             default:
                 break
@@ -58,19 +58,19 @@ class ShareManager: NSObject {
         }
     }
     
-    static func share(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType) {
+    static func share(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto) {
         // 1.创建分享参数
         let shareParams = NSMutableDictionary()
         shareParams.ssdkSetupShareParams(byText: text,
                                           images: images,
                                           url: url,
                                           title : title,
-                                          type : .auto)
+                                          type : type)
         
         // 定制微信朋友圈的分享内容
-        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: .image, forPlatformSubType: .subTypeWechatTimeline)
+        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatTimeline)
         
-        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: .image, forPlatformSubType: .subTypeWechatSession)
+        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatSession)
         
         ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParams) { (state, platformType, userData, contentEntity, error, end) in
             switch state {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397802414552824FD695D7EF /* Pods_NationalGeographic.framework */; };
+		D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615331DE28A3100C4000F /* PictorialCell.swift */; };
+		D60615361DE28F5100C4000F /* EasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615351DE28F5100C4000F /* EasyView.swift */; };
+		D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
 		D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
 		D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */; };
 		D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */; };
@@ -18,6 +21,16 @@
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
 		D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
+		D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */; };
+		D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */; };
+		D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */; };
+		D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */; };
+		D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */; };
+		D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */; };
+		D646C9F81DE2DE12007C9D40 /* ArticleFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */; };
+		D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */; };
+		D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */; };
+		D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
 		D67AE0661DDB486E00DBC7AE /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0431DDB486E00DBC7AE /* 1.jpg */; };
@@ -57,10 +70,14 @@
 		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
+		D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691DCE11DE281A300F885FE /* ArticleListViewController.swift */; };
 		D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0271DDBED1300B2664C /* PictureCell.swift */; };
 		D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */; };
+		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
+		D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE13451DE29EB600A3A2BF /* EasyCell.swift */; };
+		D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE13461DE29EB600A3A2BF /* EasyCell.xib */; };
 		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +88,9 @@
 		4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
 		BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D60615331DE28A3100C4000F /* PictorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialCell.swift; sourceTree = "<group>"; };
+		D60615351DE28F5100C4000F /* EasyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyView.swift; sourceTree = "<group>"; };
+		D606153B1DE2949500C4000F /* PictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialModel.swift; sourceTree = "<group>"; };
 		D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationalGeographic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C21E11DDB0B5D00375E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60C21E61DDB0B5D00375E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +103,16 @@
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
 		D63ED2091DE0537A0043D785 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
+		D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePageViewController.swift; sourceTree = "<group>"; };
+		D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSummaryCell.swift; sourceTree = "<group>"; };
+		D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleSummaryCell.xib; sourceTree = "<group>"; };
+		D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleImageCell.swift; sourceTree = "<group>"; };
+		D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleImageCell.xib; sourceTree = "<group>"; };
+		D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleFooterCell.swift; sourceTree = "<group>"; };
+		D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleFooterCell.xib; sourceTree = "<group>"; };
+		D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePhotosCell.swift; sourceTree = "<group>"; };
+		D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlePhotosCell.xib; sourceTree = "<group>"; };
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
@@ -123,10 +153,14 @@
 		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
+		D691DCE11DE281A300F885FE /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		D6A5F0271DDBED1300B2664C /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		D6CE13451DE29EB600A3A2BF /* EasyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCell.swift; sourceTree = "<group>"; };
+		D6CE13461DE29EB600A3A2BF /* EasyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyCell.xib; sourceTree = "<group>"; };
 		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -283,6 +317,9 @@
 				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
 				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
 				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
+				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
+				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
+				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +330,8 @@
 				D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */,
 				D66052091DDB666000ADDF34 /* PictureListModel.swift */,
 				D63ED2091DE0537A0043D785 /* WallpaperModel.swift */,
+				D606153B1DE2949500C4000F /* PictorialModel.swift */,
+				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +342,18 @@
 				D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */,
 				D6A5F0271DDBED1300B2664C /* PictureCell.swift */,
 				D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */,
+				D60615331DE28A3100C4000F /* PictorialCell.swift */,
+				D60615351DE28F5100C4000F /* EasyView.swift */,
+				D6CE13451DE29EB600A3A2BF /* EasyCell.swift */,
+				D6CE13461DE29EB600A3A2BF /* EasyCell.xib */,
+				D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */,
+				D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */,
+				D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */,
+				D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */,
+				D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */,
+				D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */,
+				D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */,
+				D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,7 +401,7 @@
 				TargetAttributes = {
 					D60C21D61DDB0B5C00375E8B = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D55X9329NJ;
+						DevelopmentTeam = J87E7K5QJK;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -379,10 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67AE0841DDB486E00DBC7AE /* 9.png in Resources */,
+				D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */,
+				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
 				D67AE0801DDB486E00DBC7AE /* 5.png in Resources */,
 				D67AE0701DDB486E00DBC7AE /* 18.png in Resources */,
 				D67AE0791DDB486E00DBC7AE /* 24.png in Resources */,
 				D67AE0681DDB486E00DBC7AE /* 10.png in Resources */,
+				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
 				D67AE0741DDB486E00DBC7AE /* 2.png in Resources */,
 				D67AE07A1DDB486E00DBC7AE /* 25.png in Resources */,
 				D67AE07C1DDB486E00DBC7AE /* 3.jpg in Resources */,
@@ -397,11 +451,13 @@
 				D67AE0721DDB486E00DBC7AE /* 1h.jpg in Resources */,
 				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
 				D67AE0731DDB486E00DBC7AE /* 2.jpg in Resources */,
+				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
 				D67AE06A1DDB486E00DBC7AE /* 12.png in Resources */,
 				D67AE0831DDB486E00DBC7AE /* 8.png in Resources */,
 				D67AE0751DDB486E00DBC7AE /* 20.png in Resources */,
 				D67AE0661DDB486E00DBC7AE /* 1.jpg in Resources */,
 				D67AE0781DDB486E00DBC7AE /* 23.png in Resources */,
+				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
 				D67AE07B1DDB486E00DBC7AE /* 2h.jpg in Resources */,
 				D67AE0851DDB486E00DBC7AE /* Deault.png in Resources */,
 				D67AE06D1DDB486E00DBC7AE /* 15.png in Resources */,
@@ -473,21 +529,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
+				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
 				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
+				D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
+				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
 				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
+				D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */,
 				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
 				D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */,
 				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
 				D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */,
+				D646C9F81DE2DE12007C9D40 /* ArticleFooterCell.swift in Sources */,
 				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,
 				D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */,
+				D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */,
+				D60615361DE28F5100C4000F /* EasyView.swift in Sources */,
 				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
 				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
+				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,
 				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
+				D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */,
+				D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */,
 				D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */,
 				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,
+				D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */,
 				D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */,
 				D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */,
 			);
@@ -612,12 +680,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = D55X9329NJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic",
+				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NationalGeographic;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -633,12 +704,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = D55X9329NJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic",
+				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NationalGeographic;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
