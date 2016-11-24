@@ -1,10 +1,21 @@
 PODS:
   - Alamofire (4.0.1)
+  - AVOSCloud (3.7.1)
+  - AVOSCloudCrashReporting (3.7.1):
+    - AVOSCloud (= 3.7.1)
+    - AVOSCloudCrashReporting/_ARC (= 3.7.1)
+    - AVOSCloudCrashReporting/_NOARC (= 3.7.1)
+  - AVOSCloudCrashReporting/_ARC (3.7.1):
+    - AVOSCloud (= 3.7.1)
+    - AVOSCloudCrashReporting/_NOARC (= 3.7.1)
+  - AVOSCloudCrashReporting/_NOARC (3.7.1):
+    - AVOSCloud (= 3.7.1)
   - Kingfisher (3.2.1)
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - MOBFoundation (2.2.3)
+  - Reveal-iOS-SDK (1.6.2)
   - ShareSDK3 (3.5.2):
     - ShareSDK3/ShareSDK (= 3.5.2)
   - ShareSDK3/ShareSDK (3.5.2)
@@ -24,11 +35,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.0)
+  - AVOSCloud
+  - AVOSCloudCrashReporting
   - Kingfisher (~> 3.2.1)
   - KVNProgress
   - MBProgressHUD
   - MJRefresh
   - MOBFoundation
+  - Reveal-iOS-SDK
   - ShareSDK3
   - ShareSDK3/ShareSDKExtension
   - ShareSDK3/ShareSDKPlatforms/Mail
@@ -44,17 +58,20 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AVOSCloud: 0ef0e068cbbe871c79257a501555c3e67fe8d866
+  AVOSCloudCrashReporting: ffe83b9160f90f5f98287c3b22264cad7ddab9d5
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MOBFoundation: 2bc5cd7011a2db75cf2b3ceacb7f4227eec88f3e
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   ShareSDK3: '08ed714e2bbdcd97ab60f58cb398227341dfc20a'
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 444718600d98a8927874c377dd1babc27725969d
+PODFILE CHECKSUM: a6ed463e6232ab86ce01c5aa98fa8042c8a8c4d4
 
 COCOAPODS: 1.1.1

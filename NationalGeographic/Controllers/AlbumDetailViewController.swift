@@ -33,7 +33,7 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupView()
+        setupViews()
         requestAlbumDetail()
     }
     
@@ -51,7 +51,14 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
         return true
     }
     
-    func setupView() {
+    func setupViews() {
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            self.showOrHideViewsTapped()
+        }
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func initialPageViewController() {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self
@@ -61,10 +68,9 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
             maker.edges.equalTo(self.view)
         }
         self.view.sendSubview(toBack: pageViewController.view)
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.showOrHideViewsTapped()
-        }
-        pageViewController.view.addGestureRecognizer(tapGesture)
+        let initPictureDetail = self.createPictureDetail()
+        initPictureDetail.pictureModel = self.pictureListModel.picture![0]
+        self.pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
     }
     
     func showOrHideViewsTapped() {
@@ -82,11 +88,22 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
             Alamofire.request("http://dili.bdatu.com/jiekou/albums/a\(albumID!).html").responseJSON(completionHandler: { (response) in
                 if let JSON = response.result.value {
                     self.pictureListModel = PictureListModel.yy_model(withJSON: JSON)
+                    DispatchQueue.main.async {
+                        self.initialPageViewController()
+                        self.updateViews()
+                        hud.hide(animated: true)
+                    }
                 }
-                DispatchQueue.main.async {
-                    self.initialPageViewController()
+                else if let error = response.result.error {
+                    DispatchQueue.main.async {
+                        hud.mode = .text
+                        hud.label.text = "加载失败"
+                        hud.detailsLabel.text = "错误描述：\(error.localizedDescription)"
+                        hud.hide(animated: true, afterDelay: 1)
+                    }
+                }
+                else {
                     hud.hide(animated: true)
-                    self.updateViews()
                 }
             })
         }
@@ -96,12 +113,6 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
     func createPictureDetail() -> PictureDetailViewController {
         let pictureDetail = self.storyboard?.instantiateViewController(withIdentifier: "PictureDetailViewController") as! PictureDetailViewController
         return pictureDetail
-    }
-    
-    func initialPageViewController() {
-        let initPictureDetail = self.createPictureDetail()
-        initPictureDetail.pictureModel = self.pictureListModel.picture![0]
-        self.pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
     }
     
     func updateViews() {

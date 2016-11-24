@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ShareManager: NSObject {
     
@@ -44,7 +45,7 @@ class ShareManager: NSObject {
                 
             case .typeWechat:
                 //设置微信应用信息
-                appInfo?.ssdkSetupWeChat(byAppId: "wx4868b35061f87885", appSecret: "64020361b8ec4c99936c0e3999a9f249")
+                appInfo?.ssdkSetupWeChat(byAppId: "wxf5f2c3c207a84486", appSecret: "95aedc2d4152214f49137fb94b54fd16")
                 
             case .typeQQ:
                 //设置QQ应用信息
@@ -73,17 +74,31 @@ class ShareManager: NSObject {
         shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatSession)
         
         ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParams) { (state, platformType, userData, contentEntity, error, end) in
+            var msg = ""
             switch state {
-                
-            case SSDKResponseState.success:
+            case .begin:
+                print("分享开始")
+                msg = "分享开始"
+            case .success:
                 print("分享成功")
-            case SSDKResponseState.fail:
+                msg = "分享成功"
+            case .fail:
                 print("授权失败,错误描述:\(error)")
+                msg = "授权失败,错误描述:\(error?.localizedDescription)"
             case SSDKResponseState.cancel:
-                print("操作取消")
+                print("取消分享")
+                msg = "取消分享"
+            }
+            
+            if state != .begin {
                 
-            default:
-                break
+                DispatchQueue.main.async {
+                    let keyWindow: UIWindow! = UIApplication.shared.keyWindow
+                    let hud = MBProgressHUD.showAdded(to: keyWindow, animated: true)
+                    hud.mode = .text
+                    hud.label.text = msg
+                    hud.hide(animated: true, afterDelay: 1)
+                }
             }
         }
     }

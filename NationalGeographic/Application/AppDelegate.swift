@@ -8,6 +8,8 @@
 
 import UIKit
 import YYCategories
+import AVOSCloud
+import AVOSCloudCrashReporting
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func openLog(_ isOpen: Bool) {
         if isOpen {
+            print("===========================")
             // 打印 Bundle 路径
             print("bundle url: \(Bundle.main.bundleURL)")
             // 沙盒路径
@@ -27,13 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         openLog(true)
         
+        // Enable Crash Reporting
+        AVOSCloudCrashReporting.enable()
+        
+        // Setup AVOSCloud
+        AVOSCloud.setApplicationId("sP1qfVdFjg7uN3L9IvKqK3xT-gzGzoHsz", clientKey: "XhuPONcLKvAjdDVpeF9jst3j")
+                
         // 分享平台设置
         ShareManager.setupShareSDK()
         
-        UITabBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+        // 设置样式
+        setAppearance()
         
         return true
+    }
+    
+    func setAppearance() {
+        UITabBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
     }
     
     

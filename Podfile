@@ -15,6 +15,7 @@ target 'NationalGeographic' do
   pod 'MBProgressHUD'
   pod 'KVNProgress'
   pod 'SnapKit'
+  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
   
   # ShareSDK
   # 主模块(必须)
@@ -34,5 +35,12 @@ target 'NationalGeographic' do
   
   # 扩展模块（非必需）
   pod 'ShareSDK3/ShareSDKExtension'
+  
+  # LeanCloud
+  pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
+  pod 'AVOSCloudCrashReporting' # 错误报告模块
+  
+  # Bugly
+  # pod 'Bugly'
 
 end

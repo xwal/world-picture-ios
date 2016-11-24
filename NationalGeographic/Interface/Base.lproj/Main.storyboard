@@ -29,26 +29,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbj" translatesAutoresizingMaskIntoConstraints="NO" id="sed-6g-cX3">
-                                            <rect key="frame" x="45.5" y="15" width="284" height="220"/>
+                                            <rect key="frame" x="28.5" y="15" width="318" height="220"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="sed-6g-cX3" secondAttribute="height" multiplier="234:181" id="HN6-4U-koa"/>
                                                 <constraint firstAttribute="height" constant="220" id="miU-RC-YEj"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nopic" translatesAutoresizingMaskIntoConstraints="NO" id="9QX-a0-jt1">
-                                            <rect key="frame" x="57.5" y="27" width="260" height="196"/>
+                                            <rect key="frame" x="40.5" y="27" width="294" height="196"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="9QX-a0-jt1" secondAttribute="height" multiplier="3:2" id="Wao-Eu-tg5"/>
+                                            </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x" translatesAutoresizingMaskIntoConstraints="NO" id="yPu-F7-Txz">
                                             <rect key="frame" x="5" y="275" width="365" height="25"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3y-IL-W4m">
-                                            <rect key="frame" x="170" y="240" width="35.5" height="17"/>
+                                            <rect key="frame" x="170" y="245" width="35.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone-eye" translatesAutoresizingMaskIntoConstraints="NO" id="j8i-eV-47x">
-                                            <rect key="frame" x="291.5" y="27" width="26" height="26"/>
+                                            <rect key="frame" x="308.5" y="27" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="26" id="Chm-ij-f5P"/>
                                                 <constraint firstAttribute="height" constant="26" id="lzu-3I-dR9"/>
@@ -59,7 +61,7 @@
                                         <constraint firstItem="9QX-a0-jt1" firstAttribute="top" secondItem="sed-6g-cX3" secondAttribute="top" constant="12" id="34M-tZ-zY1"/>
                                         <constraint firstItem="Hnb-26-KVS" firstAttribute="top" secondItem="goi-EK-Mzn" secondAttribute="top" id="35b-VN-w38"/>
                                         <constraint firstItem="9QX-a0-jt1" firstAttribute="leading" secondItem="sed-6g-cX3" secondAttribute="leading" constant="12" id="3yM-uU-AAp"/>
-                                        <constraint firstItem="9QX-a0-jt1" firstAttribute="bottom" secondItem="sed-6g-cX3" secondAttribute="bottom" constant="-12" id="9fS-Yy-HG2"/>
+                                        <constraint firstItem="sed-6g-cX3" firstAttribute="bottom" secondItem="9QX-a0-jt1" secondAttribute="bottom" constant="12" id="9fS-Yy-HG2"/>
                                         <constraint firstItem="sed-6g-cX3" firstAttribute="trailing" secondItem="9QX-a0-jt1" secondAttribute="trailing" constant="12" id="9rR-S6-RCO"/>
                                         <constraint firstItem="sed-6g-cX3" firstAttribute="top" secondItem="goi-EK-Mzn" secondAttribute="top" constant="15" id="CeC-Ye-muC"/>
                                         <constraint firstItem="j8i-eV-47x" firstAttribute="top" secondItem="9QX-a0-jt1" secondAttribute="top" id="IrU-Bk-GQa"/>
@@ -68,8 +70,8 @@
                                         <constraint firstAttribute="trailing" secondItem="Hnb-26-KVS" secondAttribute="trailing" id="Wva-3M-11a"/>
                                         <constraint firstItem="j8i-eV-47x" firstAttribute="trailing" secondItem="9QX-a0-jt1" secondAttribute="trailing" id="ZXw-w0-OiT"/>
                                         <constraint firstAttribute="bottom" secondItem="yPu-F7-Txz" secondAttribute="bottom" id="e8b-BD-sZb"/>
-                                        <constraint firstItem="G3y-IL-W4m" firstAttribute="centerX" secondItem="sed-6g-cX3" secondAttribute="centerX" id="eyU-y3-QRF"/>
-                                        <constraint firstItem="G3y-IL-W4m" firstAttribute="top" secondItem="sed-6g-cX3" secondAttribute="bottom" constant="5" id="g4D-Nb-qgE"/>
+                                        <constraint firstItem="sed-6g-cX3" firstAttribute="centerX" secondItem="G3y-IL-W4m" secondAttribute="centerX" id="eyU-y3-QRF"/>
+                                        <constraint firstItem="G3y-IL-W4m" firstAttribute="top" secondItem="sed-6g-cX3" secondAttribute="bottom" constant="10" id="g4D-Nb-qgE"/>
                                         <constraint firstAttribute="bottom" secondItem="Hnb-26-KVS" secondAttribute="bottom" id="hwr-CK-6YV"/>
                                         <constraint firstAttribute="trailing" secondItem="yPu-F7-Txz" secondAttribute="trailing" constant="5" id="oeX-jj-6OM"/>
                                         <constraint firstItem="Hnb-26-KVS" firstAttribute="leading" secondItem="goi-EK-Mzn" secondAttribute="leading" id="uSP-Ef-tdp"/>
@@ -122,7 +124,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="34F23288-4FFE-4167-9FCE-A8762D30D72F"/>
+                                <state key="highlighted" image="A75677AE-3EF8-4292-89B7-91C3FC19DB21"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -710,7 +712,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="34F23288-4FFE-4167-9FCE-A8762D30D72F" width="45" height="45">
+        <image name="A75677AE-3EF8-4292-89B7-91C3FC19DB21" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
