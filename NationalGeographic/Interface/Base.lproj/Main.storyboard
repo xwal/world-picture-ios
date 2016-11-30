@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Album List View Controller-->
+        <!--地理集-->
         <scene sceneID="wYL-eA-54P">
             <objects>
                 <tableViewController id="cH1-oq-7Mq" customClass="AlbumListViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,9 +90,7 @@
                             <outlet property="delegate" destination="cH1-oq-7Mq" id="DmO-1e-M2J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YPe-X7-uhE">
-                        <barButtonItem key="leftBarButtonItem" image="logo" id="aGH-6Y-gYT"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="地理集" id="YPe-X7-uhE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h50-dw-42r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,13 +108,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="loI-6b-GXp">
-                                <rect key="frame" x="15" y="25" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7ly-lF-IMa"/>
-                                    <constraint firstAttribute="height" constant="30" id="uLH-9B-yt8"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CO-Xp-3lB">
                                 <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                 <constraints>
@@ -124,7 +115,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="A75677AE-3EF8-4292-89B7-91C3FC19DB21"/>
+                                <state key="highlighted" image="6CBFDEDE-603E-4CA8-9885-0A76663234B7"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -204,9 +195,7 @@
                             <constraint firstItem="Qra-w6-VTQ" firstAttribute="leading" secondItem="KEj-TT-Tlm" secondAttribute="leading" id="2zk-uR-puZ"/>
                             <constraint firstItem="6CO-Xp-3lB" firstAttribute="top" secondItem="KEj-TT-Tlm" secondAttribute="top" id="3Gx-sp-bDz"/>
                             <constraint firstAttribute="trailing" secondItem="Qra-w6-VTQ" secondAttribute="trailing" id="VSB-AB-6Ji"/>
-                            <constraint firstItem="loI-6b-GXp" firstAttribute="top" secondItem="KEj-TT-Tlm" secondAttribute="top" constant="25" id="cPJ-8O-6j5"/>
                             <constraint firstAttribute="trailing" secondItem="6CO-Xp-3lB" secondAttribute="trailing" id="hVd-ca-1yt"/>
-                            <constraint firstItem="loI-6b-GXp" firstAttribute="leading" secondItem="KEj-TT-Tlm" secondAttribute="leading" constant="15" id="j67-55-yan"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -215,7 +204,6 @@
                         <outlet property="contentWebView" destination="Tl5-da-8t9" id="NYj-iH-DUj"/>
                         <outlet property="picIndexLabel" destination="S7y-PU-Hv4" id="RLi-j7-uzm"/>
                         <outlet property="picNameLabel" destination="YSq-F1-10c" id="hw7-O9-K7j"/>
-                        <outletCollection property="showOrHideViews" destination="loI-6b-GXp" collectionClass="NSMutableArray" id="46h-4y-nng"/>
                         <outletCollection property="showOrHideViews" destination="6CO-Xp-3lB" collectionClass="NSMutableArray" id="uN3-EB-gea"/>
                         <outletCollection property="showOrHideViews" destination="Qra-w6-VTQ" collectionClass="NSMutableArray" id="YIZ-Kf-Hvk"/>
                     </connections>
@@ -712,7 +700,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A75677AE-3EF8-4292-89B7-91C3FC19DB21" width="45" height="45">
+        <image name="6CBFDEDE-603E-4CA8-9885-0A76663234B7" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -914,7 +902,6 @@ KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
         <image name="ToolbarWallpaper_pressed" width="24" height="24"/>
         <image name="bjbj" width="1" height="1"/>
         <image name="linor" width="45" height="45"/>
-        <image name="logo" width="100" height="30"/>
         <image name="newbj" width="234" height="181"/>
         <image name="nopic" width="304" height="228"/>
         <image name="phone-eye" width="26" height="26"/>

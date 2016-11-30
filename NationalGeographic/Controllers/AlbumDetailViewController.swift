@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 import SnapKit
+import YYCategories
 
 class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
@@ -85,26 +86,32 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.mode = .indeterminate
         if albumID != nil {
-            Alamofire.request("http://dili.bdatu.com/jiekou/albums/a\(albumID!).html").responseJSON(completionHandler: { (response) in
-                if let JSON = response.result.value {
-                    self.pictureListModel = PictureListModel.yy_model(withJSON: JSON)
-                    DispatchQueue.main.async {
-                        self.initialPageViewController()
-                        self.updateViews()
-                        hud.hide(animated: true)
-                    }
+            Alamofire.request("http://dili.bdatu.com/jiekou/albums/a\(albumID!).html").responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
+                
+                guard let JSON = response.result.value else {
+                    
+                    let error = response.result.error
+                    
+                    hud.mode = .text
+                    hud.label.text = "加载失败"
+                    hud.detailsLabel.text = "错误描述：\(error?.localizedDescription ?? "")"
+                    hud.hide(animated: true, afterDelay: 1)
+                    
+                    return
                 }
-                else if let error = response.result.error {
-                    DispatchQueue.main.async {
-                        hud.mode = .text
-                        hud.label.text = "加载失败"
-                        hud.detailsLabel.text = "错误描述：\(error.localizedDescription)"
-                        hud.hide(animated: true, afterDelay: 1)
-                    }
+                
+                let handleJSON = JSON.removeControlCharacters()
+                guard let model = PictureListModel.yy_model(withJSON: handleJSON) else {
+                    hud.hide(animated: true)
+                    return
                 }
-                else {
+                self.pictureListModel = model
+                DispatchQueue.main.async {
+                    self.initialPageViewController()
+                    self.updateViews()
                     hud.hide(animated: true)
                 }
+                
             })
         }
         
