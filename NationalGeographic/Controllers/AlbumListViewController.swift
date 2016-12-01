@@ -18,7 +18,7 @@ class AlbumListViewController: UITableViewController {
     
     let CellIdentifier = "AlbumCell"
     
-    let perDaySeconds = 60 * 60 * 24.0
+    let refreshIntervalSeconds = 60 * 60 * 4.0
     
     var cacheDataURL: URL {
         
@@ -42,6 +42,7 @@ class AlbumListViewController: UITableViewController {
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
         })
+        header?.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
         header?.arrowView.image = UIImage(named: "blueArrow")
         header?.activityIndicatorViewStyle = .white
         tableView.mj_header = header
@@ -53,25 +54,25 @@ class AlbumListViewController: UITableViewController {
     }
     
     func setupCacheData() {
-        if let updatedTime = tableView.mj_header.lastUpdatedTime {
-            let timeInterval = NSDate().timeIntervalSince(updatedTime)
-            if timeInterval > perDaySeconds {
-                tableView.mj_header.beginRefreshing()
-            }
-            else {
-                
-                do {
-                    let cacheJSONData = try Data(contentsOf: cacheDataURL)
-                    albumModelArray = NSArray.yy_modelArray(with: AlbumModel.self, json: cacheJSONData) as! [AlbumModel]
-                    tableView.reloadData()
-                } catch {
-                    tableView.mj_header.beginRefreshing()
-                }
-            }
+        
+        guard let updatedTime = tableView.mj_header.lastUpdatedTime else {
+            tableView.mj_header.beginRefreshing()
+            return
         }
-        else {
+        
+        do {
+            let cacheJSONData = try Data(contentsOf: cacheDataURL)
+            albumModelArray = NSArray.yy_modelArray(with: AlbumModel.self, json: cacheJSONData) as! [AlbumModel]
+            tableView.reloadData()
+        } catch {
             tableView.mj_header.beginRefreshing()
         }
+        
+        let timeInterval = NSDate().timeIntervalSince(updatedTime)
+        if timeInterval > refreshIntervalSeconds {
+            tableView.mj_header.beginRefreshing()
+        }
+        
     }
     
     func updateCacheData() {

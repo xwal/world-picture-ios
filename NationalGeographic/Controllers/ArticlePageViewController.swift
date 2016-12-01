@@ -23,7 +23,7 @@ class ArticlePageViewController: UIPageViewController, UIPageViewControllerDataS
         let initDetailVC = createArticleDetail()
         initDetailVC.articleModel = articleModelArray[selectedIndex]
         
-        self.setViewControllers([initDetailVC], direction: .forward, animated: true, completion: nil)
+        self.setViewControllers([initDetailVC], direction: .forward, animated: false, completion: nil)
         
         let tapGesture = UITapGestureRecognizer { (gesture) in
             self.dismiss(animated: true, completion: nil)

@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 import YYCategories
+import MJRefresh
 
 private let reuseIdentifier = "PictorialCell"
 
-class ArticleListViewController: UITableViewController {
+class ArticleListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var pictorialArray = [PictorialModel]()
     
@@ -32,8 +33,7 @@ class ArticleListViewController: UITableViewController {
         loadingImageView.animationImages = animationImages
         
         loadingImageView.snp.makeConstraints { (maker) in
-            maker.centerX.equalTo(self.view)
-            maker.centerY.equalTo(self.view).offset(-64)
+            maker.center.equalTo(self.view)
         }
         return loadingImageView
     }()
@@ -43,10 +43,24 @@ class ArticleListViewController: UITableViewController {
         return UIApplication.shared.documentsURL.appendingPathComponent("ArticleListModel.data")
     }
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(didSelectEasyCell(_:)), name: NSNotification.Name(rawValue: DidSelectEasyCellNotification), object: nil)
         setupCacheData()
+    }
+    
+    func setupView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.requestPictorialList()
+        })
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -91,6 +105,7 @@ class ArticleListViewController: UITableViewController {
             }
             
             DispatchQueue.main.async {
+                self.tableView.mj_header.endRefreshing()
                 self.loadingImageView.stopAnimating()
                 self.tableView.reloadData()
             }
@@ -125,11 +140,11 @@ class ArticleListViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictorialArray.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! PictorialCell
 
         let model = pictorialArray[indexPath.row]
@@ -146,6 +161,23 @@ class ArticleListViewController: UITableViewController {
             articlePageVC.selectedIndex = articleSelectIndex
             articlePageVC.articleModelArray = articleSelectModelArray
         }
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        guard pictorialArray.count > 0 else {
+            return
+        }
+        
+        let randomPictorialIndex = Int(arc4random_uniform(UInt32(pictorialArray.count)))
+        
+        guard let articles = pictorialArray[randomPictorialIndex].articles else {
+            return
+        }
+        
+        articleSelectIndex = Int(arc4random_uniform(UInt32(articles.count)))
+        articleSelectModelArray = articles
+        self.performSegue(withIdentifier: "PresentArticlePage", sender: nil)
     }
 
 }
