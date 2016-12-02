@@ -23,6 +23,10 @@
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
 		D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
+		D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
+		D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */; };
+		D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */; };
+		D642BBE91DF156910026D776 /* UIViewController+NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController+NGP.swift */; };
 		D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F421DEEB33100A3CD03 /* dili.xcassets */; };
 		D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
 		D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */; };
@@ -75,6 +79,10 @@
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
 		D63ED2091DE0537A0043D785 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
+		D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialModel.swift; sourceTree = "<group>"; };
+		D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialPageViewController.swift; sourceTree = "<group>"; };
+		D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayWallpaperViewController.swift; sourceTree = "<group>"; };
+		D642BBE81DF156910026D776 /* UIViewController+NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+NGP.swift"; sourceTree = "<group>"; };
 		D6464F421DEEB33100A3CD03 /* dili.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = dili.xcassets; sourceTree = "<group>"; };
 		D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pictorial.xcassets; sourceTree = "<group>"; };
 		D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D61663731DE7256100D9C897 /* String+NGP.swift */,
+				D642BBE81DF156910026D776 /* UIViewController+NGP.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -229,6 +238,8 @@
 				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
 				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
 				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
+				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
+				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				D63ED2091DE0537A0043D785 /* WallpaperModel.swift */,
 				D606153B1DE2949500C4000F /* PictorialModel.swift */,
 				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
+				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,12 +420,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
 				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
 				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
 				D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */,
+				D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
+				D642BBE91DF156910026D776 /* UIViewController+NGP.swift in Sources */,
+				D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */,
 				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
 				D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */,
 				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
@@ -574,7 +590,7 @@
 					"$(PROJECT_DIR)/NationalGeographic",
 				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,7 +613,7 @@
 					"$(PROJECT_DIR)/NationalGeographic",
 				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";

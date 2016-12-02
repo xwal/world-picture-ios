@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.2.0)
   - AVOSCloud (3.7.1)
   - AVOSCloudCrashReporting (3.7.1):
     - AVOSCloud (= 3.7.1)
@@ -10,7 +10,7 @@ PODS:
     - AVOSCloudCrashReporting/_NOARC (= 3.7.1)
   - AVOSCloudCrashReporting/_NOARC (3.7.1):
     - AVOSCloud (= 3.7.1)
-  - Kingfisher (3.2.1)
+  - Kingfisher (3.2.2)
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
@@ -34,7 +34,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0.0)
+  - Alamofire (~> 4.2.0)
   - AVOSCloud
   - AVOSCloudCrashReporting
   - Kingfisher (~> 3.2.1)
@@ -57,10 +57,10 @@ DEPENDENCIES:
   - YYModel
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AVOSCloud: 0ef0e068cbbe871c79257a501555c3e67fe8d866
   AVOSCloudCrashReporting: ffe83b9160f90f5f98287c3b22264cad7ddab9d5
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -72,6 +72,6 @@ SPEC CHECKSUMS:
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a6ed463e6232ab86ce01c5aa98fa8042c8a8c4d4
+PODFILE CHECKSUM: 612733f12e8182958841db654dd7bb0e001f9b67
 
 COCOAPODS: 1.1.1

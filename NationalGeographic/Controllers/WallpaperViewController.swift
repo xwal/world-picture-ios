@@ -14,8 +14,6 @@ private let reuseIdentifier = "WallpaperCell"
 
 class WallpaperViewController: UICollectionViewController {
     
-    var loadingImageView: UIImageView!
-    
     var wallpaperArray = [WallpaperModel]()
     
     var currentIndex = 0
@@ -42,19 +40,6 @@ class WallpaperViewController: UICollectionViewController {
     }
     
     func setupViews() {
-        loadingImageView = UIImageView()
-        var animationImages = [UIImage]()
-        for index in 1...32 {
-            
-            if let image = UIImage(named: "loading_\(index)") {
-                animationImages.append(image)
-            }
-        }
-        loadingImageView.animationImages = animationImages
-        self.view.addSubview(loadingImageView)
-        loadingImageView.snp.makeConstraints { (maker) in
-            maker.center.equalTo(self.view.center)
-        }
         let screenSize = UIScreen.main.bounds.size
         let itemWidth = (screenSize.width - 12.0) / 2
         let itemHeight = itemWidth * 1136 / 640.0

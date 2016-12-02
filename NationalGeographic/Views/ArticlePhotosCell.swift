@@ -21,8 +21,11 @@ class ArticlePhotosCell: UITableViewCell {
             for index in stride(from: 0, to: photos.count, by: 2) {
                 let leftImageView = UIImageView()
                 self.contentView.addSubview(leftImageView)
+                
+                let leftPhotoModel = photos[index]
+                leftImageView.kf.setImage(with: URL(string: leftPhotoModel.image_url!))
                 leftImageView.snp.makeConstraints({ (maker) in
-                    maker.width.equalTo(leftImageView.snp.height)
+                    maker.width.equalTo(leftImageView.snp.height).multipliedBy(Float(leftPhotoModel.image_width) / Float(leftPhotoModel.image_height))
                     
                     if index == 0 {
                         maker.top.equalTo(prefixView.snp.top).offset(10)
@@ -33,8 +36,6 @@ class ArticlePhotosCell: UITableViewCell {
                         maker.left.equalTo(prefixView.snp.left)
                     }
                 })
-                let leftPhotoModel = photos[index]
-                leftImageView.kf.setImage(with: URL(string: leftPhotoModel.image_url!))
                 
                 prefixView = leftImageView
                 

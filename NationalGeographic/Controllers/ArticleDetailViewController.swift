@@ -119,7 +119,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     */
     @IBAction func backTapped(_ sender: UIButton) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

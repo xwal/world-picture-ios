@@ -20,24 +20,6 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     var articleSelectIndex = 0
     var articleSelectModelArray = [PictorialArticleModel]()
     
-    lazy var loadingImageView: UIImageView = {
-        let loadingImageView = UIImageView()
-        self.view.addSubview(loadingImageView)
-        var animationImages = [UIImage]()
-        for index in 1...32 {
-            
-            if let image = UIImage(named: "loading_\(index)") {
-                animationImages.append(image)
-            }
-        }
-        loadingImageView.animationImages = animationImages
-        
-        loadingImageView.snp.makeConstraints { (maker) in
-            maker.center.equalTo(self.view)
-        }
-        return loadingImageView
-    }()
-    
     private var cacheDataURL: URL {
         
         return UIApplication.shared.documentsURL.appendingPathComponent("ArticleListModel.data")

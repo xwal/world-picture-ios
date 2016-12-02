@@ -115,7 +115,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="D644040F-2967-429B-A6D3-258894548B69"/>
+                                <state key="highlighted" image="03A2449C-5FB0-49AD-A02C-76AEB26ADE39"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -383,7 +383,14 @@
                             <constraint firstItem="xqL-N9-c0U" firstAttribute="top" secondItem="BiA-EK-dEw" secondAttribute="top" id="j2O-KN-9TK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="画报集" id="IuW-Z7-njz"/>
+                    <navigationItem key="navigationItem" title="画报集" id="IuW-Z7-njz">
+                        <barButtonItem key="rightBarButtonItem" title="今日画报" id="du2-d7-xkD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="d66-yK-qFf" kind="presentation" modalTransitionStyle="crossDissolve" id="F2V-kX-iAE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="xqL-N9-c0U" id="heh-3C-hf2"/>
                         <segue destination="Y4H-H0-cjp" kind="presentation" identifier="PresentArticlePage" modalTransitionStyle="crossDissolve" id="uNd-qe-Qju"/>
@@ -527,7 +534,143 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTA-lC-Njx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="1573"/>
+            <point key="canvasLocation" x="356" y="2303"/>
+        </scene>
+        <!--Today Pictorial Page View Controller-->
+        <scene sceneID="TFR-gT-5d3">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="d66-yK-qFf" customClass="TodayPictorialPageViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLK-qD-Mqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="1551"/>
+        </scene>
+        <!--Today Wallpaper View Controller-->
+        <scene sceneID="BhL-v7-fc5">
+            <objects>
+                <viewController storyboardIdentifier="TodayWallpaperViewController" id="X6x-Za-rLf" customClass="TodayWallpaperViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SSA-hv-xbX"/>
+                        <viewControllerLayoutGuide type="bottom" id="75X-o8-oxq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xpu-uh-pqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aep-go-x1Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-7O-5B8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUn-U4-4Es">
+                                        <rect key="frame" x="10" y="10" width="65.5" height="68.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="57"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TitleSeparator" translatesAutoresizingMaskIntoConstraints="NO" id="6L7-gV-Ofr">
+                                        <rect key="frame" x="87.5" y="15" width="1.5" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="7d6-mg-yzF"/>
+                                            <constraint firstAttribute="width" constant="1.5" id="Un8-z1-d8V"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-QF-ANM">
+                                        <rect key="frame" x="101" y="19" width="99.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高原之巅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9G-32-04Z">
+                                        <rect key="frame" x="101" y="45.5" width="65.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vP-rw-IyF">
+                                        <rect key="frame" x="317" y="10" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="YzI-b1-gVn"/>
+                                            <constraint firstAttribute="height" constant="48" id="b9j-XG-mmq"/>
+                                        </constraints>
+                                        <state key="normal" image="ButtonClose_normal"/>
+                                        <state key="highlighted" image="ButtonClose_pressed"/>
+                                        <connections>
+                                            <action selector="closeTapped:" destination="X6x-Za-rLf" eventType="touchUpInside" id="L8g-tN-t9z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hUn-U4-4Es" firstAttribute="leading" secondItem="Ta0-7O-5B8" secondAttribute="leading" constant="10" id="6zL-q1-xru"/>
+                                    <constraint firstItem="h4c-QF-ANM" firstAttribute="top" secondItem="Ta0-7O-5B8" secondAttribute="top" constant="19" id="AyP-eg-5KO"/>
+                                    <constraint firstItem="7vP-rw-IyF" firstAttribute="top" secondItem="Ta0-7O-5B8" secondAttribute="top" constant="10" id="Gcw-Wd-kUt"/>
+                                    <constraint firstItem="S9G-32-04Z" firstAttribute="leading" secondItem="h4c-QF-ANM" secondAttribute="leading" id="KqD-QK-Jeh"/>
+                                    <constraint firstItem="6L7-gV-Ofr" firstAttribute="leading" secondItem="hUn-U4-4Es" secondAttribute="trailing" constant="12" id="Ldn-eN-Zgv"/>
+                                    <constraint firstAttribute="trailing" secondItem="7vP-rw-IyF" secondAttribute="trailing" constant="10" id="Pg0-zy-7JY"/>
+                                    <constraint firstItem="hUn-U4-4Es" firstAttribute="top" secondItem="Ta0-7O-5B8" secondAttribute="top" constant="10" id="Xvv-KS-zHB"/>
+                                    <constraint firstItem="S9G-32-04Z" firstAttribute="top" secondItem="h4c-QF-ANM" secondAttribute="bottom" id="sFt-3w-fol"/>
+                                    <constraint firstItem="h4c-QF-ANM" firstAttribute="leading" secondItem="6L7-gV-Ofr" secondAttribute="trailing" constant="12" id="spa-D3-TCI"/>
+                                    <constraint firstAttribute="height" constant="90" id="tUO-cy-S3i"/>
+                                    <constraint firstItem="6L7-gV-Ofr" firstAttribute="top" secondItem="Ta0-7O-5B8" secondAttribute="top" constant="15" id="y4S-8M-P17"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJ5-Hz-bKy">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日壁纸" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVk-zh-50W">
+                                        <rect key="frame" x="15" y="13.5" width="57.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FVk-zh-50W" firstAttribute="leading" secondItem="lJ5-Hz-bKy" secondAttribute="leading" constant="15" id="IRF-5c-rqa"/>
+                                    <constraint firstAttribute="height" constant="44" id="a56-il-n2f"/>
+                                    <constraint firstItem="FVk-zh-50W" firstAttribute="centerY" secondItem="lJ5-Hz-bKy" secondAttribute="centerY" id="mfH-YT-JvT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsb-1M-DIS">
+                                <rect key="frame" x="165" y="603" width="44" height="44"/>
+                                <state key="normal" image="ButtonDownloadBig_normal"/>
+                                <state key="highlighted" image="ButtonDownloadBig_pressed"/>
+                                <connections>
+                                    <action selector="downloadTapped:" destination="X6x-Za-rLf" eventType="touchUpInside" id="1gF-QI-Vre"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lJ5-Hz-bKy" firstAttribute="leading" secondItem="Xpu-uh-pqQ" secondAttribute="leading" id="3Nn-8h-6Bh"/>
+                            <constraint firstAttribute="trailing" secondItem="lJ5-Hz-bKy" secondAttribute="trailing" id="6Pn-Xa-Puc"/>
+                            <constraint firstItem="lsb-1M-DIS" firstAttribute="centerX" secondItem="Xpu-uh-pqQ" secondAttribute="centerX" id="CJb-dE-cZL"/>
+                            <constraint firstItem="aep-go-x1Z" firstAttribute="top" secondItem="Xpu-uh-pqQ" secondAttribute="top" id="CTS-QI-DSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Ta0-7O-5B8" secondAttribute="trailing" id="IOp-8U-V8A"/>
+                            <constraint firstItem="Ta0-7O-5B8" firstAttribute="top" secondItem="Xpu-uh-pqQ" secondAttribute="top" id="Ldo-Ci-OcY"/>
+                            <constraint firstAttribute="bottom" secondItem="aep-go-x1Z" secondAttribute="bottom" id="Ouj-eX-V46"/>
+                            <constraint firstItem="Ta0-7O-5B8" firstAttribute="leading" secondItem="Xpu-uh-pqQ" secondAttribute="leading" id="QCg-XU-zyI"/>
+                            <constraint firstAttribute="trailing" secondItem="aep-go-x1Z" secondAttribute="trailing" id="aZ2-ha-JOl"/>
+                            <constraint firstItem="75X-o8-oxq" firstAttribute="top" secondItem="lJ5-Hz-bKy" secondAttribute="bottom" id="bsP-BH-E38"/>
+                            <constraint firstItem="aep-go-x1Z" firstAttribute="leading" secondItem="Xpu-uh-pqQ" secondAttribute="leading" id="x3Y-vQ-ccD"/>
+                            <constraint firstAttribute="bottom" secondItem="lsb-1M-DIS" secondAttribute="bottom" constant="20" id="xbS-DV-0Q0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="lJ5-Hz-bKy" id="bF3-uB-cnq"/>
+                        <outlet property="destinationLabel" destination="FVk-zh-50W" id="oKU-fs-EjU"/>
+                        <outlet property="downloadButton" destination="lsb-1M-DIS" id="tiE-3g-hgo"/>
+                        <outlet property="monthLabel" destination="h4c-QF-ANM" id="F3E-gc-hHA"/>
+                        <outlet property="titleLabel" destination="S9G-32-04Z" id="8Co-4W-Uxq"/>
+                        <outlet property="todayLabel" destination="hUn-U4-4Es" id="F2C-6W-qyn"/>
+                        <outlet property="topView" destination="Ta0-7O-5B8" id="bwD-5x-Lab"/>
+                        <outlet property="wallpaperImageView" destination="aep-go-x1Z" id="4dT-HN-5yp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aT1-9E-McP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093.5999999999999" y="1549.4752623688157"/>
         </scene>
         <!--壁纸集-->
         <scene sceneID="ANh-qf-Of5">
@@ -597,7 +740,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlr-5N-hNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="1572.8635682158922"/>
+            <point key="canvasLocation" x="1308" y="2304"/>
         </scene>
         <!--Wallpaper Page View Controller-->
         <scene sceneID="PGu-fC-aug">
@@ -605,7 +748,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oJG-MV-3e2" customClass="WallpaperPageViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fnn-M5-nxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="1573"/>
+            <point key="canvasLocation" x="2095" y="2303"/>
         </scene>
         <!--Wallpaper Detail View Controller-->
         <scene sceneID="56w-Tq-LTt">
@@ -672,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccq-Wc-k5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="1573"/>
+            <point key="canvasLocation" x="3001" y="2303"/>
         </scene>
         <!--画报集-->
         <scene sceneID="QPh-RF-OY1">
@@ -713,14 +856,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ButtonBack_pressed" width="24" height="24"/>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ButtonLike_normal" width="24" height="24"/>
-        <image name="ButtonLike_pressed" width="24" height="24"/>
-        <image name="ButtonShare_normal" width="24" height="24"/>
-        <image name="ButtonShare_pressed" width="24" height="24"/>
-        <image name="D644040F-2967-429B-A6D3-258894548B69" width="45" height="45">
+        <image name="03A2449C-5FB0-49AD-A02C-76AEB26ADE39" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -906,7 +1042,18 @@ AMIA2QDbAN0pIykoKTMpPClPKVMpXilnKWwpdCl3KXwpiymPKZYpnimrKbApsim0KbkpwSnEKckp0SnU
 KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
 </mutableData>
         </image>
+        <image name="ButtonBack_normal" width="24" height="24"/>
+        <image name="ButtonBack_pressed" width="24" height="24"/>
+        <image name="ButtonClose_normal" width="24" height="24"/>
+        <image name="ButtonClose_pressed" width="24" height="24"/>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
+        <image name="ButtonLike_normal" width="24" height="24"/>
+        <image name="ButtonLike_pressed" width="24" height="24"/>
+        <image name="ButtonShare_normal" width="24" height="24"/>
+        <image name="ButtonShare_pressed" width="24" height="24"/>
         <image name="Navbar_mask" width="44" height="44"/>
+        <image name="TitleSeparator" width="1" height="61"/>
         <image name="ToolbarNational_normal" width="24" height="24"/>
         <image name="ToolbarNational_pressed" width="24" height="24"/>
         <image name="ToolbarPictorial_normal" width="24" height="24"/>
