@@ -52,7 +52,9 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayStr = dateFormatter.string(from: Date())
-        Alamofire.request("http://chanyouji.com/api/pictorials/\(todayStr).json").responseJSON { (response) in
+        
+        let request = URLRequest(url: URL(string: "http://chanyouji.com/api/pictorials/\(todayStr).json")!, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+        Alamofire.request(request).responseJSON { (response) in
             if let JSON = response.result.value {
                 weakSelf?.todayPictorialModel = TodayPictorialModel.yy_model(withJSON: JSON)
                 DispatchQueue.main.async {
