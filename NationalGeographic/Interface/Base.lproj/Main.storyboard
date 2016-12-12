@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -115,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="03A2449C-5FB0-49AD-A02C-76AEB26ADE39"/>
+                                <state key="highlighted" image="34CA1C39-08EE-4C5E-9AA7-D27D23E3ECA3"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -539,7 +540,7 @@
         <!--Today Pictorial Page View Controller-->
         <scene sceneID="TFR-gT-5d3">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="d66-yK-qFf" customClass="TodayPictorialPageViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="TodayPictorialPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="d66-yK-qFf" customClass="TodayPictorialPageViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLK-qD-Mqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308" y="1551"/>
@@ -856,7 +857,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="03A2449C-5FB0-49AD-A02C-76AEB26ADE39" width="45" height="45">
+        <image name="34CA1C39-08EE-4C5E-9AA7-D27D23E3ECA3" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

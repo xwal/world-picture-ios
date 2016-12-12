@@ -44,3 +44,14 @@ target 'NationalGeographic' do
   # pod 'Bugly'
 
 end
+
+target 'TodayWallpaperWidget' do
+    use_frameworks!
+    
+    # Pods for NationalGeographic
+    pod 'Alamofire', '~> 4.2.0'
+    pod 'Kingfisher', '~> 3.2.1'
+    pod 'YYModel'
+    pod 'YYCategories'
+    pod 'SnapKit'
+end

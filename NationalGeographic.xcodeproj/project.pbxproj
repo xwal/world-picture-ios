@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397802414552824FD695D7EF /* Pods_NationalGeographic.framework */; };
+		A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */; };
 		D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615331DE28A3100C4000F /* PictorialCell.swift */; };
 		D60615361DE28F5100C4000F /* EasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615351DE28F5100C4000F /* EasyView.swift */; };
 		D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
@@ -19,6 +20,15 @@
 		D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */; };
 		D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */; };
 		D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */; };
+		D63B1F771DFE9F72000B9276 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */; };
+		D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63B1F791DFE9F72000B9276 /* TodayViewController.swift */; };
+		D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */; };
+		D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
+		D63B1F891DFEA2FD000B9276 /* UIViewController+NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController+NGP.swift */; };
+		D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
+		D63B1F8B1DFEA307000B9276 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
+		D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
 		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
@@ -55,6 +65,30 @@
 		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D63B1F7F1DFE9F72000B9276 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60C21CF1DDB0B5C00375E8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D63B1F741DFE9F72000B9276;
+			remoteInfo = TodayWallpaperWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D63B1F851DFE9F72000B9276 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
 		397802414552824FD695D7EF /* Pods_NationalGeographic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +96,7 @@
 		4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
 		BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		D60615331DE28A3100C4000F /* PictorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialCell.swift; sourceTree = "<group>"; };
 		D60615351DE28F5100C4000F /* EasyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyView.swift; sourceTree = "<group>"; };
 		D606153B1DE2949500C4000F /* PictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialModel.swift; sourceTree = "<group>"; };
@@ -75,6 +110,13 @@
 		D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordManager.swift; sourceTree = "<group>"; };
+		D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWallpaperWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D63B1F791DFE9F72000B9276 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D63B1F7C1DFE9F72000B9276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D63B1F7E1DFE9F72000B9276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWallpaperWidget.entitlements; sourceTree = "<group>"; };
+		D63B1F881DFEA19E000B9276 /* NationalGeographic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NationalGeographic.entitlements; sourceTree = "<group>"; };
 		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +155,8 @@
 		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.release.xcconfig"; sourceTree = "<group>"; };
+		EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWallpaperWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +170,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D63B1F721DFE9F72000B9276 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F771DFE9F72000B9276 /* NotificationCenter.framework in Frameworks */,
+				A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +188,8 @@
 				397802414552824FD695D7EF /* Pods_NationalGeographic.framework */,
 				E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */,
 				ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */,
+				D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */,
+				EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +203,8 @@
 				F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */,
 				4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */,
 				3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */,
+				D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */,
+				EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -156,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				D60C21D91DDB0B5D00375E8B /* NationalGeographic */,
+				D63B1F781DFE9F72000B9276 /* TodayWallpaperWidget */,
 				D60C21D81DDB0B5D00375E8B /* Products */,
 				754335DC08D477ADFB71D38B /* Pods */,
 				292DAC52A30A8A85AF483D6C /* Frameworks */,
@@ -166,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */,
+				D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +232,7 @@
 		D60C21D91DDB0B5D00375E8B /* NationalGeographic */ = {
 			isa = PBXGroup;
 			children = (
+				D63B1F881DFEA19E000B9276 /* NationalGeographic.entitlements */,
 				D61663721DE7253200D9C897 /* Util */,
 				D6D5636A1DE02CDB009C6EB9 /* Interface */,
 				D633AD421DDC7623006B08C6 /* Manager */,
@@ -203,6 +263,17 @@
 				D63E805A1DDEA11A00308F92 /* ShareManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		D63B1F781DFE9F72000B9276 /* TodayWallpaperWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */,
+				D63B1F791DFE9F72000B9276 /* TodayViewController.swift */,
+				D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */,
+				D63B1F7E1DFE9F72000B9276 /* Info.plist */,
+			);
+			path = TodayWallpaperWidget;
 			sourceTree = "<group>";
 		};
 		D6549C601DDC2D470036650E /* Application */ = {
@@ -301,15 +372,36 @@
 				D60C21D51DDB0B5C00375E8B /* Resources */,
 				FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */,
 				56D24AF890773D52369E195A /* [CP] Copy Pods Resources */,
+				D63B1F851DFE9F72000B9276 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D63B1F801DFE9F72000B9276 /* PBXTargetDependency */,
 			);
 			name = NationalGeographic;
 			productName = NationalGeographic;
 			productReference = D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D63B1F841DFE9F72000B9276 /* Build configuration list for PBXNativeTarget "TodayWallpaperWidget" */;
+			buildPhases = (
+				84329E41871911015E6DDE2F /* [CP] Check Pods Manifest.lock */,
+				D63B1F711DFE9F72000B9276 /* Sources */,
+				D63B1F721DFE9F72000B9276 /* Frameworks */,
+				D63B1F731DFE9F72000B9276 /* Resources */,
+				2A56BF61BFC6577F4EEF9AA8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWallpaperWidget;
+			productName = TodayWallpaperWidget;
+			productReference = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -326,6 +418,21 @@
 						DevelopmentTeam = J87E7K5QJK;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D63B1F741DFE9F72000B9276 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J87E7K5QJK;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -342,6 +449,7 @@
 			projectRoot = "";
 			targets = (
 				D60C21D61DDB0B5C00375E8B /* NationalGeographic */,
+				D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -365,9 +473,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D63B1F731DFE9F72000B9276 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */,
+				D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A56BF61BFC6577F4EEF9AA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56D24AF890773D52369E195A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +516,21 @@
 			showEnvVarsInLog = 0;
 		};
 		716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84329E41871911015E6DDE2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,7 +604,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D63B1F711DFE9F72000B9276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */,
+				D63B1F8B1DFEA307000B9276 /* WallpaperModel.swift in Sources */,
+				D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */,
+				D63B1F891DFEA2FD000B9276 /* UIViewController+NGP.swift in Sources */,
+				D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D63B1F801DFE9F72000B9276 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */;
+			targetProxy = D63B1F7F1DFE9F72000B9276 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D61FB38F1DEEC171006E2962 /* Launch Screen.storyboard */ = {
@@ -466,6 +633,14 @@
 				D61FB3901DEEC171006E2962 /* Base */,
 			);
 			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+		D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D63B1F7C1DFE9F72000B9276 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		D6E90D931DE02E0800C65D15 /* Main.storyboard */ = {
@@ -583,6 +758,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J87E7K5QJK;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -607,6 +783,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				DEVELOPMENT_TEAM = J87E7K5QJK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,6 +795,38 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D63B1F821DFE9F72000B9276 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D63B1F831DFE9F72000B9276 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -639,6 +848,15 @@
 			buildConfigurations = (
 				D60C22001DDB0B5D00375E8B /* Debug */,
 				D60C22011DDB0B5D00375E8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D63B1F841DFE9F72000B9276 /* Build configuration list for PBXNativeTarget "TodayWallpaperWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D63B1F821DFE9F72000B9276 /* Debug */,
+				D63B1F831DFE9F72000B9276 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
