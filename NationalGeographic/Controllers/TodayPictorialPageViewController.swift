@@ -53,10 +53,28 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayStr = dateFormatter.string(from: Date())
         
-        let request = URLRequest(url: URL(string: "http://chanyouji.com/api/pictorials/\(todayStr).json")!, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+        let url = URL(string: "http://chanyouji.com/api/pictorials/\(todayStr).json")!
+        let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+        
+        let sharedUserDefaults = UserDefaults(suiteName: "group.ngp.sharedDatas")
+        let shareData = sharedUserDefaults?.data(forKey: todayStr)
+        
+        let cacheResponse = URLCache.shared.cachedResponse(for: request)
+        let cacheData = cacheResponse?.data
+        
+        if shareData != nil && cacheData == nil {
+            let response = URLResponse(url: url, mimeType: "applcation/json", expectedContentLength: shareData!.count, textEncodingName: "utf-8")
+            let cacheResponse = CachedURLResponse(response: response, data: shareData!)
+            URLCache.shared.storeCachedResponse(cacheResponse, for: request)
+        }
+        
         Alamofire.request(request).responseJSON { (response) in
             if let JSON = response.result.value {
                 weakSelf?.todayPictorialModel = TodayPictorialModel.yy_model(withJSON: JSON)
+                if shareData == nil {
+                    sharedUserDefaults?.set(self.todayPictorialModel.yy_modelToJSONData(), forKey: todayStr)
+                    sharedUserDefaults?.synchronize()
+                }
                 DispatchQueue.main.async {
                     weakSelf?.updateViews()
                     weakSelf?.loadingImageView.stopAnimating()
