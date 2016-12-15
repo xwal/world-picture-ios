@@ -20,7 +20,7 @@ class WallpaperCell: UICollectionViewCell {
     var model: WallpaperModel! {
         didSet {
             if let imageUrl = model.ios_wallpaper_url {
-                wallpaperImageView.kf.setImage(with: URL(string: imageUrl))
+                wallpaperImageView.kf.setImage(with: URL(string: imageUrl), options: [.transition(.fade(1))])
             }
             publishDateLabel.text = model.publish_date
             

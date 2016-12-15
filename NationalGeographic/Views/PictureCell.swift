@@ -12,32 +12,15 @@ import Kingfisher
 class PictureCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet weak var pictureImageView: UIImageView!
     
-//    override func awakeFromNib() {
-//        pictureImageView.isUserInteractionEnabled = true
-//       let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
-//        pictureImageView.addGestureRecognizer(pinchGesture)
-//    }
-//    
-//    func handlePinch(_ sender: UIPinchGestureRecognizer) {
-//        if sender.state == .began || sender.state == .changed {
-//            var transform = pictureImageView.transform
-//            transform = transform.scaledBy(x: sender.scale, y: sender.scale)
-//            pictureImageView.transform = transform
-//            sender.scale = 1
-//        }
-//        else {
-//            print(pictureImageView.transform)
-//            if pictureImageView.transform.a < 1 || pictureImageView.transform.d < 1 {
-//                pictureImageView.transform = CGAffineTransform.identity
-//            }
-//        }
-//        
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
     
     var model: PictureModel? {
         didSet {
             if let url = model?.url {
-                pictureImageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: nil, progressBlock: nil, completionHandler: nil)
+                pictureImageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(1))])
                 pictureImageView.kf.indicatorType = .activity
             }
         }

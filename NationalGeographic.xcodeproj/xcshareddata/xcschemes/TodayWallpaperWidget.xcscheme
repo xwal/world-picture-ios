@@ -67,16 +67,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D60C21D61DDB0B5C00375E8B"
-            BuildableName = "NationalGeographic.app"
-            BlueprintName = "NationalGeographic"
+            BlueprintIdentifier = "D63B1F741DFE9F72000B9276"
+            BuildableName = "TodayWallpaperWidget.appex"
+            BlueprintName = "TodayWallpaperWidget"
             ReferencedContainer = "container:NationalGeographic.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D63B1F741DFE9F72000B9276"
+            BuildableName = "TodayWallpaperWidget.appex"
+            BlueprintName = "TodayWallpaperWidget"
+            ReferencedContainer = "container:NationalGeographic.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

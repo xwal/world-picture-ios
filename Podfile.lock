@@ -14,6 +14,7 @@ PODS:
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - MMParallaxCell (1.2)
   - MOBFoundation (2.2.3)
   - Reveal-iOS-SDK (1.6.2)
   - ShareSDK3 (3.5.2):
@@ -32,6 +33,7 @@ PODS:
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
   - YYModel (1.0.4)
+  - ZCAnimatedLabel (0.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
@@ -41,6 +43,7 @@ DEPENDENCIES:
   - KVNProgress
   - MBProgressHUD
   - MJRefresh
+  - MMParallaxCell
   - MOBFoundation
   - Reveal-iOS-SDK
   - ShareSDK3
@@ -55,6 +58,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 3.1.1)
   - YYCategories
   - YYModel
+  - ZCAnimatedLabel
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -64,6 +68,7 @@ SPEC CHECKSUMS:
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MMParallaxCell: 9c9045097743b725076c38ed2c53e3790e90bd14
   MOBFoundation: 2bc5cd7011a2db75cf2b3ceacb7f4227eec88f3e
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   ShareSDK3: '08ed714e2bbdcd97ab60f58cb398227341dfc20a'
@@ -71,7 +76,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 3b70bfce86d8c0c35cb8509e5afe42f9223f7729
+PODFILE CHECKSUM: 26e5405b68ec14ccd0b93126f606ac0de5cdc099
 
 COCOAPODS: 1.1.1

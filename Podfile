@@ -16,6 +16,8 @@ target 'NationalGeographic' do
   pod 'KVNProgress'
   pod 'SnapKit'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+  pod 'ZCAnimatedLabel'
+  pod 'MMParallaxCell'
   
   # ShareSDK
   # 主模块(必须)

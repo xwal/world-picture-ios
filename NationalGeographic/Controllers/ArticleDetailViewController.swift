@@ -57,7 +57,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func loadArticleModel() {
-        headerImageView.kf.setImage(with: URL(string: articleModel.image_url!), placeholder: Image(named: "Placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
+        headerImageView.kf.setImage(with: URL(string: articleModel.image_url!), placeholder: Image(named: "Placeholder"), options: [.transition(.fade(1))], progressBlock: nil, completionHandler: nil)
 
         descNotesCount = articleModel.description_notes?.count ?? 0
         hasDescNotes = descNotesCount > 0 ? true : false

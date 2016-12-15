@@ -20,7 +20,7 @@ class AlbumCell: UITableViewCell {
     var model: AlbumModel? {
         didSet {
             if let url = model?.url {
-                albumImageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: nil, progressBlock: nil, completionHandler: nil)
+                albumImageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(1))])
             }
             
             albumNameLabel.text = model?.title

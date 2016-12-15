@@ -123,7 +123,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         destinationLabel.text = "每日壁纸 — \(todayPictorialModel.destination ?? "")"
         
         if let imageURL = todayPictorialModel.ios_wallpaper_url {
-            wallpaperImageView.kf.setImage(with: URL(string: imageURL))
+            wallpaperImageView.kf.setImage(with: URL(string: imageURL), options: [.transition(.fade(1))])
         }
     }
     

@@ -20,6 +20,7 @@
 		D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */; };
 		D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */; };
 		D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */; };
+		D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */; };
 		D63B1F771DFE9F72000B9276 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */; };
 		D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63B1F791DFE9F72000B9276 /* TodayViewController.swift */; };
 		D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */; };
@@ -49,6 +50,7 @@
 		D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */; };
 		D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */; };
 		D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */; };
+		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
 		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
@@ -60,8 +62,14 @@
 		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
+		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE13451DE29EB600A3A2BF /* EasyCell.swift */; };
 		D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE13461DE29EB600A3A2BF /* EasyCell.xib */; };
+		D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */; };
+		D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */; };
+		D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */; };
+		D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
+		D6CE4D1C1DFFB88E006BE034 /* UIScreen+NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D1B1DFFB88E006BE034 /* UIScreen+NGP.swift */; };
 		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +118,7 @@
 		D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordManager.swift; sourceTree = "<group>"; };
+		D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperDetailViewController.swift; sourceTree = "<group>"; };
 		D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWallpaperWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D63B1F791DFE9F72000B9276 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 		D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleFooterCell.xib; sourceTree = "<group>"; };
 		D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePhotosCell.swift; sourceTree = "<group>"; };
 		D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlePhotosCell.xib; sourceTree = "<group>"; };
+		D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NiceWallpaper.xcassets; sourceTree = "<group>"; };
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
@@ -151,6 +161,11 @@
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		D6CE13451DE29EB600A3A2BF /* EasyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCell.swift; sourceTree = "<group>"; };
 		D6CE13461DE29EB600A3A2BF /* EasyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyCell.xib; sourceTree = "<group>"; };
+		D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperViewController.swift; sourceTree = "<group>"; };
+		D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCell.swift; sourceTree = "<group>"; };
+		D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCell.xib; sourceTree = "<group>"; };
+		D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperModel.swift; sourceTree = "<group>"; };
+		D6CE4D1B1DFFB88E006BE034 /* UIScreen+NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+NGP.swift"; sourceTree = "<group>"; };
 		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -252,6 +267,7 @@
 			children = (
 				D61663731DE7256100D9C897 /* String+NGP.swift */,
 				D642BBE81DF156910026D776 /* UIViewController+NGP.swift */,
+				D6CE4D1B1DFFB88E006BE034 /* UIScreen+NGP.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -291,6 +307,7 @@
 				D67AE0651DDB486E00DBC7AE /* jianjie.css */,
 				D6464F421DEEB33100A3CD03 /* dili.xcassets */,
 				D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */,
+				D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -311,6 +328,8 @@
 				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
 				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
 				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
+				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
+				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +343,7 @@
 				D606153B1DE2949500C4000F /* PictorialModel.swift */,
 				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
 				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
+				D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +366,8 @@
 				D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */,
 				D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */,
 				D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */,
+				D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */,
+				D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,11 +486,13 @@
 				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
 				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
 				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
+				D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */,
 				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
 				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
 				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
 				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
 				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
+				D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */,
 				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +503,7 @@
 			files = (
 				D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */,
 				D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */,
+				D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,12 +594,17 @@
 			files = (
 				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
+				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
 				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
+				D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */,
 				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
+				D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */,
 				D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */,
 				D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
+				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
+				D6CE4D1C1DFFB88E006BE034 /* UIScreen+NGP.swift in Sources */,
 				D642BBE91DF156910026D776 /* UIViewController+NGP.swift in Sources */,
 				D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */,
 				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
@@ -773,6 +803,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
@@ -796,6 +827,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};

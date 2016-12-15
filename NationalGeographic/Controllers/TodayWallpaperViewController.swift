@@ -70,7 +70,7 @@ class TodayWallpaperViewController: UIViewController {
         destinationLabel.text = "每日壁纸 — \(wallpapperModel.destination ?? "")"
         
         if let imageURL = wallpapperModel.ios_wallpaper_url {
-            wallpaperImageView.kf.setImage(with: URL(string: imageURL))
+            wallpaperImageView.kf.setImage(with: URL(string: imageURL), options: [.transition(.fade(1))])
         }
         
     }
