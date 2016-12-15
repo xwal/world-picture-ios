@@ -92,6 +92,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             maker.edges.equalTo(self.backgroundImageView)
         }
         
+        self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.dataSource = self
@@ -116,7 +117,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             "time": "\(Int(time))",
             "platform":"iphone",
             "resolution": resolution,
-            "page_size":"30",
+            "page_size":"20",
             ]
         Alamofire.request("http://lab.zuimeia.com/wallpaper/category/2/", method: .get, parameters: urlParams).validate(statusCode: 200..<300).responseJSON { (response) in
             
@@ -203,8 +204,8 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             return
         }
         niceWallpaperDetailVC.hidesBottomBarWhenPushed = true
-        
-        niceWallpaperDetailVC.imageModel = model
+        niceWallpaperDetailVC.imageModelArray = self.dataSourceArray
+        niceWallpaperDetailVC.currentIndex = indexPath.row
         
         self.navigationController?.pushViewController(niceWallpaperDetailVC, animated: true)
     }

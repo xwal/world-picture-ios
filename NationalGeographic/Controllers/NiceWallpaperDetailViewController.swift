@@ -10,8 +10,15 @@ import UIKit
 import CoreMotion
 import ZCAnimatedLabel
 import SnapKit
+import AVFoundation
 
 class NiceWallpaperDetailViewController: UIViewController {
+    
+    enum WallpaperSwipeDrection : Int {
+        case current
+        case forward
+        case reverse
+    }
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -23,8 +30,13 @@ class NiceWallpaperDetailViewController: UIViewController {
     
     @IBOutlet weak var descDashLabel: ZCAnimatedLabel!
     
-    let motionManager = CMMotionManager()
-    var imageModel: NiceWallpaperImageModel!
+    private let wallpaperImageView = UIImageView()
+    
+    private let motionManager = CMMotionManager()
+    var imageModelArray: [NiceWallpaperImageModel]!
+    var currentIndex = 0
+    
+    private let speechSynthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +44,28 @@ class NiceWallpaperDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupViews()
+        showNext(direction: .current)
         setupCoreMotion()
+        
+        let leftSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
+        leftSwipGesture.direction = [.left]
+        self.view.addGestureRecognizer(leftSwipGesture)
+        
+        let rightSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
+        rightSwipGesture.direction = [.right]
+        self.view.addGestureRecognizer(rightSwipGesture)
     }
+    
+    func onSwipChanged(sender: UISwipeGestureRecognizer) {
+        
+        if sender.direction == .left {
+            showNext(direction: .forward)
+        }
+        else if sender.direction == .right {
+            showNext(direction: .reverse)
+        }
+    }
+    
     
     func setupCoreMotion() {
         if motionManager.isDeviceMotionAvailable {
@@ -52,29 +84,47 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
     }
     
-    func setupViews() {
+    func showNext(direction: WallpaperSwipeDrection) {
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        switch direction {
+        case .forward:
+            if currentIndex + 1 < imageModelArray.count {
+                currentIndex += 1
+            }
+            else {
+                return
+            }
+        case .reverse:
+            if currentIndex - 1 >= 0 {
+                currentIndex -= 1
+            }
+            else {
+                return
+            }
+        case .current:
+            if !(0..<imageModelArray.count).contains(currentIndex) {
+                return
+            }
+            
+            break
+        }
         
-        self.scrollView.bounces = false
-        self.scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.showsVerticalScrollIndicator = false
-        self.scrollView.isScrollEnabled = false
+        let tempWallpaperModel = imageModelArray[currentIndex]
         
         let imageHeight = UIScreen.screenSize.height
-        var imageWidth = (imageModel.width / imageModel.height) * imageHeight
-        imageWidth = imageWidth > UIScreen.screenSize.width ? imageWidth : UIScreen.screenSize.width
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight))
-        imageView.contentMode = .scaleAspectFill
-        self.scrollView.addSubview(imageView)
+        var imageWidth = (tempWallpaperModel.width / tempWallpaperModel.height) * imageHeight
+        imageWidth = fmax(imageWidth, UIScreen.screenSize.width)
+        wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
+        
         self.scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
-        imageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(imageModel.image_url ?? "")"))
+        wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(1))])
         
         let offsetX = (imageWidth - UIScreen.screenSize.width) / 2
         self.scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
         
-        descDashLabel.text = imageModel.desc
+        descDashLabel.stopAnimation()
+        
+        descDashLabel.text = tempWallpaperModel.desc
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
@@ -88,7 +138,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         self.descDashLabel.sizeToFit()
         self.descDashLabel.startAppearAnimation()
         
-        guard let pubTime = imageModel.pub_time else {
+        guard let pubTime = tempWallpaperModel.pub_time else {
             return
         }
         
@@ -101,6 +151,33 @@ class NiceWallpaperDetailViewController: UIViewController {
         dayLabel.text = dateArray[0]
         monthLabel.text = dateArray[1]
         weekLabel.text = dateArray[2]
+        
+        if view.layer.animation(forKey: "aniKey") == nil {
+            let transition = CATransition()
+            transition.type = kCATransitionFade
+            transition.duration = 1
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            
+            // This makes the animation go.
+            self.view.layer.add(transition, forKey: "aniKey")
+        }
+        let utterance = AVSpeechUtterance(string: tempWallpaperModel.desc ?? "")
+        speechSynthesizer.speak(utterance)
+        
+    }
+    
+    func setupViews() {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        self.scrollView.bounces = false
+        self.scrollView.showsHorizontalScrollIndicator = false
+        self.scrollView.showsVerticalScrollIndicator = false
+        self.scrollView.isScrollEnabled = false
+        
+        self.scrollView.addSubview(wallpaperImageView)
+        wallpaperImageView.contentMode = .scaleAspectFill
     }
     
     func scrollRoll(rate: Double) {
