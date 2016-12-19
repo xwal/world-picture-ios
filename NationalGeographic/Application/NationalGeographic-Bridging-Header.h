@@ -15,3 +15,6 @@
 
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
+
+// 百度语音
+#import "BDSSpeechSynthesizer.h"

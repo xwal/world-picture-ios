@@ -36,8 +36,6 @@ class NiceWallpaperDetailViewController: UIViewController {
     var imageModelArray: [NiceWallpaperImageModel]!
     var currentIndex = 0
     
-    private let speechSynthesizer = AVSpeechSynthesizer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +52,11 @@ class NiceWallpaperDetailViewController: UIViewController {
         let rightSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
         rightSwipGesture.direction = [.right]
         self.view.addGestureRecognizer(rightSwipGesture)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SpeechSynthesizerManager.sharedInstance.cancel()
     }
     
     func onSwipChanged(sender: UISwipeGestureRecognizer) {
@@ -161,9 +164,11 @@ class NiceWallpaperDetailViewController: UIViewController {
             // This makes the animation go.
             self.view.layer.add(transition, forKey: "aniKey")
         }
-        let utterance = AVSpeechUtterance(string: tempWallpaperModel.desc ?? "")
-        speechSynthesizer.speak(utterance)
         
+        DispatchQueue.global().async {
+            SpeechSynthesizerManager.sharedInstance.cancel()
+            SpeechSynthesizerManager.sharedInstance.speak(sentence: tempWallpaperModel.desc)
+        }
     }
     
     func setupViews() {
@@ -234,5 +239,4 @@ class NiceWallpaperDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

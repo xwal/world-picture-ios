@@ -42,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 设置样式
         setAppearance()
         
+        // 讯飞语音配置
+        //setupFlySpeech()
+        
+        // 百度语音配置
+        SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
+        SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
+        
         return true
     }
     
@@ -82,7 +89,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+extension UIWindow {
+    open override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    open override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        let enabled = SpeechSynthesizerManager.sharedInstance.isEnabled
+        
+        let text: String!
+        if enabled {
+            text = "语音朗读已关闭"
+        }
+        else {
+            text = "语音朗读已开启"
+        }
+        
+        SpeechSynthesizerManager.sharedInstance.speak(promptSentence: text)
+        SpeechSynthesizerManager.sharedInstance.isEnabled = !enabled
+        print("摇一摇")
+    }
 }
 

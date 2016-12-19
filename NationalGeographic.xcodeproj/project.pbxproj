@@ -63,6 +63,14 @@
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
 		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
+		D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */; };
+		D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EAF1E03F5A100F25176 /* .gitignore */; };
+		D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */; };
+		D6CC7EB91E03F5A100F25176 /* Chinese_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */; };
+		D6CC7EBA1E03F5A100F25176 /* Chinese_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */; };
+		D6CC7EBB1E03F5A100F25176 /* English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */; };
+		D6CC7EBC1E03F5A100F25176 /* English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */; };
+		D6CC7EBD1E03F5A100F25176 /* English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB51E03F5A100F25176 /* English_Text.dat */; };
 		D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE13451DE29EB600A3A2BF /* EasyCell.swift */; };
 		D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE13461DE29EB600A3A2BF /* EasyCell.xib */; };
 		D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */; };
@@ -70,6 +78,15 @@
 		D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */; };
 		D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
 		D6CE4D1C1DFFB88E006BE034 /* UIScreen+NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D1B1DFFB88E006BE034 /* UIScreen+NGP.swift */; };
+		D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */; };
+		D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */; };
+		D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */; };
+		D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B91E041277004EA31A /* AudioToolbox.framework */; };
+		D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */; };
+		D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BD1E041289004EA31A /* libc++.tbd */; };
+		D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3C11E0412A9004EA31A /* libiconv.tbd */; };
+		D6E8D3C41E0412CC004EA31A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */; };
+		D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */; };
 		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +176,20 @@
 		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
+		D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		D6CC7EA91E03F4D400F25176 /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		D6CC7EAA1E03F4D400F25176 /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		D6CC7EAB1E03F4D400F25176 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libetts_device_simulator.a; sourceTree = "<group>"; };
+		D6CC7EAF1E03F5A100F25176 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Female.dat; sourceTree = "<group>"; };
+		D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Male.dat; sourceTree = "<group>"; };
+		D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Text.dat; sourceTree = "<group>"; };
+		D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Female.dat; sourceTree = "<group>"; };
+		D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Male.dat; sourceTree = "<group>"; };
+		D6CC7EB51E03F5A100F25176 /* English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Text.dat; sourceTree = "<group>"; };
 		D6CE13451DE29EB600A3A2BF /* EasyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCell.swift; sourceTree = "<group>"; };
 		D6CE13461DE29EB600A3A2BF /* EasyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyCell.xib; sourceTree = "<group>"; };
 		D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +197,15 @@
 		D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCell.xib; sourceTree = "<group>"; };
 		D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperModel.swift; sourceTree = "<group>"; };
 		D6CE4D1B1DFFB88E006BE034 /* UIScreen+NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+NGP.swift"; sourceTree = "<group>"; };
+		D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D6E8D3B91E041277004EA31A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D6E8D3BD1E041289004EA31A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D6E8D3C11E0412A9004EA31A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
 		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -181,6 +221,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E8D3C41E0412CC004EA31A /* libstdc++.6.0.9.tbd in Frameworks */,
+				D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */,
+				D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */,
+				D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */,
+				D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */,
+				D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */,
+				D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */,
+				D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */,
+				D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */,
 				6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +249,14 @@
 		292DAC52A30A8A85AF483D6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */,
+				D6E8D3C11E0412A9004EA31A /* libiconv.tbd */,
+				D6E8D3BD1E041289004EA31A /* libc++.tbd */,
+				D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */,
+				D6E8D3B91E041277004EA31A /* AudioToolbox.framework */,
+				D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */,
+				D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */,
+				D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */,
 				397802414552824FD695D7EF /* Pods_NationalGeographic.framework */,
 				E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */,
 				ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */,
@@ -247,6 +304,7 @@
 		D60C21D91DDB0B5D00375E8B /* NationalGeographic */ = {
 			isa = PBXGroup;
 			children = (
+				D6CC7E7E1E03D3EC00F25176 /* Vendors */,
 				D63B1F881DFEA19E000B9276 /* NationalGeographic.entitlements */,
 				D61663721DE7253200D9C897 /* Util */,
 				D6D5636A1DE02CDB009C6EB9 /* Interface */,
@@ -277,6 +335,7 @@
 			children = (
 				D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */,
 				D63E805A1DDEA11A00308F92 /* ShareManager.swift */,
+				D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -372,6 +431,43 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D6CC7E7E1E03D3EC00F25176 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				D6CC7EAE1E03F5A100F25176 /* OfflineTTSDatFiles */,
+				D6CC7EA51E03F4D400F25176 /* BDSSpeechSynthesizer_SDK */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		D6CC7EA51E03F4D400F25176 /* BDSSpeechSynthesizer_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */,
+				D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */,
+				D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */,
+				D6CC7EA91E03F4D400F25176 /* BDSSpeechSynthesizerErrors.h */,
+				D6CC7EAA1E03F4D400F25176 /* BDSSpeechSynthesizerParams.h */,
+				D6CC7EAB1E03F4D400F25176 /* BDSSynthesizerLogLevel.h */,
+				D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */,
+			);
+			path = BDSSpeechSynthesizer_SDK;
+			sourceTree = "<group>";
+		};
+		D6CC7EAE1E03F5A100F25176 /* OfflineTTSDatFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D6CC7EAF1E03F5A100F25176 /* .gitignore */,
+				D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */,
+				D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */,
+				D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */,
+				D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */,
+				D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */,
+				D6CC7EB51E03F5A100F25176 /* English_Text.dat */,
+			);
+			path = OfflineTTSDatFiles;
+			sourceTree = "<group>";
+		};
 		D6D5636A1DE02CDB009C6EB9 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,14 +528,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ChaosVoid;
 				TargetAttributes = {
 					D60C21D61DDB0B5C00375E8B = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D55X9329NJ;
+						DevelopmentTeam = J87E7K5QJK;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -448,7 +544,8 @@
 					};
 					D63B1F741DFE9F72000B9276 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = J87E7K5QJK;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -482,12 +579,19 @@
 			files = (
 				D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */,
 				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
+				D6CC7EB91E03F5A100F25176 /* Chinese_Speech_Male.dat in Resources */,
 				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
+				D6CC7EBB1E03F5A100F25176 /* English_Speech_Female.dat in Resources */,
 				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
+				D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */,
+				D6CC7EBC1E03F5A100F25176 /* English_Speech_Male.dat in Resources */,
 				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
 				D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */,
 				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
+				D6CC7EBA1E03F5A100F25176 /* Chinese_Text.dat in Resources */,
 				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
+				D6CC7EBD1E03F5A100F25176 /* English_Text.dat in Resources */,
+				D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */,
 				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
 				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
 				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
@@ -595,6 +699,7 @@
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
 				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
 				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
+				D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */,
 				D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */,
 				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
 				D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */,
@@ -788,17 +893,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = D55X9329NJ;
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors",
 				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "68cd920c-187e-4ca2-9f26-a8f1de1cbf85";
+				PROVISIONING_PROFILE_SPECIFIER = "NGP-Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -814,16 +928,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
-				DEVELOPMENT_TEAM = D55X9329NJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors",
 				);
 				INFOPLIST_FILE = NationalGeographic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b03aa3b5-f97c-4bd4-b121-4aed775595c7";
+				PROVISIONING_PROFILE_SPECIFIER = NGP;
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "";
@@ -835,12 +958,15 @@
 			baseConfigurationReference = D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a42c1279-9ccd-4978-8a62-650066bf8265";
+				PROVISIONING_PROFILE_SPECIFIER = "TodayWallpaperWidget-Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -851,12 +977,16 @@
 			baseConfigurationReference = EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6dd18b1a-2bc0-4dbe-ba08-7d5328bb3912";
+				PROVISIONING_PROFILE_SPECIFIER = "NGP-TodayWidget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};

@@ -28,6 +28,7 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
     
     @IBOutlet var showOrHideViews: [UIView]!
     
+    @IBOutlet weak var bottomView: UIView!
     var pageViewController: UIPageViewController!
     
     override func viewDidLoad() {
@@ -96,7 +97,7 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
                     hud.label.text = "加载失败"
                     hud.detailsLabel.text = "错误描述：\(error?.localizedDescription ?? "")"
                     hud.hide(animated: true, afterDelay: 1)
-                    
+                    self.bottomView.isUserInteractionEnabled = false
                     return
                 }
                 
