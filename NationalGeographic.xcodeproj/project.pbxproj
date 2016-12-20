@@ -63,6 +63,8 @@
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
 		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
+		D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */; };
+		D6CB45621E08BA3000AB8720 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */; };
 		D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */; };
 		D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EAF1E03F5A100F25176 /* .gitignore */; };
 		D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */; };
@@ -176,6 +178,8 @@
 		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
 		D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
 		D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
 				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
 				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
+				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
+				D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -535,7 +541,7 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = J87E7K5QJK;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -545,7 +551,7 @@
 					D63B1F741DFE9F72000B9276 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = J87E7K5QJK;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -726,6 +732,7 @@
 				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,
+				D6CB45621E08BA3000AB8720 /* FeedbackViewController.swift in Sources */,
 				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
 				D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */,
 				D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */,
@@ -733,6 +740,7 @@
 				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,
 				D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */,
 				D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */,
+				D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */,
 				D61663741DE7256100D9C897 /* String+NGP.swift in Sources */,
 				D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */,
 			);
@@ -895,7 +903,7 @@
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -911,8 +919,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68cd920c-187e-4ca2-9f26-a8f1de1cbf85";
-				PROVISIONING_PROFILE_SPECIFIER = "NGP-Dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -928,8 +936,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -945,8 +953,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b03aa3b5-f97c-4bd4-b121-4aed775595c7";
-				PROVISIONING_PROFILE_SPECIFIER = NGP;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "";
@@ -958,15 +966,16 @@
 			baseConfigurationReference = D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a42c1279-9ccd-4978-8a62-650066bf8265";
-				PROVISIONING_PROFILE_SPECIFIER = "TodayWallpaperWidget-Dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -977,16 +986,16 @@
 			baseConfigurationReference = EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6dd18b1a-2bc0-4dbe-ba08-7d5328bb3912";
-				PROVISIONING_PROFILE_SPECIFIER = "NGP-TodayWidget";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};

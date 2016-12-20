@@ -93,11 +93,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             // Fallback on earlier versions
         }
         
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.extensionContext?.open(URL(string: "ngp://TodayWallpaper")!, completionHandler: nil)
-        }
-        self.view.addGestureRecognizer(tapGesture)
-        
         topView.layer.contents = Image(named: "Navbar_mask")?.cgImage
         bottomView.layer.contents = Image(named: "TopMask")?.cgImage
         
@@ -115,6 +110,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         titleLabel.text = "今日壁纸"
         
         self.wallpaperImageView.contentMode = .scaleAspectFill
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            self.extensionContext?.open(URL(string: "ngp://TodayWallpaper")!, completionHandler: nil)
+        }
+        self.wallpaperImageView.isUserInteractionEnabled = true
+        self.wallpaperImageView.addGestureRecognizer(tapGesture)
         
     }
     
