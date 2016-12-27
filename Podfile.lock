@@ -10,6 +10,7 @@ PODS:
     - AVOSCloudCrashReporting/_NOARC (= 3.7.1)
   - AVOSCloudCrashReporting/_NOARC (3.7.1):
     - AVOSCloud (= 3.7.1)
+  - IQKeyboardManagerSwift (4.0.7)
   - Kingfisher (3.2.2)
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.2.0)
   - AVOSCloud
   - AVOSCloudCrashReporting
+  - IQKeyboardManagerSwift
   - Kingfisher (~> 3.2.1)
   - KVNProgress
   - MBProgressHUD
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AVOSCloud: 0ef0e068cbbe871c79257a501555c3e67fe8d866
   AVOSCloudCrashReporting: ffe83b9160f90f5f98287c3b22264cad7ddab9d5
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -78,6 +81,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 26e5405b68ec14ccd0b93126f606ac0de5cdc099
+PODFILE CHECKSUM: 0ea9b456744320cba773bae917f57dc20e36a1e0
 
 COCOAPODS: 1.1.1

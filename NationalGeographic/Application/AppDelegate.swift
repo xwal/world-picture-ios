@@ -10,6 +10,8 @@ import UIKit
 import YYCategories
 import AVOSCloud
 import AVOSCloudCrashReporting
+import UserNotifications
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ShareManager.setupShareSDK()
         
         // 设置样式
-        setAppearance()
+        setupAppearance()
         
         // 讯飞语音配置
         //setupFlySpeech()
@@ -49,19 +51,105 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
         SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
         
+        setupUserNotification()
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         return true
     }
     
-    func setAppearance() {
+    func setupUserNotification() {
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if granted {
+                    // 用户允许通知
+                    self.createEverydayNotification()
+                }
+            }
+        } else if #available(iOS 8.0, *) {
+            // Fallback on earlier versions
+            let settings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+        }
+    }
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        createEverydayNotification()
+    }
+    
+    func createEverydayNotification() {
+        // 创建通知
+        if #available(iOS 10.0, *) {
+            
+            // 1. 创建通知内容
+            let content = UNMutableNotificationContent()
+            content.title = "每日壁纸"
+            content.body = "今日壁纸已经为您准备好！"
+            
+            // 2. 创建发送触发
+            let dateComponents = DateComponents(hour: 10)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            // 3. 发送请求标识符
+            let requestIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
+            
+            // 4. 创建一个发送请求
+            let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+            
+            // 将请求添加到发送中心
+            UNUserNotificationCenter.current().add(request) { error in
+                if error == nil {
+                    print("TodayWallpaper Notification scheduled: \(requestIdentifier)")
+                }
+            }
+        }
+        else {
+
+            UIApplication.shared.cancelAllLocalNotifications()
+            
+            let localNotify = UILocalNotification()
+            
+            let components = DateComponents(calendar: Calendar.current, hour: 10)
+            if let fireDate = components.date {
+                print(fireDate)
+                localNotify.fireDate = fireDate
+            }
+            
+            localNotify.repeatInterval = .day
+            localNotify.applicationIconBadgeNumber += 1
+            localNotify.alertBody = "今日壁纸已经为您准备好！"
+            localNotify.alertAction = "打开"
+            localNotify.hasAction = true
+            localNotify.userInfo = ["identifier": "me.chaosky.UserNotification.TodayWallpaper"]
+            UIApplication.shared.scheduleLocalNotification(localNotify)
+        }
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
+        showTodayWallpaper()
+        
+    }
+    
+    func setupAppearance() {
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
     }
     
+    func showTodayWallpaper() {
+        if let currentVC = UIApplication.currentViewController as? TodayPictorialPageViewController {
+            currentVC.requestTodayPictorial()
+        }
+        else {
+            let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
+            UIApplication.currentViewController?.present(todayWallpaperVC, animated: true, completion: nil)
+        }
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.scheme == "ngp" && url.host == "TodayWallpaper" {
-            let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
-            UIApplication.shared.keyWindow?.rootViewController?.present(todayWallpaperVC, animated: true, completion: nil)
+            showTodayWallpaper()
             return true
         }
         return true

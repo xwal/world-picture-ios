@@ -18,6 +18,7 @@ target 'NationalGeographic' do
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
   pod 'ZCAnimatedLabel'
   pod 'MMParallaxCell'
+  pod 'IQKeyboardManagerSwift'
   
   # ShareSDK
   # 主模块(必须)

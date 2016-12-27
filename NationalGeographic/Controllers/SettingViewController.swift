@@ -10,10 +10,14 @@ import UIKit
 import Kingfisher
 class SettingViewController: UITableViewController {
 
+    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var cacheSizeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
+        if let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String, let shortVerson = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.text = "版本 \(shortVerson)(\(bundleVersion))"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,6 +26,14 @@ class SettingViewController: UITableViewController {
             
             self.cacheSizeLabel.text = String(format: "%.2f", (Double(size) / 1024 / 1024)) + "M"
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
     }
 
     override func didReceiveMemoryWarning() {

@@ -98,6 +98,8 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
     
     func updateViews() {
         
+        pictorialVCs.removeAll()
+        
         self.dataSource = self
         
         let todayWallPaperVC = self.storyboard?.instantiateViewController(withIdentifier: "TodayWallpaperViewController") as! TodayWallpaperViewController
@@ -115,7 +117,7 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         
         
         
-        self.setViewControllers([todayWallPaperVC], direction: .forward, animated: true, completion: nil)
+        self.setViewControllers([todayWallPaperVC], direction: .forward, animated: false, completion: nil)
     }
     
     // MARK: UIPageViewControllerDataSource
