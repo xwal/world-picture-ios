@@ -37,6 +37,18 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         loadArticleModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SpeechSynthesizerManager.sharedInstance.cancel()
+        SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.title)
+        SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.desc)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SpeechSynthesizerManager.sharedInstance.cancel()
+    }
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }

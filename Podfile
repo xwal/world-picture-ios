@@ -19,6 +19,8 @@ target 'NationalGeographic' do
   pod 'ZCAnimatedLabel'
   pod 'MMParallaxCell'
   pod 'IQKeyboardManagerSwift'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'M13Checkbox'
   
   # ShareSDK
   # 主模块(必须)

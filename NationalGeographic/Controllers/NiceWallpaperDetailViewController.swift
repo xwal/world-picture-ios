@@ -11,6 +11,8 @@ import CoreMotion
 import ZCAnimatedLabel
 import SnapKit
 import AVFoundation
+import Spring
+import CoreGraphics
 
 class NiceWallpaperDetailViewController: UIViewController {
     
@@ -20,17 +22,18 @@ class NiceWallpaperDetailViewController: UIViewController {
         case reverse
     }
 
+    @IBOutlet weak var bottomView: SpringView!
+    @IBOutlet weak var topView: SpringView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var snapshotImageView: SpringImageView!
     @IBOutlet weak var dayLabel: UILabel!
-    
     @IBOutlet weak var monthLabel: UILabel!
-    
     @IBOutlet weak var weekLabel: UILabel!
-    
     @IBOutlet weak var descDashLabel: ZCAnimatedLabel!
     
     private let wallpaperImageView = UIImageView()
+    
+    private var snapshotImage: UIImage?
     
     private let motionManager = CMMotionManager()
     var imageModelArray: [NiceWallpaperImageModel]!
@@ -43,7 +46,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         setupViews()
         showNext(direction: .current)
-        setupCoreMotion()
+        startDeviceMotion()
         
         let leftSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
         leftSwipGesture.direction = [.left]
@@ -52,11 +55,57 @@ class NiceWallpaperDetailViewController: UIViewController {
         let rightSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
         rightSwipGesture.direction = [.right]
         self.view.addGestureRecognizer(rightSwipGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapped(sender:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+        let bottomTapGesture = UITapGestureRecognizer(target: nil, action: nil)
+        bottomView.addGestureRecognizer(bottomTapGesture)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         SpeechSynthesizerManager.sharedInstance.cancel()
+    }
+    
+    func onTapped(sender: UITapGestureRecognizer) {
+        if snapshotImageView.isHidden {
+            snapshotImage = scrollView.createSnapshotImage()
+            snapshotImageView.image = snapshotImage
+            snapshotImageView.isHidden = false
+            scrollView.isHidden = true
+            stopDeviceMotion()
+            
+            snapshotImageView.scaleX = 0.8
+            snapshotImageView.scaleY = 0.8
+            snapshotImageView.animateTo()
+            
+            topView.x = -topView.frame.size.width
+            topView.animateToNext {
+                self.topView.isHidden = true
+            }
+            
+            bottomView.y = 0
+            bottomView.animateTo()
+        }
+        else {
+            snapshotImageView.scaleX = 1
+            snapshotImageView.scaleY = 1
+            
+            snapshotImageView.animateToNext(completion: { 
+                self.snapshotImageView.isHidden = true
+                self.scrollView.isHidden = false
+                self.startDeviceMotion()
+            })
+            
+            self.topView.isHidden = false
+            topView.x = 0
+            topView.animateTo()
+            
+            bottomView.y = 200
+            bottomView.animateTo()
+        }
+        
     }
     
     func onSwipChanged(sender: UISwipeGestureRecognizer) {
@@ -70,7 +119,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     
-    func setupCoreMotion() {
+    func startDeviceMotion() {
         if motionManager.isDeviceMotionAvailable {
             // 采样率
             motionManager.deviceMotionUpdateInterval = 1 / 60.0
@@ -85,6 +134,10 @@ class NiceWallpaperDetailViewController: UIViewController {
                 self.scrollRoll(rate: attitude.roll)
             })
         }
+    }
+    
+    func stopDeviceMotion() {
+        motionManager.stopDeviceMotionUpdates()
     }
     
     func showNext(direction: WallpaperSwipeDrection) {
@@ -183,6 +236,10 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         self.scrollView.addSubview(wallpaperImageView)
         wallpaperImageView.contentMode = .scaleAspectFill
+        
+        snapshotImageView.isHidden = true
+        
+        bottomView.transform = CGAffineTransform(translationX: 0, y: 200)
     }
     
     func scrollRoll(rate: Double) {

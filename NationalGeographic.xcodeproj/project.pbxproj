@@ -57,6 +57,7 @@
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
 		D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691DCE11DE281A300F885FE /* ArticleListViewController.swift */; };
+		D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */; };
 		D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0271DDBED1300B2664C /* PictureCell.swift */; };
 		D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */; };
 		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
@@ -174,6 +175,7 @@
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
 		D691DCE11DE281A300F885FE /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView_NGP.swift; sourceTree = "<group>"; };
 		D6A5F0271DDBED1300B2664C /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PictureCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				D642BBE81DF156910026D776 /* UIViewController_NGP.swift */,
 				D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */,
 				D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */,
+				D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
+				D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */,
 				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
 				D6CE4D1C1DFFB88E006BE034 /* UIScreen_NGP.swift in Sources */,
 				D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */,
