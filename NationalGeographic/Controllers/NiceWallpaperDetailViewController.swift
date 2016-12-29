@@ -13,6 +13,8 @@ import SnapKit
 import AVFoundation
 import Spring
 import CoreGraphics
+import M13Checkbox
+import MBProgressHUD
 
 class NiceWallpaperDetailViewController: UIViewController {
     
@@ -30,6 +32,9 @@ class NiceWallpaperDetailViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var descDashLabel: ZCAnimatedLabel!
+    @IBOutlet weak var dateCheckbox: M13Checkbox!
+    @IBOutlet weak var descCheckbox: M13Checkbox!
+    @IBOutlet weak var backButton: UIButton!
     
     private let wallpaperImageView = UIImageView()
     
@@ -38,6 +43,8 @@ class NiceWallpaperDetailViewController: UIViewController {
     private let motionManager = CMMotionManager()
     var imageModelArray: [NiceWallpaperImageModel]!
     var currentIndex = 0
+    
+    private let scalePercent: CGFloat = 0.9
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +63,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         rightSwipGesture.direction = [.right]
         self.view.addGestureRecognizer(rightSwipGesture)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapped(sender:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onSnapshotTapped(sender:)))
         self.view.addGestureRecognizer(tapGesture)
         
         let bottomTapGesture = UITapGestureRecognizer(target: nil, action: nil)
@@ -68,27 +75,35 @@ class NiceWallpaperDetailViewController: UIViewController {
         SpeechSynthesizerManager.sharedInstance.cancel()
     }
     
-    func onTapped(sender: UITapGestureRecognizer) {
+    func onSnapshotTapped(sender: UITapGestureRecognizer) {
         if snapshotImageView.isHidden {
             snapshotImage = scrollView.createSnapshotImage()
             snapshotImageView.image = snapshotImage
             snapshotImageView.isHidden = false
             scrollView.isHidden = true
+            backButton.isHidden = true
             stopDeviceMotion()
             
-            snapshotImageView.scaleX = 0.8
-            snapshotImageView.scaleY = 0.8
-            snapshotImageView.animateTo()
+            self.snapshotImageView.addSubview(self.topView)
             
-            topView.x = -topView.frame.size.width
-            topView.animateToNext {
-                self.topView.isHidden = true
-            }
+            snapshotImageView.scaleX = scalePercent
+            snapshotImageView.scaleY = scalePercent
+            topView.x = -topView.frame.size.width / scalePercent
+            
+            snapshotImageView.animateTo()
+            topView.animateTo()
             
             bottomView.y = 0
             bottomView.animateTo()
+            
+            dateCheckbox.checkState = .unchecked
+            descCheckbox.checkState = .unchecked
         }
         else {
+            self.view.addSubview(topView)
+            _ = topView.subviews.map { $0.transform = CGAffineTransform.identity }
+            backButton.isHidden = false
+            
             snapshotImageView.scaleX = 1
             snapshotImageView.scaleY = 1
             
@@ -98,7 +113,6 @@ class NiceWallpaperDetailViewController: UIViewController {
                 self.startDeviceMotion()
             })
             
-            self.topView.isHidden = false
             topView.x = 0
             topView.animateTo()
             
@@ -287,13 +301,108 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let homeScreenVC = segue.destination as? WallpaperHomeScreenViewController {
+            homeScreenVC.snapshotImage = snapshotImage
+        }
     }
-    */
+    
+    @IBAction func saveTapped(_ sender: UIButton) {
+        if let saveImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) {
+            UIImageWriteToSavedPhotosAlbum(saveImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer) {
+        if error == nil {
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = .text
+            hud.label.text = "已保存至相册"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                hud.hide(animated: true)
+            })
+        }
+    }
+    
+    @IBAction func previewTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func shareToSNSTapped(_ sender: UIButton) {
+        
+        guard let shareImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) else {
+            return
+        }
+        
+        guard let shareText = imageModelArray[currentIndex].desc else {
+            return
+        }
+        
+        let tag = sender.tag
+        var platformType: SSDKPlatformType = .typeAny
+        switch tag {
+        case 100:
+            print("微信好友")
+            platformType = .subTypeWechatSession
+            break
+        case 101:
+            print("微信朋友圈")
+            platformType = .subTypeWechatTimeline
+        case 102:
+            print("新浪微博")
+            platformType = .typeSinaWeibo
+        case 103:
+            print("QQ")
+            platformType = .typeQQ
+        case 104:
+            print("QQ空间")
+            platformType = .subTypeQZone
+        default:
+            break
+        }
+        
+        ShareManager.shareNoUI(text: shareText, thumbImages: shareImage, images: shareImage, url: nil, title: "最美壁纸", platformType: platformType)
+    }
+    
+    @IBAction func shareMoreTapped(_ sender: UIButton) {
+        guard let shareImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) else {
+            return
+        }
+        
+        guard let shareText = imageModelArray[currentIndex].desc else {
+            return
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: [shareImage, shareText], applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {
+        if dateCheckbox.checkState == .checked || descCheckbox.checkState == .checked {
+            topView.x = 0
+        }
+        else {
+            topView.x = -topView.frame.size.width / scalePercent
+        }
+        
+        topView.animateTo()
+        
+        let dateChecked = dateCheckbox.checkState == .checked
+        let dateTranslationX = dateChecked ? 0 : -topView.frame.size.width / scalePercent
+        
+        let descChecked = descCheckbox.checkState == .checked
+        let descTranslationX = descChecked ? 0 : -topView.frame.size.width / scalePercent
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.layoutSubviews, .curveEaseOut], animations: { 
+            self.dayLabel.transform = CGAffineTransform(translationX: dateTranslationX, y: 0)
+            self.monthLabel.transform = CGAffineTransform(translationX: dateTranslationX, y: 0)
+            self.weekLabel.transform = CGAffineTransform(translationX: dateTranslationX, y: 0)
+            self.descDashLabel.transform = CGAffineTransform(translationX: descTranslationX, y: 0)
+        })
+    }
 }

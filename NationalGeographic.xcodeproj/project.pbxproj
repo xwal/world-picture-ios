@@ -50,6 +50,8 @@
 		D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */; };
 		D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */; };
 		D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */; };
+		D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */; };
+		D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */; };
 		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
@@ -167,6 +169,8 @@
 		D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleFooterCell.xib; sourceTree = "<group>"; };
 		D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ArticlePhotosCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlePhotosCell.xib; sourceTree = "<group>"; };
+		D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewCell.swift; sourceTree = "<group>"; };
+		D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHomeScreenViewController.swift; sourceTree = "<group>"; };
 		D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NiceWallpaper.xcassets; sourceTree = "<group>"; };
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
 				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
 				D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */,
+				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */,
 				D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */,
 				D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */,
+				D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 			files = (
 				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
+				D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */,
 				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
 				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
 				D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */,
@@ -737,6 +744,7 @@
 				D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */,
 				D60615361DE28F5100C4000F /* EasyView.swift in Sources */,
 				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
+				D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */,
 				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,

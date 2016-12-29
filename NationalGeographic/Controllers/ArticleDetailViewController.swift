@@ -136,7 +136,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
     
 
     @IBAction func shareTapped(_ sender: UIButton) {
-        ShareManager.share(text: articleModel.desc, thumbImages: articleModel.image_url, images: articleModel.image_url, url: URL(string: "http://chanyouji.com/pictorial_articles/\(articleModel.id)"), title: articleModel.title, type: .auto)
+        ShareManager.shareActionSheet(text: articleModel.desc, thumbImages: articleModel.image_url, images: articleModel.image_url, url: URL(string: "http://chanyouji.com/pictorial_articles/\(articleModel.id)"), title: articleModel.title, type: .auto)
     }
     
     

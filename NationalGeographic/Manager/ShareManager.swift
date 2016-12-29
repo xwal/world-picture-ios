@@ -40,7 +40,7 @@ class ShareManager: NSObject {
                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
                 appInfo?.ssdkSetupSinaWeibo(byAppKey: "3670565384",
                                             appSecret : "1f15571e9b8b6f194ff6f4edacfbfb23",
-                                            redirectUri : "http://chaosky.me/ngp",
+                                            redirectUri : "http://chaosky.me/workspace/ngp",
                                             authType : SSDKAuthTypeBoth)
                 
             case .typeWechat:
@@ -59,7 +59,7 @@ class ShareManager: NSObject {
         }
     }
     
-    static func share(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto) {
+    static func shareActionSheet(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto) {
         // 1.创建分享参数
         let shareParams = NSMutableDictionary()
         shareParams.ssdkSetupShareParams(byText: text,
@@ -74,6 +74,51 @@ class ShareManager: NSObject {
         shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatSession)
         
         ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParams) { (state, platformType, userData, contentEntity, error, end) in
+            var msg = ""
+            switch state {
+            case .begin:
+                print("分享开始")
+                msg = "分享开始"
+            case .success:
+                print("分享成功")
+                msg = "分享成功"
+            case .fail:
+                print("授权失败,错误描述:\(error)")
+                msg = "授权失败,错误描述:\(error?.localizedDescription)"
+            case SSDKResponseState.cancel:
+                print("取消分享")
+                msg = "取消分享"
+            }
+            
+            if state != .begin {
+                
+                DispatchQueue.main.async {
+                    let keyWindow: UIWindow! = UIApplication.shared.keyWindow
+                    let hud = MBProgressHUD.showAdded(to: keyWindow, animated: true)
+                    hud.mode = .text
+                    hud.label.text = msg
+                    hud.hide(animated: true, afterDelay: 1)
+                }
+            }
+        }
+    }
+    
+    static func shareNoUI(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto, platformType: SSDKPlatformType = .typeAny) {
+        //创建分享参数
+        let shareParams = NSMutableDictionary()
+        shareParams.ssdkSetupShareParams(byText: text,
+                                         images: images,
+                                         url: url,
+                                         title : title,
+                                         type : type)
+        
+        // 定制微信朋友圈的分享内容
+        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatTimeline)
+        
+        shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatSession)
+        
+        //进行分享
+        ShareSDK.share(platformType, parameters: shareParams) { (state, userData, contentEntity, error) in
             var msg = ""
             switch state {
             case .begin:

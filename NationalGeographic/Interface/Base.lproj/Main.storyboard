@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="9A5BC3C5-CC94-4CCA-9472-C9EB0B0CFE15"/>
+                                <state key="highlighted" image="5E404B77-D122-4E8C-BF33-FCA98C30C979"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -1136,6 +1136,9 @@
                                         </constraints>
                                         <state key="normal" title="保存" backgroundImage="share_bg_normal"/>
                                         <state key="highlighted" backgroundImage="share_bg_pressed"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="QF8-rY-Fbn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP2-iF-1QX">
                                         <rect key="frame" x="108.5" y="5" width="66" height="66"/>
@@ -1144,32 +1147,54 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted" backgroundImage="share_bg_pressed"/>
+                                        <connections>
+                                            <action selector="previewTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="c4Z-Zz-07K"/>
+                                            <segue destination="ska-hf-lm9" kind="presentation" modalTransitionStyle="flipHorizontal" id="xzc-yo-ZTo"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI4-p4-PuD">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI4-p4-PuD">
                                         <rect key="frame" x="200.5" y="5" width="66" height="66"/>
                                         <state key="normal" backgroundImage="btn_wx_friendList"/>
+                                        <connections>
+                                            <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="Cqd-1R-08e"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-AU-OY0">
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-AU-OY0">
                                         <rect key="frame" x="293" y="5" width="66" height="66"/>
                                         <state key="normal" backgroundImage="btn_wx_friendCircle"/>
+                                        <connections>
+                                            <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="Usq-A8-8aW"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEB-gm-26D">
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEB-gm-26D">
                                         <rect key="frame" x="16" y="87" width="66" height="66"/>
                                         <state key="normal" backgroundImage="btn_sina"/>
+                                        <connections>
+                                            <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="oeh-5y-Xxj"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-Z4-ipp">
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-Z4-ipp">
                                         <rect key="frame" x="108.5" y="87" width="66" height="66"/>
                                         <state key="normal" backgroundImage="btn_tencent"/>
+                                        <connections>
+                                            <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="CJn-DG-a21"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-66-i35">
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-66-i35">
                                         <rect key="frame" x="200.5" y="87" width="66" height="66"/>
                                         <state key="normal" backgroundImage="share_qqzone_normal"/>
                                         <state key="highlighted" backgroundImage="share_qqzone_pressed"/>
+                                        <connections>
+                                            <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="bbf-Nx-H6k"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-t0-Izo">
                                         <rect key="frame" x="293" y="87" width="66" height="66"/>
                                         <state key="normal" backgroundImage="share_more_normal"/>
                                         <state key="highlighted" backgroundImage="share_more_pressed"/>
+                                        <connections>
+                                            <action selector="shareMoreTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="2Db-lf-fkr"/>
+                                        </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1h-XU-Ulx">
                                         <rect key="frame" x="82" y="5" width="26.5" height="1"/>
@@ -1220,37 +1245,43 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfF-tU-9U3" customClass="M13Checkbox" customModule="M13Checkbox">
-                                        <rect key="frame" x="135.5" y="166" width="24" height="24"/>
+                                        <rect key="frame" x="135.5" y="170" width="16" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.015686274510000001" green="0.48627450979999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="Ahz-VY-LK8"/>
-                                            <constraint firstAttribute="height" constant="24" id="r1I-UI-1ac"/>
+                                            <constraint firstAttribute="width" constant="16" id="Ahz-VY-LK8"/>
+                                            <constraint firstAttribute="height" constant="16" id="r1I-UI-1ac"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkboxStateChanged:" destination="g2R-AP-hbV" eventType="valueChanged" id="K51-f8-fW5"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sp-nl-kHB">
-                                        <rect key="frame" x="164.5" y="169" width="65.5" height="19.5"/>
+                                        <rect key="frame" x="156.5" y="169" width="65.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZ5-DB-Qvm" customClass="M13Checkbox" customModule="M13Checkbox">
-                                        <rect key="frame" x="240" y="167" width="24" height="24"/>
+                                        <rect key="frame" x="232" y="171" width="16" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.015686274510000001" green="0.48627450979999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="3gM-nL-7Mo"/>
-                                            <constraint firstAttribute="width" constant="24" id="YgY-Rf-aM8"/>
+                                            <constraint firstAttribute="height" constant="16" id="3gM-nL-7Mo"/>
+                                            <constraint firstAttribute="width" constant="16" id="YgY-Rf-aM8"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkboxStateChanged:" destination="g2R-AP-hbV" eventType="valueChanged" id="i0n-Tw-ggH"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-2d-O5a">
-                                        <rect key="frame" x="269" y="169.5" width="65.5" height="19.5"/>
+                                        <rect key="frame" x="253" y="169.5" width="65.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1339,8 +1370,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="6WN-jW-uaJ" id="AJt-UD-TdE"/>
                         <outlet property="bottomView" destination="H1k-aP-29P" id="YF5-pw-geW"/>
+                        <outlet property="dateCheckbox" destination="JfF-tU-9U3" id="8Ha-La-Osn"/>
                         <outlet property="dayLabel" destination="tK6-K3-LWr" id="Dsv-Jl-Ek4"/>
+                        <outlet property="descCheckbox" destination="WZ5-DB-Qvm" id="SES-P7-uv5"/>
                         <outlet property="descDashLabel" destination="8CR-Pj-PRL" id="Brq-UO-f10"/>
                         <outlet property="monthLabel" destination="X71-ru-cTx" id="Iyc-RY-R1k"/>
                         <outlet property="scrollView" destination="j03-Rd-H85" id="pYu-dr-YfA"/>
@@ -1352,6 +1386,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTS-o6-PJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2093.5999999999999" y="3091.304347826087"/>
+        </scene>
+        <!--Wallpaper Home Screen View Controller-->
+        <scene sceneID="yJ3-KT-Phz">
+            <objects>
+                <viewController id="ska-hf-lm9" customClass="WallpaperHomeScreenViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lnz-dN-LyP"/>
+                        <viewControllerLayoutGuide type="bottom" id="BuY-7Y-fAb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T4o-pM-1tw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JnU-4J-8Yy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sOb-sY-gns">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="30" id="wlu-ov-Gvd">
+                                    <size key="itemSize" width="60" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="25" maxX="16" maxY="25"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IconViewCell" id="nwz-nx-LDg" customClass="IconViewCell" customModule="NationalGeographic" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="25" width="60" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8p-4i-cGz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="i8p-4i-cGz" secondAttribute="height" id="yLk-VH-BHc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-n1-OPh">
+                                                    <rect key="frame" x="14.5" y="60" width="31" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Lod-Sk-lGC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="i8p-4i-cGz" firstAttribute="top" secondItem="nwz-nx-LDg" secondAttribute="top" id="4kj-sF-EeQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="i8p-4i-cGz" secondAttribute="trailing" id="Bzx-QR-Yr1"/>
+                                            <constraint firstItem="rm7-n1-OPh" firstAttribute="centerX" secondItem="i8p-4i-cGz" secondAttribute="centerX" id="RIi-4F-dHD"/>
+                                            <constraint firstItem="i8p-4i-cGz" firstAttribute="leading" secondItem="nwz-nx-LDg" secondAttribute="leading" id="iz7-kS-eCc"/>
+                                            <constraint firstItem="rm7-n1-OPh" firstAttribute="top" secondItem="i8p-4i-cGz" secondAttribute="bottom" id="ojL-hF-aAc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="i8p-4i-cGz" id="7d5-9r-a44"/>
+                                            <outlet property="iconNameLabel" destination="rm7-n1-OPh" id="OoD-oA-4xx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JnU-4J-8Yy" firstAttribute="leading" secondItem="T4o-pM-1tw" secondAttribute="leading" id="0Bi-He-ZH0"/>
+                            <constraint firstAttribute="trailing" secondItem="sOb-sY-gns" secondAttribute="trailing" id="3uH-of-0EU"/>
+                            <constraint firstAttribute="bottom" secondItem="sOb-sY-gns" secondAttribute="bottom" id="D8W-FK-erT"/>
+                            <constraint firstAttribute="bottom" secondItem="JnU-4J-8Yy" secondAttribute="bottom" id="Fil-jq-gpg"/>
+                            <constraint firstItem="JnU-4J-8Yy" firstAttribute="top" secondItem="T4o-pM-1tw" secondAttribute="top" id="aa0-rk-7fU"/>
+                            <constraint firstItem="sOb-sY-gns" firstAttribute="top" secondItem="T4o-pM-1tw" secondAttribute="top" id="hwX-yi-KlR"/>
+                            <constraint firstItem="sOb-sY-gns" firstAttribute="leading" secondItem="T4o-pM-1tw" secondAttribute="leading" id="pMW-0b-eU5"/>
+                            <constraint firstAttribute="trailing" secondItem="JnU-4J-8Yy" secondAttribute="trailing" id="xQT-4D-NKD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="JnU-4J-8Yy" id="Fdj-7O-YpE"/>
+                        <outlet property="collectionView" destination="sOb-sY-gns" id="sTM-gI-jnb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sN-aW-41Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.8000000000002" y="3091.304347826087"/>
         </scene>
         <!--Wallpaper Page View Controller-->
         <scene sceneID="PGu-fC-aug">
@@ -1469,7 +1588,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9A5BC3C5-CC94-4CCA-9472-C9EB0B0CFE15" width="45" height="45">
+        <image name="5E404B77-D122-4E8C-BF33-FCA98C30C979" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
