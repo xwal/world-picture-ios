@@ -21,6 +21,7 @@ target 'NationalGeographic' do
   pod 'IQKeyboardManagerSwift'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'M13Checkbox'
+  pod 'DateTools'
   
   # ShareSDK
   # 主模块(必须)

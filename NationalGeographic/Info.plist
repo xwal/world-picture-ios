@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>TodayWallpaper</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>今日壁纸</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>ToolbarPictorial_normal</string>
+		</dict>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>TodayGeographic</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>今日地理</string>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>ToolbarNational_normal</string>
+        </dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

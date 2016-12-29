@@ -61,18 +61,23 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
     }
     
     func initialPageViewController() {
-        pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        pageViewController.dataSource = self
-        pageViewController.delegate = self
-        self.addChildViewController(pageViewController)
-        self.view.addSubview(pageViewController.view)
-        pageViewController.view.snp.makeConstraints { (maker) in
-            maker.edges.equalTo(self.view)
+        
+        if pageViewController == nil {
+            pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+            pageViewController.dataSource = self
+            pageViewController.delegate = self
+            self.addChildViewController(pageViewController)
+            self.view.addSubview(pageViewController.view)
+            pageViewController.view.snp.makeConstraints { (maker) in
+                maker.edges.equalTo(self.view)
+            }
+            self.view.sendSubview(toBack: pageViewController.view)
         }
-        self.view.sendSubview(toBack: pageViewController.view)
+        
         let initPictureDetail = self.createPictureDetail()
         initPictureDetail.pictureModel = self.pictureListModel.picture![0]
         self.pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
+        currentIndex = 0
     }
     
     func showOrHideViewsTapped() {
@@ -87,7 +92,9 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.mode = .indeterminate
         if albumID != nil {
-            Alamofire.request("http://dili.bdatu.com/jiekou/albums/a\(albumID!).html").responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
+            let url = URL(string: "http://dili.bdatu.com/jiekou/albums/a\(albumID!).html")!
+            let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+            Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
                 
                 guard let JSON = response.result.value else {
                     
@@ -192,6 +199,7 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
     
     @IBAction func backTapped(_ sender: UIButton) {
         _ = navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
         
     }
     

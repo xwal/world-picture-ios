@@ -12,6 +12,7 @@ import AVOSCloud
 import AVOSCloudCrashReporting
 import UserNotifications
 import IQKeyboardManagerSwift
+import DateTools
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,6 +55,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupUserNotification()
         
         IQKeyboardManager.sharedManager().enable = true
+        
+        if #available(iOS 9.0, *) {
+            let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
+            
+            if shortcutItem?.type == "TodayGeographic" {
+                self.showTodayGeographic()
+            }
+            
+            if shortcutItem?.type == "TodayWallpaper" {
+                self.showTodayWallpaper()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
         
         return true
     }
@@ -147,6 +163,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func showTodayGeographic() {
+        
+        let initDate = NSDate(year: 2013, month: 1, day: 17)!
+        let days = initDate.daysAgo()
+        
+        if days < 178 {
+            return
+        }
+        
+        if let currentVC = UIApplication.currentViewController as? AlbumDetailViewController {
+            currentVC.albumID = String(days)
+            currentVC.requestAlbumDetail()
+        }
+        else {
+            let todayGeographicVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlbumDetailViewController") as! AlbumDetailViewController
+            todayGeographicVC.albumID = String(days)
+            UIApplication.currentViewController?.present(todayGeographicVC, animated: true, completion: nil)
+        }
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.scheme == "ngp" && url.host == "TodayWallpaper" {
             showTodayWallpaper()
@@ -176,6 +212,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if shortcutItem.type == "TodayGeographic" {
+            self.showTodayGeographic()
+        }
+        
+        if shortcutItem.type == "TodayWallpaper" {
+            self.showTodayWallpaper()
+        }
     }
 }
 
