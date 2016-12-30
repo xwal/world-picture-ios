@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Alamofire
+import MJRefresh
 
 private let reuseIdentifier = "WallpaperCell"
 
@@ -44,15 +45,22 @@ class WallpaperViewController: UICollectionViewController {
         let itemWidth = (screenSize.width - 12.0) / 2
         let itemHeight = itemWidth * 1136 / 640.0
         (self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        self.collectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.requestWallpaper()
+        })
     }
     
     func requestWallpaper() {
         self.loadingImageView.startAnimating()
-        Alamofire.request("http://chanyouji.com/api/pictorials.json").responseJSON { (response) in
+        let url = URL(string: "http://chanyouji.com/api/pictorials.json")!
+        let request = URLRequest(url: url, cachePolicy: self.collectionView!.mj_header.isRefreshing() ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
+        
+        Alamofire.request(request).responseJSON { (response) in
             if let JSON = response.result.value {
                 self.wallpaperArray = NSArray.yy_modelArray(with: WallpaperModel.self, json: JSON) as! [WallpaperModel]
             }
             DispatchQueue.main.async {
+                self.collectionView?.mj_header.endRefreshing()
                 self.loadingImageView.stopAnimating()
                 self.collectionView?.reloadData()
             }

@@ -20,13 +20,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     var articleSelectIndex = 0
     var articleSelectModelArray = [PictorialArticleModel]()
     
-    private var cacheDataURL: URL {
-        
-        return UIApplication.shared.documentsURL.appendingPathComponent("ArticleListModel.data")
-    }
-    
     @IBOutlet weak var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +28,11 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
         setupView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSelectEasyCell(_:)), name: NSNotification.Name(rawValue: DidSelectEasyCellNotification), object: nil)
-        setupCacheData()
+        firstLoad()
+    }
+    
+    func firstLoad() {
+        requestPictorialList()
     }
     
     func setupView() {
@@ -77,13 +75,13 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func requestPictorialList() {
         loadingImageView.startAnimating()
-//        http://chanyouji.com/api/pictorials/articles.json
-//        http://7xooko.com1.z0.glb.clouddn.com/ngp/pictorials/articles.json
         
-        Alamofire.request("http://chanyouji.com/api/pictorials/articles.json").responseJSON { (response) in
+        let url = URL(string: "http://chanyouji.com/api/pictorials/articles.json")!
+        let request = URLRequest(url: url, cachePolicy: tableView.mj_header.isRefreshing() ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
+        
+        Alamofire.request(request).responseJSON { (response) in
             if let JSON = response.result.value {
                 self.pictorialArray = NSArray.yy_modelArray(with: PictorialModel.self, json: JSON) as! [PictorialModel]
-                self.updateCacheData()
             }
             
             DispatchQueue.main.async {
@@ -97,27 +95,6 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func setupCacheData() {
-        do {
-            let cacheJSONData = try Data(contentsOf: cacheDataURL)
-            pictorialArray = NSArray.yy_modelArray(with: PictorialModel.self, json: cacheJSONData) as! [PictorialModel]
-            tableView.reloadData()
-        } catch {
-            requestPictorialList()
-        }
-    }
-    
-    func updateCacheData() {
-        // 将数据写入本地
-        if let data = (self.pictorialArray as NSArray).yy_modelToJSONData() {
-            do {
-                try data.write(to: self.cacheDataURL)
-            } catch let error {
-                print(error)
-            }
-        }
     }
 
     // MARK: - Table view data source

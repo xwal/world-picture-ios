@@ -13,6 +13,7 @@ import AVOSCloudCrashReporting
 import UserNotifications
 import IQKeyboardManagerSwift
 import DateTools
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         openLog(true)
+        
+        // URL Cahche
+        URLCache.shared.diskCapacity = 100 * 1024 * 1024 // 100M
+        URLCache.shared.memoryCapacity = 100 * 1024 * 1024 // 100M
         
         // Enable Crash Reporting
         AVOSCloudCrashReporting.enable()
@@ -69,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // Fallback on earlier versions
         }
-        
         
         return true
     }
@@ -195,6 +199,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        //开启后台处理多媒体事件
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setActive(true)
+        //后台播放
+        try? audioSession.setCategory(AVAudioSessionCategoryPlayback)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

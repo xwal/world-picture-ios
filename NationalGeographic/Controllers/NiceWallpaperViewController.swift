@@ -23,14 +23,25 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var backgroundImageView: UIImageView!
     var dataSourceArray = [NiceWallpaperImageModel]()
     var currentTime: TimeInterval = 0
+    
+    var isLoadCacheFinished = false {
+        didSet {
+            if isLoadCacheFinished == true {
+                currentTime = 0
+                requestNiceWallpaperList(time: 0)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        firstLoad()
+        firstLoadCache()
     }
     
-    func firstLoad() {
+    func firstLoadCache() {
+        isLoadCacheFinished = false
+        currentTime = 0
         self.tableView.mj_header.beginRefreshing()
     }
     
@@ -119,7 +130,11 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             "resolution": resolution,
             "page_size":"20",
             ]
-        Alamofire.request("http://lab.zuimeia.com/wallpaper/category/2/", method: .get, parameters: urlParams).validate(statusCode: 200..<300).responseJSON { (response) in
+        
+        let url = URL(string: "http://lab.zuimeia.com/wallpaper/category/2/")!
+        let originalRequest = URLRequest(url: url, cachePolicy: (isLoadCacheFinished ? .useProtocolCachePolicy : .returnCacheDataElseLoad))
+        let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
+        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { (response) in
             
             guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
                 
@@ -146,7 +161,14 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.tableView.mj_header.endRefreshing()
+                
+                if self.isLoadCacheFinished == false {
+                    self.isLoadCacheFinished = true
+                }
+                else {
+                    self.tableView.mj_header.endRefreshing()
+                }
+                
                 self.addFooter()
                 if hasNext {
                     self.tableView.mj_footer.endRefreshing()
@@ -154,7 +176,6 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
                 else {
                     self.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
-                
             }
         }
     }

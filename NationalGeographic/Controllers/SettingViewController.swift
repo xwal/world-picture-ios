@@ -22,9 +22,9 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ImageCache.default.calculateDiskCacheSize { (size) in
-            
-            self.cacheSizeLabel.text = String(format: "%.2f", (Double(size) / 1024 / 1024)) + "M"
+        ImageCache.default.calculateDiskCacheSize { (imageDiskCacheSize) in
+            let totalCacheSize = imageDiskCacheSize + UInt(URLCache.shared.currentDiskUsage)
+            self.cacheSizeLabel.text = String(format: "%.2f", (Double(totalCacheSize) / 1024 / 1024)) + "M"
         }
     }
     
@@ -52,6 +52,7 @@ class SettingViewController: UITableViewController {
             self.cacheSizeLabel.text = "0.0M"
             ImageCache.default.clearDiskCache()
             ImageCache.default.clearMemoryCache()
+            URLCache.shared.removeAllCachedResponses()
         }
     }
 
