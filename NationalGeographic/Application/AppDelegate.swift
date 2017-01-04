@@ -15,6 +15,8 @@ import IQKeyboardManagerSwift
 import DateTools
 import AVFoundation
 
+private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -61,20 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.sharedManager().enable = true
         
-        if #available(iOS 9.0, *) {
-            let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
-            
-            if shortcutItem?.type == "TodayGeographic" {
-                self.showTodayGeographic()
-            }
-            
-            if shortcutItem?.type == "TodayWallpaper" {
-                self.showTodayWallpaper()
-            }
-        } else {
-            // Fallback on earlier versions
-        }
-        
         return true
     }
     
@@ -111,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             
             // 3. 发送请求标识符
-            let requestIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
+            let requestIdentifier = TodayWallpaperLocalNotificationIdentifier
             
             // 4. 创建一个发送请求
             let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
@@ -124,6 +112,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         else {
+            
+            if let localNotifications = UIApplication.shared.scheduledLocalNotifications {
+                for local in localNotifications {
+                    if local.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
+                        return
+                    }
+                }
+            }
 
             UIApplication.shared.cancelAllLocalNotifications()
             
@@ -140,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             localNotify.alertBody = "今日壁纸已经为您准备好！"
             localNotify.alertAction = "打开"
             localNotify.hasAction = true
-            localNotify.userInfo = ["identifier": "me.chaosky.UserNotification.TodayWallpaper"]
+            localNotify.userInfo = ["identifier": TodayWallpaperLocalNotificationIdentifier]
             UIApplication.shared.scheduleLocalNotification(localNotify)
         }
     }
@@ -148,6 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         
         showTodayWallpaper()
+        application.applicationIconBadgeNumber -= 1
         
     }
     
@@ -199,6 +196,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        application.applicationIconBadgeNumber -= 1
         
         //开启后台处理多媒体事件
         UIApplication.shared.beginReceivingRemoteControlEvents()
