@@ -36,6 +36,19 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // 转屏处理
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (context) in
+            print("转屏前调用")
+        }) { (context) in
+            print("转屏后调用")
+        }
+        UIView.animate(withDuration: coordinator.transitionDuration) { 
+            self.scrollView.zoomScale = 1
+            self.view.layoutIfNeeded()
+        }
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 
     /*
     // MARK: - Navigation
@@ -46,6 +59,7 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    // MARK: - UIScrollViewDelegate
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView.superview
     }

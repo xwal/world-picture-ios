@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="CE255D78-A62C-4D74-81E1-DB3DB43E9D37"/>
+                                <state key="highlighted" image="A7610DFC-C188-43A9-9971-0CC2F95FB8BF"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -833,11 +833,11 @@
                                         <rect key="frame" x="0.0" y="200" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bcU-KT-ZSM" id="KFf-hD-YrS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="给世界地理画报提意见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78a-rB-kBE">
-                                                    <rect key="frame" x="52" y="0.0" width="347" height="43.666666666666664"/>
+                                                    <rect key="frame" x="52" y="0.0" width="347" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -858,11 +858,11 @@
                                         <rect key="frame" x="0.0" y="244" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ak4-yx-Z5T" id="hLx-fZ-NAg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="在 App Store 评价世界地理画报" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Quq-3u-ieg">
-                                                    <rect key="frame" x="52" y="0.0" width="347" height="43.666666666666664"/>
+                                                    <rect key="frame" x="52" y="0.0" width="347" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -880,18 +880,18 @@
                                         <rect key="frame" x="0.0" y="288" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bk-Uc-qlq" id="hTh-Sq-EZb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="清空缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q62-iX-RRY">
-                                                    <rect key="frame" x="51.999999999999993" y="11.999999999999998" width="69.333333333333329" height="20.333333333333332"/>
+                                                    <rect key="frame" x="52" y="11" width="70" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0.0M" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IgP-hB-KvU">
-                                                    <rect key="frame" x="360.33333333333331" y="11.999999999999998" width="38.666666666666664" height="20.333333333333332"/>
+                                                    <rect key="frame" x="360" y="11" width="39" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1589,18 +1589,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ButtonBack_pressed" width="24" height="24"/>
-        <image name="ButtonClose_normal" width="24" height="24"/>
-        <image name="ButtonClose_pressed" width="24" height="24"/>
-        <image name="ButtonConfirm_normal" width="24" height="24"/>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
-        <image name="ButtonLike_normal" width="24" height="24"/>
-        <image name="ButtonLike_pressed" width="24" height="24"/>
-        <image name="ButtonShare_normal" width="24" height="24"/>
-        <image name="ButtonShare_pressed" width="24" height="24"/>
-        <image name="CE255D78-A62C-4D74-81E1-DB3DB43E9D37" width="45" height="45">
+        <image name="A7610DFC-C188-43A9-9971-0CC2F95FB8BF" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1786,6 +1775,17 @@ AMIA2QDbAN0pIykoKTMpPClPKVMpXilnKWwpdCl3KXwpiymPKZYpnimrKbApsim0KbkpwSnEKckp0SnU
 KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
 </mutableData>
         </image>
+        <image name="ButtonBack_normal" width="24" height="24"/>
+        <image name="ButtonBack_pressed" width="24" height="24"/>
+        <image name="ButtonClose_normal" width="24" height="24"/>
+        <image name="ButtonClose_pressed" width="24" height="24"/>
+        <image name="ButtonConfirm_normal" width="24" height="24"/>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
+        <image name="ButtonLike_normal" width="24" height="24"/>
+        <image name="ButtonLike_pressed" width="24" height="24"/>
+        <image name="ButtonShare_normal" width="24" height="24"/>
+        <image name="ButtonShare_pressed" width="24" height="24"/>
         <image name="DefaultIcon" width="1024" height="1024"/>
         <image name="Navbar_mask" width="44" height="44"/>
         <image name="SettingClean" width="22" height="22"/>
