@@ -18,7 +18,7 @@ import AVFoundation
 private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -57,17 +57,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 百度语音配置
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
-        SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
+        let hasLaunched = UserDefaults.standard.bool(forKey: NGPHasLaunchedKey)
+        
+        if !hasLaunched {
+            UserDefaults.standard.set(true, forKey: NGPHasLaunchedKey)
+            SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
+        }
         
         setupUserNotification()
         
         IQKeyboardManager.sharedManager().enable = true
+        
+        // 处理本地通知
+        if let localNotification = launchOptions?[.localNotification] as? UILocalNotification {
+            if localNotification.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
+                    self.showTodayWallpaper()
+                })
+            }
+        }
         
         return true
     }
     
     func setupUserNotification() {
         if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                 if granted {
                     // 用户允许通知
@@ -148,6 +163,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    // MARK: - UNUserNotificationCenterDelegate
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.identifier == TodayWallpaperLocalNotificationIdentifier {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: { 
+                self.showTodayWallpaper()
+            })
+        }
+        completionHandler()
+    }
+    
     func setupAppearance() {
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.white
@@ -159,8 +185,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             currentVC.requestTodayPictorial()
         }
         else {
-            let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
-            UIApplication.currentViewController?.present(todayWallpaperVC, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
+                UIApplication.currentViewController?.present(todayWallpaperVC, animated: true, completion: nil)
+            }
         }
     }
     
@@ -255,6 +283,7 @@ extension UIWindow {
         SpeechSynthesizerManager.sharedInstance.speak(promptSentence: text)
         SpeechSynthesizerManager.sharedInstance.isEnabled = !enabled
         print("摇一摇")
+        NotificationCenter.default.post(name: NSNotification.Name(NGPVoiceStateChangedNotification), object: nil, userInfo: nil)
     }
 }
 

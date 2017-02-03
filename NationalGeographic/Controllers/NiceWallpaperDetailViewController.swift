@@ -76,6 +76,9 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     func onSnapshotTapped(sender: UITapGestureRecognizer) {
+        if snapshotImageView.layer.animationKeys() != nil {
+            return
+        }
         if snapshotImageView.isHidden {
             snapshotImage = scrollView.createSnapshotImage()
             snapshotImageView.image = snapshotImage
@@ -136,16 +139,18 @@ class NiceWallpaperDetailViewController: UIViewController {
     func startDeviceMotion() {
         if motionManager.isDeviceMotionAvailable {
             // 采样率
-            motionManager.deviceMotionUpdateInterval = 1 / 60.0
+            motionManager.deviceMotionUpdateInterval = 1 / 100.0
             // 采样
-            motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (deviceMotion, error) in
+            motionManager.startDeviceMotionUpdates(to: OperationQueue(), withHandler: { (deviceMotion, error) in
                 if error != nil {
                     return
                 }
                 guard let attitude = deviceMotion?.attitude else {
                     return
                 }
-                self.scrollRoll(rate: attitude.roll)
+                DispatchQueue.main.async {
+                    self.scrollRoll(rate: attitude.roll)
+                }
             })
         }
     }
@@ -257,16 +262,14 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     func scrollRoll(rate: Double) {
+        if rate > -0.1 && rate < 0.1 {
+            return
+        }
         var contentOffset = self.scrollView.contentOffset
         
         let rightX = self.scrollView.contentSize.width - UIScreen.screenSize.width
         
-        if rate < -0.2 {
-            contentOffset.x -= CGFloat(rate * 10)
-        }
-        else if rate > 0.2 {
-            contentOffset.x -= CGFloat(rate * 10)
-        }
+        contentOffset.x -= CGFloat(rate * 3)
         
         if contentOffset.x <= 0 {
             contentOffset.x = 0

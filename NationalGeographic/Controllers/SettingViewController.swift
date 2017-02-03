@@ -12,12 +12,30 @@ class SettingViewController: UITableViewController {
 
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var cacheSizeLabel: UILabel!
+    
+    @IBOutlet weak var enableVoiceSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         if let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String, let shortVerson = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "版本 \(shortVerson)(\(bundleVersion))"
         }
+        
+        enableVoiceSwitch.addTarget(self, action: #selector(voiceStateChanged(sender:)), for: .valueChanged)
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(NGPVoiceStateChangedNotification), object: nil, queue: nil) { (notify) in
+            
+            self.enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func voiceStateChanged(sender: UISwitch) {
+        SpeechSynthesizerManager.sharedInstance.isEnabled = sender.isOn
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +44,8 @@ class SettingViewController: UITableViewController {
             let totalCacheSize = imageDiskCacheSize + UInt(URLCache.shared.currentDiskUsage)
             self.cacheSizeLabel.text = String(format: "%.2f", (Double(totalCacheSize) / 1024 / 1024)) + "M"
         }
+        
+        enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -48,7 +68,7 @@ class SettingViewController: UITableViewController {
                 UIApplication.shared.openURL(itunesURL)
             }
         }
-        else if indexPath.row == 2 {
+        else if indexPath.row == 3 {
             self.cacheSizeLabel.text = "0.0M"
             ImageCache.default.clearDiskCache()
             ImageCache.default.clearMemoryCache()
