@@ -29,6 +29,11 @@ class ArticleImageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        descNoteImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            NotificationCenter.default.post(name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: self.descNoteImageView.kf.webURL)
+        }
+        descNoteImageView.addGestureRecognizer(tapGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

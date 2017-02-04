@@ -20,6 +20,8 @@ class SpeechSynthesizerManager: NSObject {
     func setupBDSpeech() {
         let bdsSpeech = BDSSpeechSynthesizer.sharedInstance()
         bdsSpeech?.setApiKey("d8qGsGi7xrleOpmicY93qFoU", withSecretKey: "7468e4dc5883cc32695b8ce4e69c9067")
+        // 日志级别
+        BDSSpeechSynthesizer.setLogLevel(BDS_PUBLIC_LOG_ERROR)
         // 设置离线引擎
         
         let ChineseSpeechData = Bundle.main.path(forResource: "Chinese_Speech_Female", ofType: "dat")

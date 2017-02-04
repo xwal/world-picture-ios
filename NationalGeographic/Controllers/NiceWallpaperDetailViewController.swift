@@ -386,6 +386,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
     @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {
+        topView.layer.removeAllAnimations()
         if dateCheckbox.checkState == .checked || descCheckbox.checkState == .checked {
             topView.x = 0
         }

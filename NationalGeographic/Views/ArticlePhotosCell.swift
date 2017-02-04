@@ -65,6 +65,16 @@ class ArticlePhotosCell: UITableViewCell {
                     })
                 }
             }
+            for subview in self.contentView.subviews {
+                guard let imageView = subview as? UIImageView else {
+                    continue
+                }
+                imageView.isUserInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer { (gesture) in
+                    NotificationCenter.default.post(name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: imageView.kf.webURL)
+                }
+                imageView.addGestureRecognizer(tapGesture)
+            }
         }
     }
     override func awakeFromNib() {

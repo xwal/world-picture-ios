@@ -10,4 +10,5 @@ import Foundation
 
 let NGPHasLaunchedKey = "HasLaunched"
 let NGPVoiceStateChangedNotification = "NGPVoiceStateChangedNotification"
+let NGPArticleDetailBigImageSelectedNotification = "NGPArticleDetailBigImageSelectedNotification"
 

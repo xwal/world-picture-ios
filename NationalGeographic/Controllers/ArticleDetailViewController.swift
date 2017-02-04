@@ -42,11 +42,22 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         SpeechSynthesizerManager.sharedInstance.cancel()
         SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.title)
         SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.desc)
+        NotificationCenter.default.addObserver(self, selector: #selector(showArticleDetailBigImage(notification:)), name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: nil)
+    }
+    
+    func showArticleDetailBigImage(notification: Notification) {
+        print("大图点击")
+        guard let bigImageVC = self.storyboard?.instantiateViewController(withIdentifier: "ArticleDetailBigImageViewController") as? ArticleDetailBigImageViewController else {
+            return
+        }
+        bigImageVC.imageWebURL = notification.object as? URL
+        UIApplication.currentViewController?.present(bigImageVC, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         SpeechSynthesizerManager.sharedInstance.cancel()
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: nil)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

@@ -84,6 +84,7 @@
 		D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */; };
 		D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
 		D6CE4D1C1DFFB88E006BE034 /* UIScreen_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */; };
+		D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */; };
 		D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */; };
 		D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */; };
 		D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */; };
@@ -210,6 +211,7 @@
 		D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCell.xib; sourceTree = "<group>"; };
 		D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperModel.swift; sourceTree = "<group>"; };
 		D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen_NGP.swift; sourceTree = "<group>"; };
+		D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailBigImageViewController.swift; sourceTree = "<group>"; };
 		D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -402,6 +404,7 @@
 				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
 				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
 				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
+				D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */,
 				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
 				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
 				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
@@ -734,6 +737,7 @@
 				D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
+				D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */,
 				D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */,
 				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
 				D6CE4D1C1DFFB88E006BE034 /* UIScreen_NGP.swift in Sources */,

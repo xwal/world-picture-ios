@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XNq-v1-4tP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XNq-v1-4tP">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="E5D35C7C-3165-424C-A4AE-41C239D4C472"/>
+                                <state key="highlighted" image="9FE0FE18-B98A-47D8-906F-42C81566CBA9"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -522,6 +522,48 @@
             </objects>
             <point key="canvasLocation" x="3001" y="838"/>
         </scene>
+        <!--Article Detail Big Image View Controller-->
+        <scene sceneID="6iK-Fm-NaU">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetailBigImageViewController" id="zze-9b-Lln" customClass="ArticleDetailBigImageViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vuw-9V-a5u"/>
+                        <viewControllerLayoutGuide type="bottom" id="kvx-Zu-87I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hH8-ip-x6P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cto-q2-ZPU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1h-39-0bU">
+                                <rect key="frame" x="185" y="672" width="44" height="44"/>
+                                <state key="normal" image="ButtonDownloadBig_normal"/>
+                                <connections>
+                                    <action selector="download:" destination="zze-9b-Lln" eventType="touchUpInside" id="slb-P8-doT"/>
+                                    <action selector="saveImageTapped:" destination="sZO-Ou-52m" eventType="touchUpInside" id="lpS-zM-CIL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H1h-39-0bU" firstAttribute="centerX" secondItem="hH8-ip-x6P" secondAttribute="centerX" id="DIq-ro-bbM"/>
+                            <constraint firstAttribute="bottom" secondItem="cto-q2-ZPU" secondAttribute="bottom" id="Rde-5j-QNG"/>
+                            <constraint firstItem="kvx-Zu-87I" firstAttribute="top" secondItem="H1h-39-0bU" secondAttribute="bottom" constant="20" id="V86-e7-wpX"/>
+                            <constraint firstAttribute="trailing" secondItem="cto-q2-ZPU" secondAttribute="trailing" id="YRn-F4-aeE"/>
+                            <constraint firstItem="cto-q2-ZPU" firstAttribute="top" secondItem="hH8-ip-x6P" secondAttribute="top" id="mNE-DX-ya5"/>
+                            <constraint firstItem="cto-q2-ZPU" firstAttribute="leading" secondItem="hH8-ip-x6P" secondAttribute="leading" id="nEL-pL-CyB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigImageView" destination="cto-q2-ZPU" id="IvY-cX-jL9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jh9-ZY-4tN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3967" y="837"/>
+        </scene>
         <!--壁纸集-->
         <scene sceneID="5eZ-3u-NxC">
             <objects>
@@ -880,7 +922,7 @@
                                         <rect key="frame" x="0.0" y="288" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PfP-Ai-qQC" id="o7g-Nq-ZbY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingCommend" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-b3-HVt">
@@ -1625,19 +1667,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ButtonBack_pressed" width="24" height="24"/>
-        <image name="ButtonClose_normal" width="24" height="24"/>
-        <image name="ButtonClose_pressed" width="24" height="24"/>
-        <image name="ButtonConfirm_normal" width="24" height="24"/>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
-        <image name="ButtonLike_normal" width="24" height="24"/>
-        <image name="ButtonLike_pressed" width="24" height="24"/>
-        <image name="ButtonShare_normal" width="24" height="24"/>
-        <image name="ButtonShare_pressed" width="24" height="24"/>
-        <image name="DefaultIcon" width="1024" height="1024"/>
-        <image name="E5D35C7C-3165-424C-A4AE-41C239D4C472" width="45" height="45">
+        <image name="9FE0FE18-B98A-47D8-906F-42C81566CBA9" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1823,6 +1853,18 @@ AMIA2QDbAN0pIykoKTMpPClPKVMpXilnKWwpdCl3KXwpiymPKZYpnimrKbApsim0KbkpwSnEKckp0SnU
 KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
 </mutableData>
         </image>
+        <image name="ButtonBack_normal" width="24" height="24"/>
+        <image name="ButtonBack_pressed" width="24" height="24"/>
+        <image name="ButtonClose_normal" width="24" height="24"/>
+        <image name="ButtonClose_pressed" width="24" height="24"/>
+        <image name="ButtonConfirm_normal" width="24" height="24"/>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
+        <image name="ButtonLike_normal" width="24" height="24"/>
+        <image name="ButtonLike_pressed" width="24" height="24"/>
+        <image name="ButtonShare_normal" width="24" height="24"/>
+        <image name="ButtonShare_pressed" width="24" height="24"/>
+        <image name="DefaultIcon" width="1024" height="1024"/>
         <image name="Navbar_mask" width="44" height="44"/>
         <image name="SettingClean" width="22" height="22"/>
         <image name="SettingCommend" width="22" height="22"/>
