@@ -52,7 +52,6 @@
 		D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */; };
 		D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */; };
 		D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */; };
-		D64F9E041E436AF800336339 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F9E031E436AF800336339 /* Const.swift */; };
 		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
@@ -60,11 +59,17 @@
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
 		D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691DCE11DE281A300F885FE /* ArticleListViewController.swift */; };
+		D69AC8F31E4C1252001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
+		D69AC8F51E4C326B001B0992 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F41E4C326B001B0992 /* Const.swift */; };
+		D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
+		D69AC8F81E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */; };
+		D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */; };
 		D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */; };
 		D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0271DDBED1300B2664C /* PictureCell.swift */; };
 		D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */; };
 		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
+		D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
 		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */; };
@@ -83,7 +88,6 @@
 		D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */; };
 		D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */; };
 		D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
-		D6CE4D1C1DFFB88E006BE034 /* UIScreen_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */; };
 		D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */; };
 		D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */; };
 		D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */; };
@@ -173,7 +177,6 @@
 		D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlePhotosCell.xib; sourceTree = "<group>"; };
 		D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewCell.swift; sourceTree = "<group>"; };
 		D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHomeScreenViewController.swift; sourceTree = "<group>"; };
-		D64F9E031E436AF800336339 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NiceWallpaper.xcassets; sourceTree = "<group>"; };
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -182,11 +185,16 @@
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
 		D691DCE11DE281A300F885FE /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		D69AC8F21E4C1252001B0992 /* NGPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGPAPI.swift; sourceTree = "<group>"; };
+		D69AC8F41E4C326B001B0992 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryViewController.swift; sourceTree = "<group>"; };
+		D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryModel.swift; sourceTree = "<group>"; };
 		D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView_NGP.swift; sourceTree = "<group>"; };
 		D6A5F0271DDBED1300B2664C /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PictureCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +218,6 @@
 		D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCell.xib; sourceTree = "<group>"; };
 		D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperModel.swift; sourceTree = "<group>"; };
-		D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen_NGP.swift; sourceTree = "<group>"; };
 		D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailBigImageViewController.swift; sourceTree = "<group>"; };
 		D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -341,10 +348,9 @@
 			children = (
 				D61663731DE7256100D9C897 /* String_NGP.swift */,
 				D642BBE81DF156910026D776 /* UIViewController_NGP.swift */,
-				D6CE4D1B1DFFB88E006BE034 /* UIScreen_NGP.swift */,
 				D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */,
 				D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */,
-				D64F9E031E436AF800336339 /* Const.swift */,
+				D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -373,8 +379,10 @@
 		D6549C601DDC2D470036650E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				D69AC8F41E4C326B001B0992 /* Const.swift */,
 				D6549C611DDC2D730036650E /* AppDelegate.swift */,
 				D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */,
+				D69AC8F21E4C1252001B0992 /* NGPAPI.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
 				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
 				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
+				D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */,
 				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
 				D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */,
 				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
@@ -426,6 +435,7 @@
 				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
 				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
 				D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */,
+				D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -722,10 +732,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69AC8F81E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift in Sources */,
 				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
 				D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */,
-				D64F9E041E436AF800336339 /* Const.swift in Sources */,
 				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
 				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
 				D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */,
@@ -740,12 +750,13 @@
 				D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */,
 				D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */,
 				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
-				D6CE4D1C1DFFB88E006BE034 /* UIScreen_NGP.swift in Sources */,
 				D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */,
 				D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */,
 				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
+				D69AC8F51E4C326B001B0992 /* Const.swift in Sources */,
 				D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */,
 				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
+				D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */,
 				D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */,
 				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
 				D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */,
@@ -753,6 +764,7 @@
 				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,
 				D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */,
 				D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */,
+				D69AC8F31E4C1252001B0992 /* NGPAPI.swift in Sources */,
 				D60615361DE28F5100C4000F /* EasyView.swift in Sources */,
 				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
 				D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */,
@@ -762,6 +774,7 @@
 				D6CB45621E08BA3000AB8720 /* FeedbackViewController.swift in Sources */,
 				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
 				D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */,
+				D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */,
 				D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */,
 				D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */,
 				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,
@@ -781,6 +794,7 @@
 				D63B1F8B1DFEA307000B9276 /* WallpaperModel.swift in Sources */,
 				D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */,
 				D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */,
+				D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */,
 				D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

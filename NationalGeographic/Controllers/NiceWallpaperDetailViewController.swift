@@ -186,15 +186,16 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         let tempWallpaperModel = imageModelArray[currentIndex]
         
-        let imageHeight = UIScreen.screenSize.height
+        let screenBounds = UIScreen.main.currentBounds()
+        let imageHeight = screenBounds.height
         var imageWidth = (tempWallpaperModel.width / tempWallpaperModel.height) * imageHeight
-        imageWidth = fmax(imageWidth, UIScreen.screenSize.width)
+        imageWidth = fmax(imageWidth, screenBounds.width)
         wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
         
         self.scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
         wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(1))])
         
-        let offsetX = (imageWidth - UIScreen.screenSize.width) / 2
+        let offsetX = (imageWidth - screenBounds.width) / 2
         self.scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
         
         descDashLabel.stopAnimation()
@@ -267,7 +268,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
         var contentOffset = self.scrollView.contentOffset
         
-        let rightX = self.scrollView.contentSize.width - UIScreen.screenSize.width
+        let rightX = self.scrollView.contentSize.width - UIScreen.main.currentBounds().width
         
         contentOffset.x -= CGFloat(rate * 3)
         
@@ -318,19 +319,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: UIButton) {
         if let saveImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) {
-            UIImageWriteToSavedPhotosAlbum(saveImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        }
-    }
-    
-    func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer) {
-        if error == nil {
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = .text
-            hud.label.text = "已保存至相册"
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                hud.hide(animated: true)
-            })
+            Utils.writeImageToPhotosAlbum(saveImage)
         }
     }
     

@@ -48,12 +48,12 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         weak var weakSelf = self
         
         self.loadingImageView.startAnimating()
-//        http://chanyouji.com/api/pictorials/2016-12-02.json
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayStr = dateFormatter.string(from: Date())
         
-        let url = URL(string: "http://chanyouji.com/api/pictorials/\(todayStr).json")!
+        let url = URL(string: String(format: NGPAPI_CHANYOUJI_DAY_PICTORIAL, todayStr))!
         let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
         
         let sharedUserDefaults = UserDefaults(suiteName: "group.ngp.sharedDatas")

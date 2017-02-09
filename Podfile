@@ -22,6 +22,7 @@ target 'NationalGeographic' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'M13Checkbox'
   pod 'DateTools'
+  pod 'CHTCollectionViewWaterfallLayout'
   
   # ShareSDK
   # 主模块(必须)

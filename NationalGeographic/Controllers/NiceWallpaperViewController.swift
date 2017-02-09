@@ -11,6 +11,7 @@ import MJRefresh
 import Alamofire
 import SnapKit
 import Kingfisher
+import YYCategories
 
 private let cellIdentifier = "NiceWallpaperCell"
 
@@ -119,10 +120,26 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white
         self.tableView.mj_header = header
+        
+        let leftButton = UIButton(type: .custom)
+        leftButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        leftButton.tintColor = UIColor.clear
+        leftButton.setImage(#imageLiteral(resourceName: "icon_category"), for: .normal)
+        leftButton.addTarget(self, action: #selector(clickCategoryButton(sender:)), for: .touchUpInside)
+        
+        let leftBarItem = UIBarButtonItem(customView: leftButton)
+        self.navigationItem.leftBarButtonItem = leftBarItem
+    }
+    
+    func clickCategoryButton(sender: UIButton) {
+        
+        if let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperCategoryViewController") {
+            self.navigationController?.pushViewController(categoryVC, animated: true)
+        }
     }
     
     func requestNiceWallpaperList(time: Double) {
-        let pixelSize = UIScreen.screenPixelSize()
+        let pixelSize = UIScreen.main.sizeInPixel
         let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
         let urlParams = [
             "time": "\(Int(time))",
@@ -131,7 +148,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             "page_size":"20",
             ]
         
-        let url = URL(string: "http://lab.zuimeia.com/wallpaper/category/2/")!
+        let url = URL(string: NGPAPI_ZUIMEIA_EVERYDAY_WALLPAPER)!
         let originalRequest = URLRequest(url: url, cachePolicy: (isLoadCacheFinished ? .useProtocolCachePolicy : .returnCacheDataElseLoad))
         let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
         Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { (response) in

@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="9FE0FE18-B98A-47D8-906F-42C81566CBA9"/>
+                                <state key="highlighted" image="F37FBCA3-DEE1-4C5D-AE8B-D68BE5FF115C"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -999,7 +999,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYy-5X-P2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="3843.3283358320841"/>
+            <point key="canvasLocation" x="1307" y="4504"/>
         </scene>
         <!--反馈-->
         <scene sceneID="PWK-gQ-uFO">
@@ -1061,7 +1061,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1M-74-gaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="3919"/>
+            <point key="canvasLocation" x="2093" y="4505"/>
         </scene>
         <!--设置-->
         <scene sceneID="a3t-ey-fPC">
@@ -1078,7 +1078,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1B-UV-IvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="3844"/>
+            <point key="canvasLocation" x="355" y="4505"/>
         </scene>
         <!--最美集-->
         <scene sceneID="k5s-WP-AaB">
@@ -1121,6 +1121,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUb-Pb-NMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308" y="3092"/>
+        </scene>
+        <!--Nice Wallpaper Category View Controller-->
+        <scene sceneID="Lwl-1C-bqK">
+            <objects>
+                <viewController restorationIdentifier="NiceWallpaperCategoryViewController" storyboardIdentifier="NiceWallpaperCategoryViewController" id="QhY-63-QXT" customClass="NiceWallpaperCategoryViewController" customModule="NationalGeographic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rXL-Rq-u6h"/>
+                        <viewControllerLayoutGuide type="bottom" id="awl-jA-xTY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YUX-rs-peJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWP-ZJ-SeX">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="dEM-od-mf4" customClass="CHTCollectionViewWaterfallLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fti-Zk-izk">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dWP-ZJ-SeX" secondAttribute="trailing" id="E8p-nY-Scj"/>
+                            <constraint firstItem="awl-jA-xTY" firstAttribute="top" secondItem="dWP-ZJ-SeX" secondAttribute="bottom" id="MMF-4g-hEY"/>
+                            <constraint firstItem="dWP-ZJ-SeX" firstAttribute="leading" secondItem="YUX-rs-peJ" secondAttribute="leading" id="neO-Np-5vx"/>
+                            <constraint firstItem="dWP-ZJ-SeX" firstAttribute="top" secondItem="rXL-Rq-u6h" secondAttribute="bottom" id="zTS-T6-7cN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="dWP-ZJ-SeX" id="Hwc-oK-RyK"/>
+                        <outlet property="cvLayout" destination="dEM-od-mf4" id="Qjj-FH-TTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xf-eE-1yj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="3797"/>
         </scene>
         <!--Nice Wallpaper Detail View Controller-->
         <scene sceneID="ln9-ZW-fTa">
@@ -1667,7 +1712,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9FE0FE18-B98A-47D8-906F-42C81566CBA9" width="45" height="45">
+        <image name="ButtonBack_normal" width="24" height="24"/>
+        <image name="ButtonBack_pressed" width="24" height="24"/>
+        <image name="ButtonClose_normal" width="24" height="24"/>
+        <image name="ButtonClose_pressed" width="24" height="24"/>
+        <image name="ButtonConfirm_normal" width="24" height="24"/>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
+        <image name="ButtonLike_normal" width="24" height="24"/>
+        <image name="ButtonLike_pressed" width="24" height="24"/>
+        <image name="ButtonShare_normal" width="24" height="24"/>
+        <image name="ButtonShare_pressed" width="24" height="24"/>
+        <image name="DefaultIcon" width="1024" height="1024"/>
+        <image name="F37FBCA3-DEE1-4C5D-AE8B-D68BE5FF115C" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1853,18 +1910,6 @@ AMIA2QDbAN0pIykoKTMpPClPKVMpXilnKWwpdCl3KXwpiymPKZYpnimrKbApsim0KbkpwSnEKckp0SnU
 KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
 </mutableData>
         </image>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ButtonBack_pressed" width="24" height="24"/>
-        <image name="ButtonClose_normal" width="24" height="24"/>
-        <image name="ButtonClose_pressed" width="24" height="24"/>
-        <image name="ButtonConfirm_normal" width="24" height="24"/>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
-        <image name="ButtonLike_normal" width="24" height="24"/>
-        <image name="ButtonLike_pressed" width="24" height="24"/>
-        <image name="ButtonShare_normal" width="24" height="24"/>
-        <image name="ButtonShare_pressed" width="24" height="24"/>
-        <image name="DefaultIcon" width="1024" height="1024"/>
         <image name="Navbar_mask" width="44" height="44"/>
         <image name="SettingClean" width="22" height="22"/>
         <image name="SettingCommend" width="22" height="22"/>

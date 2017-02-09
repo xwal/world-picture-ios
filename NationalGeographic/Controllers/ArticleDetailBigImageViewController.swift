@@ -36,19 +36,7 @@ class ArticleDetailBigImageViewController: UIViewController {
 
     @IBAction func download(_ sender: UIButton) {
         if let saveImage = bigImageView.image {
-            UIImageWriteToSavedPhotosAlbum(saveImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        }
-    }
-    
-    func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer) {
-        if error == nil {
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = .text
-            hud.label.text = "已保存至相册"
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                hud.hide(animated: true)
-            })
+            Utils.writeImageToPhotosAlbum(saveImage)
         }
     }
     /*

@@ -14,7 +14,7 @@ import YYCategories
 
 class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
-    var albumID: String? = nil
+    var albumID: String!
     
     var pictureListModel: PictureListModel!
     
@@ -91,37 +91,36 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
     func requestAlbumDetail() {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.mode = .indeterminate
-        if albumID != nil {
-            let url = URL(string: "http://dili.bdatu.com/jiekou/albums/a\(albumID!).html")!
-            let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
-            Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
+        
+        let url = URL(string: String(format: NGPAPI_DILI_ALBUM, albumID))!
+        let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+        Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
+            
+            guard let JSON = response.result.value else {
                 
-                guard let JSON = response.result.value else {
-                    
-                    let error = response.result.error
-                    
-                    hud.mode = .text
-                    hud.label.text = "加载失败"
-                    hud.detailsLabel.text = "错误描述：\(error?.localizedDescription ?? "")"
-                    hud.hide(animated: true, afterDelay: 1)
-                    self.bottomView.isUserInteractionEnabled = false
-                    return
-                }
+                let error = response.result.error
                 
-                let handleJSON = JSON.removeControlCharacters()
-                guard let model = PictureListModel.yy_model(withJSON: handleJSON) else {
-                    hud.hide(animated: true)
-                    return
-                }
-                self.pictureListModel = model
-                DispatchQueue.main.async {
-                    self.initialPageViewController()
-                    self.updateViews()
-                    hud.hide(animated: true)
-                }
-                
-            })
-        }
+                hud.mode = .text
+                hud.label.text = "加载失败"
+                hud.detailsLabel.text = "错误描述：\(error?.localizedDescription ?? "")"
+                hud.hide(animated: true, afterDelay: 1)
+                self.bottomView.isUserInteractionEnabled = false
+                return
+            }
+            
+            let handleJSON = JSON.removeControlCharacters()
+            guard let model = PictureListModel.yy_model(withJSON: handleJSON) else {
+                hud.hide(animated: true)
+                return
+            }
+            self.pictureListModel = model
+            DispatchQueue.main.async {
+                self.initialPageViewController()
+                self.updateViews()
+                hud.hide(animated: true)
+            }
+            
+        })
         
     }
     
@@ -180,20 +179,8 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
         
         if let image = currentPictureDetail.imageView.image {
             if !image.isEqual(UIImage(named: "nopic")) {
-                UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+                Utils.writeImageToPhotosAlbum(image)
             }
-        }
-    }
-    
-    func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer) {
-        if error == nil {
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = .text
-            hud.label.text = "已保存至相册"
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                hud.hide(animated: true)
-            })
         }
     }
     

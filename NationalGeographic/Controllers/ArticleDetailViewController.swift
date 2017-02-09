@@ -113,7 +113,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func requestArticleFavorite() {
-        Alamofire.request("http://chanyouji.com/api/pictorials/favorites/\(articleModel.id).json").responseJSON { (response) in
+        Alamofire.request(String(format: NGPAPI_CHANYOUJI_ARTICLE_DETAIL, articleModel.id)).responseJSON { (response) in
             if let JSON = response.result.value {
                 if let model = ArticlefavoritesModel.yy_model(withJSON: JSON) {
                     DispatchQueue.main.async {
@@ -147,7 +147,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
     
 
     @IBAction func shareTapped(_ sender: UIButton) {
-        ShareManager.shareActionSheet(text: articleModel.desc, thumbImages: articleModel.image_url, images: articleModel.image_url, url: URL(string: "http://chanyouji.com/pictorial_articles/\(articleModel.id)"), title: articleModel.title, type: .auto)
+        ShareManager.shareActionSheet(text: articleModel.desc, thumbImages: articleModel.image_url, images: articleModel.image_url, url: URL(string: String(format: NGPAPI_CHANYOUJI_ARTICLE_SHARE, articleModel.id)), title: articleModel.title, type: .auto)
     }
     
     

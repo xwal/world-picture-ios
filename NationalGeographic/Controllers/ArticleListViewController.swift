@@ -76,7 +76,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     func requestPictorialList() {
         loadingImageView.startAnimating()
         
-        let url = URL(string: "http://chanyouji.com/api/pictorials/articles.json")!
+        let url = URL(string: NGPAPI_CHANYOUJI_ARTICLES)!
         let request = URLRequest(url: url, cachePolicy: tableView.mj_header.isRefreshing() ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
         
         Alamofire.request(request).responseJSON { (response) in

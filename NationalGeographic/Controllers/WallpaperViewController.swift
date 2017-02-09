@@ -52,7 +52,7 @@ class WallpaperViewController: UICollectionViewController {
     
     func requestWallpaper() {
         self.loadingImageView.startAnimating()
-        let url = URL(string: "http://chanyouji.com/api/pictorials.json")!
+        let url = URL(string: NGPAPI_CHANYOUJI_WALLPAPER)!
         let request = URLRequest(url: url, cachePolicy: self.collectionView!.mj_header.isRefreshing() ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
         
         Alamofire.request(request).responseJSON { (response) in

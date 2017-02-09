@@ -87,8 +87,8 @@ class AlbumListViewController: UITableViewController {
     }
     
     func requestData(withPage page: Int) {
-        
-        Alamofire.request("http://dili.bdatu.com/jiekou/mains/p\(page).html").responseJSON { (response) in
+        let requestURL = String(format: NGPAPI_DILI_MAIN, page)
+        Alamofire.request(requestURL).responseJSON { (response) in
             
             var hasMoreData = true
             // 是否有数据
