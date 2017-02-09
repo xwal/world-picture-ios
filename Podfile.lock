@@ -14,6 +14,7 @@ PODS:
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
   - DateTools (1.7.0)
+  - FDFullscreenPopGesture (1.1)
   - IQKeyboardManagerSwift (4.0.7)
   - Kingfisher (3.2.2)
   - KVNProgress (2.3.1)
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - AVOSCloudCrashReporting
   - CHTCollectionViewWaterfallLayout
   - DateTools
+  - FDFullscreenPopGesture
   - IQKeyboardManagerSwift
   - Kingfisher (~> 3.2.1)
   - KVNProgress
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   AVOSCloudCrashReporting: ffe83b9160f90f5f98287c3b22264cad7ddab9d5
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
@@ -105,6 +108,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: e25b666ba937199b0684a4730c3402da7e5dc8e5
+PODFILE CHECKSUM: bfc69cd35f27f2e87b81acffecc390563b368e11
 
 COCOAPODS: 1.1.1

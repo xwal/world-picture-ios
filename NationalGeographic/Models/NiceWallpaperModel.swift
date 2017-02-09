@@ -56,6 +56,18 @@ class NiceWallpaperImageModel: NSObject, YYModel {
     static func modelCustomPropertyMapper() -> [String : Any]? {
         return ["desc": "description"]
     }
+    
+    var view_times: Int = 0
+    
+    var origin_image_url: String?
+    
+    var publish_at: Int = 0
+    
+    var word: String?
+    
+    var created_at: String?
+    
+    var tags: [String]?
 
 }
 

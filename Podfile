@@ -23,6 +23,7 @@ target 'NationalGeographic' do
   pod 'M13Checkbox'
   pod 'DateTools'
   pod 'CHTCollectionViewWaterfallLayout'
+  pod 'FDFullscreenPopGesture'
   
   # ShareSDK
   # 主模块(必须)

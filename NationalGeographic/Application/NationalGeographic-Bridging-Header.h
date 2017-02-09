@@ -18,3 +18,5 @@
 
 // 百度语音
 #import "BDSSpeechSynthesizer.h"
+
+#import "CSMParallaxCell.h"

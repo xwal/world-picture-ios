@@ -19,6 +19,8 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     
     private var categoryModel: NiceWallpaperCategoryModel?
     
+    private var baseURL: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,12 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
         cvLayout.columnCount = 2
         cvLayout.minimumColumnSpacing = 0
         cvLayout.minimumInteritemSpacing = 0
+        
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
+        
+        categoryCollectionView.register(UINib(nibName: "NiceWallpaperCategoryCell", bundle: nil), forCellWithReuseIdentifier: "NiceWallpaperCategoryCell")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +60,8 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
             
             if let JSON = response.result.value, let model = NiceWallpaperCategoryModel.yy_model(withJSON: JSON) {
                 self.categoryModel = model
+                self.baseURL = model.data?.base_url
+                
                 DispatchQueue.main.async {
                     self.categoryCollectionView.reloadData()
                 }
@@ -60,15 +70,22 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowWallpaperCategory" {
+            if let wpCategoryVC = segue.destination as? NiceWallpaperImageListViewController {
+                
+                let indexPath = sender as! IndexPath
+                let tagModel = self.categoryModel?.data?.tags?[indexPath.row]
+                wpCategoryVC.categoryId = tagModel?.id
+                wpCategoryVC.title = tagModel?.name
+            }
+        }
     }
-    */
     
     // MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,13 +93,27 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NiceWallpaperCategoryCell", for: indexPath) as! NiceWallpaperCategoryCell
+        
+        if let tagModel = self.categoryModel?.data?.tags?[indexPath.row], let baseURL = self.baseURL, let cover = tagModel.cover {
+            cell.parallaxImage.kf.setImage(with: URL(string: "\(baseURL)/\(cover)"))
+            cell.titleLabel.text = tagModel.name
+        }
+        
+        return cell
     }
     
     // MARK: - CHTCollectionViewDelegateWaterfallLayout
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
         let width = UIScreen.main.currentBounds().width / 2
-        return CGSize(width: width, height: 210)
+        let Height = width / 187.0 * 210.0
+        return CGSize(width: width, height: Height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ShowWallpaperCategory", sender: indexPath)
+    }
+    
+    
 
 }

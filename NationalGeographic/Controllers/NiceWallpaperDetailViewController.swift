@@ -15,6 +15,7 @@ import Spring
 import CoreGraphics
 import M13Checkbox
 import MBProgressHUD
+import FDFullscreenPopGesture
 
 class NiceWallpaperDetailViewController: UIViewController {
     
@@ -200,7 +201,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         descDashLabel.stopAnimation()
         
-        descDashLabel.text = tempWallpaperModel.desc
+        descDashLabel.text = tempWallpaperModel.desc?.length != 0 ? tempWallpaperModel.desc : "喜欢这张图就帮它配词吧~"
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
@@ -214,19 +215,25 @@ class NiceWallpaperDetailViewController: UIViewController {
         self.descDashLabel.sizeToFit()
         self.descDashLabel.startAppearAnimation()
         
-        guard let pubTime = tempWallpaperModel.pub_time else {
-            return
+        if let pubTime = tempWallpaperModel.pub_time {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en")
+            formatter.dateFormat = "dd,MMM,EEEE"
+            
+            let formatDateStr = formatter.string(from: pubTime)
+            let dateArray = formatDateStr.components(separatedBy: ",")
+            dayLabel.isHidden = false
+            monthLabel.isHidden = false
+            weekLabel.isHidden = false
+            dayLabel.text = dateArray[0]
+            monthLabel.text = dateArray[1]
+            weekLabel.text = dateArray[2]
         }
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en")
-        formatter.dateFormat = "dd,MMM,EEEE"
-        
-        let formatDateStr = formatter.string(from: pubTime)
-        let dateArray = formatDateStr.components(separatedBy: ",")
-        dayLabel.text = dateArray[0]
-        monthLabel.text = dateArray[1]
-        weekLabel.text = dateArray[2]
+        else {
+            dayLabel.isHidden = true
+            monthLabel.isHidden = true
+            weekLabel.isHidden = true
+        }
         
         if view.layer.animation(forKey: "aniKey") == nil {
             let transition = CATransition()
@@ -245,7 +252,8 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     func setupViews() {
-        
+        self.fd_prefersNavigationBarHidden = true
+        self.fd_interactivePopDisabled = true
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
