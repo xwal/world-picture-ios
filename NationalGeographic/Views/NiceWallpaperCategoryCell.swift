@@ -14,7 +14,8 @@ class NiceWallpaperCategoryCell: CSMParallaxCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        contentView.backgroundColor = UIColor.clear
+        parallaxImage.backgroundColor = UIColor.clear
     }
 
 }

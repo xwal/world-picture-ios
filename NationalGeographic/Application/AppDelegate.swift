@@ -185,10 +185,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             currentVC.requestTodayPictorial()
         }
         else {
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: { 
                 let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
                 UIApplication.currentViewController?.present(todayWallpaperVC, animated: true, completion: nil)
-            }
+            })
         }
     }
     
@@ -206,9 +206,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             currentVC.requestAlbumDetail()
         }
         else {
-            let todayGeographicVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlbumDetailViewController") as! AlbumDetailViewController
-            todayGeographicVC.albumID = String(days)
-            UIApplication.currentViewController?.present(todayGeographicVC, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                let todayGeographicVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlbumDetailViewController") as! AlbumDetailViewController
+                todayGeographicVC.albumID = String(days)
+                UIApplication.currentViewController?.present(todayGeographicVC, animated: true, completion: nil)
+            })
         }
     }
     

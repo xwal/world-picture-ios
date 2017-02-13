@@ -37,6 +37,12 @@ class AlbumListViewController: UITableViewController {
         setupCacheData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tableView.mj_header.endRefreshing()
+        self.tableView.mj_footer.endRefreshing()
+    }
+    
     func setupView() {
         let header = MJRefreshNormalHeader(refreshingBlock: {
             self.currentPage = 1

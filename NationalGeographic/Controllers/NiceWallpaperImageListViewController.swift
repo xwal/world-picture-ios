@@ -17,6 +17,8 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
 
     @IBOutlet weak var imageListTableView: UITableView!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     private var currentTime: Int = 0
     
     private var baseUrl: String!
@@ -42,6 +44,11 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     }
     
     func setupView() {
+        
+        self.backgroundImageView.contentMode = .scaleAspectFill
+        self.backgroundImageView.image = UIImage(named: "personal_pic_default")
+        self.backgroundImageView.clipsToBounds = true
+        
         self.automaticallyAdjustsScrollViewInsets = false
         self.imageListTableView.separatorStyle = .none
         self.imageListTableView.tableFooterView = UIView()
@@ -170,6 +177,9 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataSourceArray[indexPath.row]
+        self.backgroundImageView.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(model.image_url ?? "")"), options: [.transition(.fade(1))])
+        
         guard let niceWallpaperDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperDetailViewController") as? NiceWallpaperDetailViewController else {
             return
         }

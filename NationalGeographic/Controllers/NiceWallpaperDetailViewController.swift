@@ -34,6 +34,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var descDashLabel: ZCAnimatedLabel!
     @IBOutlet weak var dateCheckbox: M13Checkbox!
+    @IBOutlet weak var dateDescLabel: UILabel!
     @IBOutlet weak var descCheckbox: M13Checkbox!
     @IBOutlet weak var backButton: UIButton!
     
@@ -127,6 +128,10 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     func onSwipChanged(sender: UISwipeGestureRecognizer) {
+        
+        if snapshotImageView.isHidden == false {
+            return
+        }
         
         if sender.direction == .left {
             showNext(direction: .forward)
@@ -225,6 +230,8 @@ class NiceWallpaperDetailViewController: UIViewController {
             dayLabel.isHidden = false
             monthLabel.isHidden = false
             weekLabel.isHidden = false
+            dateCheckbox.isHidden = false
+            dateDescLabel.text = "显示日期"
             dayLabel.text = dateArray[0]
             monthLabel.text = dateArray[1]
             weekLabel.text = dateArray[2]
@@ -233,6 +240,8 @@ class NiceWallpaperDetailViewController: UIViewController {
             dayLabel.isHidden = true
             monthLabel.isHidden = true
             weekLabel.isHidden = true
+            dateCheckbox.isHidden = true
+            dateDescLabel.text = nil
         }
         
         if view.layer.animation(forKey: "aniKey") == nil {

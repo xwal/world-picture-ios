@@ -93,7 +93,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func setupViews() {
-        self.view.backgroundColor = UIColor.red
+
         self.backgroundImageView.contentMode = .scaleAspectFill
         self.backgroundImageView.image = UIImage(named: "personal_pic_default")
         self.backgroundImageView.clipsToBounds = true

@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="8FF225A6-CA76-4189-8F26-DFC13906C405"/>
+                                <state key="highlighted" image="F74D0D29-21DB-4A0E-9069-2D28B2DEFBCB"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>
@@ -1181,6 +1181,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-ax-MJT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NVa-Ws-L98">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-qU-qnA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qq4-qU-qnA" firstAttribute="top" secondItem="NVa-Ws-L98" secondAttribute="top" id="675-4A-BHI"/>
+                                        <constraint firstAttribute="trailing" secondItem="qq4-qU-qnA" secondAttribute="trailing" id="Yyn-ku-JwD"/>
+                                        <constraint firstItem="qq4-qU-qnA" firstAttribute="leading" secondItem="NVa-Ws-L98" secondAttribute="leading" id="tDv-9A-Kyo"/>
+                                        <constraint firstAttribute="bottom" secondItem="qq4-qU-qnA" secondAttribute="bottom" id="uEc-4r-sIg"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wtD-VD-0qG">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1189,7 +1208,11 @@
                         <color key="backgroundColor" red="0.1333333333" green="0.16078431369999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Jg5-ha-mxz" firstAttribute="top" secondItem="wtD-VD-0qG" secondAttribute="bottom" id="34i-zY-sxG"/>
+                            <constraint firstAttribute="bottom" secondItem="GBD-ax-MJT" secondAttribute="bottom" id="I39-wl-fyy"/>
+                            <constraint firstItem="GBD-ax-MJT" firstAttribute="top" secondItem="cFD-mb-2DL" secondAttribute="top" id="KzD-lW-TeT"/>
+                            <constraint firstItem="GBD-ax-MJT" firstAttribute="leading" secondItem="cFD-mb-2DL" secondAttribute="leading" id="NlL-WK-hzh"/>
                             <constraint firstItem="wtD-VD-0qG" firstAttribute="top" secondItem="292-uh-gQ2" secondAttribute="bottom" id="b6w-x0-HGo"/>
+                            <constraint firstAttribute="trailing" secondItem="GBD-ax-MJT" secondAttribute="trailing" id="eaM-g1-AtL"/>
                             <constraint firstAttribute="trailing" secondItem="wtD-VD-0qG" secondAttribute="trailing" id="erE-bl-JuY"/>
                             <constraint firstItem="wtD-VD-0qG" firstAttribute="leading" secondItem="cFD-mb-2DL" secondAttribute="leading" id="kvd-Qi-zVb"/>
                         </constraints>
@@ -1203,6 +1226,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="qq4-qU-qnA" id="jJB-Jr-ThT"/>
                         <outlet property="imageListTableView" destination="wtD-VD-0qG" id="JjV-gc-PFb"/>
                     </connections>
                 </viewController>
@@ -1308,7 +1332,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP2-iF-1QX">
-                                        <rect key="frame" x="122" y="5" width="66" height="66"/>
+                                        <rect key="frame" x="121.33333333333334" y="5" width="66.000000000000028" height="66"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="预览" backgroundImage="share_bg_normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1320,7 +1344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI4-p4-PuD">
-                                        <rect key="frame" x="227" y="5" width="66" height="66"/>
+                                        <rect key="frame" x="226.66666666666669" y="5" width="66.000000000000057" height="66"/>
                                         <state key="normal" backgroundImage="btn_wx_friendList"/>
                                         <connections>
                                             <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="Cqd-1R-08e"/>
@@ -1341,14 +1365,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dY-Z4-ipp">
-                                        <rect key="frame" x="122" y="87" width="66" height="66"/>
+                                        <rect key="frame" x="121.33333333333334" y="87" width="66.000000000000028" height="66"/>
                                         <state key="normal" backgroundImage="btn_tencent"/>
                                         <connections>
                                             <action selector="shareToSNSTapped:" destination="g2R-AP-hbV" eventType="touchUpInside" id="CJn-DG-a21"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-66-i35">
-                                        <rect key="frame" x="227" y="87" width="66" height="66"/>
+                                        <rect key="frame" x="226.66666666666669" y="87" width="66.000000000000057" height="66"/>
                                         <state key="normal" backgroundImage="share_qqzone_normal"/>
                                         <state key="highlighted" backgroundImage="share_qqzone_pressed"/>
                                         <connections>
@@ -1364,42 +1388,42 @@
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1h-XU-Ulx">
-                                        <rect key="frame" x="82" y="5" width="40" height="1"/>
+                                        <rect key="frame" x="82" y="5" width="39.333333333333329" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="z9n-ry-oSF"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-X4-YcB">
-                                        <rect key="frame" x="188" y="5" width="39" height="1"/>
+                                        <rect key="frame" x="187.33333333333334" y="5" width="39.333333333333314" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="iKb-yb-jif"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-zV-7fl">
-                                        <rect key="frame" x="293" y="5" width="39" height="1"/>
+                                        <rect key="frame" x="292.66666666666674" y="5" width="39.333333333333314" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="E56-pc-Ucy"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rre-ah-kGp">
-                                        <rect key="frame" x="82" y="87" width="40" height="1"/>
+                                        <rect key="frame" x="82" y="87" width="39.333333333333329" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="uPS-db-hRA"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQo-eW-Tqa">
-                                        <rect key="frame" x="188" y="87" width="39" height="1"/>
+                                        <rect key="frame" x="187.33333333333334" y="87" width="39.333333333333314" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="xvZ-mB-WJq"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzs-xf-Bly">
-                                        <rect key="frame" x="293" y="87" width="39" height="1"/>
+                                        <rect key="frame" x="292.66666666666674" y="87" width="39.333333333333314" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="wd7-YZ-WI3"/>
@@ -1540,6 +1564,7 @@
                         <outlet property="backButton" destination="6WN-jW-uaJ" id="AJt-UD-TdE"/>
                         <outlet property="bottomView" destination="H1k-aP-29P" id="YF5-pw-geW"/>
                         <outlet property="dateCheckbox" destination="JfF-tU-9U3" id="8Ha-La-Osn"/>
+                        <outlet property="dateDescLabel" destination="2Sp-nl-kHB" id="vKe-Co-bEv"/>
                         <outlet property="dayLabel" destination="tK6-K3-LWr" id="Dsv-Jl-Ek4"/>
                         <outlet property="descCheckbox" destination="WZ5-DB-Qvm" id="SES-P7-uv5"/>
                         <outlet property="descDashLabel" destination="8CR-Pj-PRL" id="Brq-UO-f10"/>
@@ -1755,7 +1780,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8FF225A6-CA76-4189-8F26-DFC13906C405" width="45" height="45">
+        <image name="ButtonBack_normal" width="24" height="24"/>
+        <image name="ButtonBack_pressed" width="24" height="24"/>
+        <image name="ButtonClose_normal" width="24" height="24"/>
+        <image name="ButtonClose_pressed" width="24" height="24"/>
+        <image name="ButtonConfirm_normal" width="24" height="24"/>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
+        <image name="ButtonLike_normal" width="24" height="24"/>
+        <image name="ButtonLike_pressed" width="24" height="24"/>
+        <image name="ButtonShare_normal" width="24" height="24"/>
+        <image name="ButtonShare_pressed" width="24" height="24"/>
+        <image name="DefaultIcon" width="1024" height="1024"/>
+        <image name="F74D0D29-21DB-4A0E-9069-2D28B2DEFBCB" width="45" height="45">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1941,18 +1978,6 @@ AMIA2QDbAN0pIykoKTMpPClPKVMpXilnKWwpdCl3KXwpiymPKZYpnimrKbApsim0KbkpwSnEKckp0SnU
 KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
 </mutableData>
         </image>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ButtonBack_pressed" width="24" height="24"/>
-        <image name="ButtonClose_normal" width="24" height="24"/>
-        <image name="ButtonClose_pressed" width="24" height="24"/>
-        <image name="ButtonConfirm_normal" width="24" height="24"/>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ButtonDownloadBig_pressed" width="44" height="44"/>
-        <image name="ButtonLike_normal" width="24" height="24"/>
-        <image name="ButtonLike_pressed" width="24" height="24"/>
-        <image name="ButtonShare_normal" width="24" height="24"/>
-        <image name="ButtonShare_pressed" width="24" height="24"/>
-        <image name="DefaultIcon" width="1024" height="1024"/>
         <image name="Navbar_mask" width="44" height="44"/>
         <image name="SettingClean" width="22" height="22"/>
         <image name="SettingCommend" width="22" height="22"/>
