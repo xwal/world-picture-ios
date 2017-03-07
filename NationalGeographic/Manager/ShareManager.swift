@@ -74,32 +74,7 @@ class ShareManager: NSObject {
         shareParams.ssdkSetupWeChatParams(byText: text, title: title, url: url, thumbImage: thumbImages, image: images, musicFileURL: nil, extInfo: nil, fileData: nil, emoticonData: nil, type: type, forPlatformSubType: .subTypeWechatSession)
         
         ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParams) { (state, platformType, userData, contentEntity, error, end) in
-            var msg = ""
-            switch state {
-            case .begin:
-                print("分享开始")
-                msg = "分享开始"
-            case .success:
-                print("分享成功")
-                msg = "分享成功"
-            case .fail:
-                print("授权失败,错误描述:\(error)")
-                msg = "授权失败,错误描述:\(error?.localizedDescription)"
-            case SSDKResponseState.cancel:
-                print("取消分享")
-                msg = "取消分享"
-            }
-            
-            if state != .begin {
-                
-                DispatchQueue.main.async {
-                    let keyWindow: UIWindow! = UIApplication.shared.keyWindow
-                    let hud = MBProgressHUD.showAdded(to: keyWindow, animated: true)
-                    hud.mode = .text
-                    hud.label.text = msg
-                    hud.hide(animated: true, afterDelay: 1)
-                }
-            }
+            showShareState(state: state, error: error)
         }
     }
     
@@ -119,32 +94,38 @@ class ShareManager: NSObject {
         
         //进行分享
         ShareSDK.share(platformType, parameters: shareParams) { (state, userData, contentEntity, error) in
-            var msg = ""
-            switch state {
-            case .begin:
-                print("分享开始")
-                msg = "分享开始"
-            case .success:
-                print("分享成功")
-                msg = "分享成功"
-            case .fail:
-                print("授权失败,错误描述:\(error)")
-                msg = "授权失败,错误描述:\(error?.localizedDescription)"
-            case SSDKResponseState.cancel:
-                print("取消分享")
-                msg = "取消分享"
-            }
-            
-            if state != .begin {
-                
-                DispatchQueue.main.async {
-                    let keyWindow: UIWindow! = UIApplication.shared.keyWindow
-                    let hud = MBProgressHUD.showAdded(to: keyWindow, animated: true)
-                    hud.mode = .text
-                    hud.label.text = msg
-                    hud.hide(animated: true, afterDelay: 1)
-                }
-            }
+            showShareState(state: state, error: error)
+        }
+    }
+    
+    private static func showShareState(state: SSDKResponseState, error: Error?) {
+        var msg = ""
+        switch state {
+        case .begin:
+            print("分享开始")
+            msg = "分享开始"
+        case .success:
+            print("分享成功")
+            msg = "分享成功"
+        case .fail:
+            print("授权失败,错误描述:\(error)")
+            msg = "授权失败,错误描述:\(error?.localizedDescription)"
+        case .cancel:
+            print("取消分享")
+            msg = "取消分享"
+        }
+        
+        let keyWindow: UIWindow! = UIApplication.shared.keyWindow
+        let hud = MBProgressHUD.showAdded(to: keyWindow, animated: true)
+        
+        if state == .begin {
+            hud.mode = .indeterminate
+            hud.label.text = "分享中..."
+        }
+        else {
+            hud.mode = .text
+            hud.label.text = msg
+            hud.hide(animated: true, afterDelay: 1)
         }
     }
 

@@ -58,6 +58,7 @@
 		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
+		D680F02F1E69AE5300F8458A /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = D680F02E1E69AE5300F8458A /* notification.caf */; };
 		D689981E1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */; };
 		D68998211E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689981F1E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift */; };
 		D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */; };
@@ -192,6 +193,7 @@
 		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
+		D680F02E1E69AE5300F8458A /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperPageViewController.swift; sourceTree = "<group>"; };
 		D689981F1E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryCell.swift; sourceTree = "<group>"; };
 		D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryCell.xib; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 		D67AE0411DDB486E00DBC7AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D680F02E1E69AE5300F8458A /* notification.caf */,
 				D67AE0651DDB486E00DBC7AE /* jianjie.css */,
 				D6464F421DEEB33100A3CD03 /* dili.xcassets */,
 				D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */,
@@ -647,6 +650,7 @@
 				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
 				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,
 				D6CC7EBB1E03F5A100F25176 /* English_Speech_Female.dat in Resources */,
+				D680F02F1E69AE5300F8458A /* notification.caf in Resources */,
 				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
 				D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */,
 				D6CC7EBC1E03F5A100F25176 /* English_Speech_Male.dat in Resources */,

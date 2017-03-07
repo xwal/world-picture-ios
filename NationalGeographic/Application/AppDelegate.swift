@@ -14,6 +14,8 @@ import UserNotifications
 import IQKeyboardManagerSwift
 import DateTools
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
 
@@ -63,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             UserDefaults.standard.set(true, forKey: NGPHasLaunchedKey)
             SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
         }
-        
+
         setupUserNotification()
         
         IQKeyboardManager.sharedManager().enable = true
@@ -71,11 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 处理本地通知
         if let localNotification = launchOptions?[.localNotification] as? UILocalNotification {
             if localNotification.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: {
-                    self.showTodayWallpaper()
-                })
+                self.showTodayWallpaper()
             }
         }
+        
+        updateAppVersion()
         
         return true
     }
@@ -108,9 +110,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let content = UNMutableNotificationContent()
             content.title = "每日壁纸"
             content.body = "今日壁纸已经为您准备好！"
+            content.sound = UNNotificationSound(named: "notification.caf")
             
             // 2. 创建发送触发
-            let dateComponents = DateComponents(hour: 10)
+            let dateComponents = DateComponents(hour: 9)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             
             // 3. 发送请求标识符
@@ -131,21 +134,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             if let localNotifications = UIApplication.shared.scheduledLocalNotifications {
                 for local in localNotifications {
                     if local.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
-                        return
+                        UIApplication.shared.cancelLocalNotification(local)
+                        break
                     }
                 }
             }
-
-            UIApplication.shared.cancelAllLocalNotifications()
             
             let localNotify = UILocalNotification()
             
-            let components = DateComponents(calendar: Calendar.current, hour: 10)
+            let components = DateComponents(calendar: Calendar.current, hour: 9)
             if let fireDate = components.date {
                 print(fireDate)
                 localNotify.fireDate = fireDate
             }
             
+            localNotify.soundName = "notification.caf"
             localNotify.repeatInterval = .day
             localNotify.applicationIconBadgeNumber += 1
             localNotify.alertBody = "今日壁纸已经为您准备好！"
@@ -167,9 +170,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.notification.request.identifier == TodayWallpaperLocalNotificationIdentifier {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: { 
-                self.showTodayWallpaper()
-            })
+            self.showTodayWallpaper()
         }
         completionHandler()
     }
@@ -262,6 +263,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if shortcutItem.type == "TodayWallpaper" {
             self.showTodayWallpaper()
         }
+    }
+    
+    func updateAppVersion() {
+        
+        let reminderDate = UserDefaults.standard.double(forKey: NGPVersionReminderDateKey)
+        let nowDate = Date().timeIntervalSince1970
+        if nowDate - reminderDate < NGPThreeDaySeconds  {
+            return
+        }
+        
+        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1178885979").responseJSON { (response) in
+            if let data = response.result.value {
+                
+                let json = JSON(data)
+                let itunesVersion = json["results"][0]["version"].stringValue
+                
+                let appVersion = JSON(Bundle.main.infoDictionary!)["CFBundleShortVersionString"].stringValue
+                
+                if itunesVersion == appVersion {
+                    return
+                }
+                
+                let notes = json["results"][0]["releaseNotes"].string
+                let url = json["results"][0]["trackViewUrl"].stringValue
+                
+                let alert = UIAlertController(title: "新版本升级", message: notes, preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "暂不升级", style: .cancel, handler: { (action) in
+                    UserDefaults.standard.set(nowDate, forKey: NGPVersionReminderDateKey)
+                    UserDefaults.standard.synchronize()
+                })
+                
+                let okAction = UIAlertAction(title: "马上体验", style: .default, handler: { (action) in
+                    UIApplication.shared.openURL(URL(string: url)!)
+                })
+                
+                alert.addAction(cancelAction)
+                alert.addAction(okAction)
+                
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
+        }
+        
     }
 }
 
