@@ -41,8 +41,7 @@ class SettingViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         ImageCache.default.calculateDiskCacheSize { (imageDiskCacheSize) in
-            let totalCacheSize = imageDiskCacheSize + UInt(URLCache.shared.currentDiskUsage)
-            self.cacheSizeLabel.text = String(format: "%.2f", (Double(totalCacheSize) / 1024 / 1024)) + "M"
+            self.cacheSizeLabel.text = String(format: "%.2f", (Double(imageDiskCacheSize) / 1024 / 1024)) + "M"
         }
         
         enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
@@ -72,7 +71,6 @@ class SettingViewController: UITableViewController {
             self.cacheSizeLabel.text = "0.0M"
             ImageCache.default.clearDiskCache()
             ImageCache.default.clearMemoryCache()
-            URLCache.shared.removeAllCachedResponses()
         }
     }
 

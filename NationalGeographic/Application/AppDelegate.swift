@@ -24,16 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
-    func openLog(_ isOpen: Bool) {
-        if isOpen {
-            print("===========================")
-            // 打印 Bundle 路径
-            print("bundle url: \(Bundle.main.bundleURL)")
-            // 沙盒路径
-            print("sandbox url: \(UIApplication.shared.documentsURL)")
-        }
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         openLog(true)
@@ -41,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // URL Cahche
         URLCache.shared.diskCapacity = 100 * 1024 * 1024 // 100M
         URLCache.shared.memoryCapacity = 100 * 1024 * 1024 // 100M
+        
+        // 第三方服务
         
         // Enable Crash Reporting
         AVOSCloudCrashReporting.enable()
@@ -51,24 +43,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 分享平台设置
         ShareManager.setupShareSDK()
         
+        // 百度语音配置
+        SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
+        
+        // 键盘输入
+        IQKeyboardManager.sharedManager().enable = true
+        
+        
+        // App 设置
+        
         // 设置样式
         setupAppearance()
         
-        // 讯飞语音配置
-        //setupFlySpeech()
+        // 设置HandOff
+        setupUserActivity()
         
-        // 百度语音配置
-        SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
-        let hasLaunched = UserDefaults.standard.bool(forKey: NGPHasLaunchedKey)
+        // 启动检测
+        checkLaunchState()
         
-        if !hasLaunched {
-            UserDefaults.standard.set(true, forKey: NGPHasLaunchedKey)
-            SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
-        }
-
+        // 设置通知
         setupUserNotification()
         
-        IQKeyboardManager.sharedManager().enable = true
+        // 更新版本
+        updateAppVersion()
         
         // 处理本地通知
         if let localNotification = launchOptions?[.localNotification] as? UILocalNotification {
@@ -77,9 +74,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         
-        updateAppVersion()
-        
         return true
+    }
+    
+    func checkLaunchState() {
+        let hasLaunched = UserDefaults.standard.bool(forKey: NGPHasLaunchedKey)
+        
+        if !hasLaunched {
+            UserDefaults.standard.set(true, forKey: NGPHasLaunchedKey)
+            SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
+        }
+    }
+    
+    func setupUserActivity() {
+        userActivity = NSUserActivity(activityType: "me.chaosky.NGP.OpenSafari")
+        userActivity?.title = "Chaosky 博客"
+        userActivity?.becomeCurrent()
+        userActivity?.webpageURL = URL(string: "http://chaosky.me")
+    }
+    
+    func openLog(_ isOpen: Bool) {
+        if isOpen {
+            print("===========================")
+            // 打印 Bundle 路径
+            print("bundle url: \(Bundle.main.bundleURL)")
+            // 沙盒路径
+            print("sandbox url: \(UIApplication.shared.documentsURL)")
+        }
     }
     
     func setupUserNotification() {

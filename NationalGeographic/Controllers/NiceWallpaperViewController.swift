@@ -117,7 +117,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             self.currentTime = 0
             self.requestNiceWallpaperList(time: self.currentTime)
         })
-        header?.arrowView.image = UIImage(named: "whiteArrow")
+        header?.stateLabel.textColor = UIColor.white
         header?.stateLabel.isHidden = true
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white
