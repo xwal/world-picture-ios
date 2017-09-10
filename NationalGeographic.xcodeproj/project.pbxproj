@@ -82,7 +82,6 @@
 		D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */; };
 		D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */; };
 		D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */; };
-		D6CB45621E08BA3000AB8720 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */; };
 		D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */; };
 		D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EAF1E03F5A100F25176 /* .gitignore */; };
 		D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */; };
@@ -216,7 +215,6 @@
 		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; };
 		D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryImageCell.xib; sourceTree = "<group>"; };
 		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
 		D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
 		D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
@@ -441,7 +439,6 @@
 				D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */,
 				D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */,
 				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
-				D6CB45611E08BA3000AB8720 /* FeedbackViewController.swift */,
 				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
 			);
 			path = Controllers;
@@ -724,7 +721,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		84329E41871911015E6DDE2F /* [CP] Check Pods Manifest.lock */ = {
@@ -739,7 +736,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */ = {
@@ -808,7 +805,6 @@
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */,
 				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,
-				D6CB45621E08BA3000AB8720 /* FeedbackViewController.swift in Sources */,
 				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
 				D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */,
 				D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */,
@@ -982,7 +978,7 @@
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1016,7 +1012,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J87E7K5QJK;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

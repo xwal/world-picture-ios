@@ -50,6 +50,8 @@ class AlbumListViewController: UITableViewController {
         })
         header?.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
         header?.arrowView.image = UIImage(named: "blueArrow")
+        header?.stateLabel.isHidden = true
+        header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white
         tableView.mj_header = header
         

@@ -8,10 +8,11 @@
 
 import UIKit
 import Kingfisher
+import MBProgressHUD
+
 class SettingViewController: UITableViewController {
 
     @IBOutlet weak var versionLabel: UILabel!
-    @IBOutlet weak var cacheSizeLabel: UILabel!
     
     @IBOutlet weak var enableVoiceSwitch: UISwitch!
     
@@ -40,9 +41,6 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ImageCache.default.calculateDiskCacheSize { (imageDiskCacheSize) in
-            self.cacheSizeLabel.text = String(format: "%.2f", (Double(imageDiskCacheSize) / 1024 / 1024)) + "M"
-        }
         
         enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
     }
@@ -62,15 +60,25 @@ class SettingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
             if let itunesURL = URL(string: "https://itunes.apple.com/us/app/shi-jie-de-li-hua-bao/id1178885979?l=zh&ls=1&mt=8") {
                 UIApplication.shared.openURL(itunesURL)
             }
         }
-        else if indexPath.row == 3 {
-            self.cacheSizeLabel.text = "0.0M"
-            ImageCache.default.clearDiskCache()
-            ImageCache.default.clearMemoryCache()
+        else if indexPath.row == 2 {
+            let alertView = UIAlertController(title: nil, message: "清除缓存", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
+                alertView.dismiss(animated: true, completion: nil)
+            })
+            
+            let okAction = UIAlertAction(title: "确定", style: .default, handler: { (action) in
+                ImageCache.default.clearMemoryCache()
+                ImageCache.default.clearDiskCache()
+            })
+            alertView.addAction(cancelAction)
+            alertView.addAction(okAction)
+            
+            self.present(alertView, animated: true, completion: nil)
         }
     }
 

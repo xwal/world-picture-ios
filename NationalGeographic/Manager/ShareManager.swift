@@ -12,26 +12,24 @@ import MBProgressHUD
 class ShareManager: NSObject {
     
     static func setupShareSDK() {
-        
-        ShareSDK.registerApp("192269c5c1100", activePlatforms:[
+        ShareSDK.registerActivePlatforms([
             SSDKPlatformType.typeSinaWeibo.rawValue,
             SSDKPlatformType.typeWechat.rawValue,
             SSDKPlatformType.typeQQ.rawValue,
             SSDKPlatformType.typeMail.rawValue,
-            SSDKPlatformType.typeSMS.rawValue],
-                             onImport: { (platform : SSDKPlatformType) in
-                                switch platform
-                                {
-                                case .typeSinaWeibo:
-                                    ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
-                                case .typeWechat:
-                                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-                                case .typeQQ:
-                                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
-                                default:
-                                    break
-                                }
-                                
+            SSDKPlatformType.typeSMS.rawValue], onImport: { (platform : SSDKPlatformType) in
+                switch platform
+                {
+                case .typeSinaWeibo:
+                    ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
+                case .typeWechat:
+                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+                case .typeQQ:
+                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
+                default:
+                    break
+                }
+                
         }) { (platform : SSDKPlatformType, appInfo : NSMutableDictionary?) in
             
             switch platform
@@ -113,6 +111,8 @@ class ShareManager: NSObject {
         case .cancel:
             print("取消分享")
             msg = "取消分享"
+        default:
+            break
         }
         
         let keyWindow: UIWindow! = UIApplication.shared.keyWindow

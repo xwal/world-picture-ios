@@ -9,21 +9,50 @@
 import UIKit
 import YYCategories
 import AVOSCloud
-import AVOSCloudCrashReporting
 import UserNotifications
 import IQKeyboardManagerSwift
 import DateTools
 import AVFoundation
 import Alamofire
 import SwiftyJSON
+import StoreKit
 
 private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
+private let kAppLaunchTime = "AppLaunchTime"
+private let kLastVersion = "LastVersion"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    
+    private var _appLaunchCount: Int = -1
+    
+    var appLaunchCount: Int {
+        get {
+            if (_appLaunchCount < 0) {
+                _appLaunchCount = UserDefaults.standard.integer(forKey: kAppLaunchTime)
+            }
+            return _appLaunchCount
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: kAppLaunchTime)
+        }
+    }
+    
+    lazy var isNewVersionLaunch: Bool = {
+        let lastVersion = UserDefaults.standard.string(forKey: kLastVersion)
+        let infoDict = Bundle.main.infoDictionary
+        let currentVersion = infoDict?["CFBundleShortVersionString"] as? String
+        let isNewVersionLaunch = lastVersion != currentVersion
+        if isNewVersionLaunch {
+            self.appLaunchCount = 1
+            UserDefaults.standard.set(currentVersion, forKey: kLastVersion)
+        }
+        return isNewVersionLaunch
+    }()
+    
+    // MARK: Life Cycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         openLog(true)
@@ -34,8 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // 第三方服务
         
-        // Enable Crash Reporting
-        AVOSCloudCrashReporting.enable()
+        // Bugly
+        Bugly.start(withAppId: "7baefa5def")
         
         // Setup AVOSCloud
         AVOSCloud.setApplicationId("sP1qfVdFjg7uN3L9IvKqK3xT-gzGzoHsz", clientKey: "XhuPONcLKvAjdDVpeF9jst3j")
@@ -72,6 +101,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             if localNotification.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
                 self.showTodayWallpaper()
             }
+        }
+        
+        _ = self.isNewVersionLaunch
+        
+        self.appLaunchCount += 1
+        
+        if #available(iOS 10.3, *), self.appLaunchCount > 5 {
+            SKStoreReviewController.requestReview()
         }
         
         return true

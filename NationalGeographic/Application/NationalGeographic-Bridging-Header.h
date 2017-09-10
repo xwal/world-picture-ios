@@ -20,3 +20,5 @@
 #import "BDSSpeechSynthesizer.h"
 
 #import "CSMParallaxCell.h"
+
+#import <Bugly/Bugly.h>

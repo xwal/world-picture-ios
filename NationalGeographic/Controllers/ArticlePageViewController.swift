@@ -12,6 +12,8 @@ class ArticlePageViewController: UIPageViewController, UIPageViewControllerDataS
     
     var selectedIndex = 0
     var articleModelArray = [PictorialArticleModel]()
+    
+    let progressView = UIProgressView(progressViewStyle: .default)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,11 @@ class ArticlePageViewController: UIPageViewController, UIPageViewControllerDataS
             self.dismiss(animated: true, completion: nil)
         }
         self.view.addGestureRecognizer(tapGesture)
+        
+        progressView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 5)
+        self.view.addSubview(progressView)
+        
+        progressView.progress = Float(selectedIndex + 1) / Float(articleModelArray.count)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -79,6 +86,14 @@ class ArticlePageViewController: UIPageViewController, UIPageViewControllerDataS
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return nextArticleDetail(for: viewController as! ArticleDetailViewController, before: false)
+    }
+    
+    // MARK: - UIPageViewControllerDelegate
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let visiableVC = pageViewController.viewControllers?.first as? ArticleDetailViewController {
+            selectedIndex = articleModelArray.index(of: visiableVC.articleModel)!
+            progressView.setProgress(Float(selectedIndex + 1) / Float(articleModelArray.count), animated: true)
+        }
     }
 
 }
