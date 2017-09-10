@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         self.appLaunchCount += 1
         
-        if #available(iOS 10.3, *), self.appLaunchCount > 5 {
+        if #available(iOS 10.3, *), self.appLaunchCount == 10 {
             SKStoreReviewController.requestReview()
         }
         

@@ -48,7 +48,7 @@ class NiceWallpaperCell: MMParallaxCell {
     
     func updateViews() {
         if let imageURL = model.image_url {
-            self.parallaxImage.kf.setImage(with: URL(string: "\(imageBaseUrl)\(imageURL)"), options: [.transition(.fade(1))])
+            self.parallaxImage.kf.setImage(with: URL(string: "\(imageBaseUrl)\(imageURL)"), options: [.transition(.fade(0.5))])
         }
         upTimesLabel.text = "\(model.up_times)"
         userNameLabel.text = model.photo_user?.user_name ?? ""

@@ -21,7 +21,7 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
 
         // Do any additional setup after loading the view.
         if let url = pictureModel.thumb {
-            imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(1))])
+            imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(0.5))])
         }
     }
     

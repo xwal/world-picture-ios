@@ -29,7 +29,7 @@ class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.maximumZoomScale = 2
         
         if let url = wallpaperModel.ios_wallpaper_url {
-            imageView.kf.setImage(with: URL(string: url), options: [.transition(.fade(1))])
+            imageView.kf.setImage(with: URL(string: url), options: [.transition(.fade(0.5))])
         }
     }
     

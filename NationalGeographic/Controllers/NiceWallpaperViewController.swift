@@ -238,7 +238,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataSourceArray[indexPath.row]
-        self.backgroundImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(model.image_url ?? "")"), options: [.transition(.fade(1))])
+        self.backgroundImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(model.image_url ?? "")"), options: [.transition(.fade(0.5))])
 
         guard let niceWallpaperDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperDetailViewController") as? NiceWallpaperDetailViewController else {
             return

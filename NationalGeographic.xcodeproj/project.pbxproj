@@ -190,7 +190,7 @@
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
 		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
-		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AlbumCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
 		D680F02E1E69AE5300F8458A /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperPageViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryCell.xib; sourceTree = "<group>"; };
 		D68998251E4C663F0087AC3A /* CSMParallaxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMParallaxCell.h; sourceTree = "<group>"; };
 		D68998261E4C663F0087AC3A /* CSMParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMParallaxCell.m; sourceTree = "<group>"; };
-		D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperImageListViewController.swift; sourceTree = "<group>"; };
+		D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperImageListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryImageListModel.swift; sourceTree = "<group>"; };
 		D691DCE11DE281A300F885FE /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		D69AC8F21E4C1252001B0992 /* NGPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGPAPI.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
-		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; };
+		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryImageCell.xib; sourceTree = "<group>"; };
 		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };

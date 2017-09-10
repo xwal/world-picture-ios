@@ -199,7 +199,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
         
         self.scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
-        wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(1))])
+        wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(0.5))])
         
         let offsetX = (imageWidth - screenBounds.width) / 2
         self.scrollView.contentOffset = CGPoint(x: offsetX, y: 0)

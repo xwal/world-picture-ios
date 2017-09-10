@@ -23,7 +23,7 @@ class ArticlePhotosCell: UITableViewCell {
                 self.contentView.addSubview(leftImageView)
                 
                 let leftPhotoModel = photos[index]
-                leftImageView.kf.setImage(with: URL(string: leftPhotoModel.image_url!), options: [.transition(.fade(1))])
+                leftImageView.kf.setImage(with: URL(string: leftPhotoModel.image_url!), options: [.transition(.fade(0.5))])
                 leftImageView.snp.makeConstraints({ (maker) in
                     maker.width.equalTo(leftImageView.snp.height).multipliedBy(Float(leftPhotoModel.image_width) / Float(leftPhotoModel.image_height))
                     
@@ -52,7 +52,7 @@ class ArticlePhotosCell: UITableViewCell {
                 
                 if index + 1 < photos.count {
                     let rightPhotoModel = photos[index + 1]
-                    rightImageView.kf.setImage(with: URL(string: rightPhotoModel.image_url!),options: [.transition(.fade(1))])
+                    rightImageView.kf.setImage(with: URL(string: rightPhotoModel.image_url!),options: [.transition(.fade(0.5))])
                 }
                 else {
                     rightImageView.isHidden = true

@@ -123,7 +123,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         destinationLabel.text = "每日壁纸 — \(todayPictorialModel.destination ?? "")"
         
         if let imageURL = todayPictorialModel.ios_wallpaper_url {
-            wallpaperImageView.kf.setImage(with: URL(string: imageURL), options: [.transition(.fade(1))])
+            wallpaperImageView.kf.setImage(with: URL(string: imageURL), options: [.transition(.fade(0.5))])
         }
     }
     
@@ -138,7 +138,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        completionHandler(NCUpdateResult.noData)
+        completionHandler(NCUpdateResult.newData)
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {

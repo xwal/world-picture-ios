@@ -60,7 +60,7 @@ class EasyView: UIView, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EasyCell
         cell.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
         let model = articles[indexPath.row]
-        cell.easyImageView.kf.setImage(with: URL(string: model.image_url!), placeholder: Image(named: "ArticleCellPlaceholder"), options: [.transition(.fade(1))])
+        cell.easyImageView.kf.setImage(with: URL(string: model.image_url!), placeholder: Image(named: "ArticleCellPlaceholder"), options: [.transition(.fade(0.5))])
         return cell
     }
     
