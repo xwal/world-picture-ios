@@ -11,16 +11,21 @@ import Alamofire
 import YYCategories
 import MBProgressHUD
 
-class TodayPictorialPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class TodayPictorialPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var todayPictorialModel: TodayPictorialModel!
     
     var pictorialVCs = [UIViewController]()
     
+    let progressView = UIProgressView(progressViewStyle: .default)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(hexString: "2D363A")
+        
+        progressView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 5)
+        self.view.addSubview(progressView)
 
         // Do any additional setup after loading the view.
         requestTodayPictorial()
@@ -101,6 +106,7 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         pictorialVCs.removeAll()
         
         self.dataSource = self
+        self.delegate = self
         
         let todayWallPaperVC = self.storyboard?.instantiateViewController(withIdentifier: "TodayWallpaperViewController") as! TodayWallpaperViewController
         todayWallPaperVC.wallpapperModel = self.todayPictorialModel
@@ -115,7 +121,7 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
             }
         }
         
-        
+        progressView.progress = Float(1) / Float(pictorialVCs.count)
         
         self.setViewControllers([todayWallPaperVC], direction: .forward, animated: false, completion: nil)
     }
@@ -134,6 +140,15 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         let afterIndex = currentIndex + 1
         
         return afterIndex >= self.pictorialVCs.count ? nil : self.pictorialVCs[afterIndex]
+    }
+    
+    // MARK: - UIPageViewControllerDelegate
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let visiableVC = pageViewController.viewControllers?.first {
+            if let currentIndex = self.pictorialVCs.index(of: visiableVC) {
+                progressView.setProgress(Float(currentIndex + 1) / Float(pictorialVCs.count), animated: true)
+            }
+        }
     }
 
 }

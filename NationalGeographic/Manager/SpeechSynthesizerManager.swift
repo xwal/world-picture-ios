@@ -46,11 +46,13 @@ class SpeechSynthesizerManager: NSObject {
         
         if isEnabled && sentence != nil {
             // 开始合成并播放
-            var error: NSError? = nil
-            BDSSpeechSynthesizer.sharedInstance().speakSentence(sentence, withError: &error)
-            
-            if error != nil {
-                print("错误：\(error?.code) 描述：\(error?.localizedDescription)")
+            for subSentence in sentence.components(separatedBy: "\n") {
+                var error: NSError? = nil
+                BDSSpeechSynthesizer.sharedInstance().speakSentence(subSentence, withError: &error)
+                
+                if let error = error {
+                    print("错误：\(error.code) 描述：\(error.localizedDescription)")
+                }
             }
         }
     }
