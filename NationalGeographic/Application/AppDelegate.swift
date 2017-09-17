@@ -16,6 +16,9 @@ import AVFoundation
 import Alamofire
 import SwiftyJSON
 import StoreKit
+#if DEBUG
+import FLEX
+#endif
 
 private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
 private let kAppLaunchTime = "AppLaunchTime"
@@ -111,6 +114,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             SKStoreReviewController.requestReview()
         }
         
+        #if DEBUG
+            let flexTapGesture = UITapGestureRecognizer(actionBlock: { sender in
+                
+                if let gesture = sender as? UITapGestureRecognizer{
+                    if gesture.state == .recognized {
+                        FLEXManager.shared().showExplorer()
+                    }
+                }
+            })
+            flexTapGesture.numberOfTouchesRequired = 3
+            self.window?.addGestureRecognizer(flexTapGesture)
+        #endif
         return true
     }
     

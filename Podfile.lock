@@ -7,6 +7,7 @@ PODS:
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
   - DateTools (2.0.0)
   - FDFullscreenPopGesture (1.1)
+  - FLEX (2.4.0)
   - IQKeyboardManagerSwift (4.0.13)
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - DateTools
   - FDFullscreenPopGesture
+  - FLEX (~> 2.0)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 3.2.1)
   - KVNProgress
@@ -122,6 +124,7 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
@@ -144,6 +147,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 77700593c54c8ac16b13e57fa1b21dc9a316c601
+PODFILE CHECKSUM: 2a966d920e3a70baf6a5b67273a657ee85741307
 
 COCOAPODS: 1.2.1

@@ -53,8 +53,9 @@ class ShareManager: NSObject {
             default:
                 break
             }
-            
+            UnsafePointer
         }
+        SSUIShareActionSheetStyle.setShareActionSheetStyle(.simple)
     }
     
     static func shareActionSheet(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto) {

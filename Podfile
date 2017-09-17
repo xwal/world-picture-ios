@@ -16,6 +16,7 @@ target 'NationalGeographic' do
   pod 'KVNProgress'
   pod 'SnapKit'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+  pod 'FLEX', '~> 2.0', :configurations => ['Debug']
   pod 'ZCAnimatedLabel'
   pod 'MMParallaxCell'
   pod 'IQKeyboardManagerSwift'

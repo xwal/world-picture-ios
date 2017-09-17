@@ -5,6 +5,7 @@
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
+#import <ShareSDKUI/SSUIShareActionSheetStyle.h>
 
 //腾讯SDK头文件
 #import <TencentOpenAPI/TencentOAuth.h>
