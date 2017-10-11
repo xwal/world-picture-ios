@@ -133,7 +133,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         self.navigationItem.leftBarButtonItem = leftBarItem
     }
     
-    func clickCategoryButton(sender: UIButton) {
+    @objc func clickCategoryButton(sender: UIButton) {
         
         if let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperCategoryViewController") {
             self.navigationController?.pushViewController(categoryVC, animated: true)

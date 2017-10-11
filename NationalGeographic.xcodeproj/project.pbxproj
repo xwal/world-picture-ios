@@ -13,6 +13,8 @@
 		D60615361DE28F5100C4000F /* EasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615351DE28F5100C4000F /* EasyView.swift */; };
 		D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
 		D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
+		D61210701F8BC59500FD1A68 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */; };
+		D61210711F8BC6AA00FD1A68 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */; };
 		D61663741DE7256100D9C897 /* String_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61663731DE7256100D9C897 /* String_NGP.swift */; };
 		D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61FB38F1DEEC171006E2962 /* Launch Screen.storyboard */; };
 		D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */; };
@@ -28,12 +30,10 @@
 		D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
 		D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
 		D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
-		D63B1F8B1DFEA307000B9276 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
 		D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
 		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
-		D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2091DE0537A0043D785 /* WallpaperModel.swift */; };
 		D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
 		D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */; };
 		D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */; };
@@ -77,6 +77,7 @@
 		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
 		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
 		D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */; };
+		D6BE21651F8E5421002AB59A /* UnsplashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE21641F8E5421002AB59A /* UnsplashModel.m */; };
 		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
 		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */; };
@@ -148,6 +149,7 @@
 		D60C21D71DDB0B5D00375E8B /* NationalGeographic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationalGeographic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C21E11DDB0B5D00375E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60C21E61DDB0B5D00375E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
 		D61663731DE7256100D9C897 /* String_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_NGP.swift; sourceTree = "<group>"; };
 		D61FB3901DEEC171006E2962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPageViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +168,6 @@
 		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
-		D63ED2091DE0537A0043D785 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
 		D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialModel.swift; sourceTree = "<group>"; };
 		D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialPageViewController.swift; sourceTree = "<group>"; };
 		D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TodayWallpaperViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -211,6 +212,8 @@
 		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
 		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D6BE21631F8E5421002AB59A /* UnsplashModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnsplashModel.h; sourceTree = "<group>"; };
+		D6BE21641F8E5421002AB59A /* UnsplashModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnsplashModel.m; sourceTree = "<group>"; };
 		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryImageCell.xib; sourceTree = "<group>"; };
@@ -447,15 +450,17 @@
 		D6AA8A9E1DDB3F6C00032800 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */,
 				D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */,
 				D66052091DDB666000ADDF34 /* PictureListModel.swift */,
-				D63ED2091DE0537A0043D785 /* WallpaperModel.swift */,
 				D606153B1DE2949500C4000F /* PictorialModel.swift */,
 				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
 				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
 				D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */,
 				D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */,
 				D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */,
+				D6BE21631F8E5421002AB59A /* UnsplashModel.h */,
+				D6BE21641F8E5421002AB59A /* UnsplashModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -588,12 +593,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = ChaosVoid;
 				TargetAttributes = {
 					D60C21D61DDB0B5C00375E8B = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = J87E7K5QJK;
+						DevelopmentTeam = 3C5F74LTDA;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -607,11 +612,11 @@
 					};
 					D63B1F741DFE9F72000B9276 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = J87E7K5QJK;
+						DevelopmentTeam = 3C5F74LTDA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -764,6 +769,7 @@
 				D69AC8F81E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift in Sources */,
 				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
 				D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */,
+				D6BE21651F8E5421002AB59A /* UnsplashModel.m in Sources */,
 				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
 				D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */,
 				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
@@ -791,7 +797,6 @@
 				D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */,
 				D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */,
 				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
-				D63ED20A1DE0537A0043D785 /* WallpaperModel.swift in Sources */,
 				D646C9F81DE2DE12007C9D40 /* ArticleFooterCell.swift in Sources */,
 				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,
 				D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */,
@@ -802,6 +807,7 @@
 				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
 				D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */,
 				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
+				D61210701F8BC59500FD1A68 /* WallpaperModel.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */,
 				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,
@@ -825,10 +831,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */,
-				D63B1F8B1DFEA307000B9276 /* WallpaperModel.swift in Sources */,
 				D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */,
 				D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */,
 				D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */,
+				D61210711F8BC6AA00FD1A68 /* WallpaperModel.swift in Sources */,
 				D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,7 +889,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -891,7 +899,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -934,7 +946,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -942,7 +956,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -978,7 +996,7 @@
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -992,13 +1010,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -1012,7 +1030,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = J87E7K5QJK;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1026,12 +1044,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
@@ -1042,17 +1060,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1062,17 +1080,17 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.NGP.TodayWallpaperWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

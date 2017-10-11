@@ -11,42 +11,42 @@ import YYModel
 
 class AlbumListModel: NSObject, YYModel {
     
-    var pagecount: String?
+    @objc var pagecount: String?
     
-    var album: [AlbumModel]?
+    @objc var album: [AlbumModel]?
     
-    var total: String?
+    @objc var total: String?
     
-    var page: String?
+    @objc var page: String?
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["album": AlbumModel.self]
     }
 }
 
 class AlbumModel: NSObject {
     
-    var id: String?
+    @objc var id: String?
     
-    var timingpublish: String?
+    @objc var timingpublish: String?
     
-    var addtime: String?
+    @objc var addtime: String?
     
-    var url: String?
+    @objc var url: String?
     
-    var adshow: String?
+    @objc var adshow: String?
     
-    var title: String?
+    @objc var title: String?
     
-    var timing: String?
+    @objc var timing: String?
     
-    var fabu: String?
+    @objc var fabu: String?
     
-    var encoded: String?
+    @objc var encoded: String?
     
-    var amd5: String?
+    @objc var amd5: String?
     
-    var sort: String?
+    @objc var sort: String?
     
-    var ds: String?
+    @objc var ds: String?
 }

@@ -11,22 +11,22 @@ import YYModel
 
 class NiceWallpaperCategoryImageListModel: NSObject {
 
-    var result: Int = 0
+    @objc var result: Int = 0
 
-    var data: NWCILDataModel?
+    @objc var data: NWCILDataModel?
 
-    var reason: String?
+    @objc var reason: String?
     
 }
 class NWCILDataModel: NSObject, YYModel {
 
-    var images: [NWCILImageModel]?
+    @objc var images: [NWCILImageModel]?
 
-    var base_url: String?
+    @objc var base_url: String?
 
-    var has_next: Bool = false
+    @objc var has_next: Bool = false
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["images": NWCILImageModel.self]
     }
 
@@ -34,35 +34,35 @@ class NWCILDataModel: NSObject, YYModel {
 
 class NWCILImageModel: NSObject, YYModel {
 
-    var desc: String?
+    @objc var desc: String?
 
-    var view_times: Int = 0
+    @objc var view_times: Int = 0
 
-    var origin_image_url: String?
+    @objc var origin_image_url: String?
 
-    var publish_at: Int = 0
+    @objc var publish_at: Int = 0
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var word: String?
+    @objc var word: String?
 
-    var created_at: String?
+    @objc var created_at: String?
 
-    var tags: [String]?
+    @objc var tags: [String]?
 
-    var width: String?
+    @objc var width: String?
 
-    var image_url: String?
+    @objc var image_url: String?
 
-    var height: String?
+    @objc var height: String?
 
-    var desc_user: NWCILDescUserModel?
+    @objc var desc_user: NWCILDescUserModel?
 
-    var up_times: Int = 0
+    @objc var up_times: Int = 0
 
-    var photo_user: NWCILPhotoUserModel?
+    @objc var photo_user: NWCILPhotoUserModel?
     
-    static func modelCustomPropertyMapper() -> [String : Any]? {
+    @objc static func modelCustomPropertyMapper() -> [String : Any]? {
         return ["description": "desc"]
     }
 
@@ -70,23 +70,23 @@ class NWCILImageModel: NSObject, YYModel {
 
 class NWCILDescUserModel: NSObject {
 
-    var user_id: Int = 0
+    @objc var user_id: Int = 0
 
-    var user_photo: String?
+    @objc var user_photo: String?
 
-    var user_name: String?
+    @objc var user_name: String?
 
 }
 
 class NWCILPhotoUserModel: NSObject {
 
-    var user_id: Int = 0
+    @objc var user_id: Int = 0
 
-    var user_photo: String?
+    @objc var user_photo: String?
 
-    var user_link: String?
+    @objc var user_link: String?
 
-    var user_name: String?
+    @objc var user_name: String?
 
 }
 

@@ -13,18 +13,11 @@ class WallpaperCell: UICollectionViewCell {
     
     @IBOutlet weak var wallpaperImageView: UIImageView!
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var publishDateLabel: UILabel!
-    
-    var model: WallpaperModel! {
+    var model: UnsplashModel! {
         didSet {
-            if let imageUrl = model.ios_wallpaper_url {
-                wallpaperImageView.kf.setImage(with: URL(string: imageUrl), options: [.transition(.fade(0.5))])
+            if let imageUrl = model.full_url {
+                wallpaperImageView.kf.setImage(with: URL(string: imageUrl.appending("?imageView2/2/w/750/h/512")), placeholder:#imageLiteral(resourceName: "unsplash_default"), options: [.transition(.fade(0.5))])
             }
-            publishDateLabel.text = model.publish_date
-            
-            titleLabel.text = model.title
         }
     }
 }

@@ -53,7 +53,6 @@ class ShareManager: NSObject {
             default:
                 break
             }
-            UnsafePointer
         }
         SSUIShareActionSheetStyle.setShareActionSheetStyle(.simple)
     }

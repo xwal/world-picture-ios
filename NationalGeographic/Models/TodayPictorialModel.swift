@@ -10,9 +10,9 @@ import UIKit
 import YYModel
 
 class TodayPictorialModel: WallpaperModel, YYModel {
-    var articles: [PictorialArticleModel]?
+    @objc var articles: [PictorialArticleModel]?
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["articles": PictorialArticleModel.self]
     }
 }

@@ -70,7 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Bugly.start(withAppId: "7baefa5def")
         
         // Setup AVOSCloud
-        AVOSCloud.setApplicationId("sP1qfVdFjg7uN3L9IvKqK3xT-gzGzoHsz", clientKey: "XhuPONcLKvAjdDVpeF9jst3j")
+        UnsplashModel.registerSubclass()
+        AVOSCloud.setApplicationId("grSsdRxfR1hTUSdSwnOwGLdB", clientKey: "kpmFqpw5azg03HN7vcyGt8KG")
                 
         // 分享平台设置
         ShareManager.setupShareSDK()
@@ -251,7 +252,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func setupAppearance() {
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20)]
     }
     
     func showTodayWallpaper() {
@@ -346,7 +347,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             return
         }
         
-        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1178885979").responseJSON { (response) in
+        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1295152519").responseJSON { (response) in
             if let data = response.result.value {
                 
                 let json = JSON(data)

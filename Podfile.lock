@@ -1,23 +1,24 @@
 PODS:
-  - Alamofire (4.2.0)
-  - AVOSCloud (7.2.0)
+  - Alamofire (4.5.1)
+  - AVOSCloud (7.3.1)
   - Bugly (2.4.8)
   - CHTCollectionViewWaterfallLayout (0.9.7):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
   - DateTools (2.0.0)
+  - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - FLEX (2.4.0)
-  - IQKeyboardManagerSwift (4.0.13)
+  - IQKeyboardManagerSwift (5.0.3)
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
-  - Kingfisher (3.2.4)
+  - Kingfisher (4.1.0)
   - KVNProgress (2.3.1)
-  - M13Checkbox (3.1.3)
+  - M13Checkbox (3.2.1)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.12)
+  - MJRefresh (3.1.14)
   - MMParallaxCell (1.2)
-  - MOBFoundation (3.0.2)
+  - MOBFoundation (3.0.4)
   - RestKit (0.27.2):
     - RestKit/Core (= 0.27.2)
   - RestKit/Core (0.27.2):
@@ -42,26 +43,26 @@ PODS:
     - RestKit/Network
   - Reveal-iOS-SDK (1.6.2)
   - RKValueTransformers (1.1.3)
-  - ShareSDK3 (4.0.1):
+  - ShareSDK3 (4.0.2):
     - MOBFoundation
-    - ShareSDK3/ShareSDK (= 4.0.1)
-  - ShareSDK3/ShareSDK (4.0.1):
+    - ShareSDK3/ShareSDK (= 4.0.2)
+  - ShareSDK3/ShareSDK (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKExtension (4.0.1):
+  - ShareSDK3/ShareSDKExtension (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/Mail (4.0.1):
+  - ShareSDK3/ShareSDKPlatforms/Mail (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.1):
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.1):
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/SMS (4.0.1):
+  - ShareSDK3/ShareSDKPlatforms/SMS (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.1):
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.2):
     - MOBFoundation
-  - ShareSDK3/ShareSDKUI (4.0.1):
+  - ShareSDK3/ShareSDKUI (4.0.2):
     - MOBFoundation
-  - SnapKit (3.2.0)
+  - SnapKit (4.0.0)
   - SOCKit (1.1)
   - Spring (1.0.3)
   - SwiftyJSON (3.1.4)
@@ -73,15 +74,16 @@ PODS:
   - ZCAnimatedLabel (0.0.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.2.0)
+  - Alamofire
   - AVOSCloud
   - Bugly
   - CHTCollectionViewWaterfallLayout
   - DateTools
+  - DZNEmptyDataSet
   - FDFullscreenPopGesture
-  - FLEX (~> 2.0)
+  - FLEX
   - IQKeyboardManagerSwift
-  - Kingfisher (~> 3.2.1)
+  - Kingfisher
   - KVNProgress
   - M13Checkbox
   - MBProgressHUD
@@ -101,44 +103,45 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
   - SnapKit
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
-  - SwiftyJSON (~> 3.1.1)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift4`)
+  - SwiftyJSON
   - YYCategories
   - YYModel
   - ZCAnimatedLabel
 
 EXTERNAL SOURCES:
   Spring:
-    :branch: swift3
+    :branch: swift4
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   Spring:
-    :commit: 8201b5c93bd7ebdf4cd18160bcde1e6e88c2be64
+    :commit: b65cb00a1adc7e810e2ad10b174b840b6d520ac3
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  AVOSCloud: 9f09a2a734fe980685866feded7f6129141e9336
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AVOSCloud: 2c9e87d02f29e282bdf28a7e22f26992a6a5758f
   Bugly: da3c02408c14838d498429320545a8e439392978
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
+  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
-  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
-  M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
+  M13Checkbox: 12376f5b128189432508c240e4a36dc945ab7e4e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MJRefresh: 6642e35b3227a5447b9fd5e17c552c90196c9859
   MMParallaxCell: 9c9045097743b725076c38ed2c53e3790e90bd14
-  MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
+  MOBFoundation: ee0d83f92fe394f7f2b145a407441d08ca1c831c
   RestKit: 556c913b0640c5bc5a9cb972361504e3ed628a1d
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
-  ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  ShareSDK3: a01a35da3cd8f4d10d7f4394c7c42f8113392182
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
@@ -147,6 +150,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 2a966d920e3a70baf6a5b67273a657ee85741307
+PODFILE CHECKSUM: 14e2ccd0bf23348e8e4db2c9ed6f26004760f9fe
 
 COCOAPODS: 1.2.1

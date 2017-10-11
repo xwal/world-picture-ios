@@ -23,3 +23,5 @@
 #import "CSMParallaxCell.h"
 
 #import <Bugly/Bugly.h>
+
+#import "UnsplashModel.h"

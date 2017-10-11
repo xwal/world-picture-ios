@@ -46,7 +46,7 @@ class NiceWallpaperPageViewController: UIPageViewController, UIPageViewControlle
         self.navigationItem.leftBarButtonItem = leftBarItem
     }
     
-    func clickCategoryButton(sender: UIButton) {
+    @objc func clickCategoryButton(sender: UIButton) {
         
         guard let vc = self.viewControllers?.first else {
             return

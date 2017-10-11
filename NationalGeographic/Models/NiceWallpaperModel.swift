@@ -11,85 +11,85 @@ import YYModel
 
 class NiceWallpaperModel: NSObject {
 
-    var result: Int = 0
+    @objc var result: Int = 0
 
-    var data: NiceWallpaperDataModel?
+    @objc var data: NiceWallpaperDataModel?
 
-    var reason: String?
+    @objc var reason: String?
     
 }
 class NiceWallpaperDataModel: NSObject, YYModel {
 
-    var images: [NiceWallpaperImageModel]?
+    @objc var images: [NiceWallpaperImageModel]?
 
-    var base_url: String?
+    @objc var base_url: String?
 
-    var has_next: Bool = false
+    @objc var has_next: Bool = false
 
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["images": NiceWallpaperImageModel.self]
     }
 }
 
 class NiceWallpaperImageModel: NSObject, YYModel {
 
-    var height: CGFloat = 0.0
+    @objc var height: CGFloat = 0.0
 
-    var up_times: Int = 0
+    @objc var up_times: Int = 0
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var pub_time: Date?
+    @objc var pub_time: Date?
 
-    var width: CGFloat = 0.0
+    @objc var width: CGFloat = 0.0
 
-    var desc_user: NiceWallpaperImageDescUserModel?
+    @objc var desc_user: NiceWallpaperImageDescUserModel?
 
-    var image_url: String?
+    @objc var image_url: String?
 
-    var desc: String?
+    @objc var desc: String?
 
-    var photo_user: NiceWallpaperImagePhotoUserModel?
+    @objc var photo_user: NiceWallpaperImagePhotoUserModel?
 
-    var description_en: String?
+    @objc var description_en: String?
     
-    static func modelCustomPropertyMapper() -> [String : Any]? {
+    @objc static func modelCustomPropertyMapper() -> [String : Any]? {
         return ["desc": "description"]
     }
     
-    var view_times: Int = 0
+    @objc var view_times: Int = 0
     
-    var origin_image_url: String?
+    @objc var origin_image_url: String?
     
-    var publish_at: Int = 0
+    @objc var publish_at: Int = 0
     
-    var word: String?
+    @objc var word: String?
     
-    var created_at: String?
+    @objc var created_at: String?
     
-    var tags: [String]?
+    @objc var tags: [String]?
 
 }
 
 class NiceWallpaperImageDescUserModel: NSObject {
 
-    var user_name: String?
+    @objc var user_name: String?
 
-    var user_photo: String?
+    @objc var user_photo: String?
 
-    var user_id: Int = 0
+    @objc var user_id: Int = 0
 
 }
 
 class NiceWallpaperImagePhotoUserModel: NSObject {
 
-    var user_id: Int = 0
+    @objc var user_id: Int = 0
 
-    var user_photo: String?
+    @objc var user_photo: String?
 
-    var user_link: String?
+    @objc var user_link: String?
 
-    var user_name: String?
+    @objc var user_name: String?
 
 }
 

@@ -11,48 +11,48 @@ import YYModel
 
 class PictureListModel: NSObject, YYModel {
 
-    var picture: [PictureModel]?
+    @objc var picture: [PictureModel]?
 
-    var counttotal: String?
+    @objc var counttotal: String?
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["picture": PictureModel.self]
     }
     
 }
 class PictureModel: NSObject {
 
-    var id: String?
+    @objc var id: String?
 
-    var thumb: String?
+    @objc var thumb: String?
 
-    var author: String?
+    @objc var author: String?
 
-    var addtime: String?
+    @objc var addtime: String?
 
-    var url: String?
+    @objc var url: String?
 
-    var pmd5: String?
+    @objc var pmd5: String?
 
-    var type: String?
+    @objc var type: String?
 
-    var title: String?
+    @objc var title: String?
 
-    var size: String?
+    @objc var size: String?
 
-    var albumid: String?
+    @objc var albumid: String?
 
-    var yourshotlink: String?
+    @objc var yourshotlink: String?
 
-    var weburl: String?
+    @objc var weburl: String?
 
-    var encoded: String?
+    @objc var encoded: String?
 
-    var sort: String?
+    @objc var sort: String?
 
-    var copyright: String?
+    @objc var copyright: String?
 
-    var content: String?
+    @objc var content: String?
 
 }
 

@@ -61,7 +61,7 @@ class TodayPictorialPageViewController: UIPageViewController, UIPageViewControll
         let url = URL(string: String(format: NGPAPI_CHANYOUJI_DAY_PICTORIAL, todayStr))!
         let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
         
-        let sharedUserDefaults = UserDefaults(suiteName: "group.ngp.sharedDatas")
+        let sharedUserDefaults = UserDefaults(suiteName: "group.WorldPictorial.sharedDatas")
         let shareData = sharedUserDefaults?.data(forKey: todayStr)
         
         let cacheResponse = URLCache.shared.cachedResponse(for: request)

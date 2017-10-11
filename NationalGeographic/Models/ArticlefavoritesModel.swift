@@ -10,6 +10,6 @@ import UIKit
 
 class ArticlefavoritesModel: NSObject {
     
-    var favorites_count: Int = 0
-    var current_user_favorite: Bool = false
+    @objc var favorites_count: Int = 0
+    @objc var current_user_favorite: Bool = false
 }

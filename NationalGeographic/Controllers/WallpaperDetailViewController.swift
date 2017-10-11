@@ -12,7 +12,7 @@ import MBProgressHUD
 
 class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
     
-    var wallpaperModel: WallpaperModel!
+    var wallpaperModel: UnsplashModel!
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -28,9 +28,15 @@ class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.maximumZoomScale = 2
         
-        if let url = wallpaperModel.ios_wallpaper_url {
-            imageView.kf.setImage(with: URL(string: url), options: [.transition(.fade(0.5))])
+        if let url = wallpaperModel.full_url {
+            imageView.kf.setImage(with: URL(string: url), placeholder:#imageLiteral(resourceName: "unsplash_loading"), options: [.transition(.fade(0.5))])
         }
+        
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1;
+        }
+        tapGesture.numberOfTapsRequired = 2
+        self.scrollView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {

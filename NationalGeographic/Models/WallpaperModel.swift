@@ -10,16 +10,16 @@ import UIKit
 
 class WallpaperModel: NSObject {
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var title: String?
+    @objc var title: String?
 
-    var android_wallpaper_url: String?
+    @objc var android_wallpaper_url: String?
 
-    var destination: String?
+    @objc var destination: String?
 
-    var ios_wallpaper_url: String?
+    @objc var ios_wallpaper_url: String?
 
-    var publish_date: String?
+    @objc var publish_date: String?
     
 }

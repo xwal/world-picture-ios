@@ -23,6 +23,12 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
         if let url = pictureModel.thumb {
             imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(0.5))])
         }
+        
+        let tapGesture = UITapGestureRecognizer { (gesture) in
+            self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1;
+        }
+        tapGesture.numberOfTapsRequired = 2
+        self.scrollView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {

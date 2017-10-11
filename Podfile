@@ -6,9 +6,9 @@ target 'NationalGeographic' do
   use_frameworks!
 
   # Pods for NationalGeographic
-  pod 'Alamofire', '~> 4.2.0'
-  pod 'Kingfisher', '~> 3.2.1'
-  pod 'SwiftyJSON', '~> 3.1.1'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'SwiftyJSON'
   pod 'MJRefresh'
   pod 'YYModel'
   pod 'YYCategories'
@@ -16,11 +16,11 @@ target 'NationalGeographic' do
   pod 'KVNProgress'
   pod 'SnapKit'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
-  pod 'FLEX', '~> 2.0', :configurations => ['Debug']
+  pod 'FLEX', :configurations => ['Debug']
   pod 'ZCAnimatedLabel'
   pod 'MMParallaxCell'
   pod 'IQKeyboardManagerSwift'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift4'
   pod 'M13Checkbox'
   pod 'DateTools'
   pod 'CHTCollectionViewWaterfallLayout'
@@ -28,6 +28,7 @@ target 'NationalGeographic' do
   pod 'RestKit'
   pod 'RestKit/Testing'
   pod 'RestKit/Search'
+  pod 'DZNEmptyDataSet'
 
   # ShareSDK
   # 主模块(必须)
@@ -60,8 +61,8 @@ target 'TodayWallpaperWidget' do
     use_frameworks!
 
     # Pods for NationalGeographic
-    pod 'Alamofire', '~> 4.2.0'
-    pod 'Kingfisher', '~> 3.2.1'
+    pod 'Alamofire'
+    pod 'Kingfisher'
     pod 'YYModel'
     pod 'YYCategories'
     pod 'SnapKit'

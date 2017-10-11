@@ -11,7 +11,7 @@ import UIKit
 class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var selectedIndex = 0
-    var wallpaperModelArray: [WallpaperModel]!
+    var wallpaperModelArray: [UnsplashModel]!
     
     var indexChanged: ((_ index: Int) -> Void)?
     

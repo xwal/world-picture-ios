@@ -45,7 +45,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         NotificationCenter.default.addObserver(self, selector: #selector(showArticleDetailBigImage(notification:)), name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: nil)
     }
     
-    func showArticleDetailBigImage(notification: Notification) {
+    @objc func showArticleDetailBigImage(notification: Notification) {
         print("大图点击")
         guard let bigImageVC = self.storyboard?.instantiateViewController(withIdentifier: "ArticleDetailBigImageViewController") as? ArticleDetailBigImageViewController else {
             return

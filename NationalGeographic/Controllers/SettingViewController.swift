@@ -35,7 +35,7 @@ class SettingViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func voiceStateChanged(sender: UISwitch) {
+    @objc func voiceStateChanged(sender: UISwitch) {
         SpeechSynthesizerManager.sharedInstance.isEnabled = sender.isOn
     }
     

@@ -77,7 +77,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         SpeechSynthesizerManager.sharedInstance.cancel()
     }
     
-    func onSnapshotTapped(sender: UITapGestureRecognizer) {
+    @objc func onSnapshotTapped(sender: UITapGestureRecognizer) {
         if snapshotImageView.layer.animationKeys() != nil {
             return
         }
@@ -127,7 +127,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         
     }
     
-    func onSwipChanged(sender: UISwipeGestureRecognizer) {
+    @objc func onSwipChanged(sender: UISwipeGestureRecognizer) {
         
         if snapshotImageView.isHidden == false {
             return
@@ -212,7 +212,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         style.lineSpacing = 5
         style.alignment = .left
         style.minimumLineHeight = 18
-        let attrString = NSAttributedString(string: descDashLabel.text, attributes: [NSParagraphStyleAttributeName: style,  NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName: UIColor.white])
+        let attrString = NSAttributedString(string: descDashLabel.text, attributes: [.paragraphStyle: style,  .font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white])
         
         descDashLabel.attributedString = attrString
         

@@ -55,7 +55,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
         NotificationCenter.default.removeObserver(self)
     }
     
-    func didSelectEasyCell(_ sender: NSNotification) {
+    @objc func didSelectEasyCell(_ sender: NSNotification) {
         
         guard let models = sender.userInfo?["Models"] as? [PictorialArticleModel] else {
             return
@@ -77,7 +77,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
         loadingImageView.startAnimating()
         
         let url = URL(string: NGPAPI_CHANYOUJI_ARTICLES)!
-        let request = URLRequest(url: url, cachePolicy: tableView.mj_header.isRefreshing() ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
+        let request = URLRequest(url: url, cachePolicy: tableView.mj_header.isRefreshing ? .useProtocolCachePolicy : .returnCacheDataElseLoad)
         
         Alamofire.request(request).responseJSON { (response) in
             if let JSON = response.result.value {

@@ -12,21 +12,21 @@ import YYModel
 class NiceWallpaperCategoryModel: NSObject {
     
     
-    var result: Int = 0
+    @objc var result: Int = 0
 
-    var data: NiceWallpaperCategoryData?
+    @objc var data: NiceWallpaperCategoryData?
 
-    var reason: String?
+    @objc var reason: String?
     
 
 }
 class NiceWallpaperCategoryData: NSObject, YYModel {
 
-    var base_url: String?
+    @objc var base_url: String?
 
-    var tags: [NiceWallpaperCategoryTag]?
+    @objc var tags: [NiceWallpaperCategoryTag]?
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["tags" : NiceWallpaperCategoryTag.self]
     }
 
@@ -34,13 +34,13 @@ class NiceWallpaperCategoryData: NSObject, YYModel {
 
 class NiceWallpaperCategoryTag: NSObject {
 
-    var en_name: String?
+    @objc var en_name: String?
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var name: String?
+    @objc var name: String?
 
-    var cover: String?
+    @objc var cover: String?
 
 }
 

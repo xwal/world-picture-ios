@@ -11,57 +11,57 @@ import YYModel
 
 class PictorialModel: NSObject, YYModel {
 
-    var destination: PictorialDestModel?
+    @objc var destination: PictorialDestModel?
 
-    var articles: [PictorialArticleModel]?
+    @objc var articles: [PictorialArticleModel]?
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["articles": PictorialArticleModel.self]
     }
 }
 class PictorialDestModel: NSObject {
 
-    var name_en: String?
+    @objc var name_en: String?
 
-    var name_zh_cn: String?
+    @objc var name_zh_cn: String?
 
 }
 
 class PictorialArticleModel: NSObject, YYModel {
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var destination_intro: String?
+    @objc var destination_intro: String?
 
-    var desc: String?
+    @objc var desc: String?
 
-    var photo_author: String?
+    @objc var photo_author: String?
 
-    var trip: ArticleTripModel?
+    @objc var trip: ArticleTripModel?
 
-    var attraction: ArticleAttractionModel?
+    @objc var attraction: ArticleAttractionModel?
 
-    var image_url: String?
+    @objc var image_url: String?
 
-    var destination_intro_title: String?
+    @objc var destination_intro_title: String?
 
-    var text_author: String?
+    @objc var text_author: String?
 
-    var title: String?
+    @objc var title: String?
 
-    var summary: String?
+    @objc var summary: String?
 
-    var description_notes: [ArticleDescNoteModel]?
+    @objc var description_notes: [ArticleDescNoteModel]?
 
-    var photos: [ArticlePhotoModel]?
+    @objc var photos: [ArticlePhotoModel]?
 
-    var destination: ArticleDestModel?
+    @objc var destination: ArticleDestModel?
     
-    static func modelCustomPropertyMapper() -> [String : Any]? {
+    @objc static func modelCustomPropertyMapper() -> [String : Any]? {
         return ["desc": "description"]
     }
     
-    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+    @objc static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["description_notes": ArticleDescNoteModel.self, "photos": ArticlePhotoModel.self]
     }
 
@@ -69,39 +69,39 @@ class PictorialArticleModel: NSObject, YYModel {
 
 class ArticleDestModel: NSObject {
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var name: String?
+    @objc var name: String?
 
 }
 
 class ArticleTripModel: NSObject {
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var name: String?
+    @objc var name: String?
 
 }
 
 class ArticleAttractionModel: NSObject {
 
-    var id: Int = 0
+    @objc var id: Int = 0
 
-    var name: String?
+    @objc var name: String?
 
 }
 
 class ArticleDescNoteModel: NSObject, YYModel {
 
-    var image_url: String?
+    @objc var image_url: String?
 
-    var image_width: Int = 0
+    @objc var image_width: Int = 0
 
-    var image_height: Int = 0
+    @objc var image_height: Int = 0
 
-    var desc: String?
+    @objc var desc: String?
     
-    static func modelCustomPropertyMapper() -> [String : Any]? {
+    @objc static func modelCustomPropertyMapper() -> [String : Any]? {
         return ["desc": "description"]
     }
 
@@ -109,11 +109,11 @@ class ArticleDescNoteModel: NSObject, YYModel {
 
 class ArticlePhotoModel: NSObject {
 
-    var image_url: String?
+    @objc var image_url: String?
 
-    var image_height: Int = 0
+    @objc var image_height: Int = 0
 
-    var image_width: Int = 0
+    @objc var image_width: Int = 0
 
 }
 

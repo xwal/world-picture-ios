@@ -11,14 +11,13 @@ import Alamofire
 import YYModel
 import MJRefresh
 import YYCategories
+import DateTools
 
 class AlbumListViewController: UITableViewController {
 
     var currentPage = 1
     
     let CellIdentifier = "AlbumCell"
-    
-    let refreshIntervalSeconds = 60 * 60 * 4.0
     
     var cacheDataURL: URL {
         
@@ -76,8 +75,7 @@ class AlbumListViewController: UITableViewController {
             tableView.mj_header.beginRefreshing()
         }
         
-        let timeInterval = NSDate().timeIntervalSince(updatedTime)
-        if timeInterval > refreshIntervalSeconds {
+        if (updatedTime as NSDate).isYesterday() {
             tableView.mj_header.beginRefreshing()
         }
         
