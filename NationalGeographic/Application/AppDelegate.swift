@@ -355,7 +355,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
                 let appVersion = JSON(Bundle.main.infoDictionary!)["CFBundleShortVersionString"].stringValue
                 
-                if itunesVersion == appVersion {
+                if itunesVersion.isEmpty || itunesVersion == appVersion {
                     return
                 }
                 

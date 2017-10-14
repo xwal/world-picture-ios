@@ -12,12 +12,19 @@ import YYModel
 import MJRefresh
 import YYCategories
 import DateTools
+import DZNEmptyDataSet
 
 class AlbumListViewController: UITableViewController {
 
     var currentPage = 1
     
     let CellIdentifier = "AlbumCell"
+    
+    var isLoading: Bool = false {
+        didSet {
+            self.tableView.reloadEmptyDataSet()
+        }
+    }
     
     var cacheDataURL: URL {
         
@@ -33,6 +40,7 @@ class AlbumListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupEmptyDataSet()
         setupCacheData()
     }
     
@@ -44,6 +52,7 @@ class AlbumListViewController: UITableViewController {
     
     func setupView() {
         let header = MJRefreshNormalHeader(refreshingBlock: {
+            self.isLoading = true
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
         })
@@ -58,6 +67,10 @@ class AlbumListViewController: UITableViewController {
             self.currentPage += 1
             self.requestData(withPage: self.currentPage)
         })
+        
+        self.tableView.tableFooterView = UIView()
+        
+        
     }
     
     func setupCacheData() {
@@ -123,6 +136,7 @@ class AlbumListViewController: UITableViewController {
             }
             
             DispatchQueue.main.async {
+                self.isLoading = false
                 if hasMoreData {
                     self.tableView.mj_footer.endRefreshing()
                 }
@@ -193,4 +207,80 @@ class AlbumListViewController: UITableViewController {
     }
     
 
+}
+
+extension AlbumListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
+{
+    func setupEmptyDataSet() {
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+    }
+    
+    // MARK: DZNEmptyDataSetSource
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "无网络连接"
+        let font = UIFont.boldSystemFont(ofSize: 17)
+        let textColor = UIColor(hex: "25282b")
+        
+        let attributes: [NSAttributedStringKey: Any] = [.font:font, .foregroundColor: textColor]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        if self.isLoading {
+            return #imageLiteral(resourceName: "loading_imgBlue")
+        }
+        else {
+            return #imageLiteral(resourceName: "placeholder_emptydataset")
+        }
+    }
+    
+    func imageAnimation(forEmptyDataSet scrollView: UIScrollView!) -> CAAnimation! {
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
+        animation.toValue = NSValue(caTransform3D: CATransform3DMakeRotation(.pi / 2, 0.0, 0.0, 1.0))
+        animation.duration = 0.25
+        animation.isCumulative = true
+        animation.repeatCount = MAXFLOAT
+        
+        return animation
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        let text = "点击刷新"
+        let font = UIFont.systemFont(ofSize: 15)
+        let textColor = UIColor(hex: state == .normal ? "007ee5" : "48a1ea")
+        let attributes: [NSAttributedStringKey: Any] = [.font: font, .foregroundColor: textColor]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor(hex: "f0f3f5")
+    }
+    
+    // MARK: DZNEmptyDataSetDelegate
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return self.albumModelArray.count == 0
+    }
+    
+    func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return false
+    }
+    
+    func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool {
+        return self.isLoading
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
+        self.tableView.mj_header.beginRefreshing()
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        self.tableView.mj_header.beginRefreshing()
+    }
 }
