@@ -1,0 +1,7 @@
+app_identifier "me.chaosky.WorldPictorial" # The bundle identifier of your app
+apple_id "352135591@qq.com" # Your Apple email address
+
+team_id "3C5F74LTDA" # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

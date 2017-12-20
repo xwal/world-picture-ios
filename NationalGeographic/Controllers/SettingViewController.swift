@@ -61,7 +61,7 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            if let itunesURL = URL(string: "https://itunes.apple.com/us/app/shi-jie-de-li-hua-bao/id1178885979?l=zh&ls=1&mt=8") {
+            if let itunesURL = URL(string: "https://itunes.apple.com/us/app/%E4%B8%96%E7%95%8C%E7%94%BB%E6%8A%A5-%E6%9C%80%E7%BE%8E%E7%94%BB%E6%8A%A5%E9%9B%86/id1295152519?l=zh&ls=1&mt=8") {
                 UIApplication.shared.openURL(itunesURL)
             }
         }

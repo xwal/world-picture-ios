@@ -1574,33 +1574,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="A0W-Pe-lYq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="A0W-Pe-lYq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyC-z4-uJv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A7b-XE-I8h">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="A7b-XE-I8h" firstAttribute="leading" secondItem="pyC-z4-uJv" secondAttribute="leading" id="N5d-Oj-nTG"/>
-                                            <constraint firstAttribute="bottom" secondItem="A7b-XE-I8h" secondAttribute="bottom" id="dja-CH-JpV"/>
-                                            <constraint firstItem="A7b-XE-I8h" firstAttribute="top" secondItem="pyC-z4-uJv" secondAttribute="top" id="o6t-J6-VmX"/>
-                                            <constraint firstAttribute="trailing" secondItem="A7b-XE-I8h" secondAttribute="trailing" id="v1W-UW-Gsg"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pyC-z4-uJv" secondAttribute="trailing" id="4RG-Nw-tpl"/>
-                                    <constraint firstAttribute="bottom" secondItem="pyC-z4-uJv" secondAttribute="bottom" id="Kvr-XW-JpL"/>
-                                    <constraint firstItem="pyC-z4-uJv" firstAttribute="height" secondItem="A0W-Pe-lYq" secondAttribute="height" id="gUz-Xm-eKe"/>
-                                    <constraint firstItem="pyC-z4-uJv" firstAttribute="leading" secondItem="A0W-Pe-lYq" secondAttribute="leading" id="gdx-Gn-R4z"/>
-                                    <constraint firstItem="pyC-z4-uJv" firstAttribute="width" secondItem="A0W-Pe-lYq" secondAttribute="width" id="nhB-Uq-jLr"/>
-                                    <constraint firstItem="pyC-z4-uJv" firstAttribute="top" secondItem="A0W-Pe-lYq" secondAttribute="top" id="ozL-9M-8Gs"/>
-                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-Uf-8F3">
                                 <rect key="frame" x="185" y="672" width="44" height="44"/>
@@ -1621,7 +1596,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="A7b-XE-I8h" id="h6W-Rx-VhV"/>
                         <outlet property="scrollView" destination="A0W-Pe-lYq" id="3CL-kE-JTM"/>
                     </connections>
                 </viewController>
@@ -1892,7 +1866,7 @@ KeYp6SnuAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAKfA
         <image name="imageview_shadow" width="320" height="170"/>
         <image name="linor" width="45" height="45"/>
         <image name="newbj" width="306" height="239"/>
-        <image name="nopic" width="300" height="200"/>
+        <image name="nopic" width="600" height="400"/>
         <image name="phone-eye" width="26" height="26"/>
         <image name="phone1-save-down" width="81" height="35"/>
         <image name="phone1-save-nor" width="81" height="35"/>

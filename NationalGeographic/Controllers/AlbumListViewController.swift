@@ -88,7 +88,7 @@ class AlbumListViewController: UITableViewController {
             tableView.mj_header.beginRefreshing()
         }
         
-        if (updatedTime as NSDate).isYesterday() {
+        if (updatedTime as NSDate).daysAgo() >= 1 {
             tableView.mj_header.beginRefreshing()
         }
         

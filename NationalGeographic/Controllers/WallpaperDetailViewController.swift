@@ -10,13 +10,13 @@ import UIKit
 import Kingfisher
 import MBProgressHUD
 
-class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
+class WallpaperDetailViewController: UIViewController {
     
     var wallpaperModel: UnsplashModel!
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var imageView: UIImageView!
+    let imageView = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,24 +25,33 @@ class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func setupViews() {
-        scrollView.delegate = self
-        scrollView.maximumZoomScale = 2
+        
+        self.scrollView.bounces = false
+        
+        self.scrollView.addSubview(imageView)
+        imageView.frame = self.view.bounds
+        imageView.contentMode = .scaleAspectFit
         
         if let url = wallpaperModel.full_url {
-            imageView.kf.setImage(with: URL(string: url), placeholder:#imageLiteral(resourceName: "unsplash_loading"), options: [.transition(.fade(0.5))])
+            imageView.kf.setImage(with: URL(string: url), placeholder:#imageLiteral(resourceName: "unsplash_loading"), options: [.transition(.fade(0.5))], completionHandler: { (image, error, cacheType, url) in
+                guard let img = image else {
+                    return
+                }
+                
+                let screenBounds = UIScreen.main.currentBounds()
+                let imageHeight = screenBounds.height
+                var imageWidth = (img.size.width / img.size.height) * imageHeight
+                imageWidth = fmax(imageWidth, screenBounds.width)
+                self.imageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
+                
+                self.scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
+                
+                let offsetX = (imageWidth - screenBounds.width) / 2
+                self.scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
+                
+                self.view.layoutIfNeeded()
+            })
         }
-        
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1;
-        }
-        tapGesture.numberOfTapsRequired = 2
-        self.scrollView.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        scrollView.zoomScale = 1
-        self.view.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,10 +63,5 @@ class WallpaperDetailViewController: UIViewController, UIScrollViewDelegate {
         if let saveImage = imageView.image {
             Utils.writeImageToPhotosAlbum(saveImage)
         }
-    }
-    
-    // MARK: - UIScrollViewDelegate
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
     }
 }

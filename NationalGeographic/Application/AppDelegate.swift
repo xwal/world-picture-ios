@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         if !hasLaunched {
             UserDefaults.standard.set(true, forKey: NGPHasLaunchedKey)
-            SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界地理画报，可以通过摇一摇开启或关闭语音朗读")
+            SpeechSynthesizerManager.sharedInstance.speak(sentence: "您好，欢迎使用世界画报，可以通过摇一摇开启或关闭语音朗读")
         }
     }
     

@@ -25,9 +25,6 @@ target 'NationalGeographic' do
   pod 'DateTools'
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'FDFullscreenPopGesture'
-  pod 'RestKit'
-  pod 'RestKit/Testing'
-  pod 'RestKit/Search'
   pod 'DZNEmptyDataSet'
 
   # ShareSDK
