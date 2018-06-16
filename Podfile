@@ -22,7 +22,7 @@ target 'NationalGeographic' do
   pod 'IQKeyboardManagerSwift'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift4'
   pod 'M13Checkbox'
-  pod 'DateTools'
+  pod 'DateToolsSwift'
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'FDFullscreenPopGesture'
   pod 'DZNEmptyDataSet'

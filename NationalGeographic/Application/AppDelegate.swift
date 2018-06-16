@@ -11,7 +11,7 @@ import YYCategories
 import AVOSCloud
 import UserNotifications
 import IQKeyboardManagerSwift
-import DateTools
+import DateToolsSwift
 import AVFoundation
 import Alamofire
 import SwiftyJSON
@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
         
         // 键盘输入
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         
         
         // App 设置
@@ -269,8 +269,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func showTodayGeographic() {
         
-        let initDate = NSDate(year: 2013, month: 1, day: 17)!
-        let days = initDate.daysAgo()
+        let initDate = Date(year: 2013, month: 1, day: 17)
+        let days = initDate.daysAgo
         
         if days < 178 {
             return

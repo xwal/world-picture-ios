@@ -11,7 +11,7 @@ import Alamofire
 import YYModel
 import MJRefresh
 import YYCategories
-import DateTools
+import DateToolsSwift
 import DZNEmptyDataSet
 
 class AlbumListViewController: UITableViewController {
@@ -88,7 +88,7 @@ class AlbumListViewController: UITableViewController {
             tableView.mj_header.beginRefreshing()
         }
         
-        if (updatedTime as NSDate).daysAgo() >= 1 {
+        if updatedTime.daysAgo >= 1 {
             tableView.mj_header.beginRefreshing()
         }
         

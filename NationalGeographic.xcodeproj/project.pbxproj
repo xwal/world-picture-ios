@@ -422,27 +422,12 @@
 		D6AA8A9D1DDB3F3D00032800 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */,
-				D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */,
-				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
-				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
-				D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */,
-				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
-				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
-				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
-				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
-				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
-				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
-				D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */,
-				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
-				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
-				D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */,
-				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
-				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
-				D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */,
-				D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */,
-				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
-				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
+				D6FCB5E420D51A7900F4F474 /* Settings */,
+				D6FCB5E320D51A5600F4F474 /* NiceWallpaper */,
+				D6FCB5E120D519FC00F4F474 /* Pictorial */,
+				D6FCB5E020D519D300F4F474 /* Wallpaper */,
+				D6FCB5DF20D5198800F4F474 /* Main */,
+				D6FCB5DE20D5192C00F4F474 /* Album */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -542,6 +527,77 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		D6FCB5DE20D5192C00F4F474 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */,
+				D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */,
+				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		D6FCB5DF20D5198800F4F474 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
+				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D6FCB5E020D519D300F4F474 /* Wallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */,
+				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
+				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
+			);
+			path = Wallpaper;
+			sourceTree = "<group>";
+		};
+		D6FCB5E120D519FC00F4F474 /* Pictorial */ = {
+			isa = PBXGroup;
+			children = (
+				D6FCB5E220D51A2D00F4F474 /* TodayPictorial */,
+				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
+				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
+				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
+				D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */,
+			);
+			path = Pictorial;
+			sourceTree = "<group>";
+		};
+		D6FCB5E220D51A2D00F4F474 /* TodayPictorial */ = {
+			isa = PBXGroup;
+			children = (
+				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
+				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
+			);
+			path = TodayPictorial;
+			sourceTree = "<group>";
+		};
+		D6FCB5E320D51A5600F4F474 /* NiceWallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */,
+				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
+				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
+				D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */,
+				D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */,
+				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
+			);
+			path = NiceWallpaper;
+			sourceTree = "<group>";
+		};
+		D6FCB5E420D51A7900F4F474 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,7 +632,6 @@
 				D63B1F711DFE9F72000B9276 /* Sources */,
 				D63B1F721DFE9F72000B9276 /* Frameworks */,
 				D63B1F731DFE9F72000B9276 /* Resources */,
-				2A56BF61BFC6577F4EEF9AA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -685,21 +740,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A56BF61BFC6577F4EEF9AA8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		56D24AF890773D52369E195A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,7 +753,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDKUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -780,7 +822,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -803,7 +845,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
