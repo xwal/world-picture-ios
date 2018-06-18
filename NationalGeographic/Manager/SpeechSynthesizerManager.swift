@@ -18,25 +18,32 @@ class SpeechSynthesizerManager: NSObject {
     }
     
     func setupBDSpeech() {
-        let bdsSpeech = BDSSpeechSynthesizer.sharedInstance()
-        bdsSpeech?.setApiKey("d8qGsGi7xrleOpmicY93qFoU", withSecretKey: "7468e4dc5883cc32695b8ce4e69c9067")
+        BDSSpeechSynthesizer.sharedInstance()?
+            .setApiKey("d8qGsGi7xrleOpmicY93qFoU", withSecretKey: "7468e4dc5883cc32695b8ce4e69c9067")
         // 日志级别
         BDSSpeechSynthesizer.setLogLevel(BDS_PUBLIC_LOG_ERROR)
         // 设置离线引擎
-        
+        loadOfflineTTS()
+    }
+    
+    private func loadOfflineTTS() {
         let ChineseSpeechData = Bundle.main.path(forResource: "Chinese_Speech_Female", ofType: "dat")
         let ChineseTextData = Bundle.main.path(forResource: "Chinese_Text", ofType: "dat")
         let EnglishSpeechData = Bundle.main.path(forResource: "English_Speech_Female", ofType: "dat")
         let EnglishTextData = Bundle.main.path(forResource: "English_Text", ofType: "dat")
         
-        var loadErr = bdsSpeech?.loadOfflineEngine(ChineseTextData, speechDataPath: ChineseSpeechData, licenseFilePath: nil, withAppCode: "9084081")
+        var loadErr = BDSSpeechSynthesizer.sharedInstance()?.loadOfflineEngine(ChineseTextData,
+                                                                               speechDataPath: ChineseSpeechData,
+                                                                               licenseFilePath: nil,
+                                                                               withAppCode: "9084081")
         
         if loadErr != nil {
             print(loadErr!)
         }
         
         // 加载英文资源
-        loadErr = bdsSpeech?.loadEnglishData(forOfflineEngine: EnglishTextData, speechData: EnglishSpeechData)
+        loadErr = BDSSpeechSynthesizer.sharedInstance()?.loadEnglishData(forOfflineEngine: EnglishTextData,
+                                                                         speechData: EnglishSpeechData)
         if loadErr != nil {
             print(loadErr!)
         }
@@ -47,6 +54,9 @@ class SpeechSynthesizerManager: NSObject {
         if isEnabled && sentence != nil {
             // 开始合成并播放
             for subSentence in sentence.components(separatedBy: "\n") {
+                if subSentence.isEmpty {
+                    continue
+                }
                 var error: NSError? = nil
                 BDSSpeechSynthesizer.sharedInstance().speakSentence(subSentence, withError: &error)
                 

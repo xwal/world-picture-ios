@@ -55,6 +55,21 @@
 		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
+		D666897220D7FD05002E634C /* Chinese_And_English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */; };
+		D666897320D7FD05002E634C /* Chinese_And_English_Speech_DYY.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */; };
+		D666897420D7FD05002E634C /* English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894820D7FD04002E634C /* English_Speech_Female.dat */; };
+		D666897520D7FD05002E634C /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */; };
+		D666897620D7FD05002E634C /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */; };
+		D666897720D7FD05002E634C /* English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894B20D7FD04002E634C /* English_Text.dat */; };
+		D666897820D7FD05002E634C /* English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894C20D7FD04002E634C /* English_Speech_Male.dat */; };
+		D666897920D7FD05002E634C /* Chinese_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */; };
+		D666897A20D7FD05002E634C /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */; };
+		D666897B20D7FD05002E634C /* license-ios-etts-BaiduBoxDev.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */; };
+		D666897C20D7FD05002E634C /* Chinese_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895020D7FD04002E634C /* Chinese_Text.dat */; };
+		D666897D20D7FD05002E634C /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */; };
+		D666897E20D7FD05002E634C /* tmp_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895220D7FD04002E634C /* tmp_license.dat */; };
+		D666897F20D7FD05002E634C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */; };
+		D666898020D7FD05002E634C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D666895520D7FD04002E634C /* .gitignore */; };
 		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
@@ -83,14 +98,6 @@
 		D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */; };
 		D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */; };
 		D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */; };
-		D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */; };
-		D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EAF1E03F5A100F25176 /* .gitignore */; };
-		D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */; };
-		D6CC7EB91E03F5A100F25176 /* Chinese_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */; };
-		D6CC7EBA1E03F5A100F25176 /* Chinese_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */; };
-		D6CC7EBB1E03F5A100F25176 /* English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */; };
-		D6CC7EBC1E03F5A100F25176 /* English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */; };
-		D6CC7EBD1E03F5A100F25176 /* English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D6CC7EB51E03F5A100F25176 /* English_Text.dat */; };
 		D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE13451DE29EB600A3A2BF /* EasyCell.swift */; };
 		D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE13461DE29EB600A3A2BF /* EasyCell.xib */; };
 		D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */; };
@@ -105,7 +112,6 @@
 		D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */; };
 		D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BD1E041289004EA31A /* libc++.tbd */; };
 		D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3C11E0412A9004EA31A /* libiconv.tbd */; };
-		D6E8D3C41E0412CC004EA31A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */; };
 		D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */; };
 		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
 		D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */; };
@@ -190,6 +196,31 @@
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
+		D666891A20D7FD04002E634C /* BDSSynthesizerStatusNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerStatusNotifications.h; sourceTree = "<group>"; };
+		D666891B20D7FD04002E634C /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		D666891C20D7FD04002E634C /* BDS_EttsModelManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDS_EttsModelManagerInterface.h; sourceTree = "<group>"; };
+		D666891D20D7FD04002E634C /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
+		D666891E20D7FD04002E634C /* BDSMixedModeSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSMixedModeSynthesizer.h; sourceTree = "<group>"; };
+		D666891F20D7FD04002E634C /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		D666892020D7FD04002E634C /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		D666892120D7FD04002E634C /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		D666892220D7FD04002E634C /* BDSTTSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSTTSEventManager.h; sourceTree = "<group>"; };
+		D666892320D7FD04002E634C /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Text.dat; sourceTree = "<group>"; };
+		D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_DYY.dat; sourceTree = "<group>"; };
+		D666894820D7FD04002E634C /* English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Female.dat; sourceTree = "<group>"; };
+		D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chinese_And_English_Speech_Male-yyjw.dat"; sourceTree = "<group>"; };
+		D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
+		D666894B20D7FD04002E634C /* English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Text.dat; sourceTree = "<group>"; };
+		D666894C20D7FD04002E634C /* English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Male.dat; sourceTree = "<group>"; };
+		D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Male.dat; sourceTree = "<group>"; };
+		D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
+		D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-ios-etts-BaiduBoxDev.dat"; sourceTree = "<group>"; };
+		D666895020D7FD04002E634C /* Chinese_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Text.dat; sourceTree = "<group>"; };
+		D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Female.dat; sourceTree = "<group>"; };
+		D666895220D7FD04002E634C /* tmp_license.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tmp_license.dat; sourceTree = "<group>"; };
+		D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		D666895520D7FD04002E634C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AlbumCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
@@ -218,20 +249,6 @@
 		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryImageCell.xib; sourceTree = "<group>"; };
 		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
-		D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
-		D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
-		D6CC7EA91E03F4D400F25176 /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
-		D6CC7EAA1E03F4D400F25176 /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
-		D6CC7EAB1E03F4D400F25176 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
-		D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libetts_device_simulator.a; sourceTree = "<group>"; };
-		D6CC7EAF1E03F5A100F25176 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Female.dat; sourceTree = "<group>"; };
-		D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Male.dat; sourceTree = "<group>"; };
-		D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Text.dat; sourceTree = "<group>"; };
-		D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Female.dat; sourceTree = "<group>"; };
-		D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Male.dat; sourceTree = "<group>"; };
-		D6CC7EB51E03F5A100F25176 /* English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Text.dat; sourceTree = "<group>"; };
 		D6CE13451DE29EB600A3A2BF /* EasyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCell.swift; sourceTree = "<group>"; };
 		D6CE13461DE29EB600A3A2BF /* EasyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyCell.xib; sourceTree = "<group>"; };
 		D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -264,15 +281,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6E8D3C41E0412CC004EA31A /* libstdc++.6.0.9.tbd in Frameworks */,
 				D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */,
 				D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */,
 				D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */,
 				D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */,
 				D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */,
+				D666897F20D7FD05002E634C /* libBaiduSpeechSDK.a in Frameworks */,
 				D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */,
 				D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */,
-				D6CC7EAD1E03F4D400F25176 /* libetts_device_simulator.a in Frameworks */,
 				6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +423,78 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		D666890920D7FD04002E634C /* BDS */ = {
+			isa = PBXGroup;
+			children = (
+				D666890A20D7FD04002E634C /* BDSClientHeaders */,
+				D666892420D7FD04002E634C /* BDSClientResource */,
+				D666895320D7FD04002E634C /* BDSClientLib */,
+			);
+			path = BDS;
+			sourceTree = "<group>";
+		};
+		D666890A20D7FD04002E634C /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				D666891920D7FD04002E634C /* TTS */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		D666891920D7FD04002E634C /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				D666891A20D7FD04002E634C /* BDSSynthesizerStatusNotifications.h */,
+				D666891B20D7FD04002E634C /* BDSSpeechSynthesizerDelegate.h */,
+				D666891C20D7FD04002E634C /* BDS_EttsModelManagerInterface.h */,
+				D666891D20D7FD04002E634C /* BDSBuiltInPlayer.h */,
+				D666891E20D7FD04002E634C /* BDSMixedModeSynthesizer.h */,
+				D666891F20D7FD04002E634C /* BDSSpeechSynthesizer.h */,
+				D666892020D7FD04002E634C /* BDSSpeechSynthesizerParams.h */,
+				D666892120D7FD04002E634C /* BDSSynthesizerLogLevel.h */,
+				D666892220D7FD04002E634C /* BDSTTSEventManager.h */,
+				D666892320D7FD04002E634C /* BDSSpeechSynthesizerErrors.h */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		D666892420D7FD04002E634C /* BDSClientResource */ = {
+			isa = PBXGroup;
+			children = (
+				D666894520D7FD04002E634C /* TTS */,
+			);
+			path = BDSClientResource;
+			sourceTree = "<group>";
+		};
+		D666894520D7FD04002E634C /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */,
+				D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */,
+				D666894820D7FD04002E634C /* English_Speech_Female.dat */,
+				D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */,
+				D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */,
+				D666894B20D7FD04002E634C /* English_Text.dat */,
+				D666894C20D7FD04002E634C /* English_Speech_Male.dat */,
+				D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */,
+				D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */,
+				D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */,
+				D666895020D7FD04002E634C /* Chinese_Text.dat */,
+				D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */,
+				D666895220D7FD04002E634C /* tmp_license.dat */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		D666895320D7FD04002E634C /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */,
+				D666895520D7FD04002E634C /* .gitignore */,
+			);
+			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
 		D67AE0411DDB486E00DBC7AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,40 +570,11 @@
 		D6CC7E7E1E03D3EC00F25176 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				D6CC7EAE1E03F5A100F25176 /* OfflineTTSDatFiles */,
-				D6CC7EA51E03F4D400F25176 /* BDSSpeechSynthesizer_SDK */,
+				D666890920D7FD04002E634C /* BDS */,
 				D68998251E4C663F0087AC3A /* CSMParallaxCell.h */,
 				D68998261E4C663F0087AC3A /* CSMParallaxCell.m */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		D6CC7EA51E03F4D400F25176 /* BDSSpeechSynthesizer_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				D6CC7EA61E03F4D400F25176 /* BDSBuiltInPlayer.h */,
-				D6CC7EA71E03F4D400F25176 /* BDSSpeechSynthesizer.h */,
-				D6CC7EA81E03F4D400F25176 /* BDSSpeechSynthesizerDelegate.h */,
-				D6CC7EA91E03F4D400F25176 /* BDSSpeechSynthesizerErrors.h */,
-				D6CC7EAA1E03F4D400F25176 /* BDSSpeechSynthesizerParams.h */,
-				D6CC7EAB1E03F4D400F25176 /* BDSSynthesizerLogLevel.h */,
-				D6CC7EAC1E03F4D400F25176 /* libetts_device_simulator.a */,
-			);
-			path = BDSSpeechSynthesizer_SDK;
-			sourceTree = "<group>";
-		};
-		D6CC7EAE1E03F5A100F25176 /* OfflineTTSDatFiles */ = {
-			isa = PBXGroup;
-			children = (
-				D6CC7EAF1E03F5A100F25176 /* .gitignore */,
-				D6CC7EB01E03F5A100F25176 /* Chinese_Speech_Female.dat */,
-				D6CC7EB11E03F5A100F25176 /* Chinese_Speech_Male.dat */,
-				D6CC7EB21E03F5A100F25176 /* Chinese_Text.dat */,
-				D6CC7EB31E03F5A100F25176 /* English_Speech_Female.dat */,
-				D6CC7EB41E03F5A100F25176 /* English_Speech_Male.dat */,
-				D6CC7EB51E03F5A100F25176 /* English_Text.dat */,
-			);
-			path = OfflineTTSDatFiles;
 			sourceTree = "<group>";
 		};
 		D6D5636A1DE02CDB009C6EB9 /* Interface */ = {
@@ -703,27 +762,34 @@
 			files = (
 				D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */,
 				D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */,
+				D666897A20D7FD05002E634C /* Chinese_And_English_Speech_Female.dat in Resources */,
+				D666897420D7FD05002E634C /* English_Speech_Female.dat in Resources */,
+				D666897220D7FD05002E634C /* Chinese_And_English_Text.dat in Resources */,
+				D666897520D7FD05002E634C /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */,
+				D666897E20D7FD05002E634C /* tmp_license.dat in Resources */,
 				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
-				D6CC7EB91E03F5A100F25176 /* Chinese_Speech_Male.dat in Resources */,
 				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
+				D666897B20D7FD05002E634C /* license-ios-etts-BaiduBoxDev.dat in Resources */,
+				D666897320D7FD05002E634C /* Chinese_And_English_Speech_DYY.dat in Resources */,
 				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,
-				D6CC7EBB1E03F5A100F25176 /* English_Speech_Female.dat in Resources */,
 				D680F02F1E69AE5300F8458A /* notification.caf in Resources */,
 				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
-				D6CC7EB81E03F5A100F25176 /* Chinese_Speech_Female.dat in Resources */,
-				D6CC7EBC1E03F5A100F25176 /* English_Speech_Male.dat in Resources */,
 				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
 				D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */,
+				D666897C20D7FD05002E634C /* Chinese_Text.dat in Resources */,
+				D666898020D7FD05002E634C /* .gitignore in Resources */,
+				D666897620D7FD05002E634C /* Chinese_And_English_Speech_Male.dat in Resources */,
 				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
-				D6CC7EBA1E03F5A100F25176 /* Chinese_Text.dat in Resources */,
 				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
-				D6CC7EBD1E03F5A100F25176 /* English_Text.dat in Resources */,
-				D6CC7EB71E03F5A100F25176 /* .gitignore in Resources */,
 				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
 				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
+				D666897920D7FD05002E634C /* Chinese_Speech_Male.dat in Resources */,
 				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
 				D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */,
+				D666897720D7FD05002E634C /* English_Text.dat in Resources */,
 				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
+				D666897820D7FD05002E634C /* English_Speech_Male.dat in Resources */,
+				D666897D20D7FD05002E634C /* Chinese_Speech_Female.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,6 +1183,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDS/BDSClientLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1151,6 +1218,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDS/BDSClientLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";

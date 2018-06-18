@@ -42,6 +42,9 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         SpeechSynthesizerManager.sharedInstance.cancel()
         SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.title)
         SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.desc)
+        SpeechSynthesizerManager.sharedInstance.speak(sentence: self.articleModel.description_notes?.reduce("", { (result, model) -> String in
+            result + "\n" + (model.desc ?? "")
+        }))
         NotificationCenter.default.addObserver(self, selector: #selector(showArticleDetailBigImage(notification:)), name: NSNotification.Name(NGPArticleDetailBigImageSelectedNotification), object: nil)
     }
     
