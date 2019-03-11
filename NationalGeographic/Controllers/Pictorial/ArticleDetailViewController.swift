@@ -77,7 +77,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.tableView.register(UINib(nibName: "ArticlePhotosCell", bundle: nil), forCellReuseIdentifier: "ArticlePhotosCell")
         self.tableView.register(UINib(nibName: "ArticleFooterCell", bundle: nil), forCellReuseIdentifier: "ArticleFooterCell")
         self.tableView.estimatedRowHeight = 100
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -91,7 +91,7 @@ class ArticleDetailViewController: UIViewController, UITableViewDataSource, UITa
         hasPhotos = (articleModel.photos?.count ?? 0) > 0 ? true : false
         
         if let title = articleModel.destination_intro_title {
-            if title.characters.count > 0 {
+            if title.length > 0 {
                 hasDestIntro = true
             }
         }

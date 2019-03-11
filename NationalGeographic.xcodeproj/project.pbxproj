@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */; };
+		3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */; };
+		3849A5FA2236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */; };
+		3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */; };
+		3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */; };
+		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
+		3849A5FE2236451F00559E4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F72236451F00559E4B /* .gitignore */; };
 		6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397802414552824FD695D7EF /* Pods_NationalGeographic.framework */; };
 		A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */; };
 		D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615331DE28A3100C4000F /* PictorialCell.swift */; };
@@ -55,21 +62,6 @@
 		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
 		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
 		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
-		D666897220D7FD05002E634C /* Chinese_And_English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */; };
-		D666897320D7FD05002E634C /* Chinese_And_English_Speech_DYY.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */; };
-		D666897420D7FD05002E634C /* English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894820D7FD04002E634C /* English_Speech_Female.dat */; };
-		D666897520D7FD05002E634C /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */; };
-		D666897620D7FD05002E634C /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */; };
-		D666897720D7FD05002E634C /* English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894B20D7FD04002E634C /* English_Text.dat */; };
-		D666897820D7FD05002E634C /* English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894C20D7FD04002E634C /* English_Speech_Male.dat */; };
-		D666897920D7FD05002E634C /* Chinese_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */; };
-		D666897A20D7FD05002E634C /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */; };
-		D666897B20D7FD05002E634C /* license-ios-etts-BaiduBoxDev.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */; };
-		D666897C20D7FD05002E634C /* Chinese_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895020D7FD04002E634C /* Chinese_Text.dat */; };
-		D666897D20D7FD05002E634C /* Chinese_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */; };
-		D666897E20D7FD05002E634C /* tmp_license.dat in Resources */ = {isa = PBXBuildFile; fileRef = D666895220D7FD04002E634C /* tmp_license.dat */; };
-		D666897F20D7FD05002E634C /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */; };
-		D666898020D7FD05002E634C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D666895520D7FD04002E634C /* .gitignore */; };
 		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
 		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
 		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
@@ -143,6 +135,23 @@
 
 /* Begin PBXFileReference section */
 		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
+		3849A5E42236451F00559E4B /* BDSSynthesizerStatusNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerStatusNotifications.h; sourceTree = "<group>"; };
+		3849A5E52236451F00559E4B /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		3849A5E62236451F00559E4B /* BDS_EttsModelManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDS_EttsModelManagerInterface.h; sourceTree = "<group>"; };
+		3849A5E72236451F00559E4B /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
+		3849A5E82236451F00559E4B /* BDSMixedModeSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSMixedModeSynthesizer.h; sourceTree = "<group>"; };
+		3849A5E92236451F00559E4B /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		3849A5EA2236451F00559E4B /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		3849A5EB2236451F00559E4B /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		3849A5EC2236451F00559E4B /* BDSTTSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSTTSEventManager.h; sourceTree = "<group>"; };
+		3849A5ED2236451F00559E4B /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Text.dat; sourceTree = "<group>"; };
+		3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_DYY.dat; sourceTree = "<group>"; };
+		3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chinese_And_English_Speech_Male-yyjw.dat"; sourceTree = "<group>"; };
+		3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
+		3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
+		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		3849A5F72236451F00559E4B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		397802414552824FD695D7EF /* Pods_NationalGeographic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,31 +205,6 @@
 		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6549C631DDC2D910036650E /* NationalGeographic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NationalGeographic-Bridging-Header.h"; sourceTree = "<group>"; };
 		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
-		D666891A20D7FD04002E634C /* BDSSynthesizerStatusNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerStatusNotifications.h; sourceTree = "<group>"; };
-		D666891B20D7FD04002E634C /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
-		D666891C20D7FD04002E634C /* BDS_EttsModelManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDS_EttsModelManagerInterface.h; sourceTree = "<group>"; };
-		D666891D20D7FD04002E634C /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
-		D666891E20D7FD04002E634C /* BDSMixedModeSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSMixedModeSynthesizer.h; sourceTree = "<group>"; };
-		D666891F20D7FD04002E634C /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
-		D666892020D7FD04002E634C /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
-		D666892120D7FD04002E634C /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
-		D666892220D7FD04002E634C /* BDSTTSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSTTSEventManager.h; sourceTree = "<group>"; };
-		D666892320D7FD04002E634C /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
-		D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Text.dat; sourceTree = "<group>"; };
-		D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_DYY.dat; sourceTree = "<group>"; };
-		D666894820D7FD04002E634C /* English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Female.dat; sourceTree = "<group>"; };
-		D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chinese_And_English_Speech_Male-yyjw.dat"; sourceTree = "<group>"; };
-		D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
-		D666894B20D7FD04002E634C /* English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Text.dat; sourceTree = "<group>"; };
-		D666894C20D7FD04002E634C /* English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = English_Speech_Male.dat; sourceTree = "<group>"; };
-		D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Male.dat; sourceTree = "<group>"; };
-		D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
-		D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-ios-etts-BaiduBoxDev.dat"; sourceTree = "<group>"; };
-		D666895020D7FD04002E634C /* Chinese_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Text.dat; sourceTree = "<group>"; };
-		D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_Speech_Female.dat; sourceTree = "<group>"; };
-		D666895220D7FD04002E634C /* tmp_license.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tmp_license.dat; sourceTree = "<group>"; };
-		D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
-		D666895520D7FD04002E634C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
 		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AlbumCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
@@ -286,7 +270,7 @@
 				D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */,
 				D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */,
 				D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */,
-				D666897F20D7FD05002E634C /* libBaiduSpeechSDK.a in Frameworks */,
+				3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */,
 				D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */,
 				D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */,
 				6361DFE91CB9DDEF55FF0F2A /* Pods_NationalGeographic.framework in Frameworks */,
@@ -323,6 +307,70 @@
 				EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3849A5E12236451F00559E4B /* BDS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E22236451F00559E4B /* BDSClientHeaders */,
+				3849A5EE2236451F00559E4B /* BDSClientResource */,
+				3849A5F52236451F00559E4B /* BDSClientLib */,
+			);
+			path = BDS;
+			sourceTree = "<group>";
+		};
+		3849A5E22236451F00559E4B /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E32236451F00559E4B /* TTS */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		3849A5E32236451F00559E4B /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E42236451F00559E4B /* BDSSynthesizerStatusNotifications.h */,
+				3849A5E52236451F00559E4B /* BDSSpeechSynthesizerDelegate.h */,
+				3849A5E62236451F00559E4B /* BDS_EttsModelManagerInterface.h */,
+				3849A5E72236451F00559E4B /* BDSBuiltInPlayer.h */,
+				3849A5E82236451F00559E4B /* BDSMixedModeSynthesizer.h */,
+				3849A5E92236451F00559E4B /* BDSSpeechSynthesizer.h */,
+				3849A5EA2236451F00559E4B /* BDSSpeechSynthesizerParams.h */,
+				3849A5EB2236451F00559E4B /* BDSSynthesizerLogLevel.h */,
+				3849A5EC2236451F00559E4B /* BDSTTSEventManager.h */,
+				3849A5ED2236451F00559E4B /* BDSSpeechSynthesizerErrors.h */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		3849A5EE2236451F00559E4B /* BDSClientResource */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5EF2236451F00559E4B /* TTS */,
+			);
+			path = BDSClientResource;
+			sourceTree = "<group>";
+		};
+		3849A5EF2236451F00559E4B /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */,
+				3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */,
+				3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */,
+				3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */,
+				3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		3849A5F52236451F00559E4B /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */,
+				3849A5F72236451F00559E4B /* .gitignore */,
+			);
+			path = BDSClientLib;
 			sourceTree = "<group>";
 		};
 		754335DC08D477ADFB71D38B /* Pods */ = {
@@ -423,78 +471,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		D666890920D7FD04002E634C /* BDS */ = {
-			isa = PBXGroup;
-			children = (
-				D666890A20D7FD04002E634C /* BDSClientHeaders */,
-				D666892420D7FD04002E634C /* BDSClientResource */,
-				D666895320D7FD04002E634C /* BDSClientLib */,
-			);
-			path = BDS;
-			sourceTree = "<group>";
-		};
-		D666890A20D7FD04002E634C /* BDSClientHeaders */ = {
-			isa = PBXGroup;
-			children = (
-				D666891920D7FD04002E634C /* TTS */,
-			);
-			path = BDSClientHeaders;
-			sourceTree = "<group>";
-		};
-		D666891920D7FD04002E634C /* TTS */ = {
-			isa = PBXGroup;
-			children = (
-				D666891A20D7FD04002E634C /* BDSSynthesizerStatusNotifications.h */,
-				D666891B20D7FD04002E634C /* BDSSpeechSynthesizerDelegate.h */,
-				D666891C20D7FD04002E634C /* BDS_EttsModelManagerInterface.h */,
-				D666891D20D7FD04002E634C /* BDSBuiltInPlayer.h */,
-				D666891E20D7FD04002E634C /* BDSMixedModeSynthesizer.h */,
-				D666891F20D7FD04002E634C /* BDSSpeechSynthesizer.h */,
-				D666892020D7FD04002E634C /* BDSSpeechSynthesizerParams.h */,
-				D666892120D7FD04002E634C /* BDSSynthesizerLogLevel.h */,
-				D666892220D7FD04002E634C /* BDSTTSEventManager.h */,
-				D666892320D7FD04002E634C /* BDSSpeechSynthesizerErrors.h */,
-			);
-			path = TTS;
-			sourceTree = "<group>";
-		};
-		D666892420D7FD04002E634C /* BDSClientResource */ = {
-			isa = PBXGroup;
-			children = (
-				D666894520D7FD04002E634C /* TTS */,
-			);
-			path = BDSClientResource;
-			sourceTree = "<group>";
-		};
-		D666894520D7FD04002E634C /* TTS */ = {
-			isa = PBXGroup;
-			children = (
-				D666894620D7FD04002E634C /* Chinese_And_English_Text.dat */,
-				D666894720D7FD04002E634C /* Chinese_And_English_Speech_DYY.dat */,
-				D666894820D7FD04002E634C /* English_Speech_Female.dat */,
-				D666894920D7FD04002E634C /* Chinese_And_English_Speech_Male-yyjw.dat */,
-				D666894A20D7FD04002E634C /* Chinese_And_English_Speech_Male.dat */,
-				D666894B20D7FD04002E634C /* English_Text.dat */,
-				D666894C20D7FD04002E634C /* English_Speech_Male.dat */,
-				D666894D20D7FD04002E634C /* Chinese_Speech_Male.dat */,
-				D666894E20D7FD04002E634C /* Chinese_And_English_Speech_Female.dat */,
-				D666894F20D7FD04002E634C /* license-ios-etts-BaiduBoxDev.dat */,
-				D666895020D7FD04002E634C /* Chinese_Text.dat */,
-				D666895120D7FD04002E634C /* Chinese_Speech_Female.dat */,
-				D666895220D7FD04002E634C /* tmp_license.dat */,
-			);
-			path = TTS;
-			sourceTree = "<group>";
-		};
-		D666895320D7FD04002E634C /* BDSClientLib */ = {
-			isa = PBXGroup;
-			children = (
-				D666895420D7FD04002E634C /* libBaiduSpeechSDK.a */,
-				D666895520D7FD04002E634C /* .gitignore */,
-			);
-			path = BDSClientLib;
-			sourceTree = "<group>";
-		};
 		D67AE0411DDB486E00DBC7AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,7 +546,7 @@
 		D6CC7E7E1E03D3EC00F25176 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				D666890920D7FD04002E634C /* BDS */,
+				3849A5E12236451F00559E4B /* BDS */,
 				D68998251E4C663F0087AC3A /* CSMParallaxCell.h */,
 				D68998261E4C663F0087AC3A /* CSMParallaxCell.m */,
 			);
@@ -708,14 +684,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ChaosVoid;
 				TargetAttributes = {
 					D60C21D61DDB0B5C00375E8B = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 3C5F74LTDA;
-						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -728,6 +703,7 @@
 					D63B1F741DFE9F72000B9276 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 3C5F74LTDA;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -760,36 +736,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */,
 				D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */,
+				3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */,
 				D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */,
-				D666897A20D7FD05002E634C /* Chinese_And_English_Speech_Female.dat in Resources */,
-				D666897420D7FD05002E634C /* English_Speech_Female.dat in Resources */,
-				D666897220D7FD05002E634C /* Chinese_And_English_Text.dat in Resources */,
-				D666897520D7FD05002E634C /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */,
-				D666897E20D7FD05002E634C /* tmp_license.dat in Resources */,
+				3849A5FE2236451F00559E4B /* .gitignore in Resources */,
 				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
 				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
-				D666897B20D7FD05002E634C /* license-ios-etts-BaiduBoxDev.dat in Resources */,
-				D666897320D7FD05002E634C /* Chinese_And_English_Speech_DYY.dat in Resources */,
+				3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */,
 				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,
 				D680F02F1E69AE5300F8458A /* notification.caf in Resources */,
 				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
 				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
+				3849A5FA2236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */,
 				D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */,
-				D666897C20D7FD05002E634C /* Chinese_Text.dat in Resources */,
-				D666898020D7FD05002E634C /* .gitignore in Resources */,
-				D666897620D7FD05002E634C /* Chinese_And_English_Speech_Male.dat in Resources */,
 				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
+				3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */,
 				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
 				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
 				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
-				D666897920D7FD05002E634C /* Chinese_Speech_Male.dat in Resources */,
 				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
 				D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */,
-				D666897720D7FD05002E634C /* English_Text.dat in Resources */,
 				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
-				D666897820D7FD05002E634C /* English_Speech_Male.dat in Resources */,
-				D666897D20D7FD05002E634C /* Chinese_Speech_Female.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +780,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-resources.sh",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
@@ -825,7 +793,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */ = {
@@ -883,7 +851,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AVOSCloud/AVOSCloud.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
@@ -930,7 +898,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1067,6 +1035,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1074,6 +1043,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1124,6 +1094,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1131,6 +1102,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1164,13 +1136,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1191,7 +1163,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -1200,12 +1172,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1225,7 +1197,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
@@ -1246,7 +1218,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1266,7 +1238,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

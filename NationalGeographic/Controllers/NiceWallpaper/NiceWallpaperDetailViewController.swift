@@ -246,9 +246,9 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         if view.layer.animation(forKey: "aniKey") == nil {
             let transition = CATransition()
-            transition.type = kCATransitionFade
+            transition.type = CATransitionType.fade
             transition.duration = 1
-            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
             
             // This makes the animation go.
             self.view.layer.add(transition, forKey: "aniKey")

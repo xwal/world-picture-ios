@@ -222,7 +222,7 @@ extension AlbumListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSourc
         let font = UIFont.boldSystemFont(ofSize: 17)
         let textColor = UIColor(hex: "25282b")
         
-        let attributes: [NSAttributedStringKey: Any] = [.font:font, .foregroundColor: textColor]
+        let attributes: [NSAttributedString.Key: Any] = [.font:font, .foregroundColor: textColor]
         return NSAttributedString(string: text, attributes: attributes)
     }
     
@@ -246,11 +246,11 @@ extension AlbumListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSourc
         return animation
     }
     
-    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
         let text = "点击刷新"
         let font = UIFont.systemFont(ofSize: 15)
         let textColor = UIColor(hex: state == .normal ? "007ee5" : "48a1ea")
-        let attributes: [NSAttributedStringKey: Any] = [.font: font, .foregroundColor: textColor]
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: textColor]
         return NSAttributedString(string: text, attributes: attributes)
     }
     

@@ -106,8 +106,8 @@ class ShareManager: NSObject {
             print("分享成功")
             msg = "分享成功"
         case .fail:
-            print("授权失败,错误描述:\(error)")
-            msg = "授权失败,错误描述:\(error?.localizedDescription)"
+            print("授权失败,错误描述:\(error?.localizedDescription ?? "")")
+            msg = "授权失败,错误描述:\(error?.localizedDescription ?? "")"
         case .cancel:
             print("取消分享")
             msg = "取消分享"

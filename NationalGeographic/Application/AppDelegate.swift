@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }()
     
     // MARK: Life Cycle
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         openLog(true)
         
@@ -184,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let content = UNMutableNotificationContent()
             content.title = "每日壁纸"
             content.body = "今日壁纸已经为您准备好！"
-            content.sound = UNNotificationSound(named: "notification.caf")
+            content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("notification.caf"))
             
             // 2. 创建发送触发
             let dateComponents = DateComponents(hour: 9)
@@ -252,7 +252,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func setupAppearance() {
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
     }
     
     func showTodayWallpaper() {
@@ -289,7 +289,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.scheme == "ngp" && url.host == "TodayWallpaper" {
             showTodayWallpaper()
             return true
@@ -308,7 +308,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let audioSession = AVAudioSession.sharedInstance()
         try? audioSession.setActive(true)
         //后台播放
-        try? audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        if #available(iOS 10.0, *) {
+            try? audioSession.setCategory(.playback, mode: .default, options: [])
+        } else {
+            // Set category with options (iOS 9+) setCategory(_:options:)
+            AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:withOptions:error:"), with: AVAudioSession.Category.playback, with:  [])
+            
+            // Set category without options (<= iOS 9) setCategory(_:)
+            AVAudioSession.sharedInstance().perform(NSSelectorFromString("setCategory:error:"), with: AVAudioSession.Category.playback)
+        }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -388,7 +396,7 @@ extension UIWindow {
         return true
     }
     
-    open override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
         let enabled = SpeechSynthesizerManager.sharedInstance.isEnabled
         
@@ -407,3 +415,13 @@ extension UIWindow {
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+	return UNNotificationSoundName(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

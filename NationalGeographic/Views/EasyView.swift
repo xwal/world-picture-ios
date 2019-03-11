@@ -43,7 +43,7 @@ class EasyView: UIView, UITableViewDataSource, UITableViewDelegate {
             maker.center.equalTo(self.snp.center)
         }
         
-        easyTableView.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        easyTableView.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
         
         easyTableView.delegate = self
         easyTableView.dataSource = self
@@ -58,7 +58,7 @@ class EasyView: UIView, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EasyCell
-        cell.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
         let model = articles[indexPath.row]
         cell.easyImageView.kf.setImage(with: URL(string: model.image_url!), placeholder: Image(named: "ArticleCellPlaceholder"), options: [.transition(.fade(0.5))])
         return cell

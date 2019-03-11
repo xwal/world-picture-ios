@@ -27,23 +27,14 @@ class SpeechSynthesizerManager: NSObject {
     }
     
     private func loadOfflineTTS() {
-        let ChineseSpeechData = Bundle.main.path(forResource: "Chinese_Speech_Female", ofType: "dat")
-        let ChineseTextData = Bundle.main.path(forResource: "Chinese_Text", ofType: "dat")
-        let EnglishSpeechData = Bundle.main.path(forResource: "English_Speech_Female", ofType: "dat")
-        let EnglishTextData = Bundle.main.path(forResource: "English_Text", ofType: "dat")
+        let offlineSpeechData = Bundle.main.path(forResource: "Chinese_And_English_Speech_Female", ofType: "dat")
+        let offlineTextData = Bundle.main.path(forResource: "Chinese_And_English_Text", ofType: "dat")
         
-        var loadErr = BDSSpeechSynthesizer.sharedInstance()?.loadOfflineEngine(ChineseTextData,
-                                                                               speechDataPath: ChineseSpeechData,
+        let loadErr = BDSSpeechSynthesizer.sharedInstance()?.loadOfflineEngine(offlineTextData,
+                                                                               speechDataPath: offlineSpeechData,
                                                                                licenseFilePath: nil,
                                                                                withAppCode: "9084081")
         
-        if loadErr != nil {
-            print(loadErr!)
-        }
-        
-        // 加载英文资源
-        loadErr = BDSSpeechSynthesizer.sharedInstance()?.loadEnglishData(forOfflineEngine: EnglishTextData,
-                                                                         speechData: EnglishSpeechData)
         if loadErr != nil {
             print(loadErr!)
         }
@@ -74,7 +65,7 @@ class SpeechSynthesizerManager: NSObject {
             BDSSpeechSynthesizer.sharedInstance().speakSentence(promptSentence, withError: &error)
             
             if error != nil {
-                print("错误：\(error?.code) 描述：\(error?.localizedDescription)")
+                print("error: \(error?.localizedDescription ?? "")")
             }
         }
     }

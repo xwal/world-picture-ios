@@ -66,12 +66,12 @@ class AlbumDetailViewController: UIViewController, UIPageViewControllerDataSourc
             pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
             pageViewController.dataSource = self
             pageViewController.delegate = self
-            self.addChildViewController(pageViewController)
+            self.addChild(pageViewController)
             self.view.addSubview(pageViewController.view)
             pageViewController.view.snp.makeConstraints { (maker) in
                 maker.edges.equalTo(self.view)
             }
-            self.view.sendSubview(toBack: pageViewController.view)
+            self.view.sendSubviewToBack(pageViewController.view)
         }
         
         let initPictureDetail = self.createPictureDetail()
