@@ -363,7 +363,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 
                 let appVersion = JSON(Bundle.main.infoDictionary!)["CFBundleShortVersionString"].stringValue
                 
-                if itunesVersion.isEmpty || itunesVersion == appVersion {
+                guard itunesVersion.compare(appVersion,
+                                            options: NSString.CompareOptions.caseInsensitive) == .orderedDescending else {
                     return
                 }
                 

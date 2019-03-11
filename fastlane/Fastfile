@@ -11,43 +11,534 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.61.0"
+fastlane_require "spaceship"
+
+fastlane_version "2.89.0"
 
 default_platform :ios
 
 platform :ios do
+
+  base_path = Pathname::new(File::dirname(__FILE__)).realpath.parent
+
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    cocoapods
+    # cocoapods
     # carthage
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  desc "生成 adhoc 测试版本，提交到蒲公英，参数 => type:'adhoc/development'，默认adhoc"
+  lane :pgyer_beta do |options|
+
+    type = String(options[:type] || "adhoc")
+
+    if type == "adhoc"
+      export_method = "ad-hoc"
+      match_type = "adhoc"
+      match_type_name = "AdHoc"
+    else
+      export_method = "development"
+      match_type = "development"
+      match_type_name = "Development"
+    end
+
+    git_reversion = sh("git log -1 --pretty=format:'%h'")
+    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    build_number = number_of_commits(all: false)
+
+    # git log
+    git_log = sh("git log --no-merges -1 --pretty=format:'# %ai%n# %B by %an'")
+    build_time = Time.new.strftime("%Y-%m-%d_%H.%M.%S")
+
+    # 输出目录
+    output_dir = "#{base_path}/Output/adhoc/#{build_time}"
+    output_name = "#{ENV["SCHEME_NAME"]}_v#{version_number}(#{build_number}).ipa"
+
+    # 更新 build number
+    increment_build_number(build_number: build_number)
+
+    # 更新 product bundle identifier
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["DEV_APP_IDENTIFIER"]}"
+    )
+    # 更新display名称，PS: 不能用来更新bundle identifier
+    update_info_plist(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      block: proc do |plist|
+        plist["CFBundleDisplayName"] = "#{ENV["DEV_APP_NAME"]}"
+        plist["CFBundleName"] = "#{ENV["DEV_APP_NAME"]}"
+        plist["GIT_REVISION"] = git_reversion
+        plist["BUILD_TIME"] = build_time
+        plist["APP_CHANNEL"] = "pgyer"
+        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
+        urlScheme[:CFBundleURLSchemes] = ["#{ENV["DEV_WEIXIN_APPID"]}"]
+      end
+    )
+
+    # 更新Notification Service Extension plist
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["DEV_NOTIFICATION_SERVICE"]}"
+    )
+
+    match(
+      type: "#{match_type}", 
+      app_identifier: ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_NOTIFICATION_SERVICE"]}"], 
+      readonly: true
+    )
+
+    gym(
+      export_method: "#{export_method}",
+      include_bitcode: false,
+      scheme: "#{ENV["SCHEME_NAME"]}", 
+      configuration: "AdHoc",
+      export_options: {
+        compileBitcode: false,
+        uploadBitcode: false,
+        provisioningProfiles: {
+          "#{ENV["DEV_APP_IDENTIFIER"]}" => "match #{match_type_name} #{ENV["DEV_APP_IDENTIFIER"]}",
+          "#{ENV["DEV_NOTIFICATION_SERVICE"]}" => "match #{match_type_name} #{ENV["DEV_NOTIFICATION_SERVICE"]}"
+        }
+      },
+      output_directory: output_dir,
+      output_name: output_name
+    )
+    # pilot
+    pgyer(
+      api_key: "0098b94391ff417d86837343597789a9",
+      user_key: "4ca1278171177f624ba3f3cc39eb2d73",
+      update_description: git_log
+    )
+    
+    dev_bugly_app_id = "#{ENV["DEV_BUGLY_APPID"]}"
+    dev_bugly_app_key = "#{ENV["DEV_BUGLY_APPKEY"]}"
+
+    # 上传 dsym 文件到 bugly
+    sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{dev_bugly_app_key}&app_id=#{dev_bugly_app_id}' \
+      --form 'api_version=1' \
+      --form 'app_id=#{dev_bugly_app_id}' \
+      --form 'app_key=#{dev_bugly_app_key}' \
+      --form 'symbolType=2'  \
+      --form 'bundleId=#{ENV["DEV_APP_IDENTIFIER"]}' \
+      --form 'productVersion=#{version_number}(#{build_number})' \
+      --form 'channel=pgyer' \
+      --form 'fileName=Pgyer.app.dSYM.zip' \
+      --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
+      --verbose")
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "NationalGeographic") # Build your app - more options available
-    pilot
+  desc "生成 adhoc 预发版本，提交到蒲公英"
+  lane :pgyer_release do
 
-    # sh "your_script.sh"
-    # You can also use other beta testing services here (run `fastlane actions`)
+    git_reversion = sh("git log -1 --pretty=format:'%h'")
+    build_time = Time.new.strftime("%Y-%m-%d_%H.%M.%S")
+    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    build_number = number_of_commits(all: false)
+    git_log = sh("git log --no-merges -1 --pretty=format:'# %ai%n# %B by %an'")
+
+    # 输出目录
+    output_dir = "#{base_path}/Output/release/#{build_time}"
+    output_name = "#{ENV["SCHEME_NAME"]}_v#{version_number}(#{build_number}).ipa"
+
+    # 更新 build number
+    increment_build_number(build_number: build_number)
+
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_APP_IDENTIFIER"]}"
+    )
+
+    update_info_plist(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      block: proc do |plist|
+        plist["CFBundleDisplayName"] = "#{ENV["PROD_APP_NAME"]}"
+        plist["CFBundleName"] = "#{ENV["PROD_APP_NAME"]}"
+        plist["GIT_REVISION"] = git_reversion
+        plist["BUILD_TIME"] = build_time
+        plist["APP_CHANNEL"] = "pgyer"
+        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
+        urlScheme[:CFBundleURLSchemes] = ["#{ENV["PROD_WEIXIN_APPID"]}"]
+      end
+    )
+
+    # 更新Notification Service Extension plist
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_NOTIFICATION_SERVICE"]}"
+    )
+
+    match(
+      type: "adhoc", 
+      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"], 
+      readonly: true
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_APP_IDENTIFIER"]}_adhoc_profile-path"],
+      build_configuration: "Release"
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_NOTIFICATION_SERVICE"]}_adhoc_profile-path"],
+      build_configuration: "Release"
+    )
+
+    gym(
+      export_method: "ad-hoc", 
+      scheme: "#{ENV["SCHEME_NAME"]}", 
+      configuration: "Release",
+      export_options: {
+        compileBitcode: false,
+        uploadBitcode: false,
+        provisioningProfiles: {
+          "#{ENV["PROD_APP_IDENTIFIER"]}" => "match AdHoc #{ENV["PROD_APP_IDENTIFIER"]}",
+          "#{ENV["PROD_NOTIFICATION_SERVICE"]}" => "match AdHoc #{ENV["PROD_NOTIFICATION_SERVICE"]}"
+        }
+      },
+      output_directory: output_dir,
+      output_name: output_name
+    )
+    # pilot
+    
+    # 上传蒲公英
+    pgyer(
+      api_key: "0098b94391ff417d86837343597789a9",
+      user_key: "4ca1278171177f624ba3f3cc39eb2d73",
+      update_description: git_log
+    )
+
+    # 上传 dsym 文件到 bugly
+    prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
+    prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
+    sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
+      --form 'api_version=1' \
+      --form 'app_id=#{prod_bugly_app_id}' \
+      --form 'app_key=#{prod_bugly_app_key}' \
+      --form 'symbolType=2'  \
+      --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
+      --form 'productVersion=#{version_number}(#{build_number})' \
+      --form 'channel=appstore' \
+      --form 'fileName=Pgyer.app.dSYM.zip' \
+      --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
+      --verbose")
   end
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
+  desc "生成 appstore 版本，发布到 App Store"
+  lane :appstore_release do
+
+    git_reversion = sh("git log -1 --pretty=format:'%h'")
+    build_time = Time.new.strftime("%Y-%m-%d_%H.%M.%S")
+    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    build_number = number_of_commits(all: false)
+
+    # 输出目录
+    output_dir = "#{base_path}/Output/appstore/#{build_time}"
+    output_name = "#{ENV["SCHEME_NAME"]}_v#{version_number}(#{build_number}).ipa"
+
+    clear_derived_data
+
+    # 更新 build number
+    increment_build_number(build_number: build_number)
+
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_APP_IDENTIFIER"]}"
+    )
+
+    update_info_plist(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["SCHEME_NAME"]}/Info.plist",
+      block: proc do |plist|
+        plist["CFBundleDisplayName"] = "#{ENV["PROD_APP_NAME"]}"
+        plist["CFBundleName"] = "#{ENV["PROD_APP_NAME"]}"
+        plist["GIT_REVISION"] = git_reversion
+        plist["BUILD_TIME"] = build_time
+        plist["APP_CHANNEL"] = "appstore"
+        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
+        urlScheme[:CFBundleURLSchemes] = ["#{ENV["PROD_WEIXIN_APPID"]}"]
+      end
+    )
+
+    # 更新Notification Service Extension plist
+    update_app_identifier(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_NOTIFICATION_SERVICE"]}"
+    )
+
+    match(
+      type: "appstore", 
+      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"], 
+      readonly: true
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_APP_IDENTIFIER"]}_appstore_profile-path"],
+      build_configuration: "AppStore"
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_NOTIFICATION_SERVICE"]}_appstore_profile-path"],
+      build_configuration: "AppStore"
+    )
+
     # snapshot
-    gym(scheme: "NationalGeographic") # Build your app - more options available
-    deliver(force: true)
+
+    gym(
+      export_method: "app-store", 
+      scheme: "#{ENV["SCHEME_NAME"]}", 
+      configuration: "AppStore",
+      export_options: {
+        provisioningProfiles: {
+          "#{ENV["PROD_APP_IDENTIFIER"]}" => "match AppStore #{ENV["PROD_APP_IDENTIFIER"]}",
+          "#{ENV["PROD_NOTIFICATION_SERVICE"]}" => "match AppStore #{ENV["PROD_NOTIFICATION_SERVICE"]}"
+        }
+      },
+      output_directory: output_dir,
+      output_name: output_name
+    )
+
+    deliver(
+      metadata_path: "#{ENV["DELIVER_METADATA_PATH"]}",
+      force: true
+    )
     # frameit
   end
 
+  desc "上传 AppStore DSYM 文件到 Bugly，参数 => version:[latest]"
+  lane :upload_appstore_dsyms do |options|
+    version = String(options[:version] || "latest")
+    download_dsyms(version: version)
+    dsym_paths = lane_context[SharedValues::DSYM_PATHS]
+    for dsym_path in dsym_paths
+      # 解析DSYM文件版本
+      split_strs = dsym_path.split(/\//).last.split(/-/)
+      version_number = split_strs[1]
+      build_number = split_strs[2].split(/\./)[0]
+      # 上传 dsym 文件到 bugly
+      prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
+      prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
+      sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
+        --form 'api_version=1' \
+        --form 'app_id=#{prod_bugly_app_id}' \
+        --form 'app_key=#{prod_bugly_app_key}' \
+        --form 'symbolType=2'  \
+        --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
+        --form 'productVersion=#{version_number}(#{build_number})' \
+        --form 'channel=appstore' \
+        --form 'fileName=AppStore.app.dSYM.zip' \
+        --form 'file=@#{dsym_path}' \
+        --verbose")
+    end
+    clean_build_artifacts
+  end
+
+  desc "手动批量添加设备到profile"
+  lane :add_devices_manual do
+
+    UI.header "Add Device"
+    device_hash = {}
+    device_sum = UI.input("Device Sum: ").to_i
+    if device_sum == 0
+      next
+    end
+    index = 0
+    while index < device_sum do
+      device_name = UI.input("Device Name: ")
+      device_udid = UI.input("Device UDID: ")
+      device_hash[device_name] = device_udid
+      index += 1
+    end
+    
+    register_devices(
+        devices: device_hash
+    )
+    refresh_profiles
+  end
+
+  desc "文件批量添加设备到profile"
+  lane :add_devices_file do
+    register_devices(
+      devices_file: "fastlane/devices.txt"
+    )
+    refresh_profiles
+  end
+
+  desc "批量导出设备"
+  lane :export_devices do
+    password = UI.password("输入 #{ENV["APPLE_ID"]} 账号密码: ")
+    Spaceship::Portal.login("#{ENV["APPLE_ID"]}", password)
+    Spaceship::Portal.select_team(team_id: "#{ENV["TEAM_ID"]}")
+    devices = Spaceship.device.all
+    File.open("#{base_path}/fastlane/devices.txt", "wb") do |f|
+      f.puts "Device ID\tDevice Name"
+      devices.each do |device|
+        f.puts "#{device.udid}\t#{device.name}"
+      end
+    end
+  end
+
   # You can define as many lanes as you want
+  desc "更新 provisioning profiles"
+  lane :refresh_profiles do
+    match(
+      type: "development",
+      force: true,
+      force_for_new_devices: true
+    )
+    match(
+      type: "adhoc",
+      force: true,
+      force_for_new_devices: true
+    )
+    match(
+      type: "appstore",
+      force: true,
+      force_for_new_devices: true
+    )
+  end
+
+  desc "同步 certificates 和 provisioning profiles"
+  lane :sync_cert_profiles do
+    match(
+      type: "development",
+      readonly: true
+    )
+    match(
+      type: "adhoc",
+      readonly: true
+    )
+    match(
+      type: "appstore",
+      readonly: true
+    )
+  end
+
+  desc "移除本地描述文件"
+  lane :remove_local_profiles do
+    app_identifiers = ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_NOTIFICATION_SERVICE"]}", "#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"]
+    types = ["development", "adhoc", "appstore"]
+    app_identifiers.each do |app_identifier|
+      types.each do |type|
+        remove_provisioning_profile(app_identifier: app_identifier, type: type)    
+      end
+    end
+  end
+
+  desc "revoke 证书和描述文件"
+  private_lane :revoke_cert_profiles do
+    ENV["MATCH_SKIP_CONFIRMATION"] = "1"
+    sh("fastlane match nuke development")
+    sh("fastlane match nuke distribution")
+  end
+
+  desc "生成APNs证书"
+  lane :generate_apns_cert do
+    pem(
+      development: true, 
+      force: true, 
+      app_identifier: "#{ENV["DEV_APP_IDENTIFIER"]}", 
+      p12_password: "GXM", output_path: "fastlane/pem"
+    )
+
+    pem(
+      development: false, 
+      force: true, 
+      app_identifier: "#{ENV["DEV_APP_IDENTIFIER"]}", 
+      p12_password: "GXM", output_path: "fastlane/pem"
+    )
+
+    pem(
+      development: true, 
+      force: true, 
+      app_identifier: "#{ENV["PROD_APP_IDENTIFIER"]}", 
+      p12_password: "GXM", output_path: "fastlane/pem"
+    )
+
+    pem(
+      development: false, 
+      force: true, 
+      app_identifier: "#{ENV["PROD_APP_IDENTIFIER"]}", 
+      p12_password: "GXM", output_path: "fastlane/pem"
+    )
+  end
+
+  desc "同步 metadata"
+  lane :sync_metadata do
+    ENV["DELIVER_FORCE_OVERWRITE"] = "1"
+    sh("fastlane deliver download_metadata --metadata_path #{ENV["DOWNLOAD_METADATA_PATH"]}")
+  end
+
+  desc "轮询获取当前App处理状态"
+  lane :poll_itunes_build_status do
+    Spaceship::Tunes.login("#{ENV["APPLE_ID"]}")
+    Spaceship::Tunes.select_team(team_id: "#{ENV["ITC_TEAM_ID"]}")
+    app = Spaceship::Tunes::Application.find("#{ENV["APP_IDENTIFIER"]}")
+
+    edit_version = app.edit_version
+
+    while edit_version do
+      latest_build = edit_version.candidate_builds.first
+      puts "Checking Status >>>>>> Version #{latest_build.train_version} Build #{latest_build.build_version}"
+      if latest_build && !latest_build.processing
+        dingtalk_robot(
+          title: latest_build.app_name,
+          text: "#{latest_build.train_version}(#{latest_build.build_version}) 已处理完成",
+          app_icon: "#{app.app_icon_preview_url}",
+          app_url: "#{app.url}"
+        )
+        break
+      end
+      sleep(10)
+      edit_version = app.edit_version
+    end
+  end
+
+  desc "钉钉通知"
+  private_lane :dingtalk_robot do |options|
+    # 钉钉机器人
+    dingTalk_url = "https://oapi.dingtalk.com/robot/send?access_token=7dc59ae3ce68702cb83aa76624ca879ed778a690028b32718da847c1c0ca4dd5"
+    
+    markdown = 
+    {
+      msgtype: "markdown", 
+      markdown: {
+        title: "#{options[:title]}", 
+        text: "### #{options[:text]}\n![app icon](#{options[:app_icon]})\n #### 点击跳转：<#{options[:app_url]}>",
+      },
+      at: {
+        isAtAll: true
+      }
+    }
+
+    uri = URI.parse(dingTalk_url)
+    https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.add_field('Content-Type', 'application/json')
+    request.body = markdown.to_json
+
+    response = https.request(request)
+    puts "------------------------------"
+    puts "Response #{response.code} #{response.message}: #{response.body}"
+  end
 
   after_all do |lane|
     # This block is called, only if the executed lane was successful

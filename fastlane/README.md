@@ -8,45 +8,79 @@ Make sure you have the latest version of the Xcode command line tools installed:
 xcode-select --install
 ```
 
-## Choose your installation method:
-
-<table width="100%" >
-<tr>
-<th width="33%"><a href="http://brew.sh">Homebrew</a></td>
-<th width="33%">Installer Script</td>
-<th width="33%">Rubygems</td>
-</tr>
-<tr>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS or Linux with Ruby 2.0.0 or above</td>
-</tr>
-<tr>
-<td width="33%"><code>brew cask install fastlane</code></td>
-<td width="33%"><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
-<td width="33%"><code>sudo gem install fastlane -NV</code></td>
-</tr>
-</table>
+Install _fastlane_ using
+```
+[sudo] gem install fastlane -NV
+```
+or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios test
+### ios pgyer_beta
 ```
-fastlane ios test
+fastlane ios pgyer_beta
 ```
-Runs all the tests
-### ios beta
+生成 adhoc 测试版本，提交到蒲公英，参数 => type:'adhoc/development'，默认adhoc
+### ios pgyer_release
 ```
-fastlane ios beta
+fastlane ios pgyer_release
 ```
-Submit a new Beta Build to Apple TestFlight
-
-This will also make sure the profile is up to date
-### ios release
+生成 adhoc 预发版本，提交到蒲公英
+### ios appstore_release
 ```
-fastlane ios release
+fastlane ios appstore_release
 ```
-Deploy a new version to the App Store
+生成 appstore 版本，发布到 App Store
+### ios upload_appstore_dsyms
+```
+fastlane ios upload_appstore_dsyms
+```
+上传 AppStore DSYM 文件到 Bugly，参数 => version:[latest]
+### ios add_devices_manual
+```
+fastlane ios add_devices_manual
+```
+手动批量添加设备到profile
+### ios add_devices_file
+```
+fastlane ios add_devices_file
+```
+文件批量添加设备到profile
+### ios export_devices
+```
+fastlane ios export_devices
+```
+批量导出设备
+### ios refresh_profiles
+```
+fastlane ios refresh_profiles
+```
+更新 provisioning profiles
+### ios sync_cert_profiles
+```
+fastlane ios sync_cert_profiles
+```
+同步 certificates 和 provisioning profiles
+### ios remove_local_profiles
+```
+fastlane ios remove_local_profiles
+```
+移除本地描述文件
+### ios generate_apns_cert
+```
+fastlane ios generate_apns_cert
+```
+生成APNs证书
+### ios sync_metadata
+```
+fastlane ios sync_metadata
+```
+同步 metadata
+### ios poll_itunes_build_status
+```
+fastlane ios poll_itunes_build_status
+```
+轮询获取当前App处理状态
 
 ----
 
