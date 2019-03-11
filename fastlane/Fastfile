@@ -73,22 +73,33 @@ platform :ios do
         plist["GIT_REVISION"] = git_reversion
         plist["BUILD_TIME"] = build_time
         plist["APP_CHANNEL"] = "pgyer"
-        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
-        urlScheme[:CFBundleURLSchemes] = ["#{ENV["DEV_WEIXIN_APPID"]}"]
       end
     )
 
-    # 更新Notification Service Extension plist
     update_app_identifier(
       xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
-      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
-      app_identifier: "#{ENV["DEV_NOTIFICATION_SERVICE"]}"
+      plist_path: "#{ENV["EXTENSION_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["DEV_EXTENSION_IDENTIFIER"]}"
     )
 
     match(
       type: "#{match_type}", 
-      app_identifier: ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_NOTIFICATION_SERVICE"]}"], 
+      app_identifier: ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_EXTENSION_IDENTIFIER"]}"], 
       readonly: true
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["DEV_APP_IDENTIFIER"]}_adhoc_profile-path"],
+      build_configuration: "AdHoc"
+    )
+
+    update_project_provisioning(
+      xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
+      target_filter: "#{ENV["EXTENSION_SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["DEV_EXTENSION_IDENTIFIER"]}_adhoc_profile-path"],
+      build_configuration: "AdHoc"
     )
 
     gym(
@@ -101,7 +112,7 @@ platform :ios do
         uploadBitcode: false,
         provisioningProfiles: {
           "#{ENV["DEV_APP_IDENTIFIER"]}" => "match #{match_type_name} #{ENV["DEV_APP_IDENTIFIER"]}",
-          "#{ENV["DEV_NOTIFICATION_SERVICE"]}" => "match #{match_type_name} #{ENV["DEV_NOTIFICATION_SERVICE"]}"
+          "#{ENV["DEV_EXTENSION_IDENTIFIER"]}" => "match #{match_type_name} #{ENV["DEV_EXTENSION_IDENTIFIER"]}"
         }
       },
       output_directory: output_dir,
@@ -109,26 +120,23 @@ platform :ios do
     )
     # pilot
     pgyer(
-      api_key: "0098b94391ff417d86837343597789a9",
-      user_key: "4ca1278171177f624ba3f3cc39eb2d73",
+      api_key: "#{ENV["PGYER_API_KEY"]}",
+      user_key: "#{ENV["PGYER_USER_KEY"]}",
       update_description: git_log
     )
-    
-    dev_bugly_app_id = "#{ENV["DEV_BUGLY_APPID"]}"
-    dev_bugly_app_key = "#{ENV["DEV_BUGLY_APPKEY"]}"
 
     # 上传 dsym 文件到 bugly
-    sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{dev_bugly_app_key}&app_id=#{dev_bugly_app_id}' \
-      --form 'api_version=1' \
-      --form 'app_id=#{dev_bugly_app_id}' \
-      --form 'app_key=#{dev_bugly_app_key}' \
-      --form 'symbolType=2'  \
-      --form 'bundleId=#{ENV["DEV_APP_IDENTIFIER"]}' \
-      --form 'productVersion=#{version_number}(#{build_number})' \
-      --form 'channel=pgyer' \
-      --form 'fileName=Pgyer.app.dSYM.zip' \
-      --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
-      --verbose")
+    # sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{dev_bugly_app_key}&app_id=#{dev_bugly_app_id}' \
+    #   --form 'api_version=1' \
+    #   --form 'app_id=#{dev_bugly_app_id}' \
+    #   --form 'app_key=#{dev_bugly_app_key}' \
+    #   --form 'symbolType=2'  \
+    #   --form 'bundleId=#{ENV["DEV_APP_IDENTIFIER"]}' \
+    #   --form 'productVersion=#{version_number}(#{build_number})' \
+    #   --form 'channel=pgyer' \
+    #   --form 'fileName=Pgyer.app.dSYM.zip' \
+    #   --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
+    #   --verbose")
   end
 
   desc "生成 adhoc 预发版本，提交到蒲公英"
@@ -162,21 +170,18 @@ platform :ios do
         plist["GIT_REVISION"] = git_reversion
         plist["BUILD_TIME"] = build_time
         plist["APP_CHANNEL"] = "pgyer"
-        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
-        urlScheme[:CFBundleURLSchemes] = ["#{ENV["PROD_WEIXIN_APPID"]}"]
       end
     )
 
-    # 更新Notification Service Extension plist
     update_app_identifier(
       xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
-      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
-      app_identifier: "#{ENV["PROD_NOTIFICATION_SERVICE"]}"
+      plist_path: "#{ENV["EXTENSION_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"
     )
 
     match(
       type: "adhoc", 
-      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"], 
+      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"], 
       readonly: true
     )
 
@@ -189,8 +194,8 @@ platform :ios do
 
     update_project_provisioning(
       xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
-      target_filter: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}",
-      profile:ENV["sigh_#{ENV["PROD_NOTIFICATION_SERVICE"]}_adhoc_profile-path"],
+      target_filter: "#{ENV["EXTENSION_SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_EXTENSION_IDENTIFIER"]}_adhoc_profile-path"],
       build_configuration: "Release"
     )
 
@@ -203,7 +208,7 @@ platform :ios do
         uploadBitcode: false,
         provisioningProfiles: {
           "#{ENV["PROD_APP_IDENTIFIER"]}" => "match AdHoc #{ENV["PROD_APP_IDENTIFIER"]}",
-          "#{ENV["PROD_NOTIFICATION_SERVICE"]}" => "match AdHoc #{ENV["PROD_NOTIFICATION_SERVICE"]}"
+          "#{ENV["PROD_EXTENSION_IDENTIFIER"]}" => "match AdHoc #{ENV["PROD_EXTENSION_IDENTIFIER"]}"
         }
       },
       output_directory: output_dir,
@@ -213,25 +218,25 @@ platform :ios do
     
     # 上传蒲公英
     pgyer(
-      api_key: "0098b94391ff417d86837343597789a9",
-      user_key: "4ca1278171177f624ba3f3cc39eb2d73",
+      api_key: "#{ENV["PGYER_API_KEY"]}",
+      user_key: "#{ENV["PGYER_USER_KEY"]}",
       update_description: git_log
     )
 
-    # 上传 dsym 文件到 bugly
-    prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
-    prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
-    sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
-      --form 'api_version=1' \
-      --form 'app_id=#{prod_bugly_app_id}' \
-      --form 'app_key=#{prod_bugly_app_key}' \
-      --form 'symbolType=2'  \
-      --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
-      --form 'productVersion=#{version_number}(#{build_number})' \
-      --form 'channel=appstore' \
-      --form 'fileName=Pgyer.app.dSYM.zip' \
-      --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
-      --verbose")
+    # # 上传 dsym 文件到 bugly
+    # prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
+    # prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
+    # sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
+    #   --form 'api_version=1' \
+    #   --form 'app_id=#{prod_bugly_app_id}' \
+    #   --form 'app_key=#{prod_bugly_app_key}' \
+    #   --form 'symbolType=2'  \
+    #   --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
+    #   --form 'productVersion=#{version_number}(#{build_number})' \
+    #   --form 'channel=appstore' \
+    #   --form 'fileName=Pgyer.app.dSYM.zip' \
+    #   --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
+    #   --verbose")
   end
 
   desc "生成 appstore 版本，发布到 App Store"
@@ -266,21 +271,18 @@ platform :ios do
         plist["GIT_REVISION"] = git_reversion
         plist["BUILD_TIME"] = build_time
         plist["APP_CHANNEL"] = "appstore"
-        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
-        urlScheme[:CFBundleURLSchemes] = ["#{ENV["PROD_WEIXIN_APPID"]}"]
       end
     )
 
-    # 更新Notification Service Extension plist
     update_app_identifier(
       xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
-      plist_path: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}/Info.plist",
-      app_identifier: "#{ENV["PROD_NOTIFICATION_SERVICE"]}"
+      plist_path: "#{ENV["EXTENSION_SCHEME_NAME"]}/Info.plist",
+      app_identifier: "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"
     )
 
     match(
       type: "appstore", 
-      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"], 
+      app_identifier: ["#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"], 
       readonly: true
     )
 
@@ -293,8 +295,8 @@ platform :ios do
 
     update_project_provisioning(
       xcodeproj: "#{ENV["XCODEPROJ_NAME"]}",
-      target_filter: "#{ENV["NOTIFICATIONSERVICE_SCHEME_NAME"]}",
-      profile:ENV["sigh_#{ENV["PROD_NOTIFICATION_SERVICE"]}_appstore_profile-path"],
+      target_filter: "#{ENV["EXTENSION_SCHEME_NAME"]}",
+      profile:ENV["sigh_#{ENV["PROD_EXTENSION_IDENTIFIER"]}_appstore_profile-path"],
       build_configuration: "AppStore"
     )
 
@@ -307,7 +309,7 @@ platform :ios do
       export_options: {
         provisioningProfiles: {
           "#{ENV["PROD_APP_IDENTIFIER"]}" => "match AppStore #{ENV["PROD_APP_IDENTIFIER"]}",
-          "#{ENV["PROD_NOTIFICATION_SERVICE"]}" => "match AppStore #{ENV["PROD_NOTIFICATION_SERVICE"]}"
+          "#{ENV["PROD_EXTENSION_IDENTIFIER"]}" => "match AppStore #{ENV["PROD_EXTENSION_IDENTIFIER"]}"
         }
       },
       output_directory: output_dir,
@@ -432,7 +434,7 @@ platform :ios do
 
   desc "移除本地描述文件"
   lane :remove_local_profiles do
-    app_identifiers = ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_NOTIFICATION_SERVICE"]}", "#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_NOTIFICATION_SERVICE"]}"]
+    app_identifiers = ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_EXTENSION_IDENTIFIER"]}", "#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"]
     types = ["development", "adhoc", "appstore"]
     app_identifiers.each do |app_identifier|
       types.each do |type|

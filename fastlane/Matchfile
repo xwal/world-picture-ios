@@ -4,7 +4,7 @@ git_branch "#{ENV["MATCH_GIT_BRANCH"]}"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier ["#{ENV["APP_IDENTIFIER"]}", "#{ENV["TODAY_WIDGET_IDENTIFIER"]}"]
+app_identifier ["#{ENV["DEV_APP_IDENTIFIER"]}", "#{ENV["DEV_EXTENSION_IDENTIFIER"]}", "#{ENV["PROD_APP_IDENTIFIER"]}", "#{ENV["PROD_EXTENSION_IDENTIFIER"]}"]
 # username "user@fastlane.tools" # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`

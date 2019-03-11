@@ -134,6 +134,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.appstore.xcconfig"; sourceTree = "<group>"; };
 		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
 		3849A5E42236451F00559E4B /* BDSSynthesizerStatusNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerStatusNotifications.h; sourceTree = "<group>"; };
 		3849A5E52236451F00559E4B /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
@@ -153,10 +154,9 @@
 		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		3849A5F72236451F00559E4B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		397802414552824FD695D7EF /* Pods_NationalGeographic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicUITests/Pods-NationalGeographicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.adhoc.xcconfig"; sourceTree = "<group>"; };
 		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
-		BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.appstore.xcconfig"; sourceTree = "<group>"; };
 		D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		D60615331DE28A3100C4000F /* PictorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialCell.swift; sourceTree = "<group>"; };
 		D60615351DE28F5100C4000F /* EasyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EasyView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -253,11 +253,11 @@
 		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication_NGP.swift; sourceTree = "<group>"; };
+		DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.adhoc.xcconfig"; sourceTree = "<group>"; };
 		E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.release.xcconfig"; sourceTree = "<group>"; };
 		EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWallpaperWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographicTests/Pods-NationalGeographicTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,12 +378,12 @@
 			children = (
 				286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */,
 				BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */,
-				BE3E444D11B2D6ED2B66B42F /* Pods-NationalGeographicTests.debug.xcconfig */,
-				F03A7BD5BF3DBB2FFB002592 /* Pods-NationalGeographicTests.release.xcconfig */,
-				4F70657DAA722FDFB0E8BA2C /* Pods-NationalGeographicUITests.debug.xcconfig */,
-				3C35456738E98A5360E7C52C /* Pods-NationalGeographicUITests.release.xcconfig */,
 				D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */,
 				EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */,
+				0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */,
+				DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */,
+				CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */,
+				4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -647,7 +647,6 @@
 				FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */,
 				56D24AF890773D52369E195A /* [CP] Copy Pods Resources */,
 				D63B1F851DFE9F72000B9276 /* Embed App Extensions */,
-				D65EA9651F91FEC60006AEA4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -689,6 +688,7 @@
 				TargetAttributes = {
 					D60C21D61DDB0B5C00375E8B = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3C5F74LTDA;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -702,6 +702,7 @@
 					};
 					D63B1F741DFE9F72000B9276 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3C5F74LTDA;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -830,19 +831,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		D65EA9651F91FEC60006AEA4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "sh ./BuglydSYMUploader/dSYMUpload.sh\n";
 		};
 		FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1138,10 +1126,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1159,11 +1148,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development me.chaosky.WorldPictorial";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				VERSIONING_SYSTEM = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1174,9 +1163,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1194,10 +1185,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc me.chaosky.WorldPictorial";
 				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				VERSIONING_SYSTEM = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1206,9 +1197,10 @@
 			baseConfigurationReference = D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1216,9 +1208,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development me.chaosky.WorldPictorial.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1227,9 +1220,10 @@
 			baseConfigurationReference = EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1237,11 +1231,234 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc me.chaosky.WorldPictorial.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
+		};
+		D6CDCC8F2236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		D6CDCC902236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors",
+				);
+				INFOPLIST_FILE = NationalGeographic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc me.chaosky.WorldPictorial";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AdHoc;
+		};
+		D6CDCC912236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc me.chaosky.WorldPictorial.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AdHoc;
+		};
+		D6CDCC922236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		D6CDCC932236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NationalGeographic/NationalGeographic.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors",
+				);
+				INFOPLIST_FILE = NationalGeographic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/NationalGeographic/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.chaosky.WorldPictorial";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationalGeographic/Application/NationalGeographic-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AppStore;
+		};
+		D6CDCC942236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3C5F74LTDA;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.chaosky.WorldPictorial.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.chaosky.WorldPictorial.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AppStore;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1251,6 +1468,8 @@
 			buildConfigurations = (
 				D60C21FD1DDB0B5D00375E8B /* Debug */,
 				D60C21FE1DDB0B5D00375E8B /* Release */,
+				D6CDCC922236A9DB0030EDC7 /* AppStore */,
+				D6CDCC8F2236A9D40030EDC7 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1260,6 +1479,8 @@
 			buildConfigurations = (
 				D60C22001DDB0B5D00375E8B /* Debug */,
 				D60C22011DDB0B5D00375E8B /* Release */,
+				D6CDCC932236A9DB0030EDC7 /* AppStore */,
+				D6CDCC902236A9D40030EDC7 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1269,6 +1490,8 @@
 			buildConfigurations = (
 				D63B1F821DFE9F72000B9276 /* Debug */,
 				D63B1F831DFE9F72000B9276 /* Release */,
+				D6CDCC942236A9DB0030EDC7 /* AppStore */,
+				D6CDCC912236A9D40030EDC7 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
