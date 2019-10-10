@@ -1,5 +1,0 @@
-#!/bin/sh
-leancloud upload_symbol \
-	-f "$1" \
-	-i "sP1qfVdFjg7uN3L9IvKqK3xT-gzGzoHsz" \
-	-k "XhuPONcLKvAjdDVpeF9jst3j"

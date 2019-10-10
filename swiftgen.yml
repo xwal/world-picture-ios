@@ -1,0 +1,22 @@
+input_dir: WorldPicture/Resources
+output_dir: WorldPicture/Classes/Generated/
+xcassets:
+  inputs: .
+  filter: .+\.xcassets$
+  outputs:
+    - templateName: swift4
+      output: Assets.generated.swift
+
+colors:
+  inputs: Colors.json
+  outputs:
+    templateName: swift4
+    output: Colors.generated.swift
+
+ib:
+  inputs: Interface
+  outputs:
+    - templateName: scenes-swift4
+      output: Storyboard.Scenes.generated.swift
+    - templateName: segues-swift4
+      output: Storyboard.Segues.generated.swift

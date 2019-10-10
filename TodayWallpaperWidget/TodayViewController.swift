@@ -86,12 +86,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         self.view.backgroundColor = UIColor.clear
         
-        if #available(iOSApplicationExtension 10.0, *) {
-            self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-            
-        } else {
-            // Fallback on earlier versions
-        }
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         topView.layer.contents = Image(named: "Navbar_mask")?.cgImage
         bottomView.layer.contents = Image(named: "TopMask")?.cgImage
