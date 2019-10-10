@@ -1,0 +1,1517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		376713021ACA1193B14156E0 /* Pods_WorldPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AFE1AC0137D4B135DA272F /* Pods_WorldPicture.framework */; };
+		3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */; };
+		3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */; };
+		3849A5FA2236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */; };
+		3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */; };
+		3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */; };
+		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
+		3849A5FE2236451F00559E4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F72236451F00559E4B /* .gitignore */; };
+		A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */; };
+		D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615331DE28A3100C4000F /* PictorialCell.swift */; };
+		D60615361DE28F5100C4000F /* EasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60615351DE28F5100C4000F /* EasyView.swift */; };
+		D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
+		D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
+		D61210701F8BC59500FD1A68 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */; };
+		D61210711F8BC6AA00FD1A68 /* WallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */; };
+		D61663741DE7256100D9C897 /* String_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61663731DE7256100D9C897 /* String_NGP.swift */; };
+		D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D61FB38F1DEEC171006E2962 /* Launch Screen.storyboard */; };
+		D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */; };
+		D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */; };
+		D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */; };
+		D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */; };
+		D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */; };
+		D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */; };
+		D63B1F771DFE9F72000B9276 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */; };
+		D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63B1F791DFE9F72000B9276 /* TodayViewController.swift */; };
+		D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */; };
+		D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
+		D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
+		D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
+		D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
+		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
+		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
+		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
+		D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
+		D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */; };
+		D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */; };
+		D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
+		D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F421DEEB33100A3CD03 /* dili.xcassets */; };
+		D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
+		D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */; };
+		D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */; };
+		D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */; };
+		D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */; };
+		D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */; };
+		D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */; };
+		D646C9F81DE2DE12007C9D40 /* ArticleFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */; };
+		D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */; };
+		D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */; };
+		D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */; };
+		D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */; };
+		D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */; };
+		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
+		D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6549C611DDC2D730036650E /* AppDelegate.swift */; };
+		D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66052091DDB666000ADDF34 /* PictureListModel.swift */; };
+		D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */ = {isa = PBXBuildFile; fileRef = D67AE0651DDB486E00DBC7AE /* jianjie.css */; };
+		D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */; };
+		D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */; };
+		D680F02F1E69AE5300F8458A /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = D680F02E1E69AE5300F8458A /* notification.caf */; };
+		D689981E1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */; };
+		D68998211E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689981F1E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift */; };
+		D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */; };
+		D68998271E4C663F0087AC3A /* CSMParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68998261E4C663F0087AC3A /* CSMParallaxCell.m */; };
+		D689982C1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */; };
+		D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */; };
+		D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691DCE11DE281A300F885FE /* ArticleListViewController.swift */; };
+		D69AC8F31E4C1252001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
+		D69AC8F51E4C326B001B0992 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F41E4C326B001B0992 /* Const.swift */; };
+		D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
+		D69AC8F81E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */; };
+		D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */; };
+		D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */; };
+		D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0271DDBED1300B2664C /* PictureCell.swift */; };
+		D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */; };
+		D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */; };
+		D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */; };
+		D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */; };
+		D6BE21651F8E5421002AB59A /* UnsplashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE21641F8E5421002AB59A /* UnsplashModel.m */; };
+		D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */; };
+		D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
+		D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */; };
+		D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */; };
+		D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */; };
+		D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE13451DE29EB600A3A2BF /* EasyCell.swift */; };
+		D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE13461DE29EB600A3A2BF /* EasyCell.xib */; };
+		D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */; };
+		D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */; };
+		D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */; };
+		D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
+		D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */; };
+		D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */; };
+		D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */; };
+		D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */; };
+		D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3B91E041277004EA31A /* AudioToolbox.framework */; };
+		D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */; };
+		D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3BD1E041289004EA31A /* libc++.tbd */; };
+		D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E8D3C11E0412A9004EA31A /* libiconv.tbd */; };
+		D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */; };
+		D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E90D931DE02E0800C65D15 /* Main.storyboard */; };
+		D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D63B1F7F1DFE9F72000B9276 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60C21CF1DDB0B5C00375E8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D63B1F741DFE9F72000B9276;
+			remoteInfo = TodayWallpaperWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D63B1F851DFE9F72000B9276 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00B6401F6E9739A5D0628F30 /* Pods-WorldPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.debug.xcconfig"; sourceTree = "<group>"; };
+		0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.appstore.xcconfig"; sourceTree = "<group>"; };
+		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
+		3849A5E42236451F00559E4B /* BDSSynthesizerStatusNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerStatusNotifications.h; sourceTree = "<group>"; };
+		3849A5E52236451F00559E4B /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		3849A5E62236451F00559E4B /* BDS_EttsModelManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDS_EttsModelManagerInterface.h; sourceTree = "<group>"; };
+		3849A5E72236451F00559E4B /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
+		3849A5E82236451F00559E4B /* BDSMixedModeSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSMixedModeSynthesizer.h; sourceTree = "<group>"; };
+		3849A5E92236451F00559E4B /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		3849A5EA2236451F00559E4B /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		3849A5EB2236451F00559E4B /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		3849A5EC2236451F00559E4B /* BDSTTSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSTTSEventManager.h; sourceTree = "<group>"; };
+		3849A5ED2236451F00559E4B /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Text.dat; sourceTree = "<group>"; };
+		3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_DYY.dat; sourceTree = "<group>"; };
+		3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chinese_And_English_Speech_Male-yyjw.dat"; sourceTree = "<group>"; };
+		3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
+		3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
+		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		3849A5F72236451F00559E4B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.adhoc.xcconfig"; sourceTree = "<group>"; };
+		62AFE1AC0137D4B135DA272F /* Pods_WorldPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B96A8EB9FB2DB602AA64959 /* Pods-WorldPicture.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.adhoc.xcconfig"; sourceTree = "<group>"; };
+		848F295ABC4F7FCFCC7CFADD /* Pods-WorldPicture.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.appstore.xcconfig"; sourceTree = "<group>"; };
+		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
+		CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.appstore.xcconfig"; sourceTree = "<group>"; };
+		D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		D60615331DE28A3100C4000F /* PictorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialCell.swift; sourceTree = "<group>"; };
+		D60615351DE28F5100C4000F /* EasyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EasyView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D606153B1DE2949500C4000F /* PictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialModel.swift; sourceTree = "<group>"; };
+		D60C21D71DDB0B5D00375E8B /* WorldPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60C21E11DDB0B5D00375E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D60C21E61DDB0B5D00375E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperModel.swift; sourceTree = "<group>"; };
+		D61663731DE7256100D9C897 /* String_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_NGP.swift; sourceTree = "<group>"; };
+		D61FB3901DEEC171006E2962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPageViewController.swift; sourceTree = "<group>"; };
+		D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PictureDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordManager.swift; sourceTree = "<group>"; };
+		D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWallpaperWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D63B1F791DFE9F72000B9276 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TodayViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D63B1F7C1DFE9F72000B9276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D63B1F7E1DFE9F72000B9276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWallpaperWidget.entitlements; sourceTree = "<group>"; };
+		D63B1F881DFEA19E000B9276 /* WorldPicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorldPicture.entitlements; sourceTree = "<group>"; };
+		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
+		D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialModel.swift; sourceTree = "<group>"; };
+		D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialPageViewController.swift; sourceTree = "<group>"; };
+		D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TodayWallpaperViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D642BBE81DF156910026D776 /* UIViewController_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_NGP.swift; sourceTree = "<group>"; };
+		D6464F421DEEB33100A3CD03 /* dili.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = dili.xcassets; sourceTree = "<group>"; };
+		D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pictorial.xcassets; sourceTree = "<group>"; };
+		D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ArticleDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePageViewController.swift; sourceTree = "<group>"; };
+		D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSummaryCell.swift; sourceTree = "<group>"; };
+		D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleSummaryCell.xib; sourceTree = "<group>"; };
+		D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleImageCell.swift; sourceTree = "<group>"; };
+		D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleImageCell.xib; sourceTree = "<group>"; };
+		D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleFooterCell.swift; sourceTree = "<group>"; };
+		D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleFooterCell.xib; sourceTree = "<group>"; };
+		D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ArticlePhotosCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlePhotosCell.xib; sourceTree = "<group>"; };
+		D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewCell.swift; sourceTree = "<group>"; };
+		D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHomeScreenViewController.swift; sourceTree = "<group>"; };
+		D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NiceWallpaper.xcassets; sourceTree = "<group>"; };
+		D6549C611DDC2D730036650E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6549C631DDC2D910036650E /* WorldPicture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorldPicture-Bridging-Header.h"; sourceTree = "<group>"; };
+		D66052091DDB666000ADDF34 /* PictureListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureListModel.swift; sourceTree = "<group>"; };
+		D67AE0651DDB486E00DBC7AE /* jianjie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jianjie.css; sourceTree = "<group>"; };
+		D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AlbumCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListModel.swift; sourceTree = "<group>"; };
+		D680F02E1E69AE5300F8458A /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
+		D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperPageViewController.swift; sourceTree = "<group>"; };
+		D689981F1E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryCell.swift; sourceTree = "<group>"; };
+		D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryCell.xib; sourceTree = "<group>"; };
+		D68998251E4C663F0087AC3A /* CSMParallaxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMParallaxCell.h; sourceTree = "<group>"; };
+		D68998261E4C663F0087AC3A /* CSMParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMParallaxCell.m; sourceTree = "<group>"; };
+		D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperImageListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryImageListModel.swift; sourceTree = "<group>"; };
+		D691DCE11DE281A300F885FE /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		D69AC8F21E4C1252001B0992 /* NGPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGPAPI.swift; sourceTree = "<group>"; };
+		D69AC8F41E4C326B001B0992 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryViewController.swift; sourceTree = "<group>"; };
+		D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryModel.swift; sourceTree = "<group>"; };
+		D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView_NGP.swift; sourceTree = "<group>"; };
+		D6A5F0271DDBED1300B2664C /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PictureCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlefavoritesModel.swift; sourceTree = "<group>"; };
+		D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D6BE21631F8E5421002AB59A /* UnsplashModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnsplashModel.h; sourceTree = "<group>"; };
+		D6BE21641F8E5421002AB59A /* UnsplashModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnsplashModel.m; sourceTree = "<group>"; };
+		D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCategoryImageCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCategoryImageCell.xib; sourceTree = "<group>"; };
+		D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		D6CE13451DE29EB600A3A2BF /* EasyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCell.swift; sourceTree = "<group>"; };
+		D6CE13461DE29EB600A3A2BF /* EasyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyCell.xib; sourceTree = "<group>"; };
+		D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NiceWallpaperCell.xib; sourceTree = "<group>"; };
+		D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperModel.swift; sourceTree = "<group>"; };
+		D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailBigImageViewController.swift; sourceTree = "<group>"; };
+		D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D6E8D3B91E041277004EA31A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D6E8D3BD1E041289004EA31A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D6E8D3C11E0412A9004EA31A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
+		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication_NGP.swift; sourceTree = "<group>"; };
+		DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.adhoc.xcconfig"; sourceTree = "<group>"; };
+		E00641577658ACEE678F88EB /* Pods-WorldPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.release.xcconfig"; sourceTree = "<group>"; };
+		E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.release.xcconfig"; sourceTree = "<group>"; };
+		EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWallpaperWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalGeographicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D60C21D41DDB0B5C00375E8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6E8D3C21E0412A9004EA31A /* libiconv.tbd in Frameworks */,
+				D6E8D3BE1E041289004EA31A /* libc++.tbd in Frameworks */,
+				D6E8D3BC1E04127D004EA31A /* AVFoundation.framework in Frameworks */,
+				D6E8D3BA1E041277004EA31A /* AudioToolbox.framework in Frameworks */,
+				D6E8D3B81E04126E004EA31A /* CoreTelephony.framework in Frameworks */,
+				3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */,
+				D6E8D3B61E041267004EA31A /* SystemConfiguration.framework in Frameworks */,
+				D6E8D3B41E04125F004EA31A /* libz.1.2.5.tbd in Frameworks */,
+				376713021ACA1193B14156E0 /* Pods_WorldPicture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D63B1F721DFE9F72000B9276 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F771DFE9F72000B9276 /* NotificationCenter.framework in Frameworks */,
+				A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		292DAC52A30A8A85AF483D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */,
+				D6E8D3C11E0412A9004EA31A /* libiconv.tbd */,
+				D6E8D3BD1E041289004EA31A /* libc++.tbd */,
+				D6E8D3BB1E04127D004EA31A /* AVFoundation.framework */,
+				D6E8D3B91E041277004EA31A /* AudioToolbox.framework */,
+				D6E8D3B71E04126E004EA31A /* CoreTelephony.framework */,
+				D6E8D3B51E041267004EA31A /* SystemConfiguration.framework */,
+				D6E8D3B31E04125F004EA31A /* libz.1.2.5.tbd */,
+				E8D13469006CF2C559BA68A0 /* Pods_NationalGeographicTests.framework */,
+				ED9BD2BC0D884BC2CAF79FE6 /* Pods_NationalGeographicUITests.framework */,
+				D63B1F761DFE9F72000B9276 /* NotificationCenter.framework */,
+				EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */,
+				62AFE1AC0137D4B135DA272F /* Pods_WorldPicture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3849A5E12236451F00559E4B /* BDS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E22236451F00559E4B /* BDSClientHeaders */,
+				3849A5EE2236451F00559E4B /* BDSClientResource */,
+				3849A5F52236451F00559E4B /* BDSClientLib */,
+			);
+			path = BDS;
+			sourceTree = "<group>";
+		};
+		3849A5E22236451F00559E4B /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E32236451F00559E4B /* TTS */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		3849A5E32236451F00559E4B /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E42236451F00559E4B /* BDSSynthesizerStatusNotifications.h */,
+				3849A5E52236451F00559E4B /* BDSSpeechSynthesizerDelegate.h */,
+				3849A5E62236451F00559E4B /* BDS_EttsModelManagerInterface.h */,
+				3849A5E72236451F00559E4B /* BDSBuiltInPlayer.h */,
+				3849A5E82236451F00559E4B /* BDSMixedModeSynthesizer.h */,
+				3849A5E92236451F00559E4B /* BDSSpeechSynthesizer.h */,
+				3849A5EA2236451F00559E4B /* BDSSpeechSynthesizerParams.h */,
+				3849A5EB2236451F00559E4B /* BDSSynthesizerLogLevel.h */,
+				3849A5EC2236451F00559E4B /* BDSTTSEventManager.h */,
+				3849A5ED2236451F00559E4B /* BDSSpeechSynthesizerErrors.h */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		3849A5EE2236451F00559E4B /* BDSClientResource */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5EF2236451F00559E4B /* TTS */,
+			);
+			path = BDSClientResource;
+			sourceTree = "<group>";
+		};
+		3849A5EF2236451F00559E4B /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5F02236451F00559E4B /* Chinese_And_English_Text.dat */,
+				3849A5F12236451F00559E4B /* Chinese_And_English_Speech_DYY.dat */,
+				3849A5F22236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat */,
+				3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */,
+				3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		3849A5F52236451F00559E4B /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */,
+				3849A5F72236451F00559E4B /* .gitignore */,
+			);
+			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
+		754335DC08D477ADFB71D38B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */,
+				BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */,
+				D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */,
+				EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */,
+				0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */,
+				DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */,
+				CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */,
+				4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */,
+				00B6401F6E9739A5D0628F30 /* Pods-WorldPicture.debug.xcconfig */,
+				E00641577658ACEE678F88EB /* Pods-WorldPicture.release.xcconfig */,
+				848F295ABC4F7FCFCC7CFADD /* Pods-WorldPicture.appstore.xcconfig */,
+				7B96A8EB9FB2DB602AA64959 /* Pods-WorldPicture.adhoc.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D60C21CE1DDB0B5C00375E8B = {
+			isa = PBXGroup;
+			children = (
+				D60C21D91DDB0B5D00375E8B /* WorldPicture */,
+				D63B1F781DFE9F72000B9276 /* TodayWallpaperWidget */,
+				D60C21D81DDB0B5D00375E8B /* Products */,
+				754335DC08D477ADFB71D38B /* Pods */,
+				292DAC52A30A8A85AF483D6C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D60C21D81DDB0B5D00375E8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D60C21D71DDB0B5D00375E8B /* WorldPicture.app */,
+				D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D60C21D91DDB0B5D00375E8B /* WorldPicture */ = {
+			isa = PBXGroup;
+			children = (
+				D6CC7E7E1E03D3EC00F25176 /* Vendors */,
+				D63B1F881DFEA19E000B9276 /* WorldPicture.entitlements */,
+				D61663721DE7253200D9C897 /* Util */,
+				D6D5636A1DE02CDB009C6EB9 /* Interface */,
+				D633AD421DDC7623006B08C6 /* Manager */,
+				D6549C601DDC2D470036650E /* Application */,
+				D67AE0411DDB486E00DBC7AE /* Resources */,
+				D6AA8A9F1DDB3F7600032800 /* Views */,
+				D6AA8A9E1DDB3F6C00032800 /* Models */,
+				D6AA8A9D1DDB3F3D00032800 /* Controllers */,
+				D60C21E11DDB0B5D00375E8B /* Assets.xcassets */,
+				D60C21E61DDB0B5D00375E8B /* Info.plist */,
+			);
+			path = WorldPicture;
+			sourceTree = "<group>";
+		};
+		D61663721DE7253200D9C897 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D61663731DE7256100D9C897 /* String_NGP.swift */,
+				D642BBE81DF156910026D776 /* UIViewController_NGP.swift */,
+				D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */,
+				D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */,
+				D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D633AD421DDC7623006B08C6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */,
+				D63E805A1DDEA11A00308F92 /* ShareManager.swift */,
+				D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D63B1F781DFE9F72000B9276 /* TodayWallpaperWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */,
+				D63B1F791DFE9F72000B9276 /* TodayViewController.swift */,
+				D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */,
+				D63B1F7E1DFE9F72000B9276 /* Info.plist */,
+			);
+			path = TodayWallpaperWidget;
+			sourceTree = "<group>";
+		};
+		D6549C601DDC2D470036650E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D69AC8F41E4C326B001B0992 /* Const.swift */,
+				D6549C611DDC2D730036650E /* AppDelegate.swift */,
+				D6549C631DDC2D910036650E /* WorldPicture-Bridging-Header.h */,
+				D69AC8F21E4C1252001B0992 /* NGPAPI.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D67AE0411DDB486E00DBC7AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D680F02E1E69AE5300F8458A /* notification.caf */,
+				D67AE0651DDB486E00DBC7AE /* jianjie.css */,
+				D6464F421DEEB33100A3CD03 /* dili.xcassets */,
+				D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */,
+				D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D6AA8A9D1DDB3F3D00032800 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6FCB5E420D51A7900F4F474 /* Settings */,
+				D6FCB5E320D51A5600F4F474 /* NiceWallpaper */,
+				D6FCB5E120D519FC00F4F474 /* Pictorial */,
+				D6FCB5E020D519D300F4F474 /* Wallpaper */,
+				D6FCB5DF20D5198800F4F474 /* Main */,
+				D6FCB5DE20D5192C00F4F474 /* Album */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6AA8A9E1DDB3F6C00032800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D612106F1F8BC59500FD1A68 /* WallpaperModel.swift */,
+				D67AE08D1DDB4ED500DBC7AE /* AlbumListModel.swift */,
+				D66052091DDB666000ADDF34 /* PictureListModel.swift */,
+				D606153B1DE2949500C4000F /* PictorialModel.swift */,
+				D6AA4D671DE4009B005376B7 /* ArticlefavoritesModel.swift */,
+				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
+				D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */,
+				D69AC8F91E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift */,
+				D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */,
+				D6BE21631F8E5421002AB59A /* UnsplashModel.h */,
+				D6BE21641F8E5421002AB59A /* UnsplashModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D6AA8A9F1DDB3F7600032800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D67AE08B1DDB4DBF00DBC7AE /* AlbumCell.swift */,
+				D6A5F0271DDBED1300B2664C /* PictureCell.swift */,
+				D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */,
+				D60615331DE28A3100C4000F /* PictorialCell.swift */,
+				D60615351DE28F5100C4000F /* EasyView.swift */,
+				D6CE13451DE29EB600A3A2BF /* EasyCell.swift */,
+				D6CE13461DE29EB600A3A2BF /* EasyCell.xib */,
+				D646C9EE1DE2DD22007C9D40 /* ArticleSummaryCell.swift */,
+				D646C9EF1DE2DD22007C9D40 /* ArticleSummaryCell.xib */,
+				D646C9F21DE2DDB4007C9D40 /* ArticleImageCell.swift */,
+				D646C9F31DE2DDB4007C9D40 /* ArticleImageCell.xib */,
+				D646C9F61DE2DE12007C9D40 /* ArticleFooterCell.swift */,
+				D646C9F71DE2DE12007C9D40 /* ArticleFooterCell.xib */,
+				D646C9FA1DE2DEB8007C9D40 /* ArticlePhotosCell.swift */,
+				D646C9FB1DE2DEB8007C9D40 /* ArticlePhotosCell.xib */,
+				D6CE4D151DFFAC9C006BE034 /* NiceWallpaperCell.swift */,
+				D6CE4D161DFFAC9C006BE034 /* NiceWallpaperCell.xib */,
+				D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */,
+				D689981F1E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift */,
+				D68998201E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib */,
+				D6C6B21C1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift */,
+				D6C6B21D1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6CC7E7E1E03D3EC00F25176 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				3849A5E12236451F00559E4B /* BDS */,
+				D68998251E4C663F0087AC3A /* CSMParallaxCell.h */,
+				D68998261E4C663F0087AC3A /* CSMParallaxCell.m */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		D6D5636A1DE02CDB009C6EB9 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D6E90D931DE02E0800C65D15 /* Main.storyboard */,
+				D61FB38F1DEEC171006E2962 /* Launch Screen.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		D6FCB5DE20D5192C00F4F474 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				D6AA8AA01DDB409700032800 /* AlbumListViewController.swift */,
+				D6BED5F41DDB5D96008AAD5B /* AlbumDetailViewController.swift */,
+				D62579E61DE1824D002DC483 /* PictureDetailViewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		D6FCB5DF20D5198800F4F474 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
+				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D6FCB5E020D519D300F4F474 /* Wallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */,
+				D62579E21DE150C0002DC483 /* WallpaperPageViewController.swift */,
+				D62579E41DE1511B002DC483 /* WallpaperDetailViewController.swift */,
+			);
+			path = Wallpaper;
+			sourceTree = "<group>";
+		};
+		D6FCB5E120D519FC00F4F474 /* Pictorial */ = {
+			isa = PBXGroup;
+			children = (
+				D6FCB5E220D51A2D00F4F474 /* TodayPictorial */,
+				D691DCE11DE281A300F885FE /* ArticleListViewController.swift */,
+				D646C9EC1DE2CBC1007C9D40 /* ArticlePageViewController.swift */,
+				D646C9EA1DE2C4F6007C9D40 /* ArticleDetailViewController.swift */,
+				D6D647111E45C69F002131E7 /* ArticleDetailBigImageViewController.swift */,
+			);
+			path = Pictorial;
+			sourceTree = "<group>";
+		};
+		D6FCB5E220D51A2D00F4F474 /* TodayPictorial */ = {
+			isa = PBXGroup;
+			children = (
+				D642BBE41DF141F80026D776 /* TodayPictorialPageViewController.swift */,
+				D642BBE61DF142550026D776 /* TodayWallpaperViewController.swift */,
+			);
+			path = TodayPictorial;
+			sourceTree = "<group>";
+		};
+		D6FCB5E320D51A5600F4F474 /* NiceWallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				D689981D1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift */,
+				D6CE4D131DFF993B006BE034 /* NiceWallpaperViewController.swift */,
+				D633B5781E00436200D3E39D /* NiceWallpaperDetailViewController.swift */,
+				D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */,
+				D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */,
+				D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */,
+			);
+			path = NiceWallpaper;
+			sourceTree = "<group>";
+		};
+		D6FCB5E420D51A7900F4F474 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D6CB455D1E07D7E300AB8720 /* SettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D60C21D61DDB0B5C00375E8B /* WorldPicture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60C21FF1DDB0B5D00375E8B /* Build configuration list for PBXNativeTarget "WorldPicture" */;
+			buildPhases = (
+				716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */,
+				D60C21D31DDB0B5C00375E8B /* Sources */,
+				D60C21D41DDB0B5C00375E8B /* Frameworks */,
+				D60C21D51DDB0B5C00375E8B /* Resources */,
+				FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */,
+				56D24AF890773D52369E195A /* [CP] Copy Pods Resources */,
+				D63B1F851DFE9F72000B9276 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D63B1F801DFE9F72000B9276 /* PBXTargetDependency */,
+			);
+			name = WorldPicture;
+			productName = NationalGeographic;
+			productReference = D60C21D71DDB0B5D00375E8B /* WorldPicture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D63B1F841DFE9F72000B9276 /* Build configuration list for PBXNativeTarget "TodayWallpaperWidget" */;
+			buildPhases = (
+				84329E41871911015E6DDE2F /* [CP] Check Pods Manifest.lock */,
+				D63B1F711DFE9F72000B9276 /* Sources */,
+				D63B1F721DFE9F72000B9276 /* Frameworks */,
+				D63B1F731DFE9F72000B9276 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWallpaperWidget;
+			productName = TodayWallpaperWidget;
+			productReference = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D60C21CF1DDB0B5C00375E8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = ChaosVoid;
+				TargetAttributes = {
+					D60C21D61DDB0B5C00375E8B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AVV7VK2359;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					D63B1F741DFE9F72000B9276 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AVV7VK2359;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D60C21D21DDB0B5C00375E8B /* Build configuration list for PBXProject "WorldPicture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Base,
+				en,
+				"zh-Hans",
+			);
+			mainGroup = D60C21CE1DDB0B5C00375E8B;
+			productRefGroup = D60C21D81DDB0B5D00375E8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D60C21D61DDB0B5C00375E8B /* WorldPicture */,
+				D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D60C21D51DDB0B5C00375E8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */,
+				D646C9FD1DE2DEB8007C9D40 /* ArticlePhotosCell.xib in Resources */,
+				3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */,
+				D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */,
+				3849A5FE2236451F00559E4B /* .gitignore in Resources */,
+				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
+				D646C9F91DE2DE12007C9D40 /* ArticleFooterCell.xib in Resources */,
+				3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */,
+				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,
+				D680F02F1E69AE5300F8458A /* notification.caf in Resources */,
+				D6CE13481DE29EB600A3A2BF /* EasyCell.xib in Resources */,
+				D67AE0881DDB486E00DBC7AE /* jianjie.css in Resources */,
+				3849A5FA2236451F00559E4B /* Chinese_And_English_Speech_Male-yyjw.dat in Resources */,
+				D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */,
+				D6E90D911DE02E0800C65D15 /* Main.storyboard in Resources */,
+				3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */,
+				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
+				D646C9F51DE2DDB4007C9D40 /* ArticleImageCell.xib in Resources */,
+				D646C9F11DE2DD22007C9D40 /* ArticleSummaryCell.xib in Resources */,
+				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
+				D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */,
+				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D63B1F731DFE9F72000B9276 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */,
+				D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */,
+				D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56D24AF890773D52369E195A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-resources.sh",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDKUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorldPicture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84329E41871911015E6DDE2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodayWallpaperWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AVOSCloud/AVOSCloud.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${PODS_ROOT}/LookinServer/LookinServer.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MMParallaxCell/MMParallaxCell.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/ZCAnimatedLabel/ZCAnimatedLabel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMParallaxCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZCAnimatedLabel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D60C21D31DDB0B5C00375E8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69AC8F81E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift in Sources */,
+				D642BBE31DF13FB00026D776 /* TodayPictorialModel.swift in Sources */,
+				D6C6B21E1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.swift in Sources */,
+				D6BE21651F8E5421002AB59A /* UnsplashModel.m in Sources */,
+				D646C9F41DE2DDB4007C9D40 /* ArticleImageCell.swift in Sources */,
+				D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */,
+				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
+				D646C9F01DE2DD22007C9D40 /* ArticleSummaryCell.swift in Sources */,
+				D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */,
+				D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */,
+				D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */,
+				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
+				D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */,
+				D60615341DE28A3100C4000F /* PictorialCell.swift in Sources */,
+				D642BBE51DF141F80026D776 /* TodayPictorialPageViewController.swift in Sources */,
+				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
+				D6CE13471DE29EB600A3A2BF /* EasyCell.swift in Sources */,
+				D6D647121E45C69F002131E7 /* ArticleDetailBigImageViewController.swift in Sources */,
+				D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */,
+				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
+				D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */,
+				D642BBE71DF142550026D776 /* TodayWallpaperViewController.swift in Sources */,
+				D660520A1DDB666000ADDF34 /* PictureListModel.swift in Sources */,
+				D69AC8F51E4C326B001B0992 /* Const.swift in Sources */,
+				D646C9EB1DE2C4F6007C9D40 /* ArticleDetailViewController.swift in Sources */,
+				D689981E1E4C52EA0087AC3A /* NiceWallpaperPageViewController.swift in Sources */,
+				D689982C1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift in Sources */,
+				D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */,
+				D6BA6A8C1E4AFCD200DD9718 /* Utils.swift in Sources */,
+				D62579E91DE1940B002DC483 /* CustomTabBarViewController.swift in Sources */,
+				D6A5F02A1DDC02AC00B2664C /* CustomNavigationViewController.swift in Sources */,
+				D646C9F81DE2DE12007C9D40 /* ArticleFooterCell.swift in Sources */,
+				D62579E31DE150C0002DC483 /* WallpaperPageViewController.swift in Sources */,
+				D67AE08E1DDB4ED500DBC7AE /* AlbumListModel.swift in Sources */,
+				D6AA4D681DE4009B005376B7 /* ArticlefavoritesModel.swift in Sources */,
+				D69AC8F31E4C1252001B0992 /* NGPAPI.swift in Sources */,
+				D68998211E4C61A90087AC3A /* NiceWallpaperCategoryCell.swift in Sources */,
+				D60615361DE28F5100C4000F /* EasyView.swift in Sources */,
+				D6BED5F51DDB5D96008AAD5B /* AlbumDetailViewController.swift in Sources */,
+				D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */,
+				D6AA8AA11DDB409700032800 /* AlbumListViewController.swift in Sources */,
+				D61210701F8BC59500FD1A68 /* WallpaperModel.swift in Sources */,
+				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
+				D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */,
+				D646C9FC1DE2DEB8007C9D40 /* ArticlePhotosCell.swift in Sources */,
+				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
+				D606153C1DE2949500C4000F /* PictorialModel.swift in Sources */,
+				D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */,
+				D646C9ED1DE2CBC1007C9D40 /* ArticlePageViewController.swift in Sources */,
+				D68998271E4C663F0087AC3A /* CSMParallaxCell.m in Sources */,
+				D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */,
+				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,
+				D691DCE21DE281A300F885FE /* ArticleListViewController.swift in Sources */,
+				D62579E71DE1824D002DC483 /* PictureDetailViewController.swift in Sources */,
+				D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */,
+				D61663741DE7256100D9C897 /* String_NGP.swift in Sources */,
+				D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D63B1F711DFE9F72000B9276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */,
+				D63B1F8A1DFEA302000B9276 /* TodayPictorialModel.swift in Sources */,
+				D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */,
+				D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */,
+				D61210711F8BC6AA00FD1A68 /* WallpaperModel.swift in Sources */,
+				D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D63B1F801DFE9F72000B9276 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D63B1F741DFE9F72000B9276 /* TodayWallpaperWidget */;
+			targetProxy = D63B1F7F1DFE9F72000B9276 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D61FB38F1DEEC171006E2962 /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D61FB3901DEEC171006E2962 /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+		D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D63B1F7C1DFE9F72000B9276 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		D6E90D931DE02E0800C65D15 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6E90D921DE02E0800C65D15 /* Base */,
+				D6E90D941DE02E1400C65D15 /* en */,
+				D6E90D951DE02E1A00C65D15 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D60C21FD1DDB0B5D00375E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D60C21FE1DDB0B5D00375E8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D60C22001DDB0B5D00375E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B6401F6E9739A5D0628F30 /* Pods-WorldPicture.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WorldPicture/WorldPicture.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture",
+					"$(PROJECT_DIR)/WorldPicture/Vendors",
+				);
+				INFOPLIST_FILE = WorldPicture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development tech.chaosky.WorldPicture";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/Application/WorldPicture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		D60C22011DDB0B5D00375E8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00641577658ACEE678F88EB /* Pods-WorldPicture.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WorldPicture/WorldPicture.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture",
+					"$(PROJECT_DIR)/WorldPicture/Vendors",
+				);
+				INFOPLIST_FILE = WorldPicture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/Application/WorldPicture-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		D63B1F821DFE9F72000B9276 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development tech.chaosky.WorldPicture.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		D63B1F831DFE9F72000B9276 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1240B5B77ABD0676703FF7 /* Pods-TodayWallpaperWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		D6CDCC8F2236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		D6CDCC902236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B96A8EB9FB2DB602AA64959 /* Pods-WorldPicture.adhoc.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WorldPicture/WorldPicture.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture",
+					"$(PROJECT_DIR)/WorldPicture/Vendors",
+				);
+				INFOPLIST_FILE = WorldPicture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/Application/WorldPicture-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AdHoc;
+		};
+		D6CDCC912236A9D40030EDC7 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E74CAF9A255CF34F9DB1826 /* Pods-TodayWallpaperWidget.adhoc.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AdHoc;
+		};
+		D6CDCC922236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		D6CDCC932236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 848F295ABC4F7FCFCC7CFADD /* Pods-WorldPicture.appstore.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WorldPicture/WorldPicture.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture",
+					"$(PROJECT_DIR)/WorldPicture/Vendors",
+				);
+				INFOPLIST_FILE = WorldPicture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDSSpeechSynthesizer_SDK",
+					"$(PROJECT_DIR)/WorldPicture/Vendors/BDS/BDSClientLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore tech.chaosky.WorldPicture";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/Application/WorldPicture-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AppStore;
+		};
+		D6CDCC942236A9DB0030EDC7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWallpaperWidget/TodayWallpaperWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVV7VK2359;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = TodayWallpaperWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.chaosky.WorldPicture.TodayWallpaperWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore tech.chaosky.WorldPicture.TodayWallpaperWidget";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AppStore;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D60C21D21DDB0B5C00375E8B /* Build configuration list for PBXProject "WorldPicture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60C21FD1DDB0B5D00375E8B /* Debug */,
+				D60C21FE1DDB0B5D00375E8B /* Release */,
+				D6CDCC922236A9DB0030EDC7 /* AppStore */,
+				D6CDCC8F2236A9D40030EDC7 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D60C21FF1DDB0B5D00375E8B /* Build configuration list for PBXNativeTarget "WorldPicture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60C22001DDB0B5D00375E8B /* Debug */,
+				D60C22011DDB0B5D00375E8B /* Release */,
+				D6CDCC932236A9DB0030EDC7 /* AppStore */,
+				D6CDCC902236A9D40030EDC7 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D63B1F841DFE9F72000B9276 /* Build configuration list for PBXNativeTarget "TodayWallpaperWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D63B1F821DFE9F72000B9276 /* Debug */,
+				D63B1F831DFE9F72000B9276 /* Release */,
+				D6CDCC942236A9DB0030EDC7 /* AppStore */,
+				D6CDCC912236A9D40030EDC7 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D60C21CF1DDB0B5C00375E8B /* Project object */;
+}

@@ -2,11 +2,11 @@
 platform :ios, '8.0'
 inhibit_all_warnings!
 
-target 'NationalGeographic' do
+target 'WorldPicture' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for NationalGeographic
+  # Pods for WorldPicture
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SwiftyJSON'
@@ -16,7 +16,7 @@ target 'NationalGeographic' do
   pod 'MBProgressHUD'
   pod 'KVNProgress'
   pod 'SnapKit'
-  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+  pod 'LookinServer', :configurations => ['Debug']
   pod 'FLEX', :configurations => ['Debug']
   pod 'ZCAnimatedLabel'
   pod 'MMParallaxCell'
@@ -27,6 +27,7 @@ target 'NationalGeographic' do
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'FDFullscreenPopGesture'
   pod 'DZNEmptyDataSet'
+  pod 'SwiftyUserDefaults'
 
   # ShareSDK
   # 主模块(必须)
@@ -48,7 +49,7 @@ target 'NationalGeographic' do
   pod 'ShareSDK3/ShareSDKExtension'
 
   # LeanCloud
-  pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
+  pod 'AVOSCloud', '~> 11.5'               # 数据存储、短信、云引擎调用等基础服务模块
 
   # Bugly
   pod 'Bugly'
@@ -58,7 +59,7 @@ end
 target 'TodayWallpaperWidget' do
     use_frameworks!
 
-    # Pods for NationalGeographic
+    # Pods for WorldPicture
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'YYModel'
