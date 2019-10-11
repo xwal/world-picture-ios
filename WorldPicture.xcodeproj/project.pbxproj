@@ -21,7 +21,6 @@
 		3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */; };
 		3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */; };
 		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
-		3849A5FE2236451F00559E4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F72236451F00559E4B /* .gitignore */; };
 		386BA9DF235057D20005E489 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA9DE235057D20005E489 /* BaseViewController.swift */; };
 		3885B2ED234F037900AAF63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3885B2EC234F037900AAF63F /* GoogleService-Info.plist */; };
 		3887D08D235017760090E423 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08A235017730090E423 /* Observable+Response.swift */; };
@@ -157,7 +156,6 @@
 		3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
 		3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
 		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
-		3849A5F72236451F00559E4B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		386BA9DE235057D20005E489 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3885B2EC234F037900AAF63F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3887D08A235017730090E423 /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
@@ -410,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */,
-				3849A5F72236451F00559E4B /* .gitignore */,
 			);
 			path = BDSClientLib;
 			sourceTree = "<group>";
@@ -867,7 +864,6 @@
 				3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */,
 				3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */,
 				D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */,
-				3849A5FE2236451F00559E4B /* .gitignore in Resources */,
 				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
 				3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */,
 				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,

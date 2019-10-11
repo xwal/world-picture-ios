@@ -24,10 +24,10 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+Output
 
 ## Obj-C/Swift specific
 *.hmap
-*.ipa
 *.dSYM.zip
 *.dSYM
 
