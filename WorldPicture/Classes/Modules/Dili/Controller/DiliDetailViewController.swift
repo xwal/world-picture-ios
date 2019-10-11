@@ -40,12 +40,12 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -55,7 +55,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     func setupViews() {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        self.view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func onTap() {
@@ -68,17 +68,17 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
             pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
             pageViewController.dataSource = self
             pageViewController.delegate = self
-            self.addChild(pageViewController)
-            self.view.addSubview(pageViewController.view)
+            addChild(pageViewController)
+            view.addSubview(pageViewController.view)
             pageViewController.view.snp.makeConstraints { (maker) in
-                maker.edges.equalTo(self.view)
+                maker.edges.equalTo(view)
             }
-            self.view.sendSubviewToBack(pageViewController.view)
+            view.sendSubviewToBack(pageViewController.view)
         }
         
-        let initPictureDetail = self.createPictureDetail()
-        initPictureDetail.pictureModel = self.pictureListModel.picture![0]
-        self.pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
+        let initPictureDetail = createPictureDetail()
+        initPictureDetail.pictureModel = pictureListModel.picture![0]
+        pageViewController.setViewControllers([initPictureDetail], direction: .forward, animated: false, completion: nil)
         currentIndex = 0
     }
     
@@ -91,13 +91,13 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func requestAlbumDetail() {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .indeterminate
         
         let url = URL(string: String(format: NGPAPI_DILI_ALBUM, albumID))!
         let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
-        Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { (response) in
-            
+        Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { [weak self] (response) in
+            guard let self = self else { return }
             guard let JSON = response.result.value else {
                 
                 let error = response.result.error
@@ -127,7 +127,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func createPictureDetail() -> PictureDetailViewController {
-        let pictureDetail = self.storyboard?.instantiateViewController(withIdentifier: "PictureDetailViewController") as! PictureDetailViewController
+        let pictureDetail = StoryboardScene.Dili.pictureDetailViewController.instantiate()
         return pictureDetail
     }
     
@@ -145,13 +145,13 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func nextViewController(_ viewController: PictureDetailViewController, before: Bool) -> PictureDetailViewController? {
-        if let index = pictureListModel.picture?.index(of: viewController.pictureModel!) {
+        if let index = pictureListModel.picture?.firstIndex(of: viewController.pictureModel!) {
             let nextIndex = before ? index - 1 : index + 1
             if nextIndex < 0 || nextIndex >= (pictureListModel.picture?.count)! {
                 return nil
             }
             else {
-                let detailVC = self.createPictureDetail()
+                let detailVC = createPictureDetail()
                 detailVC.pictureModel = pictureListModel.picture?[nextIndex]
                 return detailVC
             }
@@ -188,7 +188,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     
     @IBAction func backTapped(_ sender: UIButton) {
         _ = navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     
@@ -204,7 +204,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     // MARK: - UIPageViewControllerDelegate
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let visiableVC = pageViewController.viewControllers?.first as? PictureDetailViewController {
-            currentIndex = (pictureListModel.picture?.index(of: visiableVC.pictureModel))!
+            currentIndex = (pictureListModel.picture?.firstIndex(of: visiableVC.pictureModel))!
             updateViews()
         }
     }

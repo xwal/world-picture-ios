@@ -22,15 +22,15 @@ class CustomTabBarViewController: UITabBarController {
     }
     
     override var shouldAutorotate: Bool {
-        return self.selectedViewController?.shouldAutorotate ?? false
+        return selectedViewController?.shouldAutorotate ?? false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return self.selectedViewController?.supportedInterfaceOrientations ?? .portrait
+        return selectedViewController?.supportedInterfaceOrientations ?? .portrait
     }
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return self.selectedViewController?.preferredInterfaceOrientationForPresentation ?? .portrait
+        return selectedViewController?.preferredInterfaceOrientationForPresentation ?? .portrait
     }
 
 }

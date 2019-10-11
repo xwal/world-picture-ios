@@ -21,22 +21,22 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
 
         // Do any additional setup after loading the view.
         if let url = pictureModel.thumb {
-            imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(0.5))])
+            imageView.kf.setImage(with: URL(string: url), placeholder: KFCrossPlatformImage(named: "nopic"), options: [.transition(.fade(0.5))])
         }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         tapGesture.numberOfTapsRequired = 2
-        self.scrollView.addGestureRecognizer(tapGesture)
+        scrollView.addGestureRecognizer(tapGesture)
     }
     
     @objc private func onTap() {
-        self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1
+        scrollView.zoomScale = scrollView.zoomScale == 1 ? 2 : 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.zoomScale = 1
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,7 +20,7 @@ class PictureCell: UICollectionViewCell, UIScrollViewDelegate {
     var model: PictureModel? {
         didSet {
             if let url = model?.url {
-                pictureImageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(0.5))])
+                pictureImageView.kf.setImage(with: URL(string: url), placeholder: KFCrossPlatformImage(named: "nopic"), options: [.transition(.fade(0.5))])
                 pictureImageView.kf.indicatorType = .activity
             }
         }

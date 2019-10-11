@@ -56,8 +56,8 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
         let url = URL(string: NGPAPI_ZUIMEIA_CATEGORY_LIST)!
         let originalRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
-        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { (response) in
-            
+        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { [weak self] (response) in
+            guard let self = self else { return }
             if let JSON = response.result.value, let model = NiceWallpaperCategoryModel.yy_model(withJSON: JSON) {
                 self.categoryModel = model
                 self.baseURL = model.data?.base_url
@@ -81,7 +81,7 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
             if let wpCategoryVC = segue.destination as? NiceWallpaperImageListViewController {
                 
                 let indexPath = sender as! IndexPath
-                let tagModel = self.categoryModel?.data?.tags?[indexPath.row]
+                let tagModel = categoryModel?.data?.tags?[indexPath.row]
                 wpCategoryVC.categoryId = tagModel?.id
                 wpCategoryVC.title = tagModel?.name
             }
@@ -98,7 +98,7 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NiceWallpaperCategoryCell", for: indexPath) as! NiceWallpaperCategoryCell
         
-        if let tagModel = self.categoryModel?.data?.tags?[indexPath.row], let baseURL = self.baseURL, let cover = tagModel.cover {
+        if let tagModel = categoryModel?.data?.tags?[indexPath.row], let baseURL = baseURL, let cover = tagModel.cover {
             cell.parallaxImage.kf.setImage(with: URL(string: "\(baseURL)/\(cover)"))
             cell.titleLabel.text = tagModel.name
         }

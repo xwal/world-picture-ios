@@ -21,7 +21,7 @@ class DiliListViewController: UITableViewController {
     
     var isLoading: Bool = false {
         didSet {
-            self.tableView.reloadEmptyDataSet()
+            tableView.reloadEmptyDataSet()
         }
     }
     
@@ -46,12 +46,13 @@ class DiliListViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tableView.mj_header.endRefreshing()
-        self.tableView.mj_footer.endRefreshing()
+        tableView.mj_header.endRefreshing()
+        tableView.mj_footer.endRefreshing()
     }
     
     func setupView() {
-        let header = MJRefreshNormalHeader(refreshingBlock: {
+        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
             self.isLoading = true
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
@@ -63,12 +64,13 @@ class DiliListViewController: UITableViewController {
         header?.activityIndicatorViewStyle = .white
         tableView.mj_header = header
         
-        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { 
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
             self.currentPage += 1
             self.requestData(withPage: self.currentPage)
         })
         
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         
         
     }
@@ -96,9 +98,9 @@ class DiliListViewController: UITableViewController {
     
     func updateCacheData() {
         // 将数据写入本地
-        if let data = (self.albumModelArray as NSArray).yy_modelToJSONData() {
+        if let data = (albumModelArray as NSArray).yy_modelToJSONData() {
             do {
-                try data.write(to: self.cacheDataURL)
+                try data.write(to: cacheDataURL)
             } catch let error {
                 print(error)
             }
@@ -107,7 +109,8 @@ class DiliListViewController: UITableViewController {
     
     func requestData(withPage page: Int) {
         let requestURL = String(format: NGPAPI_DILI_MAIN, page)
-        Alamofire.request(requestURL).responseJSON { (response) in
+        Alamofire.request(requestURL).responseJSON { [weak self] (response) in
+            guard let self = self else { return }
             
             var hasMoreData = true
             // 是否有数据
@@ -211,8 +214,8 @@ class DiliListViewController: UITableViewController {
 extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
 {
     func setupEmptyDataSet() {
-        self.tableView.emptyDataSetSource = self
-        self.tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     // MARK: DZNEmptyDataSetSource
@@ -226,7 +229,7 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        if self.isLoading {
+        if isLoading {
             return Asset.Assets.loadingImgBlue.image
         }
         else {
@@ -260,7 +263,7 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     // MARK: DZNEmptyDataSetDelegate
     
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-        return self.albumModelArray.count == 0
+        return albumModelArray.count == 0
     }
     
     func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
@@ -272,14 +275,14 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     }
     
     func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool {
-        return self.isLoading
+        return isLoading
     }
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
-        self.tableView.mj_header.beginRefreshing()
+        tableView.mj_header.beginRefreshing()
     }
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        self.tableView.mj_header.beginRefreshing()
+        tableView.mj_header.beginRefreshing()
     }
 }

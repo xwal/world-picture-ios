@@ -12,7 +12,7 @@ class CustomNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barStyle = .blackTranslucent
+        navigationBar.barStyle = .blackTranslucent
         // Do any additional setup after loading the view.
     }
 
@@ -22,15 +22,15 @@ class CustomNavigationViewController: UINavigationController {
     }
     
     override var shouldAutorotate: Bool {
-        return self.viewControllers.last?.shouldAutorotate ?? false
+        return viewControllers.last?.shouldAutorotate ?? false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return self.viewControllers.last?.supportedInterfaceOrientations ?? .portrait
+        return viewControllers.last?.supportedInterfaceOrientations ?? .portrait
     }
     
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return self.viewControllers.last?.preferredInterfaceOrientationForPresentation ?? .portrait
+        return viewControllers.last?.preferredInterfaceOrientationForPresentation ?? .portrait
     }
     
 

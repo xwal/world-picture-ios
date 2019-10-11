@@ -31,39 +31,40 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
         // Do any additional setup after loading the view.
         setupView()
         
-        self.imageListTableView.mj_header.beginRefreshing()
+        imageListTableView.mj_header.beginRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
-        _ = self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func setupView() {
         
-        self.backgroundImageView.contentMode = .scaleAspectFill
-        self.backgroundImageView.image = UIImage(named: "personal_pic_default")
-        self.backgroundImageView.clipsToBounds = true
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.image = UIImage(named: "personal_pic_default")
+        backgroundImageView.clipsToBounds = true
         
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.imageListTableView.separatorStyle = .none
-        self.imageListTableView.tableFooterView = UIView()
-        self.imageListTableView.backgroundColor = UIColor.clear
-        self.imageListTableView.dataSource = self
-        self.imageListTableView.delegate = self
-        self.imageListTableView.rowHeight = UIScreen.main.bounds.size.width
+        automaticallyAdjustsScrollViewInsets = false
+        imageListTableView.separatorStyle = .none
+        imageListTableView.tableFooterView = UIView()
+        imageListTableView.backgroundColor = UIColor.clear
+        imageListTableView.dataSource = self
+        imageListTableView.delegate = self
+        imageListTableView.rowHeight = UIScreen.main.bounds.size.width
         
-        self.imageListTableView.register(UINib(nibName: "NiceWallpaperCategoryImageCell", bundle: nil), forCellReuseIdentifier: "NiceWallpaperCategoryImageCell")
+        imageListTableView.register(UINib(nibName: "NiceWallpaperCategoryImageCell", bundle: nil), forCellReuseIdentifier: "NiceWallpaperCategoryImageCell")
         
         addHeader()
     }
     
     func addHeader() {
-        let header = MJRefreshNormalHeader(refreshingBlock: {
+        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
             self.currentTime = 0
             self.requestImageList(time: self.currentTime)
         })
@@ -71,12 +72,13 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
         header?.stateLabel.isHidden = true
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white
-        self.imageListTableView.mj_header = header
+        imageListTableView.mj_header = header
     }
     
     func addFooter() {
-        if self.imageListTableView.mj_footer == nil {
-            let footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+        if imageListTableView.mj_footer == nil {
+            let footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
+                guard let self = self else { return }
                 if let lastPubTime = self.dataSourceArray.last?.publish_at {
                     self.currentTime = lastPubTime
                 } else {
@@ -86,12 +88,12 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             })
             footer?.activityIndicatorViewStyle = .white
             footer?.isRefreshingTitleHidden = true
-            self.imageListTableView.mj_footer = footer
+            imageListTableView.mj_footer = footer
         }
     }
     
     func removeFooter() {
-        self.imageListTableView.mj_footer = nil
+        imageListTableView.mj_footer = nil
     }
     
     func requestImageList(time: Int) {
@@ -103,9 +105,10 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             "resolution": resolution,
             "publish_at": time
             ]
-        let url = String(format: NGPAPI_ZUIMEIA_TAG, self.categoryId)
+        let url = String(format: NGPAPI_ZUIMEIA_TAG, categoryId)
         Alamofire.request(url, method: .get, parameters: urlParams).validate(statusCode: 200..<300)
-        .responseJSON { response in
+        .responseJSON { [weak self] response in
+            guard let self = self else { return }
             guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
                 DispatchQueue.main.async {
                     self.imageListTableView.mj_header.endRefreshing()
@@ -178,16 +181,14 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataSourceArray[indexPath.row]
-        self.backgroundImageView.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(model.image_url ?? "")"), options: [.transition(.fade(0.5))])
+        backgroundImageView.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(model.image_url ?? "")"), options: [.transition(.fade(0.5))])
         
-        guard let niceWallpaperDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperDetailViewController") as? NiceWallpaperDetailViewController else {
-            return
-        }
+        let niceWallpaperDetailVC = StoryboardScene.NiceWallpaper.niceWallpaperDetailViewController.instantiate()
         niceWallpaperDetailVC.hidesBottomBarWhenPushed = true
-        niceWallpaperDetailVC.imageModelArray = self.dataSourceArray
+        niceWallpaperDetailVC.imageModelArray = dataSourceArray
         niceWallpaperDetailVC.currentIndex = indexPath.row
         
-        self.navigationController?.pushViewController(niceWallpaperDetailVC, animated: true)
+        navigationController?.pushViewController(niceWallpaperDetailVC, animated: true)
         
     }
 

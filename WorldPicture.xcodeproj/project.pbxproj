@@ -22,6 +22,7 @@
 		3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */; };
 		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
 		3849A5FE2236451F00559E4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F72236451F00559E4B /* .gitignore */; };
+		386BA9DF235057D20005E489 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA9DE235057D20005E489 /* BaseViewController.swift */; };
 		3885B2ED234F037900AAF63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3885B2EC234F037900AAF63F /* GoogleService-Info.plist */; };
 		3887D08D235017760090E423 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08A235017730090E423 /* Observable+Response.swift */; };
 		3887D08E235017760090E423 /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08B235017730090E423 /* MoyaProvider+Rx.swift */; };
@@ -157,6 +158,7 @@
 		3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
 		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		3849A5F72236451F00559E4B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		386BA9DE235057D20005E489 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3885B2EC234F037900AAF63F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3887D08A235017730090E423 /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
 		3887D08B235017730090E423 /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 			children = (
 				D6A5F0291DDC02AC00B2664C /* CustomNavigationViewController.swift */,
 				D62579E81DE1940B002DC483 /* CustomTabBarViewController.swift */,
+				386BA9DE235057D20005E489 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -838,10 +841,9 @@
 			};
 			buildConfigurationList = D60C21D21DDB0B5C00375E8B /* Build configuration list for PBXProject "WorldPicture" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				Base,
 				en,
 				"zh-Hans",
@@ -1110,6 +1112,7 @@
 				D6BE21651F8E5421002AB59A /* UnsplashModel.m in Sources */,
 				D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */,
 				D6CE4D1A1DFFAFDF006BE034 /* NiceWallpaperModel.swift in Sources */,
+				386BA9DF235057D20005E489 /* BaseViewController.swift in Sources */,
 				D6ECEC261E123ED8002C4C89 /* UIApplication_NGP.swift in Sources */,
 				D6E8D3C71E041EEE004EA31A /* SpeechSynthesizerManager.swift in Sources */,
 				D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */,
@@ -1389,7 +1392,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development tech.chaosky.WorldPicture";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/WorldPicture-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1426,7 +1429,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/WorldPicture-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1450,7 +1453,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development tech.chaosky.WorldPicture.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1474,7 +1477,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1563,7 +1566,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/WorldPicture-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AdHoc;
@@ -1587,7 +1590,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc tech.chaosky.WorldPicture.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AdHoc;
@@ -1676,7 +1679,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore tech.chaosky.WorldPicture";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorldPicture/WorldPicture-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AppStore;
@@ -1700,7 +1703,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore tech.chaosky.WorldPicture.TodayWallpaperWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = AppStore;

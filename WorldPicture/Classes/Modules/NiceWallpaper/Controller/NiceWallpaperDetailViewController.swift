@@ -60,14 +60,14 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         let leftSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
         leftSwipGesture.direction = [.left]
-        self.view.addGestureRecognizer(leftSwipGesture)
+        view.addGestureRecognizer(leftSwipGesture)
         
         let rightSwipGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipChanged(sender:)))
         rightSwipGesture.direction = [.right]
-        self.view.addGestureRecognizer(rightSwipGesture)
+        view.addGestureRecognizer(rightSwipGesture)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onSnapshotTapped(sender:)))
-        self.view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(tapGesture)
         
         let bottomTapGesture = UITapGestureRecognizer(target: nil, action: nil)
         bottomView.addGestureRecognizer(bottomTapGesture)
@@ -90,7 +90,7 @@ class NiceWallpaperDetailViewController: UIViewController {
             backButton.isHidden = true
             stopDeviceMotion()
             
-            self.snapshotImageView.addSubview(self.topView)
+            snapshotImageView.addSubview(topView)
             
             snapshotImageView.scaleX = scalePercent
             snapshotImageView.scaleY = scalePercent
@@ -106,14 +106,15 @@ class NiceWallpaperDetailViewController: UIViewController {
             descCheckbox.checkState = .unchecked
         }
         else {
-            self.view.addSubview(topView)
+            view.addSubview(topView)
             _ = topView.subviews.map { $0.transform = CGAffineTransform.identity }
             backButton.isHidden = false
             
             snapshotImageView.scaleX = 1
             snapshotImageView.scaleY = 1
             
-            snapshotImageView.animateToNext(completion: { 
+            snapshotImageView.animateToNext(completion: { [weak self] in
+                guard let self = self else { return }
                 self.snapshotImageView.isHidden = true
                 self.scrollView.isHidden = false
                 self.startDeviceMotion()
@@ -148,7 +149,8 @@ class NiceWallpaperDetailViewController: UIViewController {
             // 采样率
             motionManager.deviceMotionUpdateInterval = 1 / 100.0
             // 采样
-            motionManager.startDeviceMotionUpdates(to: OperationQueue(), withHandler: { (deviceMotion, error) in
+            motionManager.startDeviceMotionUpdates(to: OperationQueue(), withHandler: { [weak self] (deviceMotion, error) in
+                guard let self = self else { return }
                 if error != nil {
                     return
                 }
@@ -199,11 +201,11 @@ class NiceWallpaperDetailViewController: UIViewController {
         imageWidth = fmax(imageWidth, screenBounds.width)
         wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
         
-        self.scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
+        scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
         wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(0.5))])
         
         let offsetX = (imageWidth - screenBounds.width) / 2
-        self.scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
+        scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
         
         descDashLabel.stopAnimation()
         
@@ -217,9 +219,9 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         descDashLabel.attributedString = attrString
         
-        self.view.layoutIfNeeded()
-        self.descDashLabel.sizeToFit()
-        self.descDashLabel.startAppearAnimation()
+        view.layoutIfNeeded()
+        descDashLabel.sizeToFit()
+        descDashLabel.startAppearAnimation()
         
         if let pubTime = tempWallpaperModel.pub_time {
             let formatter = DateFormatter()
@@ -252,7 +254,7 @@ class NiceWallpaperDetailViewController: UIViewController {
             transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
             
             // This makes the animation go.
-            self.view.layer.add(transition, forKey: "aniKey")
+            view.layer.add(transition, forKey: "aniKey")
         }
         
         DispatchQueue.global().async {
@@ -262,17 +264,17 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     func setupViews() {
-        self.fd_prefersNavigationBarHidden = true
-        self.fd_interactivePopDisabled = true
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        fd_prefersNavigationBarHidden = true
+        fd_interactivePopDisabled = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        self.scrollView.bounces = false
-        self.scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.showsVerticalScrollIndicator = false
-        self.scrollView.isScrollEnabled = false
+        scrollView.bounces = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.isScrollEnabled = false
         
-        self.scrollView.addSubview(wallpaperImageView)
+        scrollView.addSubview(wallpaperImageView)
         wallpaperImageView.contentMode = .scaleAspectFill
         
         snapshotImageView.isHidden = true
@@ -284,9 +286,9 @@ class NiceWallpaperDetailViewController: UIViewController {
         if rate > -0.1 && rate < 0.1 {
             return
         }
-        var contentOffset = self.scrollView.contentOffset
+        var contentOffset = scrollView.contentOffset
         
-        let rightX = self.scrollView.contentSize.width - UIScreen.main.bounds.width
+        let rightX = scrollView.contentSize.width - UIScreen.main.bounds.width
         
         contentOffset.x -= CGFloat(rate * 3)
         
@@ -298,11 +300,11 @@ class NiceWallpaperDetailViewController: UIViewController {
             contentOffset.x = rightX
         }
         
-        self.scrollView.contentOffset = contentOffset
+        scrollView.contentOffset = contentOffset
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
-        _ = self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -390,7 +392,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
         
         let activityVC = UIActivityViewController(activityItems: [shareImage, shareText], applicationActivities: nil)
-        self.present(activityVC, animated: true, completion: nil)
+        present(activityVC, animated: true, completion: nil)
     }
     @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {
         topView.layer.removeAllAnimations()

@@ -20,7 +20,7 @@ open class Utils : NSObject {
             let alert = UIAlertController(title: "您已拒绝应用访问相册，是否手动开启？", message: nil, preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let openAction = UIAlertAction(title: "开启", style: .default, handler: { (action) in
-                UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 alert.dismiss(animated: true, completion: nil)
             })
             alert.addAction(cancelAction)

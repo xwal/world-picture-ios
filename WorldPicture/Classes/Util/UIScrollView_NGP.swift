@@ -12,10 +12,10 @@ extension UIScrollView {
     func createSnapshotImage() -> UIImage? {
         assert(Thread.isMainThread)
         
-        let visiableSize = self.bounds.size
+        let visiableSize = bounds.size
         UIGraphicsBeginImageContextWithOptions(visiableSize, true, UIScreen.main.scale)
         let drawRect = CGRect(origin: CGPoint(), size: visiableSize)
-        self.drawHierarchy(in: drawRect, afterScreenUpdates: false)
+        drawHierarchy(in: drawRect, afterScreenUpdates: false)
         let visibleScrollViewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return visibleScrollViewImage

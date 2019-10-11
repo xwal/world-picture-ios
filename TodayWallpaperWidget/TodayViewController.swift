@@ -39,7 +39,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func requestTodayPictorial() {
         
-        self.loadingImageView.startAnimating()
+        loadingImageView.startAnimating()
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -60,7 +60,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             URLCache.shared.storeCachedResponse(cacheResponse, for: request)
         }
         
-        Alamofire.request(request).responseJSON { (response) in
+        Alamofire.request(request).responseJSON { [weak self] (response) in
+            guard let self = self else { return }
             if let JSON = response.result.value {
                 self.todayPictorialModel = TodayPictorialModel.yy_model(withJSON: JSON)
                 if shareData == nil {
@@ -83,12 +84,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func setupViews() {
         
-        self.view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.clear
         
-        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
-        topView.layer.contents = Image(named: "Navbar_mask")?.cgImage
-        bottomView.layer.contents = Image(named: "TopMask")?.cgImage
+        topView.layer.contents = KFCrossPlatformImage(named: "Navbar_mask")?.cgImage
+        bottomView.layer.contents = KFCrossPlatformImage(named: "TopMask")?.cgImage
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
@@ -103,15 +104,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         monthLabel.text = month
         titleLabel.text = "今日壁纸"
         
-        self.wallpaperImageView.contentMode = .scaleAspectFill
+        wallpaperImageView.contentMode = .scaleAspectFill
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        self.wallpaperImageView.isUserInteractionEnabled = true
-        self.wallpaperImageView.addGestureRecognizer(tapGesture)
+        wallpaperImageView.isUserInteractionEnabled = true
+        wallpaperImageView.addGestureRecognizer(tapGesture)
         
     }
     
     @objc private func onTap() {
-        self.extensionContext?.open(URL(string: "worldpicture://TodayWallpaper")!, completionHandler: nil)
+        extensionContext?.open(URL(string: "worldpicture://TodayWallpaper")!, completionHandler: nil)
     }
     
     func updateViews() {
@@ -144,10 +145,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if (activeDisplayMode == .compact) {
-            self.preferredContentSize = maxSize
+            preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: 0, height: UIScreen.main.bounds.size.height)
+            preferredContentSize = CGSize(width: 0, height: UIScreen.main.bounds.size.height)
         }
     }
     

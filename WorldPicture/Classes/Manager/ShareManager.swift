@@ -12,49 +12,13 @@ import MBProgressHUD
 class ShareManager: NSObject {
     
     static func setupShareSDK() {
-        ShareSDK.registerActivePlatforms([
-            SSDKPlatformType.typeSinaWeibo.rawValue,
-            SSDKPlatformType.typeWechat.rawValue,
-            SSDKPlatformType.typeQQ.rawValue,
-            SSDKPlatformType.typeMail.rawValue,
-            SSDKPlatformType.typeSMS.rawValue], onImport: { (platform : SSDKPlatformType) in
-                switch platform
-                {
-                case .typeSinaWeibo:
-                    ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
-                case .typeWechat:
-                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-                case .typeQQ:
-                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
-                default:
-                    break
-                }
-                
-        }) { (platform : SSDKPlatformType, appInfo : NSMutableDictionary?) in
-            
-            switch platform
-            {
-            case .typeSinaWeibo:
-                //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                appInfo?.ssdkSetupSinaWeibo(byAppKey: "3670565384",
-                                            appSecret : "1f15571e9b8b6f194ff6f4edacfbfb23",
-                                            redirectUri : "http://chaosky.me/workspace/ngp",
-                                            authType : SSDKAuthTypeBoth)
-                
-            case .typeWechat:
-                //设置微信应用信息
-                appInfo?.ssdkSetupWeChat(byAppId: "wxf5f2c3c207a84486", appSecret: "95aedc2d4152214f49137fb94b54fd16")
-                
-            case .typeQQ:
-                //设置QQ应用信息
-                appInfo?.ssdkSetupQQ(byAppId: "1105837816",
-                                     appKey : "NFrj9KR5DsF5XUuH",
-                                     authType : SSDKAuthTypeBoth)
-            default:
-                break
-            }
+        ShareSDK.registPlatforms { (register) in
+            register?.setupSinaWeibo(withAppkey: "3670565384",
+                                     appSecret: "1f15571e9b8b6f194ff6f4edacfbfb23",
+                                     redirectUrl: "http://chaosky.tech/workspace/ngp")
+            register?.setupWeChat(withAppId: "wxf5f2c3c207a84486", appSecret: "95aedc2d4152214f49137fb94b54fd16")
+            register?.setupQQ(withAppId: "1105837816", appkey: "NFrj9KR5DsF5XUuH")
         }
-        SSUIShareActionSheetStyle.setShareActionSheetStyle(.simple)
     }
     
     static func shareActionSheet(text: String!, thumbImages: Any!, images: Any!, url: URL!, title: String!, type: SSDKContentType = .auto) {

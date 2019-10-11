@@ -31,7 +31,7 @@ class WallpaperViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        self.collectionView?.mj_header.beginRefreshing()
+        collectionView?.mj_header.beginRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,9 +53,10 @@ class WallpaperViewController: UICollectionViewController {
         let screenSize = UIScreen.main.bounds.size
         let itemWidth = screenSize.width - 12.0
         let itemHeight = itemWidth * 512.0 / 750.0
-        (self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        (collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemHeight)
         
-        let gifHeader = MJRefreshGifHeader(refreshingBlock: {
+        let gifHeader = MJRefreshGifHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
             self.requestPageCount()
         })
         gifHeader?.stateLabel.isHidden = true
@@ -65,11 +66,12 @@ class WallpaperViewController: UICollectionViewController {
         gifHeader?.setImages(refreshImages, for: .pulling)
         gifHeader?.setImages(refreshImages, for: .refreshing)
         gifHeader?.setImages(refreshImages, for: .willRefresh)
-        self.collectionView?.mj_header = gifHeader
+        collectionView?.mj_header = gifHeader
     }
     
     func addFooter() {
-        let gifFooter = MJRefreshAutoGifFooter {
+        let gifFooter = MJRefreshAutoGifFooter { [weak self] in
+            guard let self = self else { return }
             self.requestData(withPage: self.pageIndex - 1)
         }
         gifFooter?.isRefreshingTitleHidden = true
@@ -77,13 +79,14 @@ class WallpaperViewController: UICollectionViewController {
         gifFooter?.setImages(refreshImages, for: .pulling)
         gifFooter?.setImages(refreshImages, for: .refreshing)
         gifFooter?.setImages(refreshImages, for: .willRefresh)
-        self.collectionView?.mj_footer = gifFooter
+        collectionView?.mj_footer = gifFooter
     }
     
     func requestPageCount() {
         
         let queryCount = AVQuery(className: "Count")
-        queryCount.getObjectInBackground(withId: "5666312cddb2a419aef3f847") { (object, error) in
+        queryCount.getObjectInBackground(withId: "5666312cddb2a419aef3f847") { [weak self] (object, error) in
+            guard let self = self else { return }
             guard let obj = object else {
                 DispatchQueue.main.async {
                     self.collectionView?.mj_header.endRefreshing()
@@ -110,7 +113,8 @@ class WallpaperViewController: UICollectionViewController {
     func requestData(withPage page: Int) {
         let unsplashQuery = UnsplashModel.query()
         unsplashQuery.whereKey("type", equalTo: String(page))
-        unsplashQuery.findObjectsInBackground { (objs, err) in
+        unsplashQuery.findObjectsInBackground { [weak self] (objs, err) in
+            guard let self = self else { return }
             guard let unsplashs = objs as? [UnsplashModel] else {
                 DispatchQueue.main.async {
                     self.collectionView?.mj_header.endRefreshing()

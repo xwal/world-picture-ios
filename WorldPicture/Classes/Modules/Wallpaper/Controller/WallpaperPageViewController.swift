@@ -19,16 +19,16 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.dataSource = self
-        self.delegate = self
+        dataSource = self
+        delegate = self
         
         let initDetailVC = createWallpaperDetail()
         initDetailVC.wallpaperModel = wallpaperModelArray[selectedIndex]
         
-        self.setViewControllers([initDetailVC], direction: .forward, animated: true, completion: nil)
+        setViewControllers([initDetailVC], direction: .forward, animated: true, completion: nil)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        self.view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(tapGesture)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -47,13 +47,13 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
     }
     
     func nextWallpaperDetail(for viewController: WallpaperDetailViewController, before: Bool) -> WallpaperDetailViewController? {
-        if let index = wallpaperModelArray.index(of: viewController.wallpaperModel!) {
+        if let index = wallpaperModelArray.firstIndex(of: viewController.wallpaperModel!) {
             let nextIndex = before ? index - 1 : index + 1
             if nextIndex < 0 || nextIndex >= wallpaperModelArray.count {
                 return nil
             }
             else {
-                let detailVC = self.createWallpaperDetail()
+                let detailVC = createWallpaperDetail()
                 detailVC.wallpaperModel = wallpaperModelArray[nextIndex]
                 return detailVC
             }
@@ -64,7 +64,7 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
     }
     
     @objc private func onTap() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     
@@ -80,7 +80,7 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
     // MARK: - UIPageViewControllerDelegate
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let visiableVC = pageViewController.viewControllers?.first as? WallpaperDetailViewController {
-            selectedIndex = wallpaperModelArray.index(of: visiableVC.wallpaperModel)!
+            selectedIndex = wallpaperModelArray.firstIndex(of: visiableVC.wallpaperModel)!
             indexChanged?(selectedIndex)
         }
     }

@@ -43,13 +43,13 @@ class NiceWallpaperCategoryImageCell: MMParallaxCell {
     
     func updateViews() {
         if let imageURL = model.image_url {
-            self.parallaxImage.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(imageURL)"), options: [.transition(.fade(0.5))])
+            parallaxImage.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(imageURL)"), options: [.transition(.fade(0.5))])
         }
         upTimesLabel.text = "\(model.up_times)"
         userNameLabel.text = model.photo_user?.user_name ?? ""
         
         if let imageURL = model.photo_user?.user_photo {
-            userHeadImageView.kf.setImage(with: URL(string: imageURL), placeholder: Image(named: "personal_head_default"))
+            userHeadImageView.kf.setImage(with: URL(string: imageURL), placeholder: KFCrossPlatformImage(named: "personal_head_default"))
         }
         
         descLabel.text = model.desc?.length != 0 ? model.desc : "喜欢这张图就帮它配词吧~"

@@ -15,10 +15,10 @@ import AVFoundation
 import Alamofire
 import SwiftyJSON
 import StoreKit
+import Firebase
 #if DEBUG
 import FLEX
 #endif
-import Firebase
 
 private let TodayWallpaperLocalNotificationIdentifier = "tech.chaosky.UserNotification.TodayWallpaper"
 private let kAppLaunchTime = "AppLaunchTime"
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let currentVersion = infoDict?["CFBundleShortVersionString"] as? String
         let isNewVersionLaunch = lastVersion != currentVersion
         if isNewVersionLaunch {
-            self.appLaunchCount = 1
+            appLaunchCount = 1
             UserDefaults.standard.set(currentVersion, forKey: kLastVersion)
         }
         return isNewVersionLaunch
@@ -98,13 +98,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 更新版本
         updateAppVersion()
         
-        _ = self.isNewVersionLaunch
+        _ = isNewVersionLaunch
         
-        self.appLaunchCount += 1
+        appLaunchCount += 1
         
-        if #available(iOS 10.3, *), self.appLaunchCount == 10 {
+        if #available(iOS 10.3, *), appLaunchCount == 10 {
             SKStoreReviewController.requestReview()
         }
+        
+        #if DEBUG
+        FLEXManager.shared()?.showExplorer()
+        #endif
         
         return true
     }
@@ -136,10 +140,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        createEverydayNotification()
-    }
-    
     func createEverydayNotification() {
         // 创建通知
         // 1. 创建通知内容
@@ -166,24 +166,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        
-        showTodayWallpaper()
-        application.applicationIconBadgeNumber -= 1
-        
-    }
-    
     // MARK: - UNUserNotificationCenterDelegate
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.notification.request.identifier == TodayWallpaperLocalNotificationIdentifier {
-            self.showTodayWallpaper()
+            showTodayWallpaper()
         }
         completionHandler()
     }
     
     func setupAppearance() {
-        UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
     }
@@ -207,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
-                let todayGeographicVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiliDetailViewController") as! DiliDetailViewController
+                let todayGeographicVC = StoryboardScene.Dili.albumDetailViewController.instantiate()
                 todayGeographicVC.albumID = String(days)
                 UIApplication.currentViewController?.present(todayGeographicVC, animated: true, completion: nil)
             })
@@ -256,11 +248,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         if shortcutItem.type == "TodayGeographic" {
-            self.showTodayGeographic()
+            showTodayGeographic()
         }
         
         if shortcutItem.type == "TodayWallpaper" {
-            self.showTodayWallpaper()
+            showTodayWallpaper()
         }
     }
     
@@ -296,7 +288,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 })
                 
                 let okAction = UIAlertAction(title: "马上体验", style: .default, handler: { (action) in
-                    UIApplication.shared.openURL(URL(string: url)!)
+                    UIApplication.shared.open(URL(string: url)!)
                 })
                 
                 alert.addAction(cancelAction)

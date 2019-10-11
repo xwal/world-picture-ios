@@ -42,12 +42,13 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     func firstLoadCache() {
         isLoadCacheFinished = false
         currentTime = 0
-        self.tableView.mj_header.beginRefreshing()
+        tableView.mj_header.beginRefreshing()
     }
     
     func addFooter() {
-        if self.tableView.mj_footer == nil {
-            let footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+        if tableView.mj_footer == nil {
+            let footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
+                guard let self = self else { return }
                 if let lastPubTime = self.dataSourceArray.last?.pub_time {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd"
@@ -59,7 +60,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             })
             footer?.activityIndicatorViewStyle = .white
             footer?.isRefreshingTitleHidden = true
-            self.tableView.mj_footer = footer
+            tableView.mj_footer = footer
         }
     }
     
@@ -93,26 +94,27 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     
     func setupViews() {
 
-        self.backgroundImageView.contentMode = .scaleAspectFill
-        self.backgroundImageView.image = UIImage(named: "personal_pic_default")
-        self.backgroundImageView.clipsToBounds = true
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.image = UIImage(named: "personal_pic_default")
+        backgroundImageView.clipsToBounds = true
         
         let blurEffect = UIBlurEffect(style: .light)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.alpha = 0.6
-        self.backgroundImageView.addSubview(visualEffectView)
+        backgroundImageView.addSubview(visualEffectView)
         visualEffectView.snp.makeConstraints { (maker) in
-            maker.edges.equalTo(self.backgroundImageView)
+            maker.edges.equalTo(backgroundImageView)
         }
         
-        self.tableView.separatorStyle = .none
-        self.tableView.tableFooterView = UIView()
-        self.tableView.backgroundColor = UIColor.clear
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.tableView.rowHeight = UIScreen.main.bounds.size.width;
-        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        let header = MJRefreshNormalHeader(refreshingBlock: {
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = UIColor.clear
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UIScreen.main.bounds.size.width;
+        tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
             self.currentTime = 0
             self.requestNiceWallpaperList(time: self.currentTime)
         })
@@ -120,7 +122,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         header?.stateLabel.isHidden = true
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white
-        self.tableView.mj_header = header
+        tableView.mj_header = header
         
         let leftButton = UIButton(type: .custom)
         leftButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -129,14 +131,12 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         leftButton.addTarget(self, action: #selector(clickCategoryButton(sender:)), for: .touchUpInside)
         
         let leftBarItem = UIBarButtonItem(customView: leftButton)
-        self.navigationItem.leftBarButtonItem = leftBarItem
+        navigationItem.leftBarButtonItem = leftBarItem
     }
     
     @objc func clickCategoryButton(sender: UIButton) {
-        
-        if let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperCategoryViewController") {
-            self.navigationController?.pushViewController(categoryVC, animated: true)
-        }
+        let categoryVC = StoryboardScene.NiceWallpaper.niceWallpaperCategoryViewController.instantiate()
+        navigationController?.pushViewController(categoryVC, animated: true)
     }
     
     func requestNiceWallpaperList(time: Double) {
@@ -152,8 +152,8 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         let url = URL(string: NGPAPI_ZUIMEIA_EVERYDAY_WALLPAPER)!
         let originalRequest = URLRequest(url: url, cachePolicy: (isLoadCacheFinished ? .useProtocolCachePolicy : .returnCacheDataElseLoad))
         let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
-        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { (response) in
-            
+        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { [weak self] (response) in
+            guard let self = self else { return }
             guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
                 
                 DispatchQueue.main.async {
@@ -215,7 +215,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     // MARK: - Table view data source
@@ -237,16 +237,14 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataSourceArray[indexPath.row]
-        self.backgroundImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(model.image_url ?? "")"), options: [.transition(.fade(0.5))])
+        backgroundImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(model.image_url ?? "")"), options: [.transition(.fade(0.5))])
 
-        guard let niceWallpaperDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperDetailViewController") as? NiceWallpaperDetailViewController else {
-            return
-        }
+        let niceWallpaperDetailVC = StoryboardScene.NiceWallpaper.niceWallpaperDetailViewController.instantiate()
         niceWallpaperDetailVC.hidesBottomBarWhenPushed = true
-        niceWallpaperDetailVC.imageModelArray = self.dataSourceArray
+        niceWallpaperDetailVC.imageModelArray = dataSourceArray
         niceWallpaperDetailVC.currentIndex = indexPath.row
         
-        self.navigationController?.pushViewController(niceWallpaperDetailVC, animated: true)
+        navigationController?.pushViewController(niceWallpaperDetailVC, animated: true)
     }
     
     /*

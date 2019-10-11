@@ -14,12 +14,12 @@ private let loadingImageViewTag = 10000
 
 extension UIViewController {
     var loadingImageView: UIImageView {
-        if let imageView = self.view.viewWithTag(loadingImageViewTag) {
+        if let imageView = view.viewWithTag(loadingImageViewTag) {
             return imageView as! UIImageView
         }
         let loadingImageView = UIImageView()
         loadingImageView.tag = loadingImageViewTag
-        self.view.addSubview(loadingImageView)
+        view.addSubview(loadingImageView)
         var animationImages = [UIImage]()
         for index in 1...32 {
             
@@ -30,7 +30,7 @@ extension UIViewController {
         loadingImageView.animationImages = animationImages
         
         loadingImageView.snp.makeConstraints { (maker) in
-            maker.center.equalTo(self.view)
+            maker.center.equalTo(view)
         }
         return loadingImageView
     }

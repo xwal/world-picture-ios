@@ -22,19 +22,14 @@ class NiceWallpaperPageViewController: UIPageViewController, UIPageViewControlle
     
     func setupViewController() {
         
-        self.dataSource = self
-        self.delegate = self
+        dataSource = self
+        delegate = self
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperViewController") as? NiceWallpaperViewController {
-            wpEverydayVC = vc
-        }
+        wpEverydayVC = StoryboardScene.NiceWallpaper.niceWallpaperViewController.instantiate()
+        wpCategoryVC = StoryboardScene.NiceWallpaper.niceWallpaperCategoryViewController.instantiate()
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NiceWallpaperCategoryViewController") as? NiceWallpaperCategoryViewController {
-            wpCategoryVC = vc
-        }
-        
-        self.setViewControllers([wpEverydayVC], direction: .forward, animated: false, completion: nil)
-        self.navigationItem.title = "每日最美"
+        setViewControllers([wpEverydayVC], direction: .forward, animated: false, completion: nil)
+        navigationItem.title = "每日最美"
         
         let leftButton = UIButton(type: .custom)
         leftButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -43,22 +38,22 @@ class NiceWallpaperPageViewController: UIPageViewController, UIPageViewControlle
         leftButton.addTarget(self, action: #selector(clickCategoryButton(sender:)), for: .touchUpInside)
         
         let leftBarItem = UIBarButtonItem(customView: leftButton)
-        self.navigationItem.leftBarButtonItem = leftBarItem
+        navigationItem.leftBarButtonItem = leftBarItem
     }
     
     @objc func clickCategoryButton(sender: UIButton) {
         
-        guard let vc = self.viewControllers?.first else {
+        guard let vc = viewControllers?.first else {
             return
         }
         
         if vc == wpEverydayVC {
-            self.setViewControllers([wpCategoryVC], direction: .reverse, animated: true, completion: nil)
-            self.navigationItem.title = "分类"
+            setViewControllers([wpCategoryVC], direction: .reverse, animated: true, completion: nil)
+            navigationItem.title = "分类"
         }
         else {
-            self.setViewControllers([wpEverydayVC], direction: .forward, animated: true, completion: nil)
-            self.navigationItem.title = "每日最美"
+            setViewControllers([wpEverydayVC], direction: .forward, animated: true, completion: nil)
+            navigationItem.title = "每日最美"
         }
     }
     
@@ -100,10 +95,10 @@ class NiceWallpaperPageViewController: UIPageViewController, UIPageViewControlle
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let vc = pageViewController.viewControllers?.first {
             if vc == wpEverydayVC {
-                self.navigationItem.title = "每日最美"
+                navigationItem.title = "每日最美"
             }
             else {
-                self.navigationItem.title = "分类"
+                navigationItem.title = "分类"
             }
         }
     }

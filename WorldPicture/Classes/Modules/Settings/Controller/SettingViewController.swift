@@ -18,15 +18,15 @@ class SettingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         if let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String, let shortVerson = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "版本 \(shortVerson)(\(bundleVersion))"
         }
         
         enableVoiceSwitch.addTarget(self, action: #selector(voiceStateChanged(sender:)), for: .valueChanged)
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(NGPVoiceStateChangedNotification), object: nil, queue: nil) { (notify) in
-            
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(NGPVoiceStateChangedNotification), object: nil, queue: nil) { [weak self] (notify) in
+            guard let self = self else { return }
             self.enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
         }
     }
@@ -62,7 +62,7 @@ class SettingViewController: UITableViewController {
         
         if indexPath.row == 0 {
             if let itunesURL = URL(string: "https://itunes.apple.com/us/app/%E4%B8%96%E7%95%8C%E7%94%BB%E6%8A%A5-%E6%9C%80%E7%BE%8E%E7%94%BB%E6%8A%A5%E9%9B%86/id1295152519?l=zh&ls=1&mt=8") {
-                UIApplication.shared.openURL(itunesURL)
+                UIApplication.shared.open(itunesURL)
             }
         }
         else if indexPath.row == 2 {
@@ -78,7 +78,7 @@ class SettingViewController: UITableViewController {
             alertView.addAction(cancelAction)
             alertView.addAction(okAction)
             
-            self.present(alertView, animated: true, completion: nil)
+            present(alertView, animated: true, completion: nil)
         }
     }
 
