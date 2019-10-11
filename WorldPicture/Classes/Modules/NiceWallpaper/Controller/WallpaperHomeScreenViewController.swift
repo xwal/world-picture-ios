@@ -39,10 +39,12 @@ class WallpaperHomeScreenViewController: UIViewController, UICollectionViewDataS
         collectionView.dataSource = self
         collectionView.reloadData()
         
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.dismiss(animated: true, completion: nil)
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func onTap() {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

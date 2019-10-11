@@ -46,21 +46,6 @@ internal enum StoryboardScene {
 
     internal static let niceWallpaperViewController = SceneType<WorldPicture.NiceWallpaperViewController>(storyboard: NiceWallpaper.self, identifier: "NiceWallpaperViewController")
   }
-  internal enum Pictorial: StoryboardType {
-    internal static let storyboardName = "Pictorial"
-
-    internal static let initialScene = InitialSceneType<WorldPicture.CustomNavigationViewController>(storyboard: Pictorial.self)
-
-    internal static let articleDetailBigImageViewController = SceneType<WorldPicture.ArticleDetailBigImageViewController>(storyboard: Pictorial.self, identifier: "ArticleDetailBigImageViewController")
-
-    internal static let articleDetailViewController = SceneType<WorldPicture.ArticleDetailViewController>(storyboard: Pictorial.self, identifier: "ArticleDetailViewController")
-
-    internal static let pictorialUINavigationController = SceneType<WorldPicture.CustomNavigationViewController>(storyboard: Pictorial.self, identifier: "PictorialUINavigationController")
-
-    internal static let todayPictorialPageViewController = SceneType<WorldPicture.TodayPictorialPageViewController>(storyboard: Pictorial.self, identifier: "TodayPictorialPageViewController")
-
-    internal static let todayWallpaperViewController = SceneType<WorldPicture.TodayWallpaperViewController>(storyboard: Pictorial.self, identifier: "TodayWallpaperViewController")
-  }
   internal enum Setting: StoryboardType {
     internal static let storyboardName = "Setting"
 

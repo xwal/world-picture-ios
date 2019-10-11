@@ -95,7 +95,7 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     }
     
     func requestImageList(time: Int) {
-        let pixelSize = UIScreen.main.sizeInPixel
+        let pixelSize = UIScreen.main.nativeBounds
         let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
         let urlParams: [String: Any] = [
             "page_size":"20",

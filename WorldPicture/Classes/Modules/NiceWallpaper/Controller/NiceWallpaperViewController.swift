@@ -11,7 +11,6 @@ import MJRefresh
 import Alamofire
 import SnapKit
 import Kingfisher
-import YYCategories
 
 private let cellIdentifier = "NiceWallpaperCell"
 
@@ -141,7 +140,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func requestNiceWallpaperList(time: Double) {
-        let pixelSize = UIScreen.main.sizeInPixel
+        let pixelSize = UIScreen.main.nativeBounds
         let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
         let urlParams = [
             "time": "\(Int(time))",

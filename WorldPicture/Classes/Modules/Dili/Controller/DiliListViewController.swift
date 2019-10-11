@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import YYModel
 import MJRefresh
-import YYCategories
 import DateToolsSwift
 import DZNEmptyDataSet
 
@@ -28,7 +27,8 @@ class DiliListViewController: UITableViewController {
     
     var cacheDataURL: URL {
         
-        return UIApplication.shared.documentsURL.appendingPathComponent("AlbumListModel.data")
+        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0].appendingPathComponent("AlbumListModel.data")
+        return URL(fileURLWithPath: filePath)
     }
     
     var albumModelArray = [AlbumModel]() {

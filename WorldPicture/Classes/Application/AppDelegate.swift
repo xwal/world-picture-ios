@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YYCategories
 import AVOSCloud
 import UserNotifications
 import IQKeyboardManagerSwift
@@ -21,7 +20,7 @@ import FLEX
 #endif
 import Firebase
 
-private let TodayWallpaperLocalNotificationIdentifier = "me.chaosky.UserNotification.TodayWallpaper"
+private let TodayWallpaperLocalNotificationIdentifier = "tech.chaosky.UserNotification.TodayWallpaper"
 private let kAppLaunchTime = "AppLaunchTime"
 private let kLastVersion = "LastVersion"
 
@@ -99,13 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 更新版本
         updateAppVersion()
         
-        // 处理本地通知
-        if let localNotification = launchOptions?[.localNotification] as? UILocalNotification {
-            if localNotification.userInfo?["identifier"] as? String == TodayWallpaperLocalNotificationIdentifier {
-                self.showTodayWallpaper()
-            }
-        }
-        
         _ = self.isNewVersionLaunch
         
         self.appLaunchCount += 1
@@ -114,26 +106,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             SKStoreReviewController.requestReview()
         }
         
-        #if DEBUG
-            let flexTapGesture = UITapGestureRecognizer(actionBlock: { sender in
-                
-                if let gesture = sender as? UITapGestureRecognizer{
-                    if gesture.state == .recognized {
-                        FLEXManager.shared().showExplorer()
-                    }
-                }
-            })
-            flexTapGesture.numberOfTouchesRequired = 3
-            self.window?.addGestureRecognizer(flexTapGesture)
-        #endif
         return true
     }
     
     func setupUserActivity() {
-        userActivity = NSUserActivity(activityType: "me.chaosky.NGP.OpenSafari")
+        userActivity = NSUserActivity(activityType: "tech.chaosky.WorldPicture.OpenSafari")
         userActivity?.title = "Chaosky 博客"
         userActivity?.becomeCurrent()
-        userActivity?.webpageURL = URL(string: "http://chaosky.me")
+        userActivity?.webpageURL = URL(string: "http://chaosky.tech")
     }
     
     func openLog(_ isOpen: Bool) {
@@ -142,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // 打印 Bundle 路径
             print("bundle url: \(Bundle.main.bundleURL)")
             // 沙盒路径
-            print("sandbox url: \(UIApplication.shared.documentsURL)")
+            print("sandbox url: \(NSHomeDirectory())")
         }
     }
     
@@ -209,15 +189,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func showTodayWallpaper() {
-        if let currentVC = UIApplication.currentViewController as? TodayPictorialPageViewController {
-            currentVC.requestTodayPictorial()
-        }
-        else {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: { 
-                let todayWallpaperVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TodayPictorialPageViewController")
-                UIApplication.currentViewController?.present(todayWallpaperVC, animated: true, completion: nil)
-            })
-        }
+        
     }
     
     func showTodayGeographic() {
@@ -243,7 +215,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme == "ngp" && url.host == "TodayWallpaper" {
+        if url.scheme == "worldpicture" && url.host == "TodayWallpaper" {
             showTodayWallpaper()
             return true
         }

@@ -27,9 +27,7 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         
         self.setViewControllers([initDetailVC], direction: .forward, animated: true, completion: nil)
         
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.dismiss(animated: true, completion: nil)
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         self.view.addGestureRecognizer(tapGesture)
     }
     
@@ -63,6 +61,10 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         else {
             return nil
         }
+    }
+    
+    @objc private func onTap() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     

@@ -49,7 +49,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ngp</string>
+				<string>worldpicture</string>
 			</array>
 		</dict>
 	</array>
@@ -320,7 +320,7 @@
 	<string>保存图片到相册</string>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>me.chaosky.NGP.OpenSafari</string>
+		<string>tech.chaosky.WorldPicture.OpenSafari</string>
 	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>

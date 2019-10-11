@@ -141,20 +141,51 @@ PODS:
     - mob_sharesdk/ShareSDK
     - MOBFoundation
   - MOBFoundation (3.2.6)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - ObjectMapper (3.5.1)
   - Protobuf (3.10.0)
+  - Result (4.1.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SnapKit (5.0.1)
   - Spring (1.0.6)
+  - SwifterSwift (5.1.0):
+    - SwifterSwift/AppKit (= 5.1.0)
+    - SwifterSwift/CoreGraphics (= 5.1.0)
+    - SwifterSwift/CoreLocation (= 5.1.0)
+    - SwifterSwift/Dispatch (= 5.1.0)
+    - SwifterSwift/Foundation (= 5.1.0)
+    - SwifterSwift/MapKit (= 5.1.0)
+    - SwifterSwift/SceneKit (= 5.1.0)
+    - SwifterSwift/SpriteKit (= 5.1.0)
+    - SwifterSwift/SwiftStdlib (= 5.1.0)
+    - SwifterSwift/UIKit (= 5.1.0)
+  - SwifterSwift/AppKit (5.1.0)
+  - SwifterSwift/CoreGraphics (5.1.0)
+  - SwifterSwift/CoreLocation (5.1.0)
+  - SwifterSwift/Dispatch (5.1.0)
+  - SwifterSwift/Foundation (5.1.0)
+  - SwifterSwift/MapKit (5.1.0)
+  - SwifterSwift/SceneKit (5.1.0)
+  - SwifterSwift/SpriteKit (5.1.0)
+  - SwifterSwift/SwiftStdlib (5.1.0)
+  - SwifterSwift/UIKit (5.1.0)
   - SwiftGen (6.1.0)
   - SwiftyJSON (5.0.0)
   - SwiftyUserDefaults (4.0.0)
-  - YYCategories (1.0.4):
-    - YYCategories/no-arc (= 1.0.4)
-  - YYCategories/no-arc (1.0.4)
   - YYModel (1.0.4)
   - ZCAnimatedLabel (0.0.4)
 
@@ -185,12 +216,16 @@ DEPENDENCIES:
   - mob_sharesdk/ShareSDKPlatforms/SinaWeibo
   - mob_sharesdk/ShareSDKPlatforms/WeChat
   - mob_sharesdk/ShareSDKUI
+  - Moya
+  - ObjectMapper
+  - RxCocoa
+  - RxSwift
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwifterSwift
   - SwiftGen
   - SwiftyJSON
   - SwiftyUserDefaults
-  - YYCategories
   - YYModel
   - ZCAnimatedLabel
 
@@ -232,13 +267,19 @@ SPEC REPOS:
     - MMParallaxCell
     - mob_sharesdk
     - MOBFoundation
+    - Moya
     - nanopb
+    - ObjectMapper
     - Protobuf
+    - Result
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
+    - SwifterSwift
     - SwiftGen
     - SwiftyJSON
     - SwiftyUserDefaults
-    - YYCategories
     - YYModel
     - ZCAnimatedLabel
 
@@ -288,17 +329,23 @@ SPEC CHECKSUMS:
   MMParallaxCell: 9c9045097743b725076c38ed2c53e3790e90bd14
   mob_sharesdk: 1f9c5b4e252296e7d3571e5f8e7ca13ea305f924
   MOBFoundation: 08c456357888e4c984fba23bbf04cfd2f4fc1e02
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
-  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 19090101e1d87d7c919c79e504f49d481c201330
+PODFILE CHECKSUM: 0f232203e4024df92644f2c0adbd494bf2fe8996
 
 COCOAPODS: 1.8.3

@@ -38,7 +38,7 @@ class WallpaperDetailViewController: UIViewController {
                     return
                 }
                 
-                let screenBounds = UIScreen.main.currentBounds()
+                let screenBounds = UIScreen.main.bounds
                 let imageHeight = screenBounds.height
                 var imageWidth = (img.size.width / img.size.height) * imageHeight
                 imageWidth = fmax(imageWidth, screenBounds.width)

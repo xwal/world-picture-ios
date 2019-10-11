@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import YYCategories
 import CHTCollectionViewWaterfallLayout
 import Alamofire
+import SwifterSwift
 
 class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
 
@@ -47,7 +47,7 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     }
     
     func requestWallpaperCategoryList() {
-        let pixelSize = UIScreen.main.sizeInPixel
+        let pixelSize = UIScreen.main.nativeBounds
         let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
         let urlParams = [
             "platform":"iphone",
@@ -108,7 +108,7 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
     
     // MARK: - CHTCollectionViewDelegateWaterfallLayout
     func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAt indexPath: IndexPath!) -> CGSize {
-        let width = UIScreen.main.currentBounds().width / 2
+        let width = UIScreen.main.bounds.width / 2
         let Height = width / 187.0 * 210.0
         return CGSize(width: width, height: Height)
     }

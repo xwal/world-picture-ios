@@ -16,6 +16,7 @@ import CoreGraphics
 import M13Checkbox
 import MBProgressHUD
 import FDFullscreenPopGesture
+import SwifterSwift
 
 class NiceWallpaperDetailViewController: UIViewController {
     
@@ -93,12 +94,12 @@ class NiceWallpaperDetailViewController: UIViewController {
             
             snapshotImageView.scaleX = scalePercent
             snapshotImageView.scaleY = scalePercent
-            topView.x = -topView.frame.size.width / scalePercent
+            topView.frame.origin.x = -topView.frame.size.width / scalePercent
             
             snapshotImageView.animateTo()
             topView.animateTo()
             
-            bottomView.y = 0
+            bottomView.frame.origin.y = 0
             bottomView.animateTo()
             
             dateCheckbox.checkState = .unchecked
@@ -118,10 +119,10 @@ class NiceWallpaperDetailViewController: UIViewController {
                 self.startDeviceMotion()
             })
             
-            topView.x = 0
+            topView.frame.origin.x = 0
             topView.animateTo()
             
-            bottomView.y = 200
+            bottomView.frame.origin.y = 200
             bottomView.animateTo()
         }
         
@@ -192,7 +193,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         let tempWallpaperModel = imageModelArray[currentIndex]
         
-        let screenBounds = UIScreen.main.currentBounds()
+        let screenBounds = UIScreen.main.bounds
         let imageHeight = screenBounds.height
         var imageWidth = (tempWallpaperModel.width / tempWallpaperModel.height) * imageHeight
         imageWidth = fmax(imageWidth, screenBounds.width)
@@ -285,7 +286,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
         var contentOffset = self.scrollView.contentOffset
         
-        let rightX = self.scrollView.contentSize.width - UIScreen.main.currentBounds().width
+        let rightX = self.scrollView.contentSize.width - UIScreen.main.bounds.width
         
         contentOffset.x -= CGFloat(rate * 3)
         
@@ -335,7 +336,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
-        if let saveImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) {
+        if let saveImage = snapshotImageView.screenshot {
             Utils.writeImageToPhotosAlbum(saveImage)
         }
     }
@@ -345,7 +346,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     
     @IBAction func shareToSNSTapped(_ sender: UIButton) {
         
-        guard let shareImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) else {
+        guard let shareImage = snapshotImageView.screenshot else {
             return
         }
         
@@ -380,7 +381,7 @@ class NiceWallpaperDetailViewController: UIViewController {
     }
     
     @IBAction func shareMoreTapped(_ sender: UIButton) {
-        guard let shareImage = snapshotImageView.snapshotImage(afterScreenUpdates: false) else {
+        guard let shareImage = snapshotImageView.screenshot else {
             return
         }
         
@@ -394,10 +395,10 @@ class NiceWallpaperDetailViewController: UIViewController {
     @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {
         topView.layer.removeAllAnimations()
         if dateCheckbox.checkState == .checked || descCheckbox.checkState == .checked {
-            topView.x = 0
+            topView.frame.origin.x = 0
         }
         else {
-            topView.x = -topView.frame.size.width / scalePercent
+            topView.frame.origin.x = -topView.frame.size.width / scalePercent
         }
         
         topView.animateTo()

@@ -24,11 +24,13 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
             imageView.kf.setImage(with: URL(string: url), placeholder: Image(named: "nopic"), options: [.transition(.fade(0.5))])
         }
         
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1;
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         tapGesture.numberOfTapsRequired = 2
         self.scrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func onTap() {
+        self.scrollView.zoomScale = self.scrollView.zoomScale == 1 ? 2 : 1
     }
     
     override func viewWillAppear(_ animated: Bool) {

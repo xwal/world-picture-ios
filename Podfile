@@ -3,12 +3,15 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 def public_pods
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'Moya'
   pod 'SwiftyJSON'
   pod 'MJRefresh'
   pod 'YYModel'
-  pod 'YYCategories'
+  pod 'SwifterSwift'
   pod 'MBProgressHUD'
   pod 'KVNProgress'
   pod 'SnapKit'
@@ -24,6 +27,7 @@ def public_pods
   pod 'FDFullscreenPopGesture'
   pod 'DZNEmptyDataSet'
   pod 'SwiftyUserDefaults'
+  pod 'ObjectMapper'
 end
 
 def third_party_pods
@@ -73,6 +77,5 @@ target 'TodayWallpaperWidget' do
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'YYModel'
-    pod 'YYCategories'
     pod 'SnapKit'
 end

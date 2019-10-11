@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YYCategories
 
 class HistoryRecordManager: NSObject {
     static let shared = HistoryRecordManager()
@@ -15,8 +14,8 @@ class HistoryRecordManager: NSObject {
     private var historyRecord = [String]()
     
     private lazy var saveURL: URL = {
-        let saveURL = UIApplication.shared.documentsURL.appendingPathComponent("HistoryRecord.data")
-        return saveURL
+        let saveFilePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0].appendingPathComponent("HistoryRecord.data")
+        return URL(fileURLWithPath: saveFilePath)
     }()
     
     private override init() {

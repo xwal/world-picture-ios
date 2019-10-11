@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 import SnapKit
-import YYCategories
 
 class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
@@ -54,10 +53,13 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func setupViews() {
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.showOrHideViewsTapped()
-        }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func onTap() {
+        showOrHideViewsTapped()
     }
     
     func initialPageViewController() {

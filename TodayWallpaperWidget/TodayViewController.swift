@@ -10,7 +10,6 @@ import UIKit
 import NotificationCenter
 import Alamofire
 import Kingfisher
-import YYCategories
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
@@ -105,12 +104,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         titleLabel.text = "今日壁纸"
         
         self.wallpaperImageView.contentMode = .scaleAspectFill
-        let tapGesture = UITapGestureRecognizer { (gesture) in
-            self.extensionContext?.open(URL(string: "ngp://TodayWallpaper")!, completionHandler: nil)
-        }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         self.wallpaperImageView.isUserInteractionEnabled = true
         self.wallpaperImageView.addGestureRecognizer(tapGesture)
         
+    }
+    
+    @objc private func onTap() {
+        self.extensionContext?.open(URL(string: "worldpicture://TodayWallpaper")!, completionHandler: nil)
     }
     
     func updateViews() {

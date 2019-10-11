@@ -18,9 +18,6 @@ internal enum StoryboardSegue {
   internal enum NiceWallpaper: String, SegueType {
     case showWallpaperCategory = "ShowWallpaperCategory"
   }
-  internal enum Pictorial: String, SegueType {
-    case presentArticlePage = "PresentArticlePage"
-  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 
