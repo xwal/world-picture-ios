@@ -18,21 +18,7 @@
                BlueprintIdentifier = "D63B1F741DFE9F72000B9276"
                BuildableName = "TodayWallpaperWidget.appex"
                BlueprintName = "TodayWallpaperWidget"
-               ReferencedContainer = "container:NationalGeographic.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D60C21D61DDB0B5C00375E8B"
-               BuildableName = "NationalGeographic.app"
-               BlueprintName = "NationalGeographic"
-               ReferencedContainer = "container:NationalGeographic.xcodeproj">
+               ReferencedContainer = "container:WorldPicture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -85,16 +71,15 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D60C21D61DDB0B5C00375E8B"
-            BuildableName = "NationalGeographic.app"
-            BlueprintName = "NationalGeographic"
-            ReferencedContainer = "container:NationalGeographic.xcodeproj">
+            BlueprintIdentifier = "D63B1F741DFE9F72000B9276"
+            BuildableName = "TodayWallpaperWidget.appex"
+            BlueprintName = "TodayWallpaperWidget"
+            ReferencedContainer = "container:WorldPicture.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -21,13 +21,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var destinationLabel: UILabel!
-    
     @IBOutlet weak var topView: UIView!
     
-    @IBOutlet weak var bottomView: UIView!
-    
-    var todayPictorialModel: TodayPictorialModel!
+    var todayPictorialModel: NiceWallpaperImageModel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +41,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayStr = dateFormatter.string(from: Date())
         
-        let url = URL(string: String(format: NGPAPI_CHANYOUJI_DAY_PICTORIAL, todayStr))!
-        let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
-        
         let sharedUserDefaults = UserDefaults(suiteName: "group.WorldPicture.sharedDatas")
         let shareData = sharedUserDefaults?.data(forKey: todayStr)
         
-        let cacheResponse = URLCache.shared.cachedResponse(for: request)
+        let pixelSize = UIScreen.main.nativeBounds
+        let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
+        let urlParams = [
+            "time": "\(Int(Date().timeIntervalSince1970))",
+            "platform":"iphone",
+            "resolution": resolution,
+            "page_size":"20",
+            ]
+        
+        let url = URL(string: NGPAPI_ZUIMEIA_EVERYDAY_WALLPAPER)!
+        
+        let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
+        
+        let encodedRequest = try! URLEncoding.default.encode(request, with: urlParams)
+        
+        let cacheResponse = URLCache.shared.cachedResponse(for: encodedRequest)
         let cacheData = cacheResponse?.data
         
         if shareData != nil && cacheData == nil {
@@ -60,10 +68,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             URLCache.shared.storeCachedResponse(cacheResponse, for: request)
         }
         
-        Alamofire.request(request).responseJSON { [weak self] (response) in
+        Alamofire.request(encodedRequest).responseJSON { [weak self] (response) in
             guard let self = self else { return }
-            if let JSON = response.result.value {
-                self.todayPictorialModel = TodayPictorialModel.yy_model(withJSON: JSON)
+            if let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images {
+                self.todayPictorialModel = images.first
                 if shareData == nil {
                     sharedUserDefaults?.set(self.todayPictorialModel.yy_modelToJSONData(), forKey: todayStr)
                     sharedUserDefaults?.synchronize()
@@ -89,7 +97,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         topView.layer.contents = KFCrossPlatformImage(named: "Navbar_mask")?.cgImage
-        bottomView.layer.contents = KFCrossPlatformImage(named: "TopMask")?.cgImage
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
@@ -116,11 +123,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func updateViews() {
-        titleLabel.text = todayPictorialModel.title
-        destinationLabel.text = "每日壁纸 — \(todayPictorialModel.destination ?? "")"
+        titleLabel.text = todayPictorialModel.desc
         
-        if let imageURL = todayPictorialModel.ios_wallpaper_url {
-            wallpaperImageView.kf.setImage(with: URL(string: imageURL), options: [.transition(.fade(0.5))])
+        if let imageURL = todayPictorialModel.image_url {
+            wallpaperImageView.kf.setImage(with: URL(string: "\(NGPAPI_ZUIMEIA_BASE_URL)\(imageURL)"), options: [.transition(.fade(0.5))])
         }
     }
     

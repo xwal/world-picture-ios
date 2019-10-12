@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import MBProgressHUD
+import SafariServices
 
 class SettingViewController: UITableViewController {
 
@@ -61,17 +62,16 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            if let itunesURL = URL(string: "https://itunes.apple.com/us/app/%E4%B8%96%E7%95%8C%E7%94%BB%E6%8A%A5-%E6%9C%80%E7%BE%8E%E7%94%BB%E6%8A%A5%E9%9B%86/id1295152519?l=zh&ls=1&mt=8") {
+            if let itunesURL = URL(string: "https://itunes.apple.com/us/app/id1483196698?l=zh&ls=1&mt=8") {
                 UIApplication.shared.open(itunesURL)
             }
-        }
-        else if indexPath.row == 2 {
+        } else if indexPath.row == 2 {
             let alertView = UIAlertController(title: nil, message: "清除缓存", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { _ in
                 alertView.dismiss(animated: true, completion: nil)
             })
             
-            let okAction = UIAlertAction(title: "确定", style: .default, handler: { (action) in
+            let okAction = UIAlertAction(title: "确定", style: .default, handler: { _ in
                 ImageCache.default.clearMemoryCache()
                 ImageCache.default.clearDiskCache()
             })
@@ -79,6 +79,10 @@ class SettingViewController: UITableViewController {
             alertView.addAction(okAction)
             
             present(alertView, animated: true, completion: nil)
+        } else if indexPath.row == 3 {
+            guard let url = URL(string: "http://chaosky.tech/workspace/worldpicture/privacy_policy.html") else { return }
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true, completion: nil)
         }
     }
 

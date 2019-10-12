@@ -46,7 +46,7 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     func setupView() {
         
         backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.image = UIImage(named: "personal_pic_default")
+        backgroundImageView.image = Asset.NiceWallpaper.personalPicDefault.image
         backgroundImageView.clipsToBounds = true
         
         automaticallyAdjustsScrollViewInsets = false
@@ -68,7 +68,7 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             self.currentTime = 0
             self.requestImageList(time: self.currentTime)
         })
-        header?.arrowView.image = UIImage(named: "whiteArrow")
+        header?.arrowView.image = Asset.Dili.whiteArrow.image
         header?.stateLabel.isHidden = true
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white

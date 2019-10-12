@@ -167,11 +167,18 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     @IBAction func shareTapped(_ sender: UIButton) {
-        guard let pictureModel = pictureListModel?.picture?[currentIndex] else {
+        guard let content = pictureListModel?.picture?[currentIndex].content else {
             return
         }
-        
-        ShareManager.shareActionSheet(text: pictureModel.content, thumbImages: pictureModel.url, images: pictureModel.url, url: nil, title: pictureModel.title, type: .auto)
+        guard let currentPictureDetail = pageViewController.viewControllers?.first as? PictureDetailViewController else {
+            return
+        }
+        if let image = currentPictureDetail.imageView.image {
+            if !image.isEqual(Asset.Dili.nopic.image) {
+                let activityVC = UIActivityViewController(activityItems: [image, content], applicationActivities: nil)
+                present(activityVC, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
@@ -180,7 +187,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
         }
         
         if let image = currentPictureDetail.imageView.image {
-            if !image.isEqual(UIImage(named: "nopic")) {
+            if !image.isEqual(Asset.Dili.nopic.image) {
                 Utils.writeImageToPhotosAlbum(image)
             }
         }

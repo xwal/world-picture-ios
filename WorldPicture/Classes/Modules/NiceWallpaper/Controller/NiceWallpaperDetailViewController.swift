@@ -16,7 +16,6 @@ import CoreGraphics
 import M13Checkbox
 import MBProgressHUD
 import FDFullscreenPopGesture
-import SwifterSwift
 
 class NiceWallpaperDetailViewController: UIViewController {
     
@@ -94,12 +93,12 @@ class NiceWallpaperDetailViewController: UIViewController {
             
             snapshotImageView.scaleX = scalePercent
             snapshotImageView.scaleY = scalePercent
-            topView.frame.origin.x = -topView.frame.size.width / scalePercent
+            (topView as Springable).x = -topView.frame.size.width / scalePercent
             
             snapshotImageView.animateTo()
             topView.animateTo()
             
-            bottomView.frame.origin.y = 0
+            (bottomView as Springable).y = 0
             bottomView.animateTo()
             
             dateCheckbox.checkState = .unchecked
@@ -120,10 +119,10 @@ class NiceWallpaperDetailViewController: UIViewController {
                 self.startDeviceMotion()
             })
             
-            topView.frame.origin.x = 0
+            (topView as Springable).x = 0
             topView.animateTo()
             
-            bottomView.frame.origin.y = 200
+            (bottomView as Springable).y = 400
             bottomView.animateTo()
         }
         
@@ -195,17 +194,10 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         let tempWallpaperModel = imageModelArray[currentIndex]
         
-        let screenBounds = UIScreen.main.bounds
-        let imageHeight = screenBounds.height
-        var imageWidth = (tempWallpaperModel.width / tempWallpaperModel.height) * imageHeight
-        imageWidth = fmax(imageWidth, screenBounds.width)
-        wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
-        
-        scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
-        wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(0.5))])
-        
-        let offsetX = (imageWidth - screenBounds.width) / 2
-        scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
+        wallpaperImageView.kf.setImage(with: URL(string: "\(niceWallpaperImageBaseURL)\(tempWallpaperModel.image_url ?? "")"), options: [.transition(.fade(0.5))], completionHandler: { [weak self] handler in
+            guard let self = self else { return }
+            self.view.setNeedsLayout()
+        })
         
         descDashLabel.stopAnimation()
         
@@ -279,7 +271,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         
         snapshotImageView.isHidden = true
         
-        bottomView.transform = CGAffineTransform(translationX: 0, y: 200)
+        bottomView.transform = CGAffineTransform(translationX: 0, y: 400)
     }
     
     func scrollRoll(rate: Double) {
@@ -301,6 +293,21 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
         
         scrollView.contentOffset = contentOffset
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let image = wallpaperImageView.image else { return }
+        let containerSize = scrollView.size
+        let imageHeight = containerSize.height
+        var imageWidth = (image.size.width / image.size.height) * imageHeight
+        imageWidth = fmax(imageWidth, containerSize.width)
+        wallpaperImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight)
+        
+        scrollView.contentSize = CGSize(width: imageWidth, height: imageHeight)
+        
+        let offsetX = (imageWidth - containerSize.width) / 2
+        scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
@@ -346,42 +353,6 @@ class NiceWallpaperDetailViewController: UIViewController {
     @IBAction func previewTapped(_ sender: UIButton) {
     }
     
-    @IBAction func shareToSNSTapped(_ sender: UIButton) {
-        
-        guard let shareImage = snapshotImageView.screenshot else {
-            return
-        }
-        
-        guard let shareText = imageModelArray[currentIndex].desc else {
-            return
-        }
-        
-        let tag = sender.tag
-        var platformType: SSDKPlatformType = .typeAny
-        switch tag {
-        case 100:
-            print("微信好友")
-            platformType = .subTypeWechatSession
-            break
-        case 101:
-            print("微信朋友圈")
-            platformType = .subTypeWechatTimeline
-        case 102:
-            print("新浪微博")
-            platformType = .typeSinaWeibo
-        case 103:
-            print("QQ")
-            platformType = .typeQQ
-        case 104:
-            print("QQ空间")
-            platformType = .subTypeQZone
-        default:
-            break
-        }
-        
-        ShareManager.shareNoUI(text: shareText, thumbImages: shareImage, images: shareImage, url: nil, title: "最美壁纸", platformType: platformType)
-    }
-    
     @IBAction func shareMoreTapped(_ sender: UIButton) {
         guard let shareImage = snapshotImageView.screenshot else {
             return
@@ -397,10 +368,10 @@ class NiceWallpaperDetailViewController: UIViewController {
     @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {
         topView.layer.removeAllAnimations()
         if dateCheckbox.checkState == .checked || descCheckbox.checkState == .checked {
-            topView.frame.origin.x = 0
+            (topView as Springable).x = 0
         }
         else {
-            topView.frame.origin.x = -topView.frame.size.width / scalePercent
+            (topView as Springable).x = -topView.frame.size.width / scalePercent
         }
         
         topView.animateTo()

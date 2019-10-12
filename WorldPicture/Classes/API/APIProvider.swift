@@ -54,7 +54,9 @@ let APIProvider = MoyaProvider<MultiTarget>(stubClosure: { api -> Moya.StubBehav
                                                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                                 }
                                             }
-                                        })]).rx
+                                        })])
+
+let RxAPIProvider = APIProvider.rx
 
 private let moyaSessionManager: Manager = {
     let configuration = URLSessionConfiguration.default

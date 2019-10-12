@@ -58,7 +58,7 @@ class DiliListViewController: UITableViewController {
             self.requestData(withPage: self.currentPage)
         })
         header?.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
-        header?.arrowView.image = UIImage(named: "blueArrow")
+        header?.arrowView.image = Asset.Dili.blueArrow.image
         header?.stateLabel.isHidden = true
         header?.lastUpdatedTimeLabel.isHidden = true
         header?.activityIndicatorViewStyle = .white

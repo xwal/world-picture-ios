@@ -40,14 +40,8 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZi-MF-Xtd">
-                                    <rect key="frame" x="20" y="87" width="41" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sK-qJ-QaK">
-                                    <rect key="frame" x="20" y="121" width="389" height="69"/>
+                                    <rect key="frame" x="10" y="77" width="399" height="113"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <string key="text">每天一张最美壁纸，每天邂逅一种优雅。
 文字和图片的完美结合，每张壁纸都是一个故事。</string>
@@ -58,12 +52,10 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="gZi-MF-Xtd" firstAttribute="leading" secondItem="DQs-Hr-Wvw" secondAttribute="leading" id="0ZW-Dh-d2F"/>
+                                <constraint firstItem="7sK-qJ-QaK" firstAttribute="leading" secondItem="pyw-F9-e2f" secondAttribute="leading" constant="10" id="0kG-ZW-OZt"/>
                                 <constraint firstItem="eyS-SJ-pXe" firstAttribute="leading" secondItem="0MG-1d-yQu" secondAttribute="leading" id="7e0-Zx-4b9"/>
-                                <constraint firstItem="gZi-MF-Xtd" firstAttribute="top" secondItem="DQs-Hr-Wvw" secondAttribute="bottom" constant="20" id="QZ8-oD-A75"/>
+                                <constraint firstItem="7sK-qJ-QaK" firstAttribute="top" secondItem="DQs-Hr-Wvw" secondAttribute="bottom" constant="10" id="Buh-0N-STq"/>
                                 <constraint firstItem="DQs-Hr-Wvw" firstAttribute="top" secondItem="pyw-F9-e2f" secondAttribute="top" constant="10" id="XOg-AM-YMm"/>
-                                <constraint firstItem="7sK-qJ-QaK" firstAttribute="leading" secondItem="gZi-MF-Xtd" secondAttribute="leading" id="Y4J-Yr-Ra7"/>
-                                <constraint firstItem="7sK-qJ-QaK" firstAttribute="top" secondItem="gZi-MF-Xtd" secondAttribute="bottom" constant="10" id="btc-fG-MTN"/>
                                 <constraint firstAttribute="bottom" secondItem="7sK-qJ-QaK" secondAttribute="bottom" constant="10" id="dWY-Of-qdH"/>
                                 <constraint firstItem="DQs-Hr-Wvw" firstAttribute="leading" secondItem="pyw-F9-e2f" secondAttribute="leading" constant="20" id="dsA-WF-XHG"/>
                                 <constraint firstItem="eyS-SJ-pXe" firstAttribute="bottom" secondItem="DQs-Hr-Wvw" secondAttribute="bottom" id="fLI-aK-g6w"/>
@@ -82,7 +74,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="在 App Store 评价世界地理画报" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Quq-3u-ieg">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="评价世界画报" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Quq-3u-ieg">
                                                     <rect key="frame" x="57" y="0.0" width="337" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -154,6 +146,28 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="uSr-ct-hjP" imageView="g6F-bV-U0p" style="IBUITableViewCellStyleDefault" id="n5T-gz-27n">
+                                        <rect key="frame" x="0.0" y="360" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n5T-gz-27n" id="syI-ha-vLk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="隐私政策" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uSr-ct-hjP">
+                                                    <rect key="frame" x="57" y="0.0" width="337" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="SettingFeedback" id="g6F-bV-U0p">
+                                                    <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -195,6 +209,7 @@
         <image name="SettingClean" width="22" height="22"/>
         <image name="SettingCommend" width="22" height="22"/>
         <image name="SettingComment" width="22" height="22"/>
+        <image name="SettingFeedback" width="22" height="22"/>
         <image name="ToolbarSetting_normal" width="24" height="24"/>
         <image name="ToolbarSetting_pressed" width="24" height="24"/>
     </resources>

@@ -73,9 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Setup AVOSCloud
         UnsplashModel.registerSubclass()
         AVOSCloud.setApplicationId("grSsdRxfR1hTUSdSwnOwGLdB", clientKey: "kpmFqpw5azg03HN7vcyGt8KG")
-                
-        // 分享平台设置
-        ShareManager.setupShareSDK()
         
         // 百度语音配置
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()
@@ -201,6 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                 let todayGeographicVC = StoryboardScene.Dili.albumDetailViewController.instantiate()
                 todayGeographicVC.albumID = String(days)
+                todayGeographicVC.modalPresentationStyle = .fullScreen
                 UIApplication.currentViewController?.present(todayGeographicVC, animated: true, completion: nil)
             })
         }

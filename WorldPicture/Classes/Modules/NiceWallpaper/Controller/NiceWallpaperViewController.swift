@@ -95,7 +95,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     func setupViews() {
 
         backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.image = UIImage(named: "personal_pic_default")
+        backgroundImageView.image = Asset.NiceWallpaper.personalPicDefault.image
         backgroundImageView.clipsToBounds = true
         
         let blurEffect = UIBlurEffect(style: .light)

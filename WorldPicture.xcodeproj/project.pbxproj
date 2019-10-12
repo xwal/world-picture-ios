@@ -21,6 +21,7 @@
 		3849A5FB2236451F00559E4B /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F32236451F00559E4B /* Chinese_And_English_Speech_Male.dat */; };
 		3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */; };
 		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
+		384F8C0F2351C5320001064F /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
 		386BA9DF235057D20005E489 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA9DE235057D20005E489 /* BaseViewController.swift */; };
 		3885B2ED234F037900AAF63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3885B2EC234F037900AAF63F /* GoogleService-Info.plist */; };
 		3887D08D235017760090E423 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08A235017730090E423 /* Observable+Response.swift */; };
@@ -34,7 +35,6 @@
 		38A7EBF4234F210000EF5155 /* Storyboard.Segues.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7EBF0234F210000EF5155 /* Storyboard.Segues.generated.swift */; };
 		38A7EBF5234F210000EF5155 /* Storyboard.Scenes.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7EBF1234F210000EF5155 /* Storyboard.Scenes.generated.swift */; };
 		38A7EBF6234F210000EF5155 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7EBF2234F210000EF5155 /* Assets.generated.swift */; };
-		38C68AED234F3CC300EA7BC7 /* TodayPictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */; };
 		A7CF6F0DDA255775333C0264 /* Pods_TodayWallpaperWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACCB64F463622FEAB03FE42 /* Pods_TodayWallpaperWidget.framework */; };
 		D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
 		D61663741DE7256100D9C897 /* String_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61663731DE7256100D9C897 /* String_NGP.swift */; };
@@ -51,8 +51,6 @@
 		D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
 		D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
-		D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606153B1DE2949500C4000F /* PictorialModel.swift */; };
-		D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63E805A1DDEA11A00308F92 /* ShareManager.swift */; };
 		D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* WallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */; };
 		D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
@@ -179,7 +177,6 @@
 		BA54CFD887EC580C970D7C9E /* Pods-NationalGeographic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.release.xcconfig"; sourceTree = "<group>"; };
 		CB2BA97A9BCD9C11AB526E08 /* Pods-TodayWallpaperWidget.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.appstore.xcconfig"; sourceTree = "<group>"; };
 		D288B1BB5F80F8757937DDC5 /* Pods-TodayWallpaperWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWallpaperWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWallpaperWidget/Pods-TodayWallpaperWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		D606153B1DE2949500C4000F /* PictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictorialModel.swift; sourceTree = "<group>"; };
 		D60C21D71DDB0B5D00375E8B /* WorldPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C21E11DDB0B5D00375E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60C21E61DDB0B5D00375E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,10 +195,8 @@
 		D63B1F7E1DFE9F72000B9276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWallpaperWidget.entitlements; sourceTree = "<group>"; };
 		D63B1F881DFEA19E000B9276 /* WorldPicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorldPicture.entitlements; sourceTree = "<group>"; };
-		D63E805A1DDEA11A00308F92 /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		D63ED2051DE04C6B0043D785 /* WallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D63ED2071DE04CA30043D785 /* WallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperViewController.swift; sourceTree = "<group>"; };
-		D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayPictorialModel.swift; sourceTree = "<group>"; };
 		D642BBE81DF156910026D776 /* UIViewController_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_NGP.swift; sourceTree = "<group>"; };
 		D6464F421DEEB33100A3CD03 /* dili.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = dili.xcassets; sourceTree = "<group>"; };
 		D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pictorial.xcassets; sourceTree = "<group>"; };
@@ -637,7 +632,6 @@
 			isa = PBXGroup;
 			children = (
 				D633AD431DDC766C006B08C6 /* HistoryRecordManager.swift */,
-				D63E805A1DDEA11A00308F92 /* ShareManager.swift */,
 				D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */,
 			);
 			path = Manager;
@@ -646,8 +640,6 @@
 		D63B1F781DFE9F72000B9276 /* TodayWallpaperWidget */ = {
 			isa = PBXGroup;
 			children = (
-				D642BBE21DF13FB00026D776 /* TodayPictorialModel.swift */,
-				D606153B1DE2949500C4000F /* PictorialModel.swift */,
 				D63B1F871DFEA0D3000B9276 /* TodayWallpaperWidget.entitlements */,
 				D63B1F791DFE9F72000B9276 /* TodayViewController.swift */,
 				D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */,
@@ -766,7 +758,6 @@
 				D60C21D41DDB0B5C00375E8B /* Frameworks */,
 				D60C21D51DDB0B5C00375E8B /* Resources */,
 				FA6E097A6E4DBB0870DDE09C /* [CP] Embed Pods Frameworks */,
-				56D24AF890773D52369E195A /* [CP] Copy Pods Resources */,
 				D63B1F851DFE9F72000B9276 /* Embed App Extensions */,
 				386E8811234F09110056A0B7 /* ShellScript */,
 				386BA9DD23502F2E0005E489 /* ShellScript */,
@@ -950,34 +941,6 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftGen/bin/swiftgen\n";
 		};
-		56D24AF890773D52369E195A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_QQ.bundle",
-				"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_SinaWeibo.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/mob_sharesdk/ShareSDK_JS_WeChat.bundle",
-				"${PODS_ROOT}/mob_sharesdk/ShareSDK/Support/Optional/ShareSDKUI.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK_JS_QQ.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK_JS_SinaWeibo.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK_JS_WeChat.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDKUI.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorldPicture/Pods-WorldPicture-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		716623CD82120E0D41CC346C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1156,7 +1119,6 @@
 				D6CB455E1E07D7E300AB8720 /* SettingViewController.swift in Sources */,
 				D61663741DE7256100D9C897 /* String_NGP.swift in Sources */,
 				38080B78234F3A5300454D8F /* API.swift in Sources */,
-				D63E805B1DDEA11A00308F92 /* ShareManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1164,11 +1126,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D63B1F8C1DFEA30F000B9276 /* PictorialModel.swift in Sources */,
 				D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */,
 				D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */,
-				38C68AED234F3CC300EA7BC7 /* TodayPictorialModel.swift in Sources */,
 				D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */,
+				384F8C0F2351C5320001064F /* NiceWallpaperModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
