@@ -262,7 +262,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             return
         }
         
-        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1295152519").responseJSON { (response) in
+        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1483196698").responseJSON { (response) in
             if let data = response.result.value {
                 
                 let json = JSON(data)
