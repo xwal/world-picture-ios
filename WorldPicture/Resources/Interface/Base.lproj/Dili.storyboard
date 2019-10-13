@@ -137,10 +137,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tl5-da-8t9">
-                                        <rect key="frame" x="6" y="27" width="402" height="132"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </webView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spf-2q-U5s">
+                                        <rect key="frame" x="6" y="26" width="402" height="133"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xN3-VA-x3z">
                                         <rect key="frame" x="6" y="160" width="134" height="35"/>
                                         <constraints>
@@ -170,18 +170,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="S7y-PU-Hv4" firstAttribute="top" secondItem="YSq-F1-10c" secondAttribute="top" id="0qT-og-eUQ"/>
-                                    <constraint firstItem="Tl5-da-8t9" firstAttribute="top" secondItem="YSq-F1-10c" secondAttribute="bottom" constant="1" id="5T0-Y7-RHE"/>
                                     <constraint firstAttribute="trailing" secondItem="BkG-Aa-8Z2" secondAttribute="trailing" constant="6" id="5rJ-y3-HQS"/>
                                     <constraint firstAttribute="bottom" secondItem="xN3-VA-x3z" secondAttribute="bottom" constant="5" id="CKq-LB-Rsd"/>
-                                    <constraint firstItem="Tl5-da-8t9" firstAttribute="leading" secondItem="YSq-F1-10c" secondAttribute="leading" id="Fku-5L-SqO"/>
+                                    <constraint firstItem="Spf-2q-U5s" firstAttribute="top" secondItem="YSq-F1-10c" secondAttribute="bottom" id="D08-c4-Ube"/>
                                     <constraint firstItem="YSq-F1-10c" firstAttribute="top" secondItem="Qra-w6-VTQ" secondAttribute="top" id="L8d-uE-Wel"/>
                                     <constraint firstItem="BkG-Aa-8Z2" firstAttribute="bottom" secondItem="xN3-VA-x3z" secondAttribute="bottom" id="Nhy-HB-bs7"/>
+                                    <constraint firstItem="xN3-VA-x3z" firstAttribute="top" secondItem="Spf-2q-U5s" secondAttribute="bottom" constant="1" id="Qdh-IZ-Fgd"/>
+                                    <constraint firstItem="Spf-2q-U5s" firstAttribute="trailing" secondItem="S7y-PU-Hv4" secondAttribute="trailing" id="TR8-E9-7dW"/>
                                     <constraint firstItem="YSq-F1-10c" firstAttribute="leading" secondItem="Qra-w6-VTQ" secondAttribute="leading" constant="6" id="Vi3-pf-hxF"/>
                                     <constraint firstItem="S7y-PU-Hv4" firstAttribute="bottom" secondItem="YSq-F1-10c" secondAttribute="bottom" id="Xrh-ya-HXX"/>
                                     <constraint firstAttribute="height" constant="200" id="YKr-fd-IBz"/>
-                                    <constraint firstItem="S7y-PU-Hv4" firstAttribute="trailing" secondItem="Tl5-da-8t9" secondAttribute="trailing" id="ZBD-0U-Kyr"/>
+                                    <constraint firstItem="Spf-2q-U5s" firstAttribute="leading" secondItem="YSq-F1-10c" secondAttribute="leading" id="bR7-1s-Glc"/>
                                     <constraint firstItem="S7y-PU-Hv4" firstAttribute="leading" secondItem="YSq-F1-10c" secondAttribute="trailing" constant="5" id="fFk-nn-Gaz"/>
-                                    <constraint firstItem="xN3-VA-x3z" firstAttribute="top" secondItem="Tl5-da-8t9" secondAttribute="bottom" constant="1" id="imp-EJ-Ra0"/>
                                     <constraint firstItem="xN3-VA-x3z" firstAttribute="leading" secondItem="YSq-F1-10c" secondAttribute="leading" id="k5V-2Y-Bnq"/>
                                     <constraint firstAttribute="trailing" secondItem="S7y-PU-Hv4" secondAttribute="trailing" constant="6" id="rSI-sX-fKN"/>
                                 </constraints>
@@ -200,7 +200,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomView" destination="Qra-w6-VTQ" id="H1e-hR-lok"/>
-                        <outlet property="contentWebView" destination="Tl5-da-8t9" id="NYj-iH-DUj"/>
+                        <outlet property="contentView" destination="Spf-2q-U5s" id="tSE-49-is9"/>
                         <outlet property="picIndexLabel" destination="S7y-PU-Hv4" id="RLi-j7-uzm"/>
                         <outlet property="picNameLabel" destination="YSq-F1-10c" id="hw7-O9-K7j"/>
                         <outletCollection property="showOrHideViews" destination="6CO-Xp-3lB" collectionClass="NSMutableArray" id="uN3-EB-gea"/>

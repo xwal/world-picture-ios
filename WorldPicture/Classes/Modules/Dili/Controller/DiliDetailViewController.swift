@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 import SnapKit
+import WebKit
 
 class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
@@ -23,11 +24,13 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     
     @IBOutlet weak var picIndexLabel: UILabel!
     
-    @IBOutlet weak var contentWebView: UIWebView!
-    
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet var showOrHideViews: [UIView]!
     
     @IBOutlet weak var bottomView: UIView!
+    
+    private let contentWebView = WKWebView()
+    
     var pageViewController: UIPageViewController!
     
     override func viewDidLoad() {
@@ -53,6 +56,15 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     }
     
     func setupViews() {
+        
+        contentView.backgroundColor = .clear
+        contentWebView.backgroundColor = .clear
+        contentWebView.isOpaque = false
+        contentView.addSubview(contentWebView)
+        
+        contentWebView.snp.makeConstraints { (maker) in
+            maker.edges.equalToSuperview()
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         view.addGestureRecognizer(tapGesture)

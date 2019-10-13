@@ -246,8 +246,6 @@
 		D6E8D3C31E0412CC004EA31A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D6E8D3C61E041EEE004EA31A /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
 		D6E90D921DE02E0800C65D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D6E90D941DE02E1400C65D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		D6E90D951DE02E1A00C65D15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication_NGP.swift; sourceTree = "<group>"; };
 		DB9F44B4A050E78E457C88B8 /* Pods-NationalGeographic.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.adhoc.xcconfig"; sourceTree = "<group>"; };
 		E00641577658ACEE678F88EB /* Pods-WorldPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.release.xcconfig"; sourceTree = "<group>"; };
@@ -1196,8 +1194,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D6E90D921DE02E0800C65D15 /* Base */,
-				D6E90D941DE02E1400C65D15 /* en */,
-				D6E90D951DE02E1A00C65D15 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
