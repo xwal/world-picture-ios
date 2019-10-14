@@ -133,12 +133,12 @@ PODS:
   - ObjectMapper (3.5.1)
   - Protobuf (3.10.0)
   - Result (4.1.0)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
+  - RxSwift (5.0.1)
   - SnapKit (5.0.1)
   - Spring (1.0.6)
   - SwifterSwift (5.1.0):
@@ -191,8 +191,8 @@ DEPENDENCIES:
   - MMParallaxCell
   - Moya
   - ObjectMapper
-  - RxCocoa
-  - RxSwift
+  - RxCocoa (from `https://github.com/ReactiveX/RxSwift.git`)
+  - RxSwift (from `https://github.com/ReactiveX/RxSwift.git`)
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwifterSwift
@@ -243,9 +243,7 @@ SPEC REPOS:
     - ObjectMapper
     - Protobuf
     - Result
-    - RxCocoa
     - RxRelay
-    - RxSwift
     - SnapKit
     - SwifterSwift
     - SwiftGen
@@ -255,10 +253,20 @@ SPEC REPOS:
     - ZCAnimatedLabel
 
 EXTERNAL SOURCES:
+  RxCocoa:
+    :git: https://github.com/ReactiveX/RxSwift.git
+  RxSwift:
+    :git: https://github.com/ReactiveX/RxSwift.git
   Spring:
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
+  RxCocoa:
+    :commit: 9b31a15520306b073cb9d46456f64826c1d6dcab
+    :git: https://github.com/ReactiveX/RxSwift.git
+  RxSwift:
+    :commit: 9b31a15520306b073cb9d46456f64826c1d6dcab
+    :git: https://github.com/ReactiveX/RxSwift.git
   Spring:
     :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
     :git: https://github.com/MengTo/Spring.git
@@ -303,9 +311,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
@@ -315,6 +323,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZCAnimatedLabel: 519b688bef4403fd356bc785f9b61cdfd8e6472d
 
-PODFILE CHECKSUM: 0b8765a662544fdfc0bf36284e9e1804cc9bce88
+PODFILE CHECKSUM: 1a17411a9347b7d4fd4f63ec11c6083c18ffe644
 
 COCOAPODS: 1.8.3

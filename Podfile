@@ -3,8 +3,8 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 def public_pods
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git'
+  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git'
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'Moya'

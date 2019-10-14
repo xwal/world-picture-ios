@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
                                 <state key="normal" image="linor"/>
-                                <state key="highlighted" image="button:6CO-Xp-3lB:image"/>
+                                <state key="highlighted" image="lidown"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
                                 </connections>

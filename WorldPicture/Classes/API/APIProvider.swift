@@ -33,53 +33,21 @@ private func reversedPrint(_ separator: String, terminator: String, items: Any..
 
 // MARK: - Provider support
 
-let APIProvider = MoyaProvider<MultiTarget>(stubClosure: { api -> Moya.StubBehavior in
-                                        switch api.target {
-                                        default:
-                                            break
-                                        }
-                                        return StubBehavior.never
-                                    },
-                                    manager: moyaSessionManager,
-                                    plugins: [
-                                        NetworkLoggerPlugin(verbose: true,
-                                                            cURL: true,
-                                                            output: reversedPrint),
-                                        NetworkActivityPlugin(networkActivityClosure: { change, _ in
-                                            DispatchQueue.main.async {
-                                                switch change {
-                                                case .began:
-                                                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                                                case .ended:
-                                                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                                                }
-                                            }
-                                        })])
+let APIProvider = MoyaProvider<MultiTarget>(plugins: [
+    MoyaCacheablePlugin(),
+    NetworkLoggerPlugin(verbose: true,
+                        cURL: true,
+                        output: reversedPrint),
+    NetworkActivityPlugin(networkActivityClosure: { change, _ in
+        DispatchQueue.main.async {
+            switch change {
+            case .began:
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            case .ended:
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+        }
+    }),
+])
 
 let RxAPIProvider = APIProvider.rx
-
-private let moyaSessionManager: Manager = {
-    let configuration = URLSessionConfiguration.default
-    configuration.httpAdditionalHeaders = Manager.defaultHTTPHeaders
-    configuration.timeoutIntervalForRequest = 30
-    let manager = Manager(configuration: configuration)
-    manager.startRequestsImmediately = false
-    return manager
-}()
-
-extension MoyaError {
-    var innerError: NSError? {
-        switch self {
-        case let .encodableMapping(error):
-            return error as NSError
-        case let .objectMapping(error, _):
-            return error as NSError
-        case let .underlying(error, _):
-            return error as NSError
-        case let .parameterEncoding(error):
-            return error as NSError
-        default:
-            return nil
-        }
-    }
-}

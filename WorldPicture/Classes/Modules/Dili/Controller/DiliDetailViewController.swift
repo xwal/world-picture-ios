@@ -106,36 +106,27 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .indeterminate
         
-        let url = URL(string: String(format: NGPAPI_DILI_ALBUM, albumID))!
-        let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 15)
-        Alamofire.request(request).responseString(queue: nil, encoding: String.Encoding.utf8, completionHandler: { [weak self] (response) in
-            guard let self = self else { return }
-            guard let JSON = response.result.value else {
-                
-                let error = response.result.error
-                
+        APIProvider.request(DiliAPI.albums(albumId: albumID).multiTarget) { result in
+            switch result {
+            case let .success(response):
+                guard let model = PictureListModel.yy_model(withJSON: response.data) else {
+                    hud.hide(animated: true)
+                    return
+                }
+                self.pictureListModel = model
+                DispatchQueue.main.async {
+                    self.initialPageViewController()
+                    self.updateViews()
+                    hud.hide(animated: true)
+                }
+            case let .failure(error):
                 hud.mode = .text
                 hud.label.text = "加载失败"
-                hud.detailsLabel.text = "错误描述：\(error?.localizedDescription ?? "")"
+                hud.detailsLabel.text = "错误描述：\(error.localizedDescription)"
                 hud.hide(animated: true, afterDelay: 1)
                 self.bottomView.isUserInteractionEnabled = false
-                return
             }
-            
-            let handleJSON = JSON.removeControlCharacters()
-            guard let model = PictureListModel.yy_model(withJSON: handleJSON) else {
-                hud.hide(animated: true)
-                return
-            }
-            self.pictureListModel = model
-            DispatchQueue.main.async {
-                self.initialPageViewController()
-                self.updateViews()
-                hud.hide(animated: true)
-            }
-            
-        })
-        
+        }
     }
     
     func createPictureDetail() -> PictureDetailViewController {

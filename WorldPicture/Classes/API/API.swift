@@ -78,7 +78,7 @@ enum ZuimeiaAPI: MultiTargetProtocol {
     case tag(tagId: Int, time: TimeInterval, pageSize: Int)
     
     var baseURL: URL {
-        return URL(string: "http://lab.zuimeia.com/")!
+        return URL(string: "http://lab.zuimeia.com")!
     }
     
     var path: String {

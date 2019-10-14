@@ -19,41 +19,18 @@ class DiliListViewController: UITableViewController {
     
     let CellIdentifier = "AlbumCell"
     
-    var isLoading: Bool = false {
-        didSet {
-            tableView.reloadEmptyDataSet()
-        }
-    }
-    
-    var cacheDataURL: URL {
-        
-        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0].appendingPathComponent("AlbumListModel.data")
-        return URL(fileURLWithPath: filePath)
-    }
-    
-    var albumModelArray = [AlbumModel]() {
-        didSet {
-            updateCacheData()
-        }
-    }
+    var albumModelArray = [AlbumModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupEmptyDataSet()
-        setupCacheData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tableView.mj_header.endRefreshing()
-        tableView.mj_footer.endRefreshing()
+        loadData()
     }
     
     func setupView() {
         let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
-            self.isLoading = true
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
         })
@@ -64,59 +41,28 @@ class DiliListViewController: UITableViewController {
         header?.activityIndicatorViewStyle = .white
         tableView.mj_header = header
         
-        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
+        let footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             self.currentPage += 1
             self.requestData(withPage: self.currentPage)
         })
+        footer?.isHidden = true
+        tableView.mj_footer = footer
         
         tableView.tableFooterView = UIView()
-        
-        
     }
     
-    func setupCacheData() {
-        
-        guard let updatedTime = tableView.mj_header.lastUpdatedTime else {
-            tableView.mj_header.beginRefreshing()
-            return
-        }
-        
-        do {
-            let cacheJSONData = try Data(contentsOf: cacheDataURL)
-            albumModelArray = NSArray.yy_modelArray(with: AlbumModel.self, json: cacheJSONData) as! [AlbumModel]
-            tableView.reloadData()
-        } catch {
-            tableView.mj_header.beginRefreshing()
-        }
-        
-        if updatedTime.daysAgo >= 1 {
-            tableView.mj_header.beginRefreshing()
-        }
-        
-    }
-    
-    func updateCacheData() {
-        // 将数据写入本地
-        if let data = (albumModelArray as NSArray).yy_modelToJSONData() {
-            do {
-                try data.write(to: cacheDataURL)
-            } catch let error {
-                print(error)
-            }
-        }
+    func loadData() {
+        tableView.mj_header.beginRefreshing()
     }
     
     func requestData(withPage page: Int) {
-        let requestURL = String(format: NGPAPI_DILI_MAIN, page)
-        Alamofire.request(requestURL).responseJSON { [weak self] (response) in
+        APIProvider.request(DiliAPI.mains(page: page).multiTarget) { [weak self] result in
             guard let self = self else { return }
-            
-            var hasMoreData = true
-            // 是否有数据
-            if let JSON = response.result.value {
-                
-                if let albumListModel = AlbumListModel.yy_model(withJSON: JSON) {
+            var hasMoreData = false
+            switch result {
+            case let .success(response):
+                if let albumListModel = AlbumListModel.yy_model(withJSON: response.data) {
                     if let albumList = albumListModel.album {
                         
                         if page == 1 {
@@ -128,19 +74,20 @@ class DiliListViewController: UITableViewController {
                     if let total = Int((albumListModel.total)!) {
                         if self.albumModelArray.count >= total {
                             hasMoreData = false
+                        } else {
+                            hasMoreData = true
                         }
                     }
                 }
-            }
-            else {
+                break
+            case .failure:
                 if self.currentPage > 1 {
                     self.currentPage -= 1
                 }
             }
-            
             DispatchQueue.main.async {
-                self.isLoading = false
                 if hasMoreData {
+                    self.tableView.mj_footer.isHidden = false
                     self.tableView.mj_footer.endRefreshing()
                 }
                 else {
@@ -229,23 +176,7 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        if isLoading {
-            return Asset.Assets.loadingImgBlue.image
-        }
-        else {
-            return Asset.Assets.placeholderEmptydataset.image
-        }
-    }
-    
-    func imageAnimation(forEmptyDataSet scrollView: UIScrollView!) -> CAAnimation! {
-        let animation = CABasicAnimation(keyPath: "transform")
-        animation.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
-        animation.toValue = NSValue(caTransform3D: CATransform3DMakeRotation(.pi / 2, 0.0, 0.0, 1.0))
-        animation.duration = 0.25
-        animation.isCumulative = true
-        animation.repeatCount = MAXFLOAT
-        
-        return animation
+        return Asset.Assets.placeholderEmptydataset.image
     }
     
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
@@ -272,10 +203,6 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return false
-    }
-    
-    func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool {
-        return isLoading
     }
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {

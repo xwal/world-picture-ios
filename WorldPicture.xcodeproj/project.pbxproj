@@ -23,10 +23,13 @@
 		3849A5FD2236451F00559E4B /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */; };
 		384F8C0F2351C5320001064F /* NiceWallpaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE4D191DFFAFDF006BE034 /* NiceWallpaperModel.swift */; };
 		386BA9DF235057D20005E489 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BA9DE235057D20005E489 /* BaseViewController.swift */; };
+		38830FD9235484B90070BEF8 /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38830FD8235484B90070BEF8 /* UIScrollViewExtensions.swift */; };
 		3885B2ED234F037900AAF63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3885B2EC234F037900AAF63F /* GoogleService-Info.plist */; };
 		3887D08D235017760090E423 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08A235017730090E423 /* Observable+Response.swift */; };
 		3887D08E235017760090E423 /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08B235017730090E423 /* MoyaProvider+Rx.swift */; };
 		3887D08F235017760090E423 /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3887D08C235017730090E423 /* Single+Response.swift */; };
+		38994D172354649500649D31 /* MoyaCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38994D162354649500649D31 /* MoyaCacheable.swift */; };
+		38994D19235464B000649D31 /* MoyaCacheablePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38994D18235464B000649D31 /* MoyaCacheablePlugin.swift */; };
 		38A7EBCF234F165800EF5155 /* Dili.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A7EBCD234F165800EF5155 /* Dili.storyboard */; };
 		38A7EBD5234F193800EF5155 /* Wallpaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A7EBD3234F193800EF5155 /* Wallpaper.storyboard */; };
 		38A7EBD8234F19DB00EF5155 /* NiceWallpaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A7EBD6234F19DB00EF5155 /* NiceWallpaper.storyboard */; };
@@ -155,10 +158,13 @@
 		3849A5F42236451F00559E4B /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
 		3849A5F62236451F00559E4B /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
 		386BA9DE235057D20005E489 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		38830FD8235484B90070BEF8 /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
 		3885B2EC234F037900AAF63F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3887D08A235017730090E423 /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
 		3887D08B235017730090E423 /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
 		3887D08C235017730090E423 /* Single+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Response.swift"; sourceTree = "<group>"; };
+		38994D162354649500649D31 /* MoyaCacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCacheable.swift; sourceTree = "<group>"; };
+		38994D18235464B000649D31 /* MoyaCacheablePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCacheablePlugin.swift; sourceTree = "<group>"; };
 		38A7EBCE234F165800EF5155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dili.storyboard; sourceTree = "<group>"; };
 		38A7EBD4234F193800EF5155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Wallpaper.storyboard; sourceTree = "<group>"; };
 		38A7EBD7234F19DB00EF5155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NiceWallpaper.storyboard; sourceTree = "<group>"; };
@@ -323,10 +329,12 @@
 		38080B63234F3A5300454D8F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				38080B66234F3A5300454D8F /* APIProvider.swift */,
 				38080B67234F3A5300454D8F /* Moya-ObjectMapper */,
 				38080B6C234F3A5300454D8F /* API.swift */,
 				3887D089235017730090E423 /* RxMoya */,
+				38080B66234F3A5300454D8F /* APIProvider.swift */,
+				38994D162354649500649D31 /* MoyaCacheable.swift */,
+				38994D18235464B000649D31 /* MoyaCacheablePlugin.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -622,6 +630,7 @@
 				D6ECEC251E123ED8002C4C89 /* UIApplication_NGP.swift */,
 				D69D23761E13856C000C0D17 /* UIScrollView_NGP.swift */,
 				D6BA6A8B1E4AFCD200DD9718 /* Utils.swift */,
+				38830FD8235484B90070BEF8 /* UIScrollViewExtensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1078,6 +1087,7 @@
 				D63ED2061DE04C6B0043D785 /* WallpaperCell.swift in Sources */,
 				38080B77234F3A5300454D8F /* Response+ObjectMapper.swift in Sources */,
 				38080B76234F3A5300454D8F /* Single+ObjectMapper.swift in Sources */,
+				38994D172354649500649D31 /* MoyaCacheable.swift in Sources */,
 				D69D23771E13856C000C0D17 /* UIScrollView_NGP.swift in Sources */,
 				D6CE4D171DFFAC9C006BE034 /* NiceWallpaperCell.swift in Sources */,
 				D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */,
@@ -1104,11 +1114,13 @@
 				3887D08D235017760090E423 /* Observable+Response.swift in Sources */,
 				D6AA8AA11DDB409700032800 /* DiliListViewController.swift in Sources */,
 				3887D08E235017760090E423 /* MoyaProvider+Rx.swift in Sources */,
+				38994D19235464B000649D31 /* MoyaCacheablePlugin.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */,
 				38080B75234F3A5300454D8F /* ObjectMapper+Extension.swift in Sources */,
 				D62579E51DE1511B002DC483 /* WallpaperDetailViewController.swift in Sources */,
 				D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */,
+				38830FD9235484B90070BEF8 /* UIScrollViewExtensions.swift in Sources */,
 				D68998271E4C663F0087AC3A /* CSMParallaxCell.m in Sources */,
 				D6A5F0281DDBED1300B2664C /* PictureCell.swift in Sources */,
 				D67AE08C1DDB4DBF00DBC7AE /* AlbumCell.swift in Sources */,

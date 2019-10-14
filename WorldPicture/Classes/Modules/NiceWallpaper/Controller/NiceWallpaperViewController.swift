@@ -23,15 +23,6 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var backgroundImageView: UIImageView!
     var dataSourceArray = [NiceWallpaperImageModel]()
     var currentTime: TimeInterval = 0
-    
-    var isLoadCacheFinished = false {
-        didSet {
-            if isLoadCacheFinished == true {
-                currentTime = 0
-                requestNiceWallpaperList(time: 0)
-            }
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +31,6 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func firstLoadCache() {
-        isLoadCacheFinished = false
-        currentTime = 0
         tableView.mj_header.beginRefreshing()
     }
     
@@ -140,59 +129,41 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func requestNiceWallpaperList(time: Double) {
-        let pixelSize = UIScreen.main.nativeBounds
-        let resolution = "{\(Int(pixelSize.width)), \(Int(pixelSize.height))}"
-        let urlParams = [
-            "time": "\(Int(time))",
-            "platform":"iphone",
-            "resolution": resolution,
-            "page_size":"20",
-            ]
         
-        let url = URL(string: NGPAPI_ZUIMEIA_EVERYDAY_WALLPAPER)!
-        let originalRequest = URLRequest(url: url, cachePolicy: (isLoadCacheFinished ? .useProtocolCachePolicy : .returnCacheDataElseLoad))
-        let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
-        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { [weak self] (response) in
+        APIProvider.request(ZuimeiaAPI.everydayWallpaper(time: time, pageSize: 20).multiTarget) { [weak self] result in
             guard let self = self else { return }
-            guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
+            if let response = try? result.get(),
+                let model = NiceWallpaperModel.yy_model(withJSON: response.data),
+                let images = model.data?.images,
+                let hasNext = model.data?.has_next {
+                if let base_url = model.data?.base_url {
+                    niceWallpaperImageBaseURL = base_url
+                }
                 
+                if time == 0 {
+                    self.dataSourceArray.removeAll()
+                }
+                
+                self.dataSourceArray.append(contentsOf: images)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.tableView.mj_header.endRefreshing()
+                    self.addFooter()
+                    if hasNext {
+                        self.tableView.mj_footer.endRefreshing()
+                    }
+                    else {
+                        self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                    }
+                }
+            } else {
                 DispatchQueue.main.async {
                     self.tableView.mj_header.endRefreshing()
                     
                     if (self.tableView.mj_footer != nil) {
                         self.tableView.mj_footer.endRefreshing()
                     }
-                }
-                
-                return
-            }
-                
-            if let base_url = model.data?.base_url {
-                niceWallpaperImageBaseURL = base_url
-            }
-            
-            if time == 0 {
-                self.dataSourceArray.removeAll()
-            }
-            
-            self.dataSourceArray.append(contentsOf: images)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                
-                if self.isLoadCacheFinished == false {
-                    self.isLoadCacheFinished = true
-                }
-                else {
-                    self.tableView.mj_header.endRefreshing()
-                }
-                
-                self.addFooter()
-                if hasNext {
-                    self.tableView.mj_footer.endRefreshing()
-                }
-                else {
-                    self.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
             }
         }
