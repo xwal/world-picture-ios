@@ -72,7 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // Setup AVOSCloud
         UnsplashModel.registerSubclass()
-        AVOSCloud.setApplicationId("grSsdRxfR1hTUSdSwnOwGLdB", clientKey: "kpmFqpw5azg03HN7vcyGt8KG")
+        AVOSCloud.setApplicationId("grSsdRxfR1hTUSdSwnOwGLdB",
+                                   clientKey: "kpmFqpw5azg03HN7vcyGt8KG",
+                                   serverURLString: "https://grssdrxf.api.lncld.net")
         
         // 百度语音配置
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()

@@ -34,11 +34,11 @@ class DiliListViewController: UITableViewController {
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
         })
-        header?.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
-        header?.arrowView.image = Asset.Dili.blueArrow.image
-        header?.stateLabel.isHidden = true
-        header?.lastUpdatedTimeLabel.isHidden = true
-        header?.activityIndicatorViewStyle = .white
+        header.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
+        header.arrowView?.image = Asset.Dili.blueArrow.image
+        header.stateLabel?.isHidden = true
+        header.lastUpdatedTimeLabel?.isHidden = true
+        header.loadingView?.style = .white
         tableView.mj_header = header
         
         let footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
@@ -46,14 +46,14 @@ class DiliListViewController: UITableViewController {
             self.currentPage += 1
             self.requestData(withPage: self.currentPage)
         })
-        footer?.isHidden = true
+        footer.isHidden = true
         tableView.mj_footer = footer
         
         tableView.tableFooterView = UIView()
     }
     
     func loadData() {
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
     
     func requestData(withPage page: Int) {
@@ -63,11 +63,12 @@ class DiliListViewController: UITableViewController {
             switch result {
             case let .success(response):
                 if let albumListModel = AlbumListModel.yy_model(withJSON: response.data) {
-                    if let albumList = albumListModel.album {
+                    if var albumList = albumListModel.album {
                         
                         if page == 1 {
                             self.albumModelArray.removeAll()
                         }
+                        albumList.removeAll(where: { $0.ds == "0" })
                         self.albumModelArray.append(contentsOf: albumList)
                     }
                     
@@ -87,13 +88,13 @@ class DiliListViewController: UITableViewController {
             }
             DispatchQueue.main.async {
                 if hasMoreData {
-                    self.tableView.mj_footer.isHidden = false
-                    self.tableView.mj_footer.endRefreshing()
+                    self.tableView.mj_footer?.isHidden = false
+                    self.tableView.mj_footer?.endRefreshing()
                 }
                 else {
-                    self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                    self.tableView.mj_footer?.endRefreshingWithNoMoreData()
                 }
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 
                 self.tableView.reloadData()
             }
@@ -206,10 +207,10 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     }
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
 }

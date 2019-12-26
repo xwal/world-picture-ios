@@ -31,7 +31,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func firstLoadCache() {
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
     
     func addFooter() {
@@ -47,8 +47,8 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
                 }
                 self.requestNiceWallpaperList(time: self.currentTime)
             })
-            footer?.activityIndicatorViewStyle = .white
-            footer?.isRefreshingTitleHidden = true
+            footer.loadingView?.style = .white
+            footer.isRefreshingTitleHidden = true
             tableView.mj_footer = footer
         }
     }
@@ -107,10 +107,10 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             self.currentTime = 0
             self.requestNiceWallpaperList(time: self.currentTime)
         })
-        header?.stateLabel.textColor = UIColor.white
-        header?.stateLabel.isHidden = true
-        header?.lastUpdatedTimeLabel.isHidden = true
-        header?.activityIndicatorViewStyle = .white
+        header.stateLabel?.textColor = UIColor.white
+        header.stateLabel?.isHidden = true
+        header.lastUpdatedTimeLabel?.isHidden = true
+        header.loadingView?.style = .white
         tableView.mj_header = header
         
         let leftButton = UIButton(type: .custom)
@@ -148,21 +148,21 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    self.tableView.mj_header.endRefreshing()
+                    self.tableView.mj_header?.endRefreshing()
                     self.addFooter()
                     if hasNext {
-                        self.tableView.mj_footer.endRefreshing()
+                        self.tableView.mj_footer?.endRefreshing()
                     }
                     else {
-                        self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                        self.tableView.mj_footer?.endRefreshingWithNoMoreData()
                     }
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.tableView.mj_header.endRefreshing()
+                    self.tableView.mj_header?.endRefreshing()
                     
                     if (self.tableView.mj_footer != nil) {
-                        self.tableView.mj_footer.endRefreshing()
+                        self.tableView.mj_footer?.endRefreshing()
                     }
                 }
             }

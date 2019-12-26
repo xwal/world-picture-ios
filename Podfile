@@ -3,8 +3,8 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 def public_pods
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git'
-  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'Moya'
@@ -33,7 +33,7 @@ end
 def third_party_pods
 
   # LeanCloud
-  pod 'AVOSCloud', '~> 11.5'               # 数据存储、短信、云引擎调用等基础服务模块
+  pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
   
   # Firebase
   pod 'Firebase/Analytics'

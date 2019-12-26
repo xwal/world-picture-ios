@@ -98,14 +98,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         topView.layer.contents = KFCrossPlatformImage(named: "Navbar_mask")?.cgImage
         
+        todayLabel.textColor = .white
+        monthLabel.textColor = .white
+        titleLabel.textColor = .white
+        
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en")
+        let todayDate = Date()
         
         dateFormatter.dateFormat = "dd"
-        let day = dateFormatter.string(from: Date())
+        let day = dateFormatter.string(from: todayDate)
         
         dateFormatter.dateFormat = "MMMM"
-        let month = dateFormatter.string(from: Date())
+        let month = dateFormatter.string(from: todayDate)
         
         todayLabel.text = day
         monthLabel.text = month

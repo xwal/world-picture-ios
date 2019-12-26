@@ -31,7 +31,7 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
         // Do any additional setup after loading the view.
         setupView()
         
-        imageListTableView.mj_header.beginRefreshing()
+        imageListTableView.mj_header?.beginRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,10 +68,10 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             self.currentTime = 0
             self.requestImageList(time: self.currentTime)
         })
-        header?.arrowView.image = Asset.Dili.whiteArrow.image
-        header?.stateLabel.isHidden = true
-        header?.lastUpdatedTimeLabel.isHidden = true
-        header?.activityIndicatorViewStyle = .white
+        header.arrowView?.image = Asset.Dili.whiteArrow.image
+        header.stateLabel?.isHidden = true
+        header.lastUpdatedTimeLabel?.isHidden = true
+        header.loadingView?.style = .white
         imageListTableView.mj_header = header
     }
     
@@ -86,8 +86,8 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
                 }
                 self.requestImageList(time: self.currentTime)
             })
-            footer?.activityIndicatorViewStyle = .white
-            footer?.isRefreshingTitleHidden = true
+            footer.loadingView?.style = .white
+            footer.isRefreshingTitleHidden = true
             imageListTableView.mj_footer = footer
         }
     }
@@ -111,9 +111,9 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             guard let self = self else { return }
             guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
                 DispatchQueue.main.async {
-                    self.imageListTableView.mj_header.endRefreshing()
+                    self.imageListTableView.mj_header?.endRefreshing()
                     if (self.imageListTableView.mj_footer != nil) {
-                        self.imageListTableView.mj_footer.endRefreshing()
+                        self.imageListTableView.mj_footer?.endRefreshing()
                     }
                 }
                 return
@@ -131,19 +131,19 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             
             DispatchQueue.main.async {
                 self.imageListTableView.reloadData()
-                self.imageListTableView.mj_header.endRefreshing()
+                self.imageListTableView.mj_header?.endRefreshing()
                 
                 if self.imageListTableView.mj_footer != nil {
-                    self.imageListTableView.mj_footer.endRefreshing()
+                    self.imageListTableView.mj_footer?.endRefreshing()
                 }
                 
                 self.addFooter()
         
                 if hasNext {
-                    self.imageListTableView.mj_footer.endRefreshing()
+                    self.imageListTableView.mj_footer?.endRefreshing()
                 }
                 else {
-                    self.imageListTableView.mj_footer.endRefreshingWithNoMoreData()
+                    self.imageListTableView.mj_footer?.endRefreshingWithNoMoreData()
                 }
             }
         }
