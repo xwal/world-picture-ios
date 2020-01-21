@@ -59,10 +59,12 @@ class DiliListViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-6178635866936443/1396797175"
         bannerView.rootViewController = self
         bannerView.delegate = self
+        bannerView.isAutoloadEnabled = true
         
         view.addSubview(bannerView)
         bannerView.snp.makeConstraints { (maker) in
-            maker.centerX.bottom.equalToSuperview()
+            maker.centerX.equalToSuperview()
+            maker.bottom.equalTo(bottomLayoutGuide.snp.top)
         }
         
         bannerView.load(GADRequest())

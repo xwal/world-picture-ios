@@ -31,11 +31,6 @@ fastlane ios pgyer_release
 fastlane ios appstore_release
 ```
 生成 appstore 版本，发布到 App Store
-### ios upload_appstore_dsyms
-```
-fastlane ios upload_appstore_dsyms
-```
-上传 AppStore DSYM 文件到 Bugly，参数 => version:[latest]
 ### ios add_devices_manual
 ```
 fastlane ios add_devices_manual
@@ -76,11 +71,6 @@ fastlane ios generate_apns_cert
 fastlane ios sync_metadata
 ```
 同步 metadata
-### ios poll_itunes_build_status
-```
-fastlane ios poll_itunes_build_status
-```
-轮询获取当前App处理状态
 
 ----
 

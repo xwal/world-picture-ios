@@ -16,6 +16,7 @@ import Alamofire
 import SwiftyJSON
 import StoreKit
 import Firebase
+import SwiftyStoreKit
 #if DEBUG
 import FLEX
 #endif
@@ -95,19 +96,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 更新版本
         updateAppVersion()
         
+        // 设置StoreKit
+        setupStore()
+        
         _ = isNewVersionLaunch
         
         appLaunchCount += 1
-        
-        if #available(iOS 10.3, *), appLaunchCount == 10 {
-            SKStoreReviewController.requestReview()
-        }
         
         #if DEBUG
         FLEXManager.shared()?.showExplorer()
         #endif
         
         return true
+    }
+    
+    func setupStore() {
+        if #available(iOS 10.3, *), appLaunchCount == 10 {
+            SKStoreReviewController.requestReview()
+        }
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
     }
     
     func setupUserActivity() {

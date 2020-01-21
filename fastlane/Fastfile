@@ -43,7 +43,7 @@ platform :ios do
     end
 
     git_reversion = sh("git log -1 --pretty=format:'%h'")
-    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    version_number = get_version_number(xcodeproj: ENV["XCODEPROJ_NAME"], target: ENV["SCHEME_NAME"])
     build_number = number_of_commits(all: false)
 
     # git log
@@ -124,19 +124,6 @@ platform :ios do
       user_key: "#{ENV["PGYER_USER_KEY"]}",
       update_description: git_log
     )
-
-    # 上传 dsym 文件到 bugly
-    # sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{dev_bugly_app_key}&app_id=#{dev_bugly_app_id}' \
-    #   --form 'api_version=1' \
-    #   --form 'app_id=#{dev_bugly_app_id}' \
-    #   --form 'app_key=#{dev_bugly_app_key}' \
-    #   --form 'symbolType=2'  \
-    #   --form 'bundleId=#{ENV["DEV_APP_IDENTIFIER"]}' \
-    #   --form 'productVersion=#{version_number}(#{build_number})' \
-    #   --form 'channel=pgyer' \
-    #   --form 'fileName=Pgyer.app.dSYM.zip' \
-    #   --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
-    #   --verbose")
   end
 
   desc "生成 adhoc 预发版本，提交到蒲公英"
@@ -144,7 +131,7 @@ platform :ios do
 
     git_reversion = sh("git log -1 --pretty=format:'%h'")
     build_time = Time.new.strftime("%Y-%m-%d_%H.%M.%S")
-    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    version_number = get_version_number(xcodeproj: ENV["XCODEPROJ_NAME"], target: ENV["SCHEME_NAME"])
     build_number = number_of_commits(all: false)
     git_log = sh("git log --no-merges -1 --pretty=format:'# %ai%n# %B by %an'")
 
@@ -222,21 +209,6 @@ platform :ios do
       user_key: "#{ENV["PGYER_USER_KEY"]}",
       update_description: git_log
     )
-
-    # # 上传 dsym 文件到 bugly
-    # prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
-    # prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
-    # sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
-    #   --form 'api_version=1' \
-    #   --form 'app_id=#{prod_bugly_app_id}' \
-    #   --form 'app_key=#{prod_bugly_app_key}' \
-    #   --form 'symbolType=2'  \
-    #   --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
-    #   --form 'productVersion=#{version_number}(#{build_number})' \
-    #   --form 'channel=appstore' \
-    #   --form 'fileName=Pgyer.app.dSYM.zip' \
-    #   --form 'file=@#{lane_context[SharedValues::DSYM_OUTPUT_PATH]}' \
-    #   --verbose")
   end
 
   desc "生成 appstore 版本，发布到 App Store"
@@ -244,7 +216,7 @@ platform :ios do
 
     git_reversion = sh("git log -1 --pretty=format:'%h'")
     build_time = Time.new.strftime("%Y-%m-%d_%H.%M.%S")
-    version_number = get_info_plist_value(path: "#{ENV["SCHEME_NAME"]}/Info.plist", key: "CFBundleShortVersionString")
+    version_number = get_version_number(xcodeproj: ENV["XCODEPROJ_NAME"], target: ENV["SCHEME_NAME"])
     build_number = number_of_commits(all: false)
 
     # 输出目录
@@ -321,34 +293,6 @@ platform :ios do
       force: true
     )
     # frameit
-  end
-
-  desc "上传 AppStore DSYM 文件到 Bugly，参数 => version:[latest]"
-  lane :upload_appstore_dsyms do |options|
-    version = String(options[:version] || "latest")
-    download_dsyms(version: version)
-    dsym_paths = lane_context[SharedValues::DSYM_PATHS]
-    for dsym_path in dsym_paths
-      # 解析DSYM文件版本
-      split_strs = dsym_path.split(/\//).last.split(/-/)
-      version_number = split_strs[1]
-      build_number = split_strs[2].split(/\./)[0]
-      # 上传 dsym 文件到 bugly
-      prod_bugly_app_id = "#{ENV["PROD_BUGLY_APPID"]}"
-      prod_bugly_app_key = "#{ENV["PROD_BUGLY_APPKEY"]}"
-      sh("curl -k 'https://api.bugly.qq.com/openapi/file/upload/symbol?app_key=#{prod_bugly_app_key}&app_id=#{prod_bugly_app_id}' \
-        --form 'api_version=1' \
-        --form 'app_id=#{prod_bugly_app_id}' \
-        --form 'app_key=#{prod_bugly_app_key}' \
-        --form 'symbolType=2'  \
-        --form 'bundleId=#{ENV["PROD_APP_IDENTIFIER"]}' \
-        --form 'productVersion=#{version_number}(#{build_number})' \
-        --form 'channel=appstore' \
-        --form 'fileName=AppStore.app.dSYM.zip' \
-        --form 'file=@#{dsym_path}' \
-        --verbose")
-    end
-    clean_build_artifacts
   end
 
   desc "手动批量添加设备到profile"
@@ -438,7 +382,7 @@ platform :ios do
     types = ["development", "adhoc", "appstore"]
     app_identifiers.each do |app_identifier|
       types.each do |type|
-        remove_provisioning_profile(app_identifier: app_identifier, type: type)    
+        remove_provisioning_profile(app_identifier: app_identifier, type: type)
       end
     end
   end
@@ -481,65 +425,10 @@ platform :ios do
     )
   end
 
-  desc "同步 metadata"
+  desc '同步 metadata'
   lane :sync_metadata do
     ENV["DELIVER_FORCE_OVERWRITE"] = "1"
     sh("fastlane deliver download_metadata --metadata_path #{ENV["DOWNLOAD_METADATA_PATH"]}")
-  end
-
-  desc "轮询获取当前App处理状态"
-  lane :poll_itunes_build_status do
-    Spaceship::Tunes.login("#{ENV["APPLE_ID"]}")
-    Spaceship::Tunes.select_team(team_id: "#{ENV["ITC_TEAM_ID"]}")
-    app = Spaceship::Tunes::Application.find("#{ENV["APP_IDENTIFIER"]}")
-
-    edit_version = app.edit_version
-
-    while edit_version do
-      latest_build = edit_version.candidate_builds.first
-      puts "Checking Status >>>>>> Version #{latest_build.train_version} Build #{latest_build.build_version}"
-      if latest_build && !latest_build.processing
-        dingtalk_robot(
-          title: latest_build.app_name,
-          text: "#{latest_build.train_version}(#{latest_build.build_version}) 已处理完成",
-          app_icon: "#{app.app_icon_preview_url}",
-          app_url: "#{app.url}"
-        )
-        break
-      end
-      sleep(10)
-      edit_version = app.edit_version
-    end
-  end
-
-  desc "钉钉通知"
-  private_lane :dingtalk_robot do |options|
-    # 钉钉机器人
-    dingTalk_url = "https://oapi.dingtalk.com/robot/send?access_token=7dc59ae3ce68702cb83aa76624ca879ed778a690028b32718da847c1c0ca4dd5"
-    
-    markdown = 
-    {
-      msgtype: "markdown", 
-      markdown: {
-        title: "#{options[:title]}", 
-        text: "### #{options[:text]}\n![app icon](#{options[:app_icon]})\n #### 点击跳转：<#{options[:app_url]}>",
-      },
-      at: {
-        isAtAll: true
-      }
-    }
-
-    uri = URI.parse(dingTalk_url)
-    https = Net::HTTP.new(uri.host, uri.port)
-    https.use_ssl = true
-
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request.add_field('Content-Type', 'application/json')
-    request.body = markdown.to_json
-
-    response = https.request(request)
-    puts "------------------------------"
-    puts "Response #{response.code} #{response.message}: #{response.body}"
   end
 
   after_all do |lane|
