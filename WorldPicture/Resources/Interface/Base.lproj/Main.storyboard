@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XNq-v1-4tP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XNq-v1-4tP">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,20 +38,20 @@
             </objects>
             <point key="canvasLocation" x="286" y="772"/>
         </scene>
-        <!--Wallpaper-->
+        <!--NiceWallpaper-->
         <scene sceneID="Pif-Ce-UlZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Wallpaper" id="gGs-Qx-9Dq" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="NiceWallpaper" id="gGs-Qx-9Dq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="URl-Eu-FUU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA9-Cs-zBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="315" y="873"/>
         </scene>
-        <!--NiceWallpaper-->
+        <!--CutoWallpaper-->
         <scene sceneID="5RS-Ko-QLI">
             <objects>
-                <viewControllerPlaceholder storyboardName="NiceWallpaper" id="9vr-yJ-3U2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CutoWallpaper" id="9vr-yJ-3U2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="yQW-D0-SNa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwj-zX-Jsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

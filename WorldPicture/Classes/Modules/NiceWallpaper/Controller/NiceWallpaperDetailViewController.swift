@@ -317,14 +317,6 @@ class NiceWallpaperDetailViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -363,6 +355,7 @@ class NiceWallpaperDetailViewController: UIViewController {
         }
         
         let activityVC = UIActivityViewController(activityItems: [shareImage, shareText], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender
         present(activityVC, animated: true, completion: nil)
     }
     @IBAction func checkboxStateChanged(_ sender: M13Checkbox) {

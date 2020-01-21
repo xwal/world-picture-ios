@@ -168,16 +168,6 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
     }
-    
-    
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

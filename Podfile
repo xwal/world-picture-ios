@@ -13,7 +13,6 @@ def public_pods
   pod 'YYModel'
   pod 'SwifterSwift'
   pod 'MBProgressHUD'
-  pod 'KVNProgress'
   pod 'SnapKit'
   pod 'LookinServer', :configurations => ['Debug']
   pod 'FLEX', :configurations => ['Debug']
@@ -28,6 +27,7 @@ def public_pods
   pod 'DZNEmptyDataSet'
   pod 'SwiftyUserDefaults'
   pod 'ObjectMapper'
+  pod 'SwiftyStoreKit'
 end
 
 def third_party_pods

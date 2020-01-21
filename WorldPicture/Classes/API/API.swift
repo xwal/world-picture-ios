@@ -125,3 +125,46 @@ enum ZuimeiaAPI: MultiTargetProtocol {
         }
     }
 }
+
+// MARK: Cuto集
+enum CutoAPI: MultiTargetProtocol {
+    
+    // 壁纸
+    case wallpapers(lang: String, cursor: String?)
+    // 标签
+    case tags(lang: String)
+    
+    var baseURL: URL {
+        return URL(string: "https://www.cutowallpaper.com/api/v1")!
+    }
+    
+    var path: String {
+        switch self {
+        case .wallpapers:
+            return "/wallpapers/"
+        case .tags:
+            return "/tags/"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .wallpapers, .tags:
+            return .get
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        case let .wallpapers(lang, cursor):
+            var params: [String: Any] = [:]
+            params["lang"] = lang
+            params["cursor"] = cursor
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case let .tags(lang):
+            var params: [String: Any] = [:]
+            params["lang"] = lang
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        }
+    }
+}

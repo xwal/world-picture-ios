@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import MBProgressHUD
 import SnapKit
-import WebKit
 
 class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
@@ -29,7 +28,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     
     @IBOutlet weak var bottomView: UIView!
     
-    private let contentWebView = WKWebView()
+    private let picContentView = UITextView()
     
     var pageViewController: UIPageViewController!
     
@@ -58,11 +57,14 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
     func setupViews() {
         
         contentView.backgroundColor = .clear
-        contentWebView.backgroundColor = .clear
-        contentWebView.isOpaque = false
-        contentView.addSubview(contentWebView)
         
-        contentWebView.snp.makeConstraints { (maker) in
+        picContentView.backgroundColor = .clear
+        picContentView.isEditable = false
+        picContentView.textColor = .white
+        picContentView.font = .systemFont(ofSize: 14)
+        contentView.addSubview(picContentView)
+        
+        picContentView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
         
@@ -142,8 +144,8 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
         
         if let currentPic = pictureListModel?.picture?[currentIndex] {
             picNameLabel.text = currentPic.title
-            let html = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"><link href=\"jianjie.css\" type=\"text/css\" rel=\"stylesheet\"  /></head><body><p>\(currentPic.content!)（摄像：\(currentPic.author!)）</p></body></html>"
-            contentWebView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
+            picContentView.text = "\(currentPic.content!)（摄像：\(currentPic.author!)）"
+            picContentView.scrollToTop()
         }
     }
     
@@ -179,6 +181,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
         if let image = currentPictureDetail.imageView.image {
             if !image.isEqual(Asset.Dili.nopic.image) {
                 let activityVC = UIActivityViewController(activityItems: [image, content], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = sender
                 present(activityVC, animated: true, completion: nil)
             }
         }

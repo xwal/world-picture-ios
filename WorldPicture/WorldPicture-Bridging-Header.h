@@ -6,5 +6,3 @@
 #import "BDSSpeechSynthesizer.h"
 
 #import "CSMParallaxCell.h"
-
-#import "UnsplashModel.h"

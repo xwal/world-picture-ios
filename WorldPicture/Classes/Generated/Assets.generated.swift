@@ -137,7 +137,6 @@ internal enum Asset {
   }
   internal enum Dili {
     internal static let bjbj = ImageAsset(name: "bjbj")
-    internal static let blueArrow = ImageAsset(name: "blueArrow")
     internal static let cancel = ImageAsset(name: "cancel")
     internal static let lidown = ImageAsset(name: "lidown")
     internal static let linor = ImageAsset(name: "linor")
@@ -152,7 +151,6 @@ internal enum Asset {
     internal static let phone2SaveNor = ImageAsset(name: "phone2-save-nor")
     internal static let phone2ShareDown = ImageAsset(name: "phone2-share-down")
     internal static let phone2ShareNor = ImageAsset(name: "phone2-share-nor")
-    internal static let whiteArrow = ImageAsset(name: "whiteArrow")
     internal static let x = ImageAsset(name: "x")
   }
 }

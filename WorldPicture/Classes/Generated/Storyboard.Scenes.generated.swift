@@ -12,6 +12,15 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum CutoWallpaper: StoryboardType {
+    internal static let storyboardName = "CutoWallpaper"
+
+    internal static let initialScene = InitialSceneType<WorldPicture.CustomNavigationViewController>(storyboard: CutoWallpaper.self)
+
+    internal static let wallpaperDetailViewController = SceneType<WorldPicture.CutoWallpaperDetailViewController>(storyboard: CutoWallpaper.self, identifier: "WallpaperDetailViewController")
+
+    internal static let wallpaperNavigationController = SceneType<WorldPicture.CustomNavigationViewController>(storyboard: CutoWallpaper.self, identifier: "WallpaperNavigationController")
+  }
   internal enum Dili: StoryboardType {
     internal static let storyboardName = "Dili"
 
@@ -50,15 +59,6 @@ internal enum StoryboardScene {
     internal static let storyboardName = "Setting"
 
     internal static let initialScene = InitialSceneType<WorldPicture.CustomNavigationViewController>(storyboard: Setting.self)
-  }
-  internal enum Wallpaper: StoryboardType {
-    internal static let storyboardName = "Wallpaper"
-
-    internal static let initialScene = InitialSceneType<WorldPicture.CustomNavigationViewController>(storyboard: Wallpaper.self)
-
-    internal static let wallpaperDetailViewController = SceneType<WorldPicture.WallpaperDetailViewController>(storyboard: Wallpaper.self, identifier: "WallpaperDetailViewController")
-
-    internal static let wallpaperNavigationController = SceneType<WorldPicture.CustomNavigationViewController>(storyboard: Wallpaper.self, identifier: "WallpaperNavigationController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

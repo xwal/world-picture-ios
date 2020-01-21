@@ -1,5 +1,5 @@
 //
-//  WallpaperDetailViewController.swift
+//  CutoWallpaperDetailViewController.swift
 //  WorldPicture
 //
 //  Created by Chaosky on 2016/11/20.
@@ -10,9 +10,9 @@ import UIKit
 import Kingfisher
 import MBProgressHUD
 
-class WallpaperDetailViewController: UIViewController {
+class CutoWallpaperDetailViewController: UIViewController {
     
-    var wallpaperModel: UnsplashModel!
+    var wallpaperModel: CutoWallpaperModel!
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -31,7 +31,7 @@ class WallpaperDetailViewController: UIViewController {
         
         scrollView.addSubview(imageView)
         
-        if let url = wallpaperModel.full_url {
+        if let url = wallpaperModel.url {
             imageView.kf.setImage(with: URL(string: url), placeholder: Asset.Assets.unsplashLoading.image, options: [.transition(.fade(0.5))], completionHandler: { [weak self] handler in
                 guard let self = self else { return }
                 self.view.setNeedsLayout()

@@ -21,18 +21,6 @@ class CustomNavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-    override var shouldAutorotate: Bool {
-        return viewControllers.last?.shouldAutorotate ?? false
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return viewControllers.last?.supportedInterfaceOrientations ?? .portrait
-    }
-    
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return viewControllers.last?.preferredInterfaceOrientationForPresentation ?? .portrait
-    }
-    
 
     /*
     // MARK: - Navigation

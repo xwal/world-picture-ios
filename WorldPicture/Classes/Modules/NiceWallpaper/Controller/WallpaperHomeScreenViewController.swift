@@ -78,14 +78,6 @@ class WallpaperHomeScreenViewController: UIViewController, UICollectionViewDataS
         return false
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

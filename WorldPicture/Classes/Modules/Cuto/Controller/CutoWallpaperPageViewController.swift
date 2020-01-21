@@ -1,5 +1,5 @@
 //
-//  WallpaperPageViewController.swift
+//  CutoWallpaperPageViewController.swift
 //  WorldPicture
 //
 //  Created by Chaosky on 2016/11/20.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class CutoWallpaperPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var selectedIndex = 0
-    var wallpaperModelArray: [UnsplashModel]!
+    var wallpaperModelArray: [CutoWallpaperModel]!
     
     var indexChanged: ((_ index: Int) -> Void)?
     
@@ -40,13 +40,13 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
         // Dispose of any resources that can be recreated.
     }
     
-    func createWallpaperDetail() -> WallpaperDetailViewController {
+    func createWallpaperDetail() -> CutoWallpaperDetailViewController {
         
-        let wallpaperDetailVC = StoryboardScene.Wallpaper.wallpaperDetailViewController.instantiate()
+        let wallpaperDetailVC = StoryboardScene.CutoWallpaper.wallpaperDetailViewController.instantiate()
         return wallpaperDetailVC
     }
     
-    func nextWallpaperDetail(for viewController: WallpaperDetailViewController, before: Bool) -> WallpaperDetailViewController? {
+    func nextWallpaperDetail(for viewController: CutoWallpaperDetailViewController, before: Bool) -> CutoWallpaperDetailViewController? {
         if let index = wallpaperModelArray.firstIndex(of: viewController.wallpaperModel!) {
             let nextIndex = before ? index - 1 : index + 1
             if nextIndex < 0 || nextIndex >= wallpaperModelArray.count {
@@ -70,16 +70,16 @@ class WallpaperPageViewController: UIPageViewController, UIPageViewControllerDat
     
     // MARK: - UIPageViewControllerDataSource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nextWallpaperDetail(for: viewController as! WallpaperDetailViewController, before: true)
+        return nextWallpaperDetail(for: viewController as! CutoWallpaperDetailViewController, before: true)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nextWallpaperDetail(for: viewController as! WallpaperDetailViewController, before: false)
+        return nextWallpaperDetail(for: viewController as! CutoWallpaperDetailViewController, before: false)
     }
     
     // MARK: - UIPageViewControllerDelegate
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let visiableVC = pageViewController.viewControllers?.first as? WallpaperDetailViewController {
+        if let visiableVC = pageViewController.viewControllers?.first as? CutoWallpaperDetailViewController {
             selectedIndex = wallpaperModelArray.firstIndex(of: visiableVC.wallpaperModel)!
             indexChanged?(selectedIndex)
         }

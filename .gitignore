@@ -30,6 +30,7 @@ Output
 *.hmap
 *.dSYM.zip
 *.dSYM
+*.app
 
 ## Playgrounds
 timeline.xctimeline

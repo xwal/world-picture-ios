@@ -70,11 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
-        // Setup AVOSCloud
-        UnsplashModel.registerSubclass()
-        AVOSCloud.setApplicationId("grSsdRxfR1hTUSdSwnOwGLdB",
-                                   clientKey: "kpmFqpw5azg03HN7vcyGt8KG",
-                                   serverURLString: "https://grssdrxf.api.lncld.net")
+        AVOSCloud.setApplicationId("FTg9Sm3twoAW1eROhglmob8B-gzGzoHsz",
+                                   clientKey: "JepbTwaiwvytDd2IUV7uH259",
+                                   serverURLString: "https://api.worldpicture.chaosky.tech")
         
         // 百度语音配置
         SpeechSynthesizerManager.sharedInstance.setupBDSpeech()

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4VR-Fe-cbq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4VR-Fe-cbq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--最美集-->
+        <!--每日最美-->
         <scene sceneID="1sx-77-PSp">
             <objects>
                 <navigationController storyboardIdentifier="NiceWallpaperNavigationController" id="4VR-Fe-cbq" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="最美集" image="ToolbarLike_normal" selectedImage="ToolbarLike_pressed" id="mKQ-pq-ngR"/>
+                    <tabBarItem key="tabBarItem" title="每日最美" image="ToolbarLike_normal" selectedImage="ToolbarLike_pressed" id="mKQ-pq-ngR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="dhC-mh-ACH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="356" y="3093"/>
         </scene>
-        <!--最美集-->
+        <!--每日最美-->
         <scene sceneID="k5s-WP-AaB">
             <objects>
                 <viewController storyboardIdentifier="NiceWallpaperViewController" id="XKZ-ao-1Ye" customClass="NiceWallpaperViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             <constraint firstItem="o0h-wK-EMf" firstAttribute="leading" secondItem="lcX-5r-crm" secondAttribute="leading" id="u5q-05-EST"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="最美集" id="rqc-pz-c4n"/>
+                    <navigationItem key="navigationItem" title="每日最美" id="rqc-pz-c4n"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="o0h-wK-EMf" id="VLl-xK-tiW"/>
                         <outlet property="tableView" destination="RQH-jJ-aqW" id="gbw-py-dUw"/>
@@ -66,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="2093" y="3093"/>
         </scene>
-        <!--最美集-->
+        <!--每日最美-->
         <scene sceneID="4Oa-az-uxW">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Nzw-al-PAC" customClass="NiceWallpaperPageViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="最美集" id="Zqb-mf-xHv"/>
+                    <navigationItem key="navigationItem" title="每日最美" id="Zqb-mf-xHv"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9us-4t-VDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

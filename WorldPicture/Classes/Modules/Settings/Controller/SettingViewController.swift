@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import MBProgressHUD
 import SafariServices
+import SwiftyStoreKit
 
 class SettingViewController: UITableViewController {
 
@@ -45,14 +46,6 @@ class SettingViewController: UITableViewController {
         
         enableVoiceSwitch.isOn = SpeechSynthesizerManager.sharedInstance.isEnabled
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,11 +54,24 @@ class SettingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
+            let hudView = MBProgressHUD.showAdded(to: view, animated: true)
+            hudView.mode = .indeterminate
+            SwiftyStoreKit.purchaseProduct("tech.chaosky.WorldPicture.buydrinks") { result in
+                switch result {
+                case let .success(purchase):
+                    print("Purchase Success: \(purchase.productId)")
+                case let .error(error):
+                    print(error.localizedDescription)
+                }
+                hudView.hide(animated: true)
+            }
+        case 1:
             if let itunesURL = URL(string: "https://itunes.apple.com/us/app/id1483196698?l=zh&ls=1&mt=8") {
                 UIApplication.shared.open(itunesURL)
             }
-        } else if indexPath.row == 2 {
+        case 3:
             let alertView = UIAlertController(title: nil, message: "清除缓存", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { _ in
                 alertView.dismiss(animated: true, completion: nil)
@@ -79,10 +85,12 @@ class SettingViewController: UITableViewController {
             alertView.addAction(okAction)
             
             present(alertView, animated: true, completion: nil)
-        } else if indexPath.row == 3 {
-            guard let url = URL(string: "http://chaosky.tech/workspace/worldpicture/privacy_policy.html") else { return }
+        case 4:
+            guard let url = URL(string: "https://file.worldpicture.chaosky.tech/b70adb4f85f2bd0e0d14/privacy_policy.html") else { return }
             let safariVC = SFSafariViewController(url: url)
             present(safariVC, animated: true, completion: nil)
+        default:
+            break
         }
     }
 

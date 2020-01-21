@@ -63,15 +63,11 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
     }
     
     func addHeader() {
-        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+        let header = DropDownRefreshHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             self.currentTime = 0
             self.requestImageList(time: self.currentTime)
         })
-        header.arrowView?.image = Asset.Dili.whiteArrow.image
-        header.stateLabel?.isHidden = true
-        header.lastUpdatedTimeLabel?.isHidden = true
-        header.loadingView?.style = .white
         imageListTableView.mj_header = header
     }
     

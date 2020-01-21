@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ty-lZ-245">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--壁纸精选-->
+        <scene sceneID="5eZ-3u-NxC">
+            <objects>
+                <navigationController storyboardIdentifier="WallpaperNavigationController" id="7ty-lZ-245" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="壁纸精选" image="ToolbarWallpaper_normal" selectedImage="ToolbarWallpaper_pressed" id="gKq-v5-14p"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vpm-P6-qLQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="STZ-sC-ltq" kind="relationship" relationship="rootViewController" id="Bc9-CX-GOK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTA-lC-Njx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="2303"/>
+        </scene>
+        <!--壁纸精选-->
+        <scene sceneID="aq7-w5-tVx">
+            <objects>
+                <viewController id="STZ-sC-ltq" customClass="CutoWallpaperViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fWX-yG-JQI"/>
+                        <viewControllerLayoutGuide type="bottom" id="oRX-OM-R8B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CGG-mM-RkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-1O-FGP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CutoWallpaperCell" rowHeight="192" id="dQT-Za-Qm6" customClass="CutoWallpaperCell" customModule="WorldPicture" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="192"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dQT-Za-Qm6" id="ZPe-ke-XiO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-EC-f2M">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ziY-EC-f2M" secondAttribute="trailing" id="5IP-zE-sve"/>
+                                                <constraint firstAttribute="bottom" secondItem="ziY-EC-f2M" secondAttribute="bottom" constant="2" id="GNr-hc-VHn"/>
+                                                <constraint firstItem="ziY-EC-f2M" firstAttribute="leading" secondItem="ZPe-ke-XiO" secondAttribute="leading" id="jJL-iq-vg4"/>
+                                                <constraint firstItem="ziY-EC-f2M" firstAttribute="top" secondItem="ZPe-ke-XiO" secondAttribute="top" id="yyf-bg-kDl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="wallpaperImageView" destination="ziY-EC-f2M" id="Vlz-jR-o66"/>
+                                            <segue destination="oJG-MV-3e2" kind="presentation" id="ii4-p9-4Nj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.16078431372549018" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DCX-1O-FGP" secondAttribute="bottom" id="Am1-d8-qH7"/>
+                            <constraint firstItem="DCX-1O-FGP" firstAttribute="top" secondItem="CGG-mM-RkZ" secondAttribute="top" id="Dwa-vm-PUY"/>
+                            <constraint firstItem="DCX-1O-FGP" firstAttribute="leading" secondItem="CGG-mM-RkZ" secondAttribute="leading" id="IBJ-dc-E9Q"/>
+                            <constraint firstAttribute="trailing" secondItem="DCX-1O-FGP" secondAttribute="trailing" id="xij-Ad-9ws"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="壁纸精选" id="g9s-gF-XHZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="DCX-1O-FGP" id="BkH-in-Nap"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arV-Ox-Uhk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="2303"/>
+        </scene>
+        <!--Cuto Wallpaper Page View Controller-->
+        <scene sceneID="PGu-fC-aug">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oJG-MV-3e2" customClass="CutoWallpaperPageViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fnn-M5-nxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095" y="2303"/>
+        </scene>
+        <!--Cuto Wallpaper Detail View Controller-->
+        <scene sceneID="56w-Tq-LTt">
+            <objects>
+                <viewController storyboardIdentifier="WallpaperDetailViewController" id="sZO-Ou-52m" customClass="CutoWallpaperDetailViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGB-Lh-hkg"/>
+                        <viewControllerLayoutGuide type="bottom" id="KaO-AP-6yB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u11-jQ-jQn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="A0W-Pe-lYq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-Uf-8F3">
+                                <rect key="frame" x="185" y="798" width="44" height="44"/>
+                                <state key="normal" image="ButtonDownloadBig_normal"/>
+                                <connections>
+                                    <action selector="saveImageTapped:" destination="sZO-Ou-52m" eventType="touchUpInside" id="Oau-58-hd0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13" green="0.16" blue="0.17000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="A0W-Pe-lYq" secondAttribute="trailing" id="46v-xQ-Fuh"/>
+                            <constraint firstItem="A0W-Pe-lYq" firstAttribute="top" secondItem="u11-jQ-jQn" secondAttribute="top" id="4Qq-HF-hdo"/>
+                            <constraint firstItem="5NG-Uf-8F3" firstAttribute="centerX" secondItem="u11-jQ-jQn" secondAttribute="centerX" id="LcF-oM-du4"/>
+                            <constraint firstItem="A0W-Pe-lYq" firstAttribute="leading" secondItem="u11-jQ-jQn" secondAttribute="leading" id="Pn3-R2-226"/>
+                            <constraint firstAttribute="bottom" secondItem="A0W-Pe-lYq" secondAttribute="bottom" id="RJK-B9-nox"/>
+                            <constraint firstItem="KaO-AP-6yB" firstAttribute="top" secondItem="5NG-Uf-8F3" secondAttribute="bottom" constant="20" id="n0j-w6-VVK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="A0W-Pe-lYq" id="3CL-kE-JTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccq-Wc-k5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3001" y="2303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="ToolbarWallpaper_normal" width="24" height="24"/>
+        <image name="ToolbarWallpaper_pressed" width="24" height="24"/>
+    </resources>
+</document>

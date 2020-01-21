@@ -12,14 +12,18 @@ import YYModel
 import MJRefresh
 import DateToolsSwift
 import DZNEmptyDataSet
+import GoogleMobileAds
 
-class DiliListViewController: UITableViewController {
+class DiliListViewController: UIViewController {
 
     var currentPage = 1
     
     let CellIdentifier = "AlbumCell"
     
     var albumModelArray = [AlbumModel]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    private var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +33,16 @@ class DiliListViewController: UITableViewController {
     }
     
     func setupView() {
-        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let header = DropDownRefreshHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             self.currentPage = 1
             self.requestData(withPage: self.currentPage)
         })
         header.lastUpdatedTimeKey = "AlbumListViewControllerHeader"
-        header.arrowView?.image = Asset.Dili.blueArrow.image
-        header.stateLabel?.isHidden = true
-        header.lastUpdatedTimeLabel?.isHidden = true
-        header.loadingView?.style = .white
         tableView.mj_header = header
         
         let footer = MJRefreshAutoNormalFooter(refreshingBlock: { [weak self] in
@@ -50,6 +54,18 @@ class DiliListViewController: UITableViewController {
         tableView.mj_footer = footer
         
         tableView.tableFooterView = UIView()
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-6178635866936443/1396797175"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        view.addSubview(bannerView)
+        bannerView.snp.makeConstraints { (maker) in
+            maker.centerX.bottom.equalToSuperview()
+        }
+        
+        bannerView.load(GADRequest())
     }
     
     func loadData() {
@@ -100,46 +116,11 @@ class DiliListViewController: UITableViewController {
             }
         }
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return false
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return albumModelArray.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath) as! AlbumCell
-
-        let albumModel = albumModelArray[indexPath.row]
-        cell.model = albumModel
-        
-        return cell
-    }
-    
-    // MARK: - UITableViewDelegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let albumModel = albumModelArray[indexPath.row]
-        HistoryRecordManager.shared.add(albumModel.id!)
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? AlbumCell {
-            cell.eyeImageView.isHidden = true
-        }
-    }
-
     
     // MARK: - Navigation
 
@@ -157,6 +138,35 @@ class DiliListViewController: UITableViewController {
     }
     
 
+}
+
+extension DiliListViewController: UITableViewDataSource {
+    // MARK: - Table view data source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return albumModelArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath) as! AlbumCell
+
+        let albumModel = albumModelArray[indexPath.row]
+        cell.model = albumModel
+        
+        return cell
+    }
+}
+
+extension DiliListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let albumModel = albumModelArray[indexPath.row]
+        HistoryRecordManager.shared.add(albumModel.id!)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? AlbumCell {
+            cell.eyeImageView.isHidden = true
+        }
+    }
 }
 
 extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
@@ -195,7 +205,7 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     // MARK: DZNEmptyDataSetDelegate
     
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-        return albumModelArray.count == 0
+        return albumModelArray.isEmpty && currentPage == 1
     }
     
     func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
@@ -212,5 +222,17 @@ extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
     
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
         tableView.mj_header?.beginRefreshing()
+    }
+}
+
+extension DiliListViewController: GADBannerViewDelegate {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("adViewDidReceiveAd")
+    }
+
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+        didFailToReceiveAdWithError error: GADRequestError) {
+      print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 }
