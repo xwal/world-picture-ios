@@ -328,8 +328,7 @@ platform :ios do
 
   desc "批量导出设备"
   lane :export_devices do
-    password = UI.password("输入 #{ENV["APPLE_ID"]} 账号密码: ")
-    Spaceship::Portal.login("#{ENV["APPLE_ID"]}", password)
+    Spaceship::Portal.login("#{ENV["APPLE_ID"]}", "#{ENV["FASTLANE_PASSWORD"]}")
     Spaceship::Portal.select_team(team_id: "#{ENV["TEAM_ID"]}")
     devices = Spaceship.device.all
     File.open("#{base_path}/fastlane/devices.txt", "wb") do |f|
