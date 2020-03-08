@@ -11,7 +11,7 @@
         <scene sceneID="5eZ-3u-NxC">
             <objects>
                 <navigationController storyboardIdentifier="WallpaperNavigationController" id="7ty-lZ-245" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="壁纸精选" image="ToolbarWallpaper_normal" selectedImage="ToolbarWallpaper_pressed" id="gKq-v5-14p"/>
+                    <tabBarItem key="tabBarItem" title="壁纸精选" image="TabBar/ToolbarWallpaper_normal" selectedImage="TabBar/ToolbarWallpaper_pressed" id="gKq-v5-14p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vpm-P6-qLQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -108,7 +108,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-Uf-8F3">
                                 <rect key="frame" x="185" y="798" width="44" height="44"/>
-                                <state key="normal" image="ButtonDownloadBig_normal"/>
+                                <state key="normal" image="Pictorial/ButtonDownloadBig_normal"/>
                                 <connections>
                                     <action selector="saveImageTapped:" destination="sZO-Ou-52m" eventType="touchUpInside" id="Oau-58-hd0"/>
                                 </connections>
@@ -134,8 +134,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonDownloadBig_normal" width="44" height="44"/>
-        <image name="ToolbarWallpaper_normal" width="24" height="24"/>
-        <image name="ToolbarWallpaper_pressed" width="24" height="24"/>
+        <image name="Pictorial/ButtonDownloadBig_normal" width="44" height="44"/>
+        <image name="TabBar/ToolbarWallpaper_normal" width="24" height="24"/>
+        <image name="TabBar/ToolbarWallpaper_pressed" width="24" height="24"/>
     </resources>
 </document>

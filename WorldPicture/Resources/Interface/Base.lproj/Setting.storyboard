@@ -21,7 +21,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DQs-Hr-Wvw">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Common/DefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DQs-Hr-Wvw">
                                     <rect key="frame" x="20" y="10" width="57" height="57"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="57" id="mEZ-Hn-6KN"/>
@@ -177,7 +177,7 @@
         <scene sceneID="a3t-ey-fPC">
             <objects>
                 <navigationController id="2xv-6P-Bns" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="ToolbarSetting_normal" selectedImage="ToolbarSetting_pressed" id="evj-ls-YW5"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="TabBar/ToolbarSetting_normal" selectedImage="TabBar/ToolbarSetting_pressed" id="evj-ls-YW5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="23e-pk-i5Q">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -192,8 +192,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DefaultIcon" width="1024" height="1024"/>
-        <image name="ToolbarSetting_normal" width="24" height="24"/>
-        <image name="ToolbarSetting_pressed" width="24" height="24"/>
+        <image name="Common/DefaultIcon" width="1024" height="1024"/>
+        <image name="TabBar/ToolbarSetting_normal" width="24" height="24"/>
+        <image name="TabBar/ToolbarSetting_pressed" width="24" height="24"/>
     </resources>
 </document>

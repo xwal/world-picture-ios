@@ -32,7 +32,7 @@ class CutoWallpaperDetailViewController: UIViewController {
         scrollView.addSubview(imageView)
         
         if let url = wallpaperModel.url {
-            imageView.kf.setImage(with: URL(string: url), placeholder: Asset.Assets.unsplashLoading.image, options: [.transition(.fade(0.5))], completionHandler: { [weak self] handler in
+            imageView.kf.setImage(with: URL(string: url), placeholder: Asset.Assets.Common.unsplashLoading.image, options: [.transition(.fade(0.5))], completionHandler: { [weak self] handler in
                 guard let self = self else { return }
                 self.view.setNeedsLayout()
             })

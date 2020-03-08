@@ -179,7 +179,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
             return
         }
         if let image = currentPictureDetail.imageView.image {
-            if !image.isEqual(Asset.Dili.nopic.image) {
+            if !image.isEqual(Asset.Assets.Dili.nopic.image) {
                 let activityVC = UIActivityViewController(activityItems: [image, content], applicationActivities: nil)
                 activityVC.popoverPresentationController?.sourceView = sender
                 present(activityVC, animated: true, completion: nil)
@@ -193,7 +193,7 @@ class DiliDetailViewController: UIViewController, UIPageViewControllerDataSource
         }
         
         if let image = currentPictureDetail.imageView.image {
-            if !image.isEqual(Asset.Dili.nopic.image) {
+            if !image.isEqual(Asset.Assets.Dili.nopic.image) {
                 Utils.writeImageToPhotosAlbum(image)
             }
         }

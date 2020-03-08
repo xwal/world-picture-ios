@@ -21,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nvl-5w-m25">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AlbumCell" rowHeight="300" id="k2e-UM-3v5" customClass="AlbumCell" customModule="WorldPicture" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
@@ -30,69 +30,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjbj" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-BL-NdL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbj" translatesAutoresizingMaskIntoConstraints="NO" id="sHr-yA-8xE">
-                                                    <rect key="frame" x="48" y="15" width="318" height="220"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dili/nopic" translatesAutoresizingMaskIntoConstraints="NO" id="InE-sL-o89">
+                                                    <rect key="frame" x="57" y="31" width="300" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="220" id="XjW-xI-Yiq"/>
+                                                        <constraint firstAttribute="width" constant="300" id="aWK-nF-WBa"/>
+                                                        <constraint firstAttribute="height" constant="200" id="qUC-Wz-10T"/>
                                                     </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nopic" translatesAutoresizingMaskIntoConstraints="NO" id="InE-sL-o89">
-                                                    <rect key="frame" x="60" y="27" width="294" height="196"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="InE-sL-o89" secondAttribute="height" multiplier="3:2" id="XLl-Lm-x9c"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-9P-SaI">
-                                                    <rect key="frame" x="5" y="275" width="404" height="25"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-31-Sg8">
-                                                    <rect key="frame" x="189" y="245" width="36" height="17"/>
+                                                    <rect key="frame" x="189" y="246" width="36" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone-eye" translatesAutoresizingMaskIntoConstraints="NO" id="Dbf-Po-7eA">
-                                                    <rect key="frame" x="328" y="27" width="26" height="26"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="26" id="efu-sI-79j"/>
-                                                        <constraint firstAttribute="height" constant="26" id="sSN-DV-8md"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dili/x" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-9P-SaI">
+                                                    <rect key="frame" x="5" y="275" width="404" height="25"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sHr-yA-8xE" firstAttribute="top" secondItem="epu-4k-QZZ" secondAttribute="top" constant="15" id="DFs-pn-PUt"/>
-                                                <constraint firstItem="sHr-yA-8xE" firstAttribute="centerX" secondItem="epu-4k-QZZ" secondAttribute="centerX" id="DlU-mz-fFP"/>
-                                                <constraint firstItem="Dbf-Po-7eA" firstAttribute="top" secondItem="InE-sL-o89" secondAttribute="top" id="FXg-3P-zkv"/>
-                                                <constraint firstItem="InE-sL-o89" firstAttribute="top" secondItem="sHr-yA-8xE" secondAttribute="top" constant="12" id="Ipc-B7-z9j"/>
-                                                <constraint firstItem="BOd-BL-NdL" firstAttribute="leading" secondItem="epu-4k-QZZ" secondAttribute="leading" id="Pxu-gE-BXv"/>
-                                                <constraint firstItem="InE-sL-o89" firstAttribute="leading" secondItem="sHr-yA-8xE" secondAttribute="leading" constant="12" id="TJ5-an-wOw"/>
-                                                <constraint firstItem="sHr-yA-8xE" firstAttribute="trailing" secondItem="InE-sL-o89" secondAttribute="trailing" constant="12" id="XHQ-6u-Wmb"/>
-                                                <constraint firstItem="iwt-31-Sg8" firstAttribute="top" secondItem="sHr-yA-8xE" secondAttribute="bottom" constant="10" id="XMV-41-B6W"/>
-                                                <constraint firstItem="sHr-yA-8xE" firstAttribute="centerX" secondItem="iwt-31-Sg8" secondAttribute="centerX" id="aCC-vx-2Sb"/>
-                                                <constraint firstItem="Dbf-Po-7eA" firstAttribute="trailing" secondItem="InE-sL-o89" secondAttribute="trailing" id="b3c-u6-Lg0"/>
                                                 <constraint firstAttribute="bottom" secondItem="D9h-9P-SaI" secondAttribute="bottom" id="dpR-sg-tBV"/>
-                                                <constraint firstItem="BOd-BL-NdL" firstAttribute="top" secondItem="epu-4k-QZZ" secondAttribute="top" id="epP-5n-ecZ"/>
+                                                <constraint firstItem="iwt-31-Sg8" firstAttribute="centerX" secondItem="epu-4k-QZZ" secondAttribute="centerX" id="fzb-T1-OD1"/>
                                                 <constraint firstItem="D9h-9P-SaI" firstAttribute="leading" secondItem="epu-4k-QZZ" secondAttribute="leading" constant="5" id="hkZ-UP-CVg"/>
-                                                <constraint firstAttribute="trailing" secondItem="BOd-BL-NdL" secondAttribute="trailing" id="j4I-QK-dK3"/>
                                                 <constraint firstAttribute="trailing" secondItem="D9h-9P-SaI" secondAttribute="trailing" constant="5" id="k2g-AX-lA8"/>
-                                                <constraint firstAttribute="bottom" secondItem="BOd-BL-NdL" secondAttribute="bottom" id="q9n-cb-1Ec"/>
-                                                <constraint firstItem="sHr-yA-8xE" firstAttribute="bottom" secondItem="InE-sL-o89" secondAttribute="bottom" constant="12" id="zaf-XO-WKk"/>
+                                                <constraint firstItem="InE-sL-o89" firstAttribute="centerX" secondItem="epu-4k-QZZ" secondAttribute="centerX" id="k9p-ox-E3r"/>
+                                                <constraint firstItem="InE-sL-o89" firstAttribute="top" secondItem="epu-4k-QZZ" secondAttribute="topMargin" constant="20" id="pxg-cX-QQ5"/>
+                                                <constraint firstItem="iwt-31-Sg8" firstAttribute="top" secondItem="InE-sL-o89" secondAttribute="bottom" constant="15" id="sFB-W1-391"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumImageView" destination="InE-sL-o89" id="60M-vS-W4l"/>
                                             <outlet property="albumNameLabel" destination="iwt-31-Sg8" id="TGe-aj-1rc"/>
-                                            <outlet property="eyeImageView" destination="Dbf-Po-7eA" id="EHG-kE-dyx"/>
                                             <segue destination="3Mz-KH-VzF" kind="show" identifier="DetailSegue" id="kki-i8-D3q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.16078431372549018" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nvl-5w-m25" firstAttribute="top" secondItem="c1y-rK-gDn" secondAttribute="top" id="4nz-wu-3de"/>
                             <constraint firstAttribute="trailing" secondItem="nvl-5w-m25" secondAttribute="trailing" id="dR6-9U-H6b"/>
@@ -127,7 +101,7 @@
                                     <constraint firstAttribute="height" constant="75" id="Hll-lz-uck"/>
                                     <constraint firstAttribute="width" constant="75" id="fXm-z6-UON"/>
                                 </constraints>
-                                <state key="normal" image="linor"/>
+                                <state key="normal" image="icon_collectionview_normal"/>
                                 <state key="highlighted" image="lidown"/>
                                 <connections>
                                     <action selector="backTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="Uk1-gW-QYi"/>
@@ -157,25 +131,25 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xN3-VA-x3z">
-                                        <rect key="frame" x="6" y="160" width="134" height="35"/>
+                                        <rect key="frame" x="6" y="160" width="64" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="8k6-mm-AXj"/>
-                                            <constraint firstAttribute="width" constant="134" id="ew8-yD-IbT"/>
+                                            <constraint firstAttribute="width" constant="64" id="ew8-yD-IbT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" image="phone1-share-nor"/>
+                                        <state key="normal" image="Dili/share"/>
                                         <state key="highlighted" image="phone1-share-down"/>
                                         <connections>
                                             <action selector="shareTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="SGV-zE-gsB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-Aa-8Z2">
-                                        <rect key="frame" x="327" y="160" width="81" height="35"/>
+                                        <rect key="frame" x="344" y="160" width="64" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="81" id="hck-Pp-f8M"/>
+                                            <constraint firstAttribute="width" constant="64" id="hck-Pp-f8M"/>
                                             <constraint firstAttribute="height" constant="35" id="zVX-6n-hj9"/>
                                         </constraints>
-                                        <state key="normal" image="phone1-save-nor"/>
+                                        <state key="normal" image="Dili/download"/>
                                         <state key="highlighted" image="phone1-save-down"/>
                                         <connections>
                                             <action selector="saveTapped:" destination="3Mz-KH-VzF" eventType="touchUpInside" id="QcT-kR-Ulk"/>
@@ -245,7 +219,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnd-aW-aYy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nopic" translatesAutoresizingMaskIntoConstraints="NO" id="kZC-Sf-di6">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dili/nopic" translatesAutoresizingMaskIntoConstraints="NO" id="kZC-Sf-di6">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
                                             </imageView>
                                         </subviews>
@@ -296,7 +270,7 @@
         <scene sceneID="m7b-mT-hIV">
             <objects>
                 <navigationController storyboardIdentifier="DiLiNavigationController" id="58D-xV-as6" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="每日精选" image="ToolbarNational_normal" selectedImage="ToolbarNational_pressed" id="JnK-3P-4j2"/>
+                    <tabBarItem key="tabBarItem" title="每日精选" image="TabBar/ToolbarNational_normal" selectedImage="TabBar/ToolbarNational_pressed" id="JnK-3P-4j2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="1iF-RZ-nP9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -311,18 +285,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ToolbarNational_normal" width="24" height="24"/>
-        <image name="ToolbarNational_pressed" width="24" height="24"/>
-        <image name="bjbj" width="1" height="1"/>
+        <image name="Dili/download" width="32" height="32"/>
+        <image name="Dili/nopic" width="600" height="400"/>
+        <image name="Dili/share" width="32" height="32"/>
+        <image name="Dili/x" width="320" height="25"/>
+        <image name="TabBar/ToolbarNational_normal" width="24" height="24"/>
+        <image name="TabBar/ToolbarNational_pressed" width="24" height="24"/>
+        <image name="icon_collectionview_normal" width="42" height="42"/>
         <image name="lidown" width="45" height="45"/>
-        <image name="linor" width="45" height="45"/>
-        <image name="newbj" width="234" height="181"/>
-        <image name="nopic" width="600" height="400"/>
-        <image name="phone-eye" width="26" height="26"/>
         <image name="phone1-save-down" width="81" height="35"/>
-        <image name="phone1-save-nor" width="81" height="35"/>
         <image name="phone1-share-down" width="134" height="35"/>
-        <image name="phone1-share-nor" width="134" height="35"/>
-        <image name="x" width="320" height="25"/>
     </resources>
 </document>

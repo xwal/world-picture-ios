@@ -68,9 +68,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             URLCache.shared.storeCachedResponse(cacheResponse, for: request)
         }
         
-        Alamofire.request(encodedRequest).responseJSON { [weak self] (response) in
+        AF.request(encodedRequest).responseJSON { [weak self] (response) in
             guard let self = self else { return }
-            if let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images {
+            
+            if let JSON = try? response.result.get(), let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images {
                 self.todayPictorialModel = images.first
                 if shareData == nil {
                     sharedUserDefaults?.set(self.todayPictorialModel.yy_modelToJSONData(), forKey: todayStr)
@@ -96,7 +97,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
-        topView.layer.contents = KFCrossPlatformImage(named: "Navbar_mask")?.cgImage
+        topView.layer.contents = KFCrossPlatformImage(named: "Pictorial/Navbar_mask")?.cgImage
         
         todayLabel.textColor = .white
         monthLabel.textColor = .white

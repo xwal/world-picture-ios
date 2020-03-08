@@ -56,9 +56,9 @@ class NiceWallpaperCategoryViewController: UIViewController, CHTCollectionViewDe
         let url = URL(string: NGPAPI_ZUIMEIA_CATEGORY_LIST)!
         let originalRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         let encodedRequest = try! URLEncoding.default.encode(originalRequest, with: urlParams)
-        Alamofire.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { [weak self] (response) in
+        AF.request(encodedRequest).validate(statusCode: 200..<300).responseJSON { [weak self] (response) in
             guard let self = self else { return }
-            if let JSON = response.result.value, let model = NiceWallpaperCategoryModel.yy_model(withJSON: JSON) {
+            if let JSON = try? response.result.get(), let model = NiceWallpaperCategoryModel.yy_model(withJSON: JSON) {
                 self.categoryModel = model
                 self.baseURL = model.data?.base_url
                 

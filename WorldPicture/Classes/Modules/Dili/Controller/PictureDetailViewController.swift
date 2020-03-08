@@ -21,7 +21,7 @@ class PictureDetailViewController: UIViewController, UIScrollViewDelegate {
 
         // Do any additional setup after loading the view.
         if let url = pictureModel.thumb {
-            imageView.kf.setImage(with: URL(string: url), placeholder: KFCrossPlatformImage(named: "nopic"), options: [.transition(.fade(0.5))])
+            imageView.kf.setImage(with: URL(string: url), placeholder: Asset.Assets.Dili.nopic.image, options: [.transition(.fade(0.5))])
         }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))

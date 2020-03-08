@@ -102,7 +102,7 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         tableView.delegate = self
         tableView.rowHeight = UIScreen.main.bounds.size.width;
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        let header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+        let header = DropDownRefreshHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             self.currentTime = 0
             self.requestNiceWallpaperList(time: self.currentTime)
@@ -110,7 +110,6 @@ class NiceWallpaperViewController: UIViewController, UITableViewDataSource, UITa
         header.stateLabel?.textColor = UIColor.white
         header.stateLabel?.isHidden = true
         header.lastUpdatedTimeLabel?.isHidden = true
-        header.loadingView?.style = .white
         tableView.mj_header = header
         
         let leftButton = UIButton(type: .custom)

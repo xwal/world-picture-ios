@@ -102,10 +102,10 @@ class NiceWallpaperImageListViewController: UIViewController, UITableViewDataSou
             "publish_at": time
             ]
         let url = String(format: NGPAPI_ZUIMEIA_TAG, categoryId)
-        Alamofire.request(url, method: .get, parameters: urlParams).validate(statusCode: 200..<300)
+        AF.request(url, method: .get, parameters: urlParams).validate(statusCode: 200..<300)
         .responseJSON { [weak self] response in
             guard let self = self else { return }
-            guard let JSON = response.result.value, let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
+            guard let JSON = try? response.result.get(), let model = NiceWallpaperModel.yy_model(withJSON: JSON), let images = model.data?.images, let hasNext = model.data?.has_next else {
                 DispatchQueue.main.async {
                     self.imageListTableView.mj_header?.endRefreshing()
                     if (self.imageListTableView.mj_footer != nil) {

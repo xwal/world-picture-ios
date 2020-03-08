@@ -28,7 +28,6 @@ class DiliListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupEmptyDataSet()
         loadData()
     }
     
@@ -164,66 +163,6 @@ extension DiliListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let albumModel = albumModelArray[indexPath.row]
         HistoryRecordManager.shared.add(albumModel.id!)
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? AlbumCell {
-            cell.eyeImageView.isHidden = true
-        }
-    }
-}
-
-extension DiliListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource
-{
-    func setupEmptyDataSet() {
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
-    }
-    
-    // MARK: DZNEmptyDataSetSource
-    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "无网络连接"
-        let font = UIFont.boldSystemFont(ofSize: 17)
-        let textColor = UIColor(hex: "25282b")
-        
-        let attributes: [NSAttributedString.Key: Any] = [.font:font, .foregroundColor: textColor]
-        return NSAttributedString(string: text, attributes: attributes)
-    }
-    
-    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return Asset.Assets.placeholderEmptydataset.image
-    }
-    
-    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
-        let text = "点击刷新"
-        let font = UIFont.systemFont(ofSize: 15)
-        let textColor = UIColor(hex: state == .normal ? "007ee5" : "48a1ea")
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: textColor]
-        return NSAttributedString(string: text, attributes: attributes)
-    }
-    
-    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-        return UIColor(hex: "f0f3f5")
-    }
-    
-    // MARK: DZNEmptyDataSetDelegate
-    
-    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-        return albumModelArray.isEmpty && currentPage == 1
-    }
-    
-    func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
-        return true
-    }
-    
-    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
-        return false
-    }
-    
-    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!) {
-        tableView.mj_header?.beginRefreshing()
-    }
-    
-    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        tableView.mj_header?.beginRefreshing()
     }
 }
 

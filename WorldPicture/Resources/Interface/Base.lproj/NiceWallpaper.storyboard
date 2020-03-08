@@ -11,7 +11,7 @@
         <scene sceneID="1sx-77-PSp">
             <objects>
                 <navigationController storyboardIdentifier="NiceWallpaperNavigationController" id="4VR-Fe-cbq" customClass="CustomNavigationViewController" customModule="WorldPicture" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="每日最美" image="ToolbarLike_normal" selectedImage="ToolbarLike_pressed" id="mKQ-pq-ngR"/>
+                    <tabBarItem key="tabBarItem" title="每日最美" image="TabBar/ToolbarLike_normal" selectedImage="TabBar/ToolbarLike_pressed" id="mKQ-pq-ngR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="dhC-mh-ACH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -162,7 +162,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iZr-ua-7Zb">
-                        <barButtonItem key="leftBarButtonItem" image="ButtonBack_normal" id="dcj-Ii-REJ">
+                        <barButtonItem key="leftBarButtonItem" image="Pictorial/ButtonBack_normal" id="dcj-Ii-REJ">
                             <connections>
                                 <action selector="backButtonClicked:" destination="hCs-uR-FHz" id="dsD-eK-aol"/>
                             </connections>
@@ -510,9 +510,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonBack_normal" width="24" height="24"/>
-        <image name="ToolbarLike_normal" width="24" height="24"/>
-        <image name="ToolbarLike_pressed" width="24" height="24"/>
+        <image name="Pictorial/ButtonBack_normal" width="24" height="24"/>
+        <image name="TabBar/ToolbarLike_normal" width="24" height="24"/>
+        <image name="TabBar/ToolbarLike_pressed" width="24" height="24"/>
         <image name="icon_collectionview_normal" width="42" height="42"/>
         <image name="icon_collectionview_pressed" width="42" height="42"/>
         <image name="imageview_shadow" width="320" height="170"/>

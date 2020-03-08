@@ -86,9 +86,10 @@ class SettingViewController: UITableViewController {
             
             present(alertView, animated: true, completion: nil)
         case 4:
-            guard let url = URL(string: "https://file.worldpicture.chaosky.tech/b70adb4f85f2bd0e0d14/privacy_policy.html") else { return }
-            let safariVC = SFSafariViewController(url: url)
-            present(safariVC, animated: true, completion: nil)
+            guard let url = URL(string: "https://file.wp.chaosky.tech/b70adb4f85f2bd0e0d14/privacy_policy.html") else { return }
+            let webVC = WebViewController(url: url)
+            webVC.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(webVC)
         default:
             break
         }

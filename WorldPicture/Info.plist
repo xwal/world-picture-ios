@@ -80,7 +80,7 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>ToolbarNational_normal</string>
+			<string>TabBar/ToolbarNational_normal</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>今日精选</string>
 			<key>UIApplicationShortcutItemType</key>

@@ -125,6 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     // Unlock content
                 case .failed, .purchasing, .deferred:
                     break // do nothing
+                @unknown default:
+                    fatalError()
                 }
             }
         }
@@ -195,6 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func setupAppearance() {
         UITabBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
+        UINavigationBar.appearance().tintColor = .white
     }
     
     func showTodayWallpaper() {
@@ -282,8 +285,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             return
         }
         
-        Alamofire.request("https://itunes.apple.com/CN/lookup?id=1483196698").responseJSON { (response) in
-            if let data = response.result.value {
+        AF.request("https://itunes.apple.com/CN/lookup?id=1483196698").responseJSON { (response) in
+            if let data = try? response.result.get() {
                 
                 let json = JSON(data)
                 let itunesVersion = json["results"][0]["version"].stringValue

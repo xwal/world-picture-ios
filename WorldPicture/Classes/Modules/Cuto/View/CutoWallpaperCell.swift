@@ -16,7 +16,7 @@ class CutoWallpaperCell: UITableViewCell {
     var model: CutoWallpaperModel! {
         didSet {
             if let imageUrl = model.thumbnail {
-                wallpaperImageView.kf.setImage(with: URL(string: imageUrl), placeholder: Asset.Assets.unsplashDefault.image, options: [.transition(.fade(0.5))])
+                wallpaperImageView.kf.setImage(with: URL(string: imageUrl), placeholder: Asset.Assets.Common.unsplashDefault.image, options: [.transition(.fade(0.5))])
             }
         }
     }

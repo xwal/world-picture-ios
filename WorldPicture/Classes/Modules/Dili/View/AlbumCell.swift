@@ -15,20 +15,13 @@ class AlbumCell: UITableViewCell {
     
     @IBOutlet weak var albumNameLabel: UILabel!
     
-    @IBOutlet weak var eyeImageView: UIImageView!
-    
     var model: AlbumModel? {
         didSet {
             if let url = model?.url {
-                albumImageView.kf.setImage(with: URL(string: url), placeholder: KFCrossPlatformImage(named: "nopic"), options: [.transition(.fade(0.5))])
+                albumImageView.kf.setImage(with: URL(string: url), placeholder: Asset.Assets.Dili.nopic.image, options: [.transition(.fade(0.5))])
             }
             
             albumNameLabel.text = model?.title
-            
-            if let id = model?.id {
-                let checked = HistoryRecordManager.shared.check(id)
-                eyeImageView.isHidden = checked
-            }
             
         }
     }

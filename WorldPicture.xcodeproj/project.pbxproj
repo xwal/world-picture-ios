@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		376713021ACA1193B14156E0 /* Pods_WorldPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AFE1AC0137D4B135DA272F /* Pods_WorldPicture.framework */; };
-		38080B60234F393600454D8F /* Unsplash.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38080B5F234F393600454D8F /* Unsplash.xcassets */; };
 		38080B73234F3A5300454D8F /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38080B66234F3A5300454D8F /* APIProvider.swift */; };
 		38080B74234F3A5300454D8F /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38080B68234F3A5300454D8F /* ObservableType+ObjectMapper.swift */; };
 		38080B75234F3A5300454D8F /* ObjectMapper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38080B69234F3A5300454D8F /* ObjectMapper+Extension.swift */; };
@@ -52,13 +51,10 @@
 		D63B1F7A1DFE9F72000B9276 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63B1F791DFE9F72000B9276 /* TodayViewController.swift */; };
 		D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63B1F7B1DFE9F72000B9276 /* MainInterface.storyboard */; };
 		D63B1F811DFE9F72000B9276 /* TodayWallpaperWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D63B1F751DFE9F72000B9276 /* TodayWallpaperWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
 		D63B1F891DFEA2FD000B9276 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
 		D63ED2061DE04C6B0043D785 /* CutoWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2051DE04C6B0043D785 /* CutoWallpaperCell.swift */; };
 		D63ED2081DE04CA30043D785 /* CutoWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ED2071DE04CA30043D785 /* CutoWallpaperViewController.swift */; };
 		D642BBE91DF156910026D776 /* UIViewController_NGP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D642BBE81DF156910026D776 /* UIViewController_NGP.swift */; };
-		D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F421DEEB33100A3CD03 /* dili.xcassets */; };
-		D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */; };
 		D64EA33E1E14ACA7002C90B6 /* IconViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */; };
 		D64EA3401E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */; };
 		D65391781DFF8624006BBAA0 /* NiceWallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */; };
@@ -75,6 +71,10 @@
 		D68998271E4C663F0087AC3A /* CSMParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D68998261E4C663F0087AC3A /* CSMParallaxCell.m */; };
 		D689982C1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */; };
 		D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */; };
+		D68C11692415316000B7B7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C21E11DDB0B5D00375E8B /* Assets.xcassets */; };
+		D68C116D2415321900B7B7F5 /* WebOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C116B2415321900B7B7F5 /* WebOperations.swift */; };
+		D68C116E2415321900B7B7F5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C116C2415321900B7B7F5 /* WebViewController.swift */; };
+		D68C11712415326200B7B7F5 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C11702415326200B7B7F5 /* HUD.swift */; };
 		D69AC8F31E4C1252001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
 		D69AC8F51E4C326B001B0992 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F41E4C326B001B0992 /* Const.swift */; };
 		D69AC8F61E4C365C001B0992 /* NGPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69AC8F21E4C1252001B0992 /* NGPAPI.swift */; };
@@ -135,7 +135,6 @@
 		00B6401F6E9739A5D0628F30 /* Pods-WorldPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldPicture/Pods-WorldPicture.debug.xcconfig"; sourceTree = "<group>"; };
 		0A672EF25C623CDB77AA9291 /* Pods-NationalGeographic.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.appstore.xcconfig"; sourceTree = "<group>"; };
 		286DA26F0DCBE0D6AE781785 /* Pods-NationalGeographic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalGeographic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NationalGeographic/Pods-NationalGeographic.debug.xcconfig"; sourceTree = "<group>"; };
-		38080B5F234F393600454D8F /* Unsplash.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Unsplash.xcassets; sourceTree = "<group>"; };
 		38080B66234F3A5300454D8F /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		38080B68234F3A5300454D8F /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		38080B69234F3A5300454D8F /* ObjectMapper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectMapper+Extension.swift"; sourceTree = "<group>"; };
@@ -205,8 +204,6 @@
 		D63ED2051DE04C6B0043D785 /* CutoWallpaperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CutoWallpaperCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D63ED2071DE04CA30043D785 /* CutoWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CutoWallpaperViewController.swift; sourceTree = "<group>"; };
 		D642BBE81DF156910026D776 /* UIViewController_NGP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_NGP.swift; sourceTree = "<group>"; };
-		D6464F421DEEB33100A3CD03 /* dili.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = dili.xcassets; sourceTree = "<group>"; };
-		D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pictorial.xcassets; sourceTree = "<group>"; };
 		D64EA33D1E14ACA7002C90B6 /* IconViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewCell.swift; sourceTree = "<group>"; };
 		D64EA33F1E14AD05002C90B6 /* WallpaperHomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperHomeScreenViewController.swift; sourceTree = "<group>"; };
 		D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NiceWallpaper.xcassets; sourceTree = "<group>"; };
@@ -225,6 +222,9 @@
 		D68998261E4C663F0087AC3A /* CSMParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMParallaxCell.m; sourceTree = "<group>"; };
 		D689982B1E4C78980087AC3A /* NiceWallpaperImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NiceWallpaperImageListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D689982D1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryImageListModel.swift; sourceTree = "<group>"; };
+		D68C116B2415321900B7B7F5 /* WebOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebOperations.swift; sourceTree = "<group>"; };
+		D68C116C2415321900B7B7F5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D68C11702415326200B7B7F5 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		D69AC8F21E4C1252001B0992 /* NGPAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGPAPI.swift; sourceTree = "<group>"; };
 		D69AC8F41E4C326B001B0992 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D69AC8F71E4C3FDB001B0992 /* NiceWallpaperCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceWallpaperCategoryViewController.swift; sourceTree = "<group>"; };
@@ -672,13 +672,27 @@
 				D6D5636A1DE02CDB009C6EB9 /* Interface */,
 				D60C21E11DDB0B5D00375E8B /* Assets.xcassets */,
 				D680F02E1E69AE5300F8458A /* notification.caf */,
-				D6464F421DEEB33100A3CD03 /* dili.xcassets */,
-				D6464F441DEEB4B600A3CD03 /* Pictorial.xcassets */,
 				D65391771DFF8624006BBAA0 /* NiceWallpaper.xcassets */,
 				38A7EBEE234F20B700EF5155 /* Colors.json */,
-				38080B5F234F393600454D8F /* Unsplash.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D68C116A2415321900B7B7F5 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				D68C116B2415321900B7B7F5 /* WebOperations.swift */,
+				D68C116C2415321900B7B7F5 /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		D68C116F2415326200B7B7F5 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				D68C11702415326200B7B7F5 /* HUD.swift */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		D6CC7E7E1E03D3EC00F25176 /* Vendors */ = {
@@ -707,6 +721,8 @@
 		D6DCE88E23D69A8E00706257 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D68C116F2415326200B7B7F5 /* HUD */,
+				D68C116A2415321900B7B7F5 /* WebView */,
 				D6DCE88F23D69A9B00706257 /* Refresh */,
 			);
 			path = Components;
@@ -879,7 +895,6 @@
 				3849A5FC2236451F00559E4B /* Chinese_And_English_Speech_Female.dat in Resources */,
 				3849A5F82236451F00559E4B /* Chinese_And_English_Text.dat in Resources */,
 				D68998221E4C61A90087AC3A /* NiceWallpaperCategoryCell.xib in Resources */,
-				D6464F451DEEB4B600A3CD03 /* Pictorial.xcassets in Resources */,
 				3849A5F92236451F00559E4B /* Chinese_And_English_Speech_DYY.dat in Resources */,
 				D6C6B21F1E4C9D2F00AEEDDF /* NiceWallpaperCategoryImageCell.xib in Resources */,
 				D680F02F1E69AE5300F8458A /* notification.caf in Resources */,
@@ -892,10 +907,8 @@
 				D61FB3911DEEC171006E2962 /* Launch Screen.storyboard in Resources */,
 				3885B2ED234F037900AAF63F /* GoogleService-Info.plist in Resources */,
 				38A7EBDB234F1A4A00EF5155 /* Setting.storyboard in Resources */,
-				D6464F431DEEB33100A3CD03 /* dili.xcassets in Resources */,
 				38A7EBD5234F193800EF5155 /* CutoWallpaper.storyboard in Resources */,
 				D6CE4D181DFFAC9C006BE034 /* NiceWallpaperCell.xib in Resources */,
-				38080B60234F393600454D8F /* Unsplash.xcassets in Resources */,
 				D60C21E21DDB0B5D00375E8B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -905,7 +918,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D63B1F7D1DFE9F72000B9276 /* MainInterface.storyboard in Resources */,
-				D63B1F861DFEA0A3000B9276 /* Pictorial.xcassets in Resources */,
+				D68C11692415316000B7B7F5 /* Assets.xcassets in Resources */,
 				D6C53B741DFF8ECD0050DAD1 /* NiceWallpaper.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,7 +1041,6 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -1065,7 +1077,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -1101,6 +1112,7 @@
 				D633B5791E00436200D3E39D /* NiceWallpaperDetailViewController.swift in Sources */,
 				D6549C621DDC2D730036650E /* AppDelegate.swift in Sources */,
 				D6CE4D141DFF993B006BE034 /* NiceWallpaperViewController.swift in Sources */,
+				D68C116D2415321900B7B7F5 /* WebOperations.swift in Sources */,
 				D63ED2061DE04C6B0043D785 /* CutoWallpaperCell.swift in Sources */,
 				D6DCE89123D69AF900706257 /* DropDownRefreshHeader.swift in Sources */,
 				38080B77234F3A5300454D8F /* Response+ObjectMapper.swift in Sources */,
@@ -1133,10 +1145,12 @@
 				3887D08D235017760090E423 /* Observable+Response.swift in Sources */,
 				D6AA8AA11DDB409700032800 /* DiliListViewController.swift in Sources */,
 				3887D08E235017760090E423 /* MoyaProvider+Rx.swift in Sources */,
+				D68C116E2415321900B7B7F5 /* WebViewController.swift in Sources */,
 				38994D19235464B000649D31 /* MoyaCacheablePlugin.swift in Sources */,
 				D633AD441DDC766C006B08C6 /* HistoryRecordManager.swift in Sources */,
 				D689982E1E4C984F0087AC3A /* NiceWallpaperCategoryImageListModel.swift in Sources */,
 				D658371323D6D51500A28398 /* CutoWallpaperResponseModel.swift in Sources */,
+				D68C11712415326200B7B7F5 /* HUD.swift in Sources */,
 				38080B75234F3A5300454D8F /* ObjectMapper+Extension.swift in Sources */,
 				D62579E51DE1511B002DC483 /* CutoWallpaperDetailViewController.swift in Sources */,
 				D69AC8FA1E4C49A8001B0992 /* NiceWallpaperCategoryModel.swift in Sources */,

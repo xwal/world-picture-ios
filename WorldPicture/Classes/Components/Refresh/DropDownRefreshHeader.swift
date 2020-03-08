@@ -12,7 +12,7 @@ import MJRefresh
 class DropDownRefreshHeader: MJRefreshGifHeader {
 
     let refreshImages = (0...4).map { (index) -> UIImage in
-        return UIImage(named: "dropdown_anim_0".appending(String(index)))!
+        return UIImage(named: "Common/dropdown_anim_0".appending(String(index)))!
     }
     
     override func prepare() {
